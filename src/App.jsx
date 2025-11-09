@@ -3537,6 +3537,230 @@ function App() {
         }
       }
     },
+    'bustmax-breast-oil': {
+      title: 'BustMax Breast Oil – Breast Massage Oil',
+      subtitle: '🌸 Total Breast Health & Natural Firming Solution',
+      badge: 'WOMEN',
+      heroImage: '/images/BustMax Breast Oil.png',
+      
+      // Hero Section
+      features: [
+        'Total Breast Health & Natural Firming Solution',
+        'Premium active ingredients',
+        'Deeply nourish the skin',
+        'Promote breast development',
+        'Naturally improve firmness & shape'
+      ],
+      tagline: '🌸 Total Breast Health & Natural Firming Solution',
+      heroSubtitle: 'A strong herbal formula with premium active ingredients that deeply nourish the skin, promote breast development, and naturally improve firmness & shape.',
+      specialPriceAmount: '2,500',
+      
+      // Common Problems Women Face
+      problemsTitle: '💢 Common Problems Women Face',
+      problemsSubtitle: 'BustMax Oil helps you naturally restore firmness, shape, and confidence without side effects.',
+      problemsList: [
+        'Small or Unshaped Breasts',
+        'Sagging or Uneven Firmness',
+        'Leanness due to hormonal imbalance',
+        'Loss of elasticity or skin tightness',
+        'Poor circulation and dull tone'
+      ],
+      solution: '👉 BustMax Oil helps you naturally restore firmness, shape, and confidence without side effects.',
+      
+      // Video Section
+      videoId: 'YOUR_BUSTMAX_VIDEO_ID',
+      videoTitle: '🎥 See BustMax in Action',
+      videoSubtitle: 'Watch how BustMax Oil is transforming women\'s confidence and body shape across Pakistan.',
+      videoCover: '/images/bustmax-video-cover.png',
+      videoDescription: '🌺 Don\'t just take our word for it — see the real glow & shape results yourself!',
+      
+      // Real Results Section
+      beforeAfterTitle: '💃 Real Results, Real Women',
+      beforeAfterSubtitle: 'Thousands of women across Pakistan have experienced amazing transformation with regular use of BustMax Oil',
+      resultsAccuracy: [
+        '💗 Improved firmness & lift',
+        '💗 Natural size enhancement',
+        '💗 Softer & glowing skin',
+        '💗 Better hormonal balance'
+      ],
+      
+      // Herbal Power Section
+      herbalSection: {
+        title: '🌿 Herbal Power – 100% Natural Ingredients',
+        subtitle: 'Premium natural oils and extracts for total breast health',
+        showIngredients: true,
+        customColumns: [
+          {
+            title: '🍃 Simmondsia Chinensis (Jojoba Oil)',
+            description: 'Deeply nourishes and hydrates skin, improving elasticity and firmness.',
+            points: []
+          },
+          {
+            title: '🌸 Ricinus Communis (Castor Oil)',
+            description: 'Stimulates collagen and promotes smooth, glowing skin.',
+            points: []
+          },
+          {
+            title: '🌾 Olea Europaea (Olive Oil)',
+            description: 'Rich in antioxidants, helps in skin regeneration and natural lift.',
+            points: []
+          },
+          {
+            title: '🌰 Oak Galls',
+            description: 'Tightens skin tissues, enhances tone, and supports natural firmness.',
+            points: []
+          },
+          {
+            title: '🌹 Rose Oil',
+            description: 'Gives soothing fragrance and rejuvenates skin, leaving it soft and supple.',
+            points: []
+          }
+        ],
+        badgesLine: '✅ 100% Natural | ✅ No Side Effects | ✅ Safe for Daily Use'
+      },
+      
+      // Results Section
+      benefitsTitle: '✨ Visible Results You\'ll Love',
+      benefitsList: [
+        '✅ Firmer, fuller & lifted bust',
+        '✅ Natural shape enhancement',
+        '✅ Smooth & moisturized skin',
+        '✅ Improved blood & lymph circulation',
+        '✅ Supports hormonal balance',
+        '✅ 100% herbal & safe for daily use',
+        '💧 No side effects – only herbal nourishment!'
+      ],
+      
+      // Dosage & Usage Instructions
+      dosageSection: {
+        title: '🕒 Dosage & Usage Instructions',
+        steps: [
+          {
+            stepNumber: '1️⃣',
+            title: 'Clean the targeted area (breasts)',
+            description: 'Morning & Night'
+          },
+          {
+            stepNumber: '2️⃣',
+            title: 'Apply 5–8 drops of BustMax Oil',
+            description: 'Gently massage upward'
+          },
+          {
+            stepNumber: '3️⃣',
+            title: 'Continue daily for visible lift',
+            description: '3–4 weeks regular use'
+          }
+        ],
+        notes: [
+          '⚠️ For external use only',
+          'Avoid contact with eyes or damaged skin.'
+        ]
+      },
+      
+      // Affordable Packages
+      pricing: {
+        title: '💸 Affordable Packages',
+        subtitle: 'Choose the perfect package for your breast health journey',
+        packages: [
+          {
+            title: '1 Pack',
+            headerTitle: '1 Pack',
+            price: 2500,
+            features: [
+              '100 ml',
+              'Free Delivery',
+              'Cash on Delivery'
+            ]
+          },
+          {
+            title: '2 Packs',
+            headerTitle: '2 Packs',
+            price: 4500,
+            features: [
+              '2 × 100 ml',
+              'Free Delivery',
+              'Cash on Delivery'
+            ]
+          },
+          {
+            title: '3 Packs',
+            headerTitle: '3 Packs',
+            price: 6000,
+            features: [
+              '3 × 100 ml',
+              'Free Delivery',
+              'Cash on Delivery'
+            ],
+            recommended: true
+          }
+        ],
+        shelfLife: '📦 Shelf Life: 3 Years',
+        madeIn: '🌍 Made in Pakistan – 100% Herbal Formula'
+      },
+      
+      // Testimonials Section
+      testimonialsTitle: '💬 What Our Customers Say',
+      testimonialsDescription: 'Real women sharing their amazing experiences with BustMax Oil',
+      testimonials: [
+        {
+          id: 1,
+          name: 'Ayesha M.',
+          age: 28,
+          location: 'Karachi',
+          rating: 5,
+          text: 'After using BustMax Oil for just 3 weeks, I noticed visible firmness and lift. My skin feels so soft and nourished. Highly recommend!',
+          image: 'https://i.pravatar.cc/150?img=1'
+        },
+        {
+          id: 2,
+          name: 'Sana K.',
+          age: 32,
+          location: 'Lahore',
+          rating: 5,
+          text: 'I was skeptical at first, but BustMax Oil really works! My confidence has improved so much. The natural ingredients make it safe and effective.',
+          image: 'https://i.pravatar.cc/150?img=5'
+        },
+        {
+          id: 3,
+          name: 'Fatima R.',
+          age: 26,
+          location: 'Islamabad',
+          rating: 5,
+          text: 'Best breast oil I\'ve ever used! The results are amazing - firmer, fuller, and my skin glows. No side effects at all. Worth every penny!',
+          image: 'https://i.pravatar.cc/150?img=9'
+        }
+      ],
+      
+      // FAQs
+      faqTitle: '❓ FAQs',
+      faqSubtitle: 'Everything you need to know about BustMax Oil',
+      faqs: [
+        {
+          question: 'Q1: How long before I see results?',
+          answer: 'Most users notice visible firmness within 2 to 3 weeks of consistent use.'
+        },
+        {
+          question: 'Q2: Is it safe for all skin types?',
+          answer: 'Yes, BustMax Oil is 100% herbal and suitable for all skin types.'
+        },
+        {
+          question: 'Q3: Can it cause irritation?',
+          answer: 'No, but avoid applying to wounds or very sensitive skin.'
+        },
+        {
+          question: 'Q4: How often should I apply it?',
+          answer: 'Twice daily — morning and before sleep — for best results.'
+        },
+        {
+          question: 'Q5: Does it have any side effects?',
+          answer: 'None at all. It\'s free from chemicals and made with natural oils.'
+        },
+        {
+          question: 'Q6: Can I use it with other lotions or creams?',
+          answer: 'Yes, but apply BustMax Oil first for better absorption.'
+        }
+      ]
+    },
 
   };
 
@@ -4319,8 +4543,8 @@ Please confirm my order. Thank you!`;
           </div>
         </section>
 
-        {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster */}
-        {slug === 'slim-n-shape-fit-booster' && productConfigs[slug]?.dosageSection?.steps && (
+        {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster and BustMax Oil */}
+        {(slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil') && productConfigs[slug]?.dosageSection?.steps && (
           <section className={`py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
@@ -4460,7 +4684,7 @@ Please confirm my order. Thank you!`;
           </section>
         )}
 
-        {!(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'g-max-passion' || slug === 'slim-n-shape-fit-booster') && (
+        {!(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'g-max-passion' || slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil') && (
           <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gray-900' : 'bg-yellow-50'}`}>
             <div className="container mx-auto px-4">
               <motion.div className="max-w-4xl mx-auto" {...fadeInUp}>
@@ -4774,6 +4998,14 @@ Please confirm my order. Thank you!`;
                 </div>
               </motion.div>
             </div>
+            
+            {/* Shelf Life & Made In - for BustMax Oil */}
+            {slug === 'bustmax-breast-oil' && productConfigs[slug]?.pricing?.shelfLife && (
+              <motion.div className="text-center mt-8 space-y-2" {...fadeInUp}>
+                <p className="text-lg text-gray-700 font-medium">{productConfigs[slug].pricing.shelfLife}</p>
+                <p className="text-lg text-gray-700 font-medium">{productConfigs[slug].pricing.madeIn}</p>
+              </motion.div>
+            )}
           </div>
         </section>
 
@@ -4781,9 +5013,9 @@ Please confirm my order. Thank you!`;
         <Suspense fallback={<LoadingFallback />}>
           <FAQSection
             language={language}
-            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
-            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
-            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
+            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
+            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
+            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
             ctaLanguage={(slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-garcinia-cambogia-capsules') ? 'en' : undefined}
             slug={slug}
           />
