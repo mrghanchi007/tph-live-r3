@@ -2380,6 +2380,7 @@ function App() {
       subtitle: 'To Live Life Powerfully, Actively & Strongly',
       description: 'Experience renewed strength, stamina, and confidence with Sultan Shahi Gold — a powerful herbal health booster crafted for men of all ages. Naturally formulated with Ginseng, Ashwagandha, Safed Musli & Shilajit for lasting energy and peak performance.',
       badge: 'PREMIUM',
+      heroImage: 'https://i.ibb.co/Ldw6wttM/Shahi-Sultan-Health-Booster.png',
       features: [
         '💪 Boosts Strength & Stamina',
         '🔥 Enhances Performance & Vitality',
@@ -2401,15 +2402,42 @@ function App() {
       },
       benefitsTitle: language === 'en' ? 'Benefits of Sultan Shahi Gold Health Booster' : 'سلطان شاہی گولڈ ہیلتھ بوسٹر کے فوائد',
       benefitsList: [
-        'Enhances vitality and overall energy',
-        'Boosts stamina and endurance for long-lasting performance',
-        'Supports reproductive health and testosterone levels',
-        'Reduces stress and improves mental clarity',
-        'Improves blood circulation for better performance',
-        'Promotes muscle strength and physical wellness',
-        'Supports immune system and overall well-being',
-        'Helps maintain hormonal balance naturally',
-        '100% Natural and safe for long-term use'
+        {
+          text: 'Ultimate Wellness - Energy, Stamina & Immunity Booster',
+          image: 'https://i.ibb.co/XfkPHQ6p/Ultimate-Wellness-energy-stamina-immunity-booster.png',
+          alt: 'Ultimate Wellness energy stamina immunity booster',
+          title: 'Ultimate Wellness - Energy, Stamina & Immunity Booster'
+        },
+        {
+          text: 'Energy & Strength Builder - Fight Fatigue, Build Power',
+          image: 'https://i.ibb.co/Y7Mff1r3/Energy-Strength-Builder-fight-fatigue-build-power.png',
+          alt: 'Energy Strength Builder fight fatigue build power',
+          title: 'Energy & Strength Builder - Fight Fatigue, Build Power'
+        },
+        {
+          text: 'Athletic Performance - Stronger Muscles, Faster Recovery',
+          image: 'https://i.ibb.co/ZRvwxPRw/Athletic-Performance-stronger-muscles-faster-recovery.png',
+          alt: 'Athletic Performance stronger muscles faster recovery',
+          title: 'Athletic Performance - Stronger Muscles, Faster Recovery'
+        },
+        {
+          text: 'Enhanced Libido - Natural Desire & Performance Boost',
+          image: 'https://i.ibb.co/b5SWNLWZ/Enhanced-Libido-natural-desire-performance-boost.png',
+          alt: 'Enhanced Libido natural desire performance boost',
+          title: 'Enhanced Libido - Natural Desire & Performance Boost'
+        },
+        {
+          text: 'Stress Relief - Balanced Hormones & Mood Lift',
+          image: 'https://i.ibb.co/0Rcp6vpp/Stress-Relief-balanced-hormones-mood-lift.png',
+          alt: 'Stress Relief balanced hormones mood lift',
+          title: 'Stress Relief - Balanced Hormones & Mood Lift'
+        },
+        {
+          text: 'Re-Young - Feel Youthful, Confident & Powerful',
+          image: 'https://i.ibb.co/2bSvL4t/Re-Young-feel-youthful-confident-powerful.png',
+          alt: 'Re Young feel youthful confident powerful',
+          title: 'Re-Young - Feel Youthful, Confident & Powerful'
+        }
       ],
       specialPriceAmount: '6,000',
       problemsTitle: 'Common Problems Men Face Today',
@@ -2502,6 +2530,7 @@ function App() {
       // Video Section headings (EN)
       videoTitle: 'See Sultan Shahi Gold Health Booster in Action',
       videoSubtitle: 'Real Energy, Real Confidence, Real Power',
+      videoCover: 'https://i.ibb.co/Hpt0BJ92/Shahi-Sultan-Health-Booster-Video.png',
       // Urdu translations for this product only
       i18n: {
         ur: {
@@ -2523,15 +2552,42 @@ function App() {
             'عضو مخصوص کی سوزش'
           ],
           benefitsList: [
-            'توانائی اور مجموعی زندگی کی طاقت بڑھاتا ہے',
-            'طاقت اور برداشت کو بڑھاتا ہے تاکہ دیرپا کارکردگی ممکن ہو',
-            'تناسلی صحت اور ٹیسٹوسٹیرون کی سطح کی حمایت کرتا ہے',
-            'تناؤ کم کرتا ہے اور ذہنی وضاحت بہتر بناتا ہے',
-            'خون کی روانی بہتر بناتا ہے تاکہ کارکردگی میں اضافہ ہو',
-            'پٹھوں کی طاقت اور جسمانی صحت کو فروغ دیتا ہے',
-            'مدافعتی نظام اور مجموعی صحت کی حمایت کرتا ہے',
-            'قدرتی طور پر ہارمونل توازن برقرار رکھنے میں مدد کرتا ہے',
-            'لمبے عرصے کے استعمال کے لیے 100٪ قدرتی اور محفوظ'
+            {
+              text: 'حتمی تندرستی - توانائی، طاقت اور قوت مدافعت بڑھانے والا',
+              image: 'https://i.ibb.co/XfkPHQ6p/Ultimate-Wellness-energy-stamina-immunity-booster.png',
+              alt: 'حتمی تندرستی توانائی طاقت قوت مدافعت',
+              title: 'حتمی تندرستی - توانائی، طاقت اور قوت مدافعت بڑھانے والا'
+            },
+            {
+              text: 'توانائی اور طاقت بنانے والا - تھکاوٹ سے لڑیں، طاقت بنائیں',
+              image: 'https://i.ibb.co/Y7Mff1r3/Energy-Strength-Builder-fight-fatigue-build-power.png',
+              alt: 'توانائی طاقت بنانے والا تھکاوٹ',
+              title: 'توانائی اور طاقت بنانے والا - تھکاوٹ سے لڑیں، طاقت بنائیں'
+            },
+            {
+              text: 'کھلاڑیوں کی کارکردگی - مضبوط پٹھے، تیز بحالی',
+              image: 'https://i.ibb.co/ZRvwxPRw/Athletic-Performance-stronger-muscles-faster-recovery.png',
+              alt: 'کھلاڑیوں کی کارکردگی مضبوط پٹھے',
+              title: 'کھلاڑیوں کی کارکردگی - مضبوط پٹھے، تیز بحالی'
+            },
+            {
+              text: 'بہتر جنسی خواہش - قدرتی خواہش اور کارکردگی میں اضافہ',
+              image: 'https://i.ibb.co/b5SWNLWZ/Enhanced-Libido-natural-desire-performance-boost.png',
+              alt: 'بہتر جنسی خواہش قدرتی',
+              title: 'بہتر جنسی خواہش - قدرتی خواہش اور کارکردگی میں اضافہ'
+            },
+            {
+              text: 'تناؤ سے نجات - متوازن ہارمونز اور موڈ میں بہتری',
+              image: 'https://i.ibb.co/0Rcp6vpp/Stress-Relief-balanced-hormones-mood-lift.png',
+              alt: 'تناؤ سے نجات متوازن ہارمونز',
+              title: 'تناؤ سے نجات - متوازن ہارمونز اور موڈ میں بہتری'
+            },
+            {
+              text: 'دوبارہ جوان - جوان، پراعتماد اور طاقتور محسوس کریں',
+              image: 'https://i.ibb.co/2bSvL4t/Re-Young-feel-youthful-confident-powerful.png',
+              alt: 'دوبارہ جوان پراعتماد طاقتور',
+              title: 'دوبارہ جوان - جوان، پراعتماد اور طاقتور محسوس کریں'
+            }
           ],
           herbalSection: {
             title: '🌿 جڑی بوٹیوں کی طاقت۔ سائنس سے ثابت شدہ۔',
@@ -2669,7 +2725,11 @@ function App() {
           before: 'https://i.ibb.co/N6VyzpDb/8-weeks-of-use-Before-Shahi-Sultan-Health-Booster.png',
           after: 'https://i.ibb.co/HDw4BNjR/8-weeks-of-use-After-Shahi-Sultan-Health-Booster.png',
           duration: 8,
-          summary: undefined
+          summary: undefined,
+          beforeAlt: '8 weeks of use Before Shahi Sultan Health Booster',
+          afterAlt: '8 weeks of use After Shahi Sultan Health Booster',
+          beforeTitle: '8 weeks of use Before Shahi Sultan Health Booster',
+          afterTitle: '8 weeks of use After Shahi Sultan Health Booster'
         },
         {
           id: 2,
@@ -2677,7 +2737,11 @@ function App() {
           before: 'https://i.ibb.co/zV0v4JcY/4-weeks-of-use-Before-Shahi-Sultan-Health-Booster.png',
           after: 'https://i.ibb.co/Gvs3GKjY/4-weeks-of-use-After-Shahi-Sultan-Health-Booster.png',
           duration: 4,
-          summary: undefined
+          summary: undefined,
+          beforeAlt: '4 weeks of use Before Shahi Sultan Health Booster',
+          afterAlt: '4 weeks of use After Shahi Sultan Health Booster',
+          beforeTitle: '4 weeks of use Before Shahi Sultan Health Booster',
+          afterTitle: '4 weeks of use After Shahi Sultan Health Booster'
         }
       ],
       // Affordable Packages
@@ -3706,6 +3770,7 @@ function App() {
           id: 1,
           name: 'Ayesha M.',
           age: 28,
+          
           location: 'Karachi',
           rating: 5,
           text: 'After using BustMax Oil for just 3 weeks, I noticed visible firmness and lift. My skin feels so soft and nourished. Highly recommend!',
@@ -4491,6 +4556,7 @@ Please confirm my order. Thank you!`;
                         <img
                           src={productConfigs[slug]?.heroImage || "https://i.ibb.co/gLX3dwfM/B-Maxman-Royal-Special-Treatment.png"}
                           alt={productConfigs[slug]?.title || "B-Maxman Royal Special Treatment"}
+                          title={productConfigs[slug]?.title || "B-Maxman Royal Special Treatment"}
                           className="max-w-full h-auto rounded shadow-md"
                           loading="eager"
                         />

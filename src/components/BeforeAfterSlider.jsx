@@ -51,7 +51,8 @@ const BeforeAfterSlider = ({ sets, labels }) => {
                 <div className="relative">
                   <img
                     src={set.before}
-                    alt={`Before - ${set.duration} weeks`}
+                    alt={set.beforeAlt || `Before - ${set.duration} weeks`}
+                    title={set.beforeTitle || `Before - ${set.duration} weeks`}
                     className="w-full h-60 object-cover rounded-lg mb-2 grayscale"
                     loading="lazy"
                     width="240"
@@ -72,7 +73,8 @@ const BeforeAfterSlider = ({ sets, labels }) => {
                 <div className="relative">
                   <img
                     src={set.after}
-                    alt={`After - ${set.duration} weeks`}
+                    alt={set.afterAlt || `After - ${set.duration} weeks`}
+                    title={set.afterTitle || `After - ${set.duration} weeks`}
                     className="w-full h-60 object-cover rounded-lg mb-2"
                     loading="lazy"
                     width="240"
