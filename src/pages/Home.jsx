@@ -29,9 +29,9 @@ const Home = () => {
 
   // Get featured products (first 3 from each category)
   const featuredProducts = [
-    ...PRODUCTS.men.slice(0, 1),
-    ...PRODUCTS.women.slice(0, 1),
-    ...PRODUCTS['weight-lose'].slice(0, 1)
+    ...PRODUCTS.men.slice(2, 3), // Sultan Shahi Gold Majoon (3rd product)
+    ...PRODUCTS.women.slice(2, 3), // BustMax Breast Oil (3rd product)
+    ...PRODUCTS['weight-lose'].slice(1, 2) // Slim n Shape Fit Booster (2nd product)
   ].map(product => ({
     ...product,
     slug: slugifyProduct(product.name)
@@ -59,10 +59,10 @@ const Home = () => {
   ];
 
   const features = [
-    { icon: <FaLeaf className="w-8 h-8 mb-3 text-red-600" />, title: "Premium Quality Ingredients" },
-    { icon: <FaIndustry className="w-8 h-8 mb-3 text-red-600" />, title: "GMP Certified Facility" },
-    { icon: <FaBoxes className="w-8 h-8 mb-3 text-red-600" />, title: "Custom Packaging & Private Label" },
-    { icon: <FaHandshake className="w-8 h-8 mb-3 text-red-600" />, title: "OEM Services for Businesses" }
+    { image: "https://i.ibb.co/jvNGRNQb/Premium-Quality-Ingredients.jpg", title: "Premium Quality Ingredients" },
+    { image: "https://i.ibb.co/xSzPWJPD/GMP-Certified-Facility.jpg", title: "GMP Certified Facility" },
+    { image: "https://i.ibb.co/bj7h4cZX/Custom-Packaging-Private-Label.jpg", title: "Custom Packaging & Private Label" },
+    { image: "https://i.ibb.co/kgDfgnP4/OEM-Services-for-Businesses.jpg", title: "OEM Services for Businesses" }
   ];
 
   return (
@@ -70,7 +70,7 @@ const Home = () => {
       {/* 1️⃣ Hero Section */}
       <section className="relative bg-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-white to-red-50 opacity-90"></div>
-        <div className="absolute inset-0 bg-[url('/images/product-collage.jpg')] bg-cover bg-center mix-blend-overlay opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://i.ibb.co/Hp76qS4G/Hero-Section-Banner.jpg')] bg-cover bg-center mix-blend-overlay opacity-10"></div>
         
         <div className="container mx-auto px-4 py-16 md:py-24 relative">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -111,7 +111,7 @@ const Home = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-red-100 to-yellow-100 rounded-2xl transform rotate-1 -z-10"></div>
                 <img 
-                  src="/images/About TPH International.png" 
+                  src="https://i.ibb.co/Vc7pgW9D/About-TPH-International-Section.jpg" 
                   alt="Herbal Products" 
                   className="w-full h-auto rounded-xl shadow-2xl"
                   onError={(e) => {
@@ -265,12 +265,18 @@ const Home = () => {
                 <motion.div 
                   key={index}
                   variants={fadeInUp}
-                  className="bg-gray-50 p-8 rounded-xl text-center hover:shadow-lg transition-shadow"
+                  className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
                 >
-                  <div className="flex justify-center">
-                    {feature.icon}
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={feature.image} 
+                      alt={feature.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mt-4">{feature.title}</h3>
+                  <div className="p-6 text-center">
+                    <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -291,7 +297,7 @@ const Home = () => {
             >
               <div className="bg-white rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="/images/About TPH International.png" 
+                  src="https://i.ibb.co/Vc7pgW9D/About-TPH-International-Section.jpg" 
                   alt="TPH International" 
                   className="w-full h-auto object-cover"
                   onError={(e) => {

@@ -47,19 +47,6 @@ export const PRODUCTS = {
       ]
     },
     { 
-      name: 'Shahi Sultan Health Booster', 
-      price: 9500, 
-      image: '/images/Shahi Sultan Health Booster.png',
-      description: 'To Live Life Powerfully / Actively / Strongly💪\nEnergetic • Men Power • Wellness in All Ages',
-      benefits: [
-        'Boosts immunity',
-        'Enhances vitality',
-        'Improves overall health',
-        'Premium herbal ingredients'
-      ],
-      theme: 'luxury'
-    },
-    { 
       name: 'Sultan Shahi Gold Majoon', 
       price: 5000, 
       image: 'https://i.ibb.co/qTywxNG/Sultan-Shahi-Gold-Majoon.png',
@@ -85,8 +72,45 @@ export const PRODUCTS = {
       ],
       theme: 'luxury'
     },
+    { 
+      name: 'Sultan Shahi Gold Health Booster', 
+      price: 6000, 
+      image: '/images/Shahi Sultan Health Booster.png',
+      description: 'To Live Life Powerfully / Actively / Strongly💪\nEnergetic • Men Power • Wellness in All Ages',
+      benefits: [
+        'Boosts immunity',
+        'Enhances vitality',
+        'Improves overall health',
+        'Premium herbal ingredients'
+      ],
+      theme: 'luxury'
+    },
   ],
   women: [
+    { 
+      name: 'G-Max Passion', 
+      price: 2500, 
+      image: '/images/G-Max Passion.png',
+      description: 'Enhance feminine vitality and desire',
+      benefits: [
+        'Boosts libido',
+        'Enhances pleasure',
+        'Balances hormones',
+        'Natural ingredients'
+      ]
+    },
+    { 
+      name: 'Malika Shahi Gold Health Booster', 
+      price: 5000, 
+      image: '/images/Malka Shahi Gold Health Booster.png',
+      description: 'Premium herbal tonic for women',
+      benefits: [
+        'Supports hormonal balance',
+        'Enhances vitality',
+        'Boosts immunity',
+        'Rich in nutrients'
+      ]
+    },
     { 
       name: 'BustMax Breast Oil', 
       price: 2500, 
@@ -100,34 +124,34 @@ export const PRODUCTS = {
       ]
     },
     { 
-      name: 'G-Max Passion', 
-      price: 2000, 
-      image: '/images/G-Max Passion.png',
-      description: 'Enhance feminine vitality and desire',
+      name: 'Bustmax XL Breast Booster', 
+      price: 3000, 
+      image: '/images/Bustmax XL Breast Booster.png',
+      description: 'Premium breast enhancement formula',
       benefits: [
-        'Boosts libido',
-        'Enhances pleasure',
-        'Balances hormones',
-        'Natural ingredients'
-      ]
-    },
-    { 
-      name: 'Malka Shahi Gold Health Booster', 
-      price: 7500, 
-      image: '/images/Malka Shahi Gold Health Booster.png',
-      description: 'Premium herbal tonic for women',
-      benefits: [
-        'Supports hormonal balance',
-        'Enhances vitality',
-        'Boosts immunity',
-        'Rich in nutrients'
+        'Natural breast enlargement',
+        'Firms and lifts',
+        'Enhances shape and size',
+        'Herbal ingredients'
       ]
     },
   ],
   'weight-lose': [
     { 
-      name: 'Slim n Shape Garcinia Cambogia Capsules', 
-      price: 2000, 
+      name: 'Slim n Shape Herbal Tea', 
+      price: 1200, 
+      image: '/images/Slim n Shape Tea.png',
+      description: 'Detox and weight management tea',
+      benefits: [
+        'Aids digestion',
+        'Boosts metabolism',
+        'Natural detox',
+        'Antioxidant rich'
+      ]
+    },
+    { 
+      name: 'Slim n Shape Fit Booster', 
+      price: 2500, 
       image: '/images/Slim n Shape Garcinia.png',
       description: 'Best Herbal Weight Loss Capsules in Pakistan | Natural Belly Fat Burner | Metabolism Booster for Men & Women\n\nPremium herbal formula for safe & effective weight loss.',
       benefits: [
@@ -135,7 +159,7 @@ export const PRODUCTS = {
         'Control Appetite & Cravings',
         'Boost Energy & Metabolism',
         'Trusted by Thousands in Pakistan',
-        'Special Price: Rs 2,000/-'
+        'Special Price: Rs 2,500/-'
       ],
       fullDescription: {
         overview: 'Our products are made with the finest natural ingredients and are free from harmful chemicals. Each batch is carefully crafted to ensure maximum potency and effectiveness.',
@@ -145,20 +169,8 @@ export const PRODUCTS = {
           'Enhances natural weight loss process'
         ],
         howToUse: 'Take 1-2 capsules daily with water, preferably with meals. For best results, use consistently as part of your daily routine. Results may vary based on individual body types and metabolism.',
-        ingredients: 'Made with 100% natural Garcinia Cambogia extract and herbs. Free from artificial colors, flavors, and preservatives. Always read the label before use.'
+        ingredients: 'Made with 100% natural herbal extract and herbs. Free from artificial colors, flavors, and preservatives. Always read the label before use.'
       }
-    },
-    { 
-      name: 'Slim n Shape Tea', 
-      price: 999, 
-      image: '/images/Slim n Shape Tea.png',
-      description: 'Detox and weight management tea',
-      benefits: [
-        'Aids digestion',
-        'Boosts metabolism',
-        'Natural detox',
-        'Antioxidant rich'
-      ]
     },
   ],
 };

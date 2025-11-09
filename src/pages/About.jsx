@@ -45,8 +45,8 @@ const About = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <img
-              src="/images/About TPH International.png"
-              alt="TPH International Facility"
+              src="https://i.ibb.co/Vc7pgW9D/About-TPH-International-Section.jpg"
+              alt="Who We Are"
               className="rounded-xl shadow-lg w-full object-cover"
               loading="lazy"
             />
@@ -342,28 +342,53 @@ const About = () => {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-12 md:py-16 bg-gray-900 text-white relative overflow-hidden">
-        <div className="absolute -top-10 right-10 w-40 h-40 bg-red-500/20 rounded-full blur-2xl" />
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <h3 className="text-2xl font-bold mb-3">Our Commitment</h3>
-              <p className="text-gray-100">
-                With technical expertise, R&D capabilities, and dedicated customer service, we ensure products that exceed expectations.
-                Whether you need ready-to-sell products or custom manufacturing, TPH Int. is your trusted partner in the natural health industry.
-              </p>
-            </motion.div>
-            <motion.img
-              src="https://images.unsplash.com/photo-1582719366769-3b10d8ebf0d2?q=80&w=1400&auto=format&fit=crop"
-              alt="Commitment to Excellence"
-              className="rounded-xl shadow-lg w-full object-cover"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-red-500 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-yellow-500 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Commitment</h2>
+            <p className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
+              With technical expertise, R&D capabilities, and dedicated customer service, we ensure products that exceed expectations. 
+              Whether you need ready-to-sell products or custom manufacturing, TPH Int. is your trusted partner in the natural health industry.
+            </p>
+            
+            {/* Logo and Company Name */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              loading="lazy"
-            />
-          </div>
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col items-center gap-4 mt-8"
+            >
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 shadow-2xl">
+                <img 
+                  src="https://i.ibb.co/mVFdjH9M/footer-logo.png" 
+                  alt="TPH International Logo"
+                  className="h-20 w-auto mx-auto"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                The Planner Herbal International (TPH Int.)
+              </h3>
+              <div className="flex items-center gap-2 text-gray-300">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm font-medium">Since 2002 - Your Trusted Partner</span>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

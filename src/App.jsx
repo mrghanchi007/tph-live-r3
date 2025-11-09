@@ -47,7 +47,13 @@ function App() {
   const [cookiesAccepted, setCookiesAccepted] = useState(false);
 
   // Get current product from URL
-  const { slug } = useParams();
+  const { slug: rawSlug } = useParams();
+  
+  // Normalize slug - map alternative URLs to canonical slugs
+  const slugAliases = {
+    'slim-n-shape-herbal-tea': 'slim-n-shape-tea'
+  };
+  const slug = slugAliases[rawSlug] || rawSlug;
 
   // Product configurations
   const productConfigs = {
@@ -435,10 +441,22 @@ function App() {
       badge: 'BEST SELLER',
       solution: 'B-Maxman Royal Special Treatment is the ultimate solution you\'ve been looking for!',
       benefitsTitle: language === 'en' ? 'Benefits of B-Maxman Royal Special Treatment' : 'بی میکس مین رائل سپیشل ٹریٹمنٹ کے فوائد',
+      // Herbal Power Section with 2-column layout
+      herbalSection: {
+        title: '🌿 Herbal Power. Backed by Science.',
+        subtitle: 'A potent blend of 30+ world-renowned herbal ingredients, trusted for centuries',
+        showIngredients: true,
+        twoColumnLayout: true
+      },
       i18n: {
         ur: {
           // Problems section line override (Urdu only for this product)
-          solution: 'بی میکس مین رائل اسپیشل ٹریٹمنٹ وہ بہترین حل ہے جس کی آپ تلاش کر رہے تھے!'
+          solution: 'بی میکس مین رائل اسپیشل ٹریٹمنٹ وہ بہترین حل ہے جس کی آپ تلاش کر رہے تھے!',
+          // Herbal Power Section (Urdu)
+          herbalSection: {
+            title: '🌿 جڑی بوٹیوں کی طاقت۔ سائنس سے ثابت شدہ۔',
+            subtitle: '۳۰+ عالمی شہرت یافتہ جڑی بوٹیوں کا طاقتور امتزاج، صدیوں سے قابل اعتماد'
+          }
         }
       }
     },
@@ -703,11 +721,11 @@ function App() {
       benefitsTitle: language === 'en' ? 'Benefits of Slim N Shape Garcinia' : 'سلیم این شیپ گارسنیا کے فوائد'
     },
     'slim-n-shape-garcinia-cambogia-capsules': {
-      title: 'Slim n Shape Garcinia Cambogia Capsules',
+      title: 'Slim n Shape Fit Booster',
       subtitle: 'Best Herbal Weight Loss Capsules in Pakistan | Natural Belly Fat Burner | Metabolism Booster for Men & Women',
       badge: 'WEIGHT LOSS',
-      solution: '🔑 Slim n Shape Garcinia Cambogia is the natural solution you\'ve been looking for!',
-      benefitsTitle: 'Benefits of Slim n Shape Garcinia Cambogia',
+      solution: '🔑 Slim n Shape Fit Booster is the natural solution you\'ve been looking for!',
+      benefitsTitle: 'Benefits of Slim n Shape Fit Booster',
       features: [
         'Burn Belly Fat Naturally',
         'Control Appetite & Cravings',
@@ -718,15 +736,15 @@ function App() {
         {
           text: '🔥 Accelerates fat burn & metabolism naturally',
           image: '/images/Slim n Shape Garcinia.png',
-          alt: 'Natural belly fat burner and metabolism booster - Slim n Shape Garcinia Cambogia',
-          title: 'Accelerates Natural Fat Burn & Metabolism - Slim n Shape Garcinia Cambogia',
-          seoDescription: 'Herbal Garcinia Cambogia capsules that naturally accelerate fat burning and boost metabolism for safe weight loss'
+          alt: 'Natural belly fat burner and metabolism booster - Slim n Shape Fit Booster',
+          title: 'Accelerates Natural Fat Burn & Metabolism - Slim n Shape Fit Booster',
+          seoDescription: 'Herbal Fit Booster capsules that naturally accelerate fat burning and boost metabolism for safe weight loss'
         },
         {
           text: '🍽 Reduces hunger & controls cravings effectively',
           image: '/images/Slim n Shape Garcinia.png',
-          alt: 'Appetite suppressant and craving control with Garcinia Cambogia',
-          title: 'Reduces Hunger & Controls Cravings - Slim n Shape Garcinia Cambogia',
+          alt: 'Appetite suppressant and craving control with Fit Booster',
+          title: 'Reduces Hunger & Controls Cravings - Slim n Shape Fit Booster',
           seoDescription: 'Natural appetite control that helps reduce hunger and manage food cravings effectively'
         },
         {
@@ -734,7 +752,7 @@ function App() {
           image: '/images/Slim n Shape Garcinia.png',
           alt: 'Supports healthy cholesterol and blood pressure levels',
           title: 'Supports Healthy Cholesterol & Blood Pressure',
-          seoDescription: 'Garcinia Cambogia may support healthy lipid profile and blood pressure as part of a balanced lifestyle'
+          seoDescription: 'Fit Booster may support healthy lipid profile and blood pressure as part of a balanced lifestyle'
         },
         {
           text: '🧠 Improves focus & balances emotional eating',
@@ -768,7 +786,7 @@ function App() {
       benefitsImage: 'https://i.ibb.co/KpmMN1kL/Benefits-of-Slim-n-Shape-Garcinia-Cambogia.png',
       // Product-specific hero image
       heroImage: 'https://i.ibb.co/GfYCr9z9/Slim-n-Shape-Garcinia-Cambogia-Capsules.png',
-      specialPriceAmount: '2,000',
+      specialPriceAmount: '2,500',
       problemsTitle: 'Common Problems People Face Today',
       problemsSubtitle: 'Millions of men & women in Pakistan silently struggle with these issues — but you don’t have to:',
       problemsList: [
@@ -782,9 +800,9 @@ function App() {
       // Video section overrides
       videoId: 'GG04kBQ_1NA',
       videoTitle: 'See Slim n Shape in Action',
-      videoSubtitle: 'Watch how Slim n Shape Garcinia Cambogia has helped people across Pakistan lose weight naturally and safely.',
+      videoSubtitle: 'Watch how Slim n Shape Fit Booster has helped people across Pakistan lose weight naturally and safely.',
       videoCover: 'https://i.ibb.co/YFS4t88Y/Slim-n-Shape-Garcinia-Cambogia-Video.png',
-      videoIframeTitle: 'Slim n Shape Garcinia Cambogia Video'
+      videoIframeTitle: 'Slim n Shape Fit Booster Video'
       ,
       // Before & After overrides (Real Results)
       beforeAfterTitle: 'Real Results, Real People',
@@ -817,8 +835,8 @@ function App() {
       ,
       // Herbal power section overrides (Why Garcinia Works)
       herbalSection: {
-        title: 'Why Garcinia Cambogia Works (Backed by Science)',
-        subtitle: 'Slim n Shape is powered by Garcinia Cambogia, one of the most effective natural fat burners in the world. Its active compound Hydroxycitric Acid (HCA):',
+        title: 'Why Fit Booster Works (Backed by Science)',
+        subtitle: 'Slim n Shape Fit Booster is powered by natural herbal extracts, one of the most effective natural fat burners in the world. Its active compounds:',
         bullets: [
           'Blocks fat production',
           'Suppresses appetite naturally',
@@ -877,9 +895,9 @@ function App() {
         subtitle: 'Choose the pack that works best for you:',
         packages: [
           {
-            title: '1 Month Pack – Rs. 2000',
+            title: '1 Month Pack – Rs. 2,500',
             headerTitle: '1 Month Pack',
-            price: 2000,
+            price: 2500,
             features: [
               '90 Herbal Capsules',
               'Free Delivery',
@@ -888,10 +906,10 @@ function App() {
             ]
           },
           {
-            title: '2 Month Pack – Rs. 3800 (Save Rs. 200)',
+            title: '2 Month Pack – Rs. 4,500 (Save Rs. 500)',
             headerTitle: '2 Month Pack',
-            price: 3800,
-            saveAmount: 200,
+            price: 4500,
+            saveAmount: 500,
             features: [
               '180 Herbal Capsules',
               'Free Delivery',
@@ -900,10 +918,10 @@ function App() {
             ]
           },
           {
-            title: '3 Month Pack – Rs. 5500 (Best Value – Save Rs. 500)',
+            title: '3 Month Pack – Rs. 6,500 (Best Value – Save Rs. 1,000)',
             headerTitle: '3 Month Pack',
-            price: 5500,
-            saveAmount: 500,
+            price: 6500,
+            saveAmount: 1000,
             features: [
               '270 Herbal Capsules',
               'Free Delivery',
@@ -915,8 +933,8 @@ function App() {
       }
       ,
       // Product-specific FAQs (used by FAQSection overrides)
-      faqTitle: 'Slim n Shape Garcinia Cambogia – FAQs',
-      faqSubtitle: 'Get answers to the most common questions about Slim n Shape Garcinia Cambogia',
+      faqTitle: 'Slim n Shape Fit Booster – FAQs',
+      faqSubtitle: 'Get answers to the most common questions about Slim n Shape Fit Booster',
       faqs: [
         {
           question: 'Is Slim n Shape safe for men & women?',
@@ -940,7 +958,7 @@ function App() {
         },
         {
           question: 'Can people with diabetes, BP, or cholesterol issues use this?',
-          answer: '👍 Yes, Garcinia Cambogia may help support healthy cholesterol & blood pressure levels, but always consult your doctor if you have medical conditions.'
+          answer: '👍 Yes, Fit Booster may help support healthy cholesterol & blood pressure levels, but always consult your doctor if you have medical conditions.'
         },
         {
           question: 'What age group can use Slim n Shape?',
@@ -1604,233 +1622,1040 @@ function App() {
     },
     'g-max-passion': {
       title: 'G-Max Passion',
-      subtitle: 'Enhance your intimate moments naturally',
-      badge: 'INTIMACY',
-      solution: 'G-Max Passion helps improve your intimate life!',
-      benefitsTitle: language === 'en' ? 'Benefits of G-Max Passion' : 'جی میکس پاشن کے فوائد'
-    },
-    'shahi-sultan-health-booster': {
-      title: 'Shahi Sultan Health Booster',
-      subtitle: 'To Live Life Powerfully / Actively / Strongly💪\nEnergetic • Men Power • Wellness in All Ages',
+      subtitle: 'Natural Fertility & Hormonal Support for Women',
+      description: 'Boost your reproductive health, hormonal balance, and energy naturally with our premium herbal formula.',
       badge: 'PREMIUM',
-      solution: 'Shahi Sultan Health Booster is the ultimate solution for powerful living!',
-      benefitsTitle: language === 'en' ? 'Benefits of Shahi Sultan Health Booster' : 'شاہی سلطان ہیلتھ بوسٹر کے فوائد',
+      // Video Section
+      videoId: 'YOUR_YOUTUBE_VIDEO_ID',
+      videoTitle: '🌸 See G-Max Passion in Action',
+      videoSubtitle: 'Watch how G-Max Passion has helped women across Pakistan restore their natural balance, energy, and fertility.',
+      videoDescription: 'Don\'t just take our word for it — see the real stories and transformations of confident, healthy women who trusted G-Max Passion!',
+      features: [
+        '🌸 Supports conception & fertility',
+        '⚖️ Balances hormones naturally',
+        '✨ Enhances energy, vitality & emotional well-being',
+        '🌿 100% natural & safe'
+      ],
+      specialPriceAmount: '2,500',
+      // Pricing Packages
+      pricingPackages: {
+        title: '💰 Affordable Packages – G-Max Passion Health Booster',
+        subtitle: '100% herbal formula — safe, effective & scientifically tested to balance hormones & boost fertility naturally.',
+        packages: [
+          {
+            name: 'Single Pack',
+            subtitle: '1 Bottle – 60 Capsules',
+            price: 'Rs. 2,500',
+            duration: '1-Month Course',
+            savings: null,
+            features: ['💵 Price: Rs. 2,500', '🕒 1-Month Course']
+          },
+          {
+            name: 'Double Pack',
+            subtitle: '2 Bottles – 120 Capsules',
+            price: 'Rs. 4,500',
+            duration: '2-Month Course',
+            savings: 'Save Rs. 500',
+            features: ['💵 Price: Rs. 4,500', '🕒 2-Month Course', '🎁 Save Rs. 500']
+          },
+          {
+            name: 'Triple Pack',
+            subtitle: '3 Bottles – 180 Capsules',
+            price: 'Rs. 6,500',
+            duration: '3-Month Course',
+            savings: 'Save Rs. 1,000 + Free Delivery',
+            features: ['💵 Price: Rs. 6,500', '🕒 3-Month Course', '🎁 Save Rs. 1,000 + Free Delivery'],
+            recommended: true
+          }
+        ]
+      },
+      problemsTitle: '🌸 Common Problems Women Face Today',
+      problemsSubtitle: 'Millions of women silently struggle with these reproductive and hormonal challenges — but you don\'t have to anymore.',
+      problemsList: [
+        'Hormonal Imbalance (Mood swings, irregular periods, PCOS symptoms)',
+        'Infertility & Difficulty in Conception',
+        'Low Energy & Constant Fatigue',
+        'Weak Egg Quality & Poor Fertility Health',
+        'Stress, Anxiety & Poor Sleep',
+        'Menstrual Irregularities & Painful Periods',
+        'Low Libido & Intimacy Issues',
+        'Premature Aging & Hormonal Decline (Menopause symptoms)',
+        'Weak Immune System & Frequent Infections',
+        'Nutrient Deficiency Affecting Reproductive Health'
+      ],
+      solution: 'G-Max Passion naturally supports women\'s reproductive health, fertility, and hormonal balance.',
+      // Herbal Power Section
+      herbalSection: {
+        title: '🌿 Herbal Power',
+        subtitle: 'A powerful blend of natural herbs, vitamins, and minerals – scientifically validated for women\'s fertility, hormonal balance, and overall vitality.',
+        badgesLine: '🌿 100% Natural | ⚗️ Scientifically Proven | 🛡️ Safe & Effective',
+        footer: 'Each ingredient is carefully selected and tested for maximum potency',
+        showIngredients: true,
+        // Custom Ingredients for G-Max Passion
+        ingredients: [
+          {
+            name: '⚡ Horny Goat Weed',
+            description: 'Supports reproductive health, blood flow, and sexual wellness',
+            image: '/images/Horny-Goat-Weed.png',
+            alt: 'Horny Goat Weed herbal supplement for women\'s reproductive health and wellness',
+            seoDescription: 'Horny Goat Weed extract that supports reproductive health, improves blood flow, and enhances sexual wellness for women'
+          },
+          {
+            name: '🌸 Ashwagandha',
+            description: 'Reduces stress, boosts energy, and supports emotional well-being',
+            image: '/images/Ashwagandha.png',
+            alt: 'Ashwagandha adaptogenic herb for stress reduction and energy boost',
+            seoDescription: 'Pure Ashwagandha extract that reduces stress, boosts energy levels, and supports emotional well-being for women'
+          },
+          {
+            name: '💖 Tribulus Terrestris',
+            description: 'Enhances fertility, balances hormones, and improves sexual drive',
+            image: '/images/Tribulus-Terrestris.png',
+            alt: 'Tribulus Terrestris herb for fertility enhancement and hormonal balance',
+            seoDescription: 'Tribulus Terrestris extract that enhances fertility, balances hormones naturally, and improves sexual drive in women'
+          },
+          {
+            name: '🍊 Vitamins & Minerals',
+            description: 'B6, B12, C, Zinc, Folic Acid, Iron, Selenium - Support egg quality, hormone regulation, immunity, and overall reproductive health',
+            image: '/images/Vitamins-Minerals.png',
+            alt: 'Essential vitamins and minerals for women\'s reproductive health',
+            seoDescription: 'Complete blend of B6, B12, C, Zinc, Folic Acid, Iron, and Selenium to support egg quality, hormone regulation, immunity, and reproductive health'
+          }
+        ]
+      },
+      benefitsTitle: language === 'en' ? '🌸 Benefits of G-Max Passion – Women\'s Fertility & Hormonal Support' : '🌸 جی میکس پاشن کے فوائد – خواتین کی زرخیزی اور ہارمونل سپورٹ',
       benefitsList: [
+        '✨ Promotes Conception & Fertility',
+        '✨ Supports Hormonal Balance Naturally',
+        '✨ Enhances Reproductive Health',
+        '✨ Boosts Energy & Vitality',
+        '✨ Reduces Stress & Anxiety',
+        '✨ Strengthens Uterus & Reproductive Organs',
+        '✨ Supports Egg Quality & Ovulation',
+        '✨ Improves Mood & Emotional Well-being',
+        '✨ 100% Herbal & Safe'
+      ],
+      // Usage/Dosage Section
+      usage: {
+        title: '💊 Dosage & Usage Instructions – G-Max Passion Health Booster',
+        dosage: {
+          title: 'Dosage',
+          text: 'Take 1 capsule twice daily.'
+        },
+        with: {
+          title: 'With',
+          text: 'Consume with lukewarm milk or water.'
+        },
+        timing: {
+          title: 'Timing',
+          text: 'After meals, morning and evening.'
+        },
+        course: {
+          title: 'Course Duration',
+          text: 'Use continuously for at least 30 to 90 days for complete results.'
+        },
+        note: {
+          title: 'Note',
+          text: 'Maintain a balanced diet, adequate water intake, and proper rest during usage.'
+        }
+      },
+      // Active Herbal Composition Section
+      activeComposition: {
+        title: '🌿 Active Herbal Composition',
+        subtitle: 'Each ingredient is carefully selected and scientifically validated for safety and effectiveness.',
+        ingredients: [
+          {
+            name: 'Horny Goat Weed (Epimedium)',
+            benefits: [
+              'Improves blood flow and boosts reproductive function',
+              'Acts as a natural aphrodisiac',
+              'Supports energy, stamina, and mental clarity'
+            ]
+          },
+          {
+            name: 'Ashwagandha',
+            benefits: [
+              'Reduces stress and anxiety naturally',
+              'Enhances energy, vitality, and overall hormonal balance',
+              'Supports mental, physical, and emotional well-being'
+            ]
+          },
+          {
+            name: 'Tribulus Terrestris',
+            benefits: [
+              'Balances hormones and supports ovulation',
+              'Enhances fertility and reproductive health',
+              'Acts as a natural libido booster'
+            ]
+          },
+          {
+            name: 'Other Supportive Ingredients',
+            benefits: [
+              'Strengthens reproductive organs',
+              'Supports uterine health and blood circulation',
+              'Improves overall fertility outcomes'
+            ]
+          }
+        ]
+      },
+      // Urdu translations
+      i18n: {
+        ur: {
+          problemsTitle: '🌸 آج کل خواتین کو درپیش عام مسائل',
+          problemsSubtitle: 'لاکھوں خواتین خاموشی سے ان تولیدی اور ہارمونل مسائل سے نبرد آزما ہیں — لیکن اب آپ کو نہیں۔',
+          problemsList: [
+            'ہارمونل عدم توازن (موڈ میں تبدیلی، بے قاعدہ ماہواری، پی سی او ایس کی علامات)',
+            'بانجھ پن اور حمل میں دشواری',
+            'کم توانائی اور مسلسل تھکاوٹ',
+            'کمزور انڈے کا معیار اور خراب زرخیزی کی صحت',
+            'تناؤ، پریشانی اور خراب نیند',
+            'ماہواری کی بے قاعدگی اور تکلیف دہ ادوار',
+            'کم لیبیڈو اور قربت کے مسائل',
+            'قبل از وقت بڑھاپا اور ہارمونل کمی (رجونورتی کی علامات)',
+            'کمزور مدافعتی نظام اور بار بار انفیکشن',
+            'غذائی قلت جو تولیدی صحت کو متاثر کرتی ہے'
+          ],
+          solution: 'جی میکس پاشن قدرتی طور پر خواتین کی تولیدی صحت، زرخیزی اور ہارمونل توازن کو سپورٹ کرتا ہے۔',
+          benefitsTitle: '🌸 جی میکس پاشن کے فوائد – خواتین کی زرخیزی اور ہارمونل سپورٹ',
+          benefitsList: [
+            '✨ حمل اور زرخیزی کو فروغ دیتا ہے',
+            '✨ قدرتی طور پر ہارمونل توازن کو سپورٹ کرتا ہے',
+            '✨ تولیدی صحت کو بہتر بناتا ہے',
+            '✨ توانائی اور قوت میں اضافہ کرتا ہے',
+            '✨ تناؤ اور پریشانی کو کم کرتا ہے',
+            '✨ رحم اور تولیدی اعضاء کو مضبوط بناتا ہے',
+            '✨ انڈے کے معیار اور بیضہ دانی کو سپورٹ کرتا ہے',
+            '✨ موڈ اور جذباتی صحت کو بہتر بناتا ہے',
+            '✨ 100% جڑی بوٹیوں پر مبنی اور محفوظ'
+          ],
+          usage: {
+            title: '💊 خوراک اور استعمال کی ہدایات – جی میکس پاشن ہیلتھ بوسٹر',
+            dosage: {
+              title: 'Dosage',
+              text: 'روزانہ 1 کیپسول دن میں دو بار استعمال کریں۔'
+            },
+            with: {
+              title: 'With',
+              text: 'نیم گرم دودھ یا پانی کے ساتھ لیں۔'
+            },
+            timing: {
+              title: 'Timing',
+              text: 'کھانے کے بعد صبح اور شام۔'
+            },
+            course: {
+              title: 'Course Duration',
+              text: 'کم از کم 30 سے 90 دن تک مسلسل استعمال کریں تاکہ مکمل نتائج حاصل ہوں۔'
+            },
+            note: {
+              title: 'Note',
+              text: 'استعمال کے دوران متوازن خوراک، پانی کا مناسب استعمال، اور آرام کا خیال رکھیں۔'
+            }
+          },
+          activeComposition: {
+            title: '🌿 فعال جڑی بوٹیوں کی ترکیب',
+            subtitle: 'ہر جزو کو احتیاط سے منتخب کیا گیا ہے اور سائنسی طور پر حفاظت اور تاثیر کے لیے تصدیق شدہ ہے۔',
+            ingredients: [
+              {
+                name: 'ہارنی گوٹ ویڈ (ایپی میڈیم)',
+                benefits: [
+                  'خون کی گردش کو بہتر بناتا ہے اور تولیدی فعل کو بڑھاتا ہے',
+                  'قدرتی افروڈیزیک کے طور پر کام کرتا ہے',
+                  'توانائی، برداشت اور ذہنی وضاحت کو سپورٹ کرتا ہے'
+                ]
+              },
+              {
+                name: 'اشوگندھا',
+                benefits: [
+                  'قدرتی طور پر تناؤ اور پریشانی کو کم کرتا ہے',
+                  'توانائی، قوت اور مجموعی ہارمونل توازن کو بڑھاتا ہے',
+                  'ذہنی، جسمانی اور جذباتی صحت کو سپورٹ کرتا ہے'
+                ]
+              },
+              {
+                name: 'ٹریبولس ٹیریسٹرس',
+                benefits: [
+                  'ہارمونز کو متوازن کرتا ہے اور بیضہ دانی کو سپورٹ کرتا ہے',
+                  'زرخیزی اور تولیدی صحت کو بڑھاتا ہے',
+                  'قدرتی لیبیڈو بوسٹر کے طور پر کام کرتا ہے'
+                ]
+              },
+              {
+                name: 'دیگر معاون اجزاء',
+                benefits: [
+                  'تولیدی اعضاء کو مضبوط بناتا ہے',
+                  'رحم کی صحت اور خون کی گردش کو سپورٹ کرتا ہے',
+                  'مجموعی زرخیزی کے نتائج کو بہتر بناتا ہے'
+                ]
+              }
+            ]
+          },
+          faqTitle: 'اکثر پوچھے گئے سوالات – جی میکس پاشن',
+          faqSubtitle: 'خواتین کے لیے جی میکس پاشن جڑی بوٹیوں پر مبنی زرخیزی سپلیمنٹ کے بارے میں عام سوالات کے جوابات حاصل کریں',
+          faqs: [
+            {
+              question: 'جی میکس پاشن کیا ہے؟',
+              answer: 'جی میکس پاشن ایک قدرتی زرخیزی اور ہارمونل توازن کا سپلیمنٹ ہے جو خواتین کے لیے تیار کیا گیا ہے تاکہ حمل، تولیدی صحت اور مجموعی قوت کو سپورٹ کیا جا سکے۔'
+            },
+            {
+              question: 'کیا جی میکس پاشن استعمال کرنا محفوظ ہے؟',
+              answer: 'جی ہاں، یہ 100% جڑی بوٹیوں پر مبنی ہے اور اس کے کوئی معلوم ضمنی اثرات نہیں ہیں۔ تمام اجزاء پودوں پر مبنی ہیں اور حفاظت کے لیے طبی طور پر جانچے گئے ہیں۔'
+            },
+            {
+              question: 'جی میکس پاشن کون لے سکتی ہے؟',
+              answer: 'یہ تمام خواتین لے سکتی ہیں جو حمل کی کوشش کر رہی ہیں، بشمول وہ جو زیادہ عمر کی ہیں یا ہارمونل عدم توازن کے مسائل رکھتی ہیں۔'
+            },
+            {
+              question: 'نتائج دیکھنے میں کتنا وقت لگتا ہے؟',
+              answer: 'نتائج مختلف ہو سکتے ہیں، لیکن زیادہ تر خواتین باقاعدہ استعمال کے 4 سے 8 ہفتوں کے اندر توانائی، سائیکل کی باقاعدگی اور زرخیزی کی صحت میں بہتری محسوس کرتی ہیں۔'
+            },
+            {
+              question: 'جی میکس پاشن کیسے لینا چاہیے؟',
+              answer: 'کھانے کے بعد گرم دودھ یا پانی کے ساتھ روزانہ دو بار 1 کیپسول لیں۔ بہترین نتائج کے لیے 30 سے 90 دن تک مسلسل استعمال کریں۔'
+            },
+            {
+              question: 'کیا جی میکس پاشن دوسرے سپلیمنٹس کے ساتھ لیا جا سکتا ہے؟',
+              answer: 'جی ہاں، اسے زیادہ تر ملٹی وٹامنز یا صحت کے سپلیمنٹس کے ساتھ لیا جا سکتا ہے، لیکن اگر آپ دوائیں لے رہی ہیں تو اپنے ڈاکٹر سے مشورہ کرنا بہتر ہے۔'
+            },
+            {
+              question: 'کیا جی میکس پاشن پی سی او ایس یا بے قاعدہ ماہواری میں مدد کرتا ہے؟',
+              answer: 'جی ہاں، جڑی بوٹیوں کا امتزاج ہارمونل توازن کو سپورٹ کرتا ہے، ماہواری کے چکر کو منظم کرنے میں مدد کرتا ہے، اور پی سی او ایس سے متعلق علامات کو کم کر سکتا ہے۔'
+            },
+            {
+              question: 'کیا جی میکس پاشن تناؤ اور تھکاوٹ کے لیے مؤثر ہے؟',
+              answer: 'جی ہاں، اشوگندھا اور ٹریبولس جیسے اجزاء تناؤ کو کم کرنے، موڈ کو بہتر بنانے اور قدرتی توانائی کی سطح کو بڑھانے میں مدد کرتے ہیں۔'
+            }
+          ]
+        }
+      },
+      // FAQs Section
+      faqs: [
         {
-          text: '✅ Ultimate Wellness – energy, stamina & immunity booster',
-          image: 'https://i.ibb.co/XfkPHQ6p/Ultimate-Wellness-energy-stamina-immunity-booster.png',
-          alt: 'Ultimate Wellness energy stamina immunity booster',
-          title: 'Ultimate Wellness – Energy, Stamina & Immunity Booster'
+          question: 'What is G-Max Passion?',
+          answer: 'G-Max Passion is a natural fertility and hormonal balance supplement formulated for women to support conception, reproductive health, and overall vitality.'
         },
         {
-          text: '✅ Athletic Performance – stronger muscles, faster recovery',
-          image: 'https://i.ibb.co/ZRvwxPRw/Athletic-Performance-stronger-muscles-faster-recovery.png',
-          alt: 'Athletic Performance stronger muscles faster recovery',
-          title: 'Athletic Performance – Stronger Muscles, Faster Recovery'
+          question: 'Is G-Max Passion safe to use?',
+          answer: 'Yes, it is 100% herbal with no known side effects. All ingredients are plant-based and clinically tested for safety.'
         },
         {
-          text: '✅ Energy & Strength Builder – fight fatigue, build power',
-          image: 'https://i.ibb.co/Y7Mff1r3/Energy-Strength-Builder-fight-fatigue-build-power.png',
-          alt: 'Energy Strength Builder fight fatigue build power',
-          title: 'Energy & Strength Builder – Fight Fatigue, Build Power'
+          question: 'Who can take G-Max Passion?',
+          answer: 'It can be taken by all women trying to conceive, including those of advanced maternal age or with hormonal imbalance issues.'
         },
         {
-          text: '✅ Stress Relief – balanced hormones & mood lift',
-          image: 'https://i.ibb.co/0Rcp6vpp/Stress-Relief-balanced-hormones-mood-lift.png',
-          alt: 'Stress Relief balanced hormones mood lift',
-          title: 'Stress Relief – Balanced Hormones & Mood Lift'
+          question: 'How long does it take to see results?',
+          answer: 'Results may vary, but most women notice improvement in energy, cycle regularity, and fertility health within 4 to 8 weeks of regular use.'
         },
         {
-          text: '✅ Re-Young – feel youthful, confident & powerful',
-          image: 'https://i.ibb.co/2bSvL4t/Re-Young-feel-youthful-confident-powerful.png',
-          alt: 'Re-Young feel youthful confident powerful',
-          title: 'Re-Young – Feel Youthful, Confident & Powerful'
+          question: 'How should I take G-Max Passion?',
+          answer: 'Take 1 capsule twice daily with warm milk or water after meals. Use consistently for 30 to 90 days for best results.'
         },
         {
-          text: '✅ Enhanced Libido – natural desire & performance boost',
-          image: 'https://i.ibb.co/b5SWNLWZ/Enhanced-Libido-natural-desire-performance-boost.png',
-          alt: 'Enhanced Libido natural desire performance boost',
-          title: 'Enhanced Libido – Natural Desire & Performance Boost'
+          question: 'Can G-Max Passion be taken with other supplements?',
+          answer: 'Yes, it can be taken with most multivitamins or health supplements, but it\'s recommended to consult your doctor if you are on medication.'
+        },
+        {
+          question: 'Does G-Max Passion help with PCOS or irregular periods?',
+          answer: 'Yes, the herbal blend supports hormonal balance, helps regulate menstrual cycles, and may reduce PCOS-related symptoms.'
+        },
+        {
+          question: 'Is G-Max Passion effective for stress and fatigue?',
+          answer: 'Yes, ingredients like Ashwagandha and Tribulus help reduce stress, enhance mood, and boost natural energy levels.'
         }
       ],
-      specialPriceAmount: '9,500',
-      problemsTitle: 'Common Problems',
-      problemsSubtitle: undefined,
-      problemsList: [
-        'Low stamina & weakness',
-        'Poor performance & energy drop',
-        'Stress, fatigue & hormonal imbalance',
-        'Age-related decline in men\'s power',
-        'Slow muscle recovery & lack of fitness',
-        'Low confidence & self-esteem issues'
+      faqsTitle: 'FAQs – G-Max Passion',
+      faqSubtitle: 'Get answers to the most common questions about G-Max Passion herbal fertility supplement for women',
+      // Testimonials Section
+      testimonialsTitle: 'Real Results, Real Women',
+      testimonialsSubtitle: 'See how G-Max Passion has transformed the lives of women across Pakistan',
+      testimonialsDescription: 'Thousands of women have regained their energy, balanced hormones, and improved fertility with G-Max Passion. Real women, real transformation — naturally!',
+      testimonialsFooter: '✨ Real stories. Real results. Experience the natural power of G-Max Passion for yourself.',
+      testimonials: [
+        {
+          name: 'Ayesha, 29 – Lahore',
+          text: 'After 6 months of trying, I finally conceived naturally with the help of G-Max Passion. My cycle is now regular and I feel more energetic than ever!',
+          rating: 5
+        },
+        {
+          name: 'Fatima, 34 – Karachi',
+          text: 'I was struggling with hormonal imbalance and fatigue. Within 2 months of using G-Max Passion, my mood, sleep, and overall wellness improved a lot.',
+          rating: 5
+        },
+        {
+          name: 'Sadia, 38 – Islamabad',
+          text: 'Doctors told me my fertility was low, but G-Max Passion gave me hope. Now I feel stronger, more confident, and my hormones are finally balanced.',
+          rating: 5
+        }
       ],
+      // Before/After Section - Custom labels for G-Max Passion
+      beforeAfterTitle: 'Real Results, Real Women',
+      beforeAfterSubtitle: 'See how G-Max Passion has transformed the lives of women across Pakistan',
+      beforeAfterLabels: {
+        beforeTitle: 'Before G-Max Passion',
+        afterTitle: 'After G-Max Passion',
+        beforeDesc: 'Low energy, hormonal imbalance, fertility issues',
+        afterDesc: 'Balanced hormones, improved energy, enhanced fertility',
+        weeksPrefix: '',
+        weeksSuffix: ' weeks of use'
+      },
+      beforeAfterSets: [] // Empty array to hide the slider
+    },
+    'malika-shahi-gold-health-booster': {
+      title: 'Malika Shahi Gold Health Booster',
+      subtitle: 'Premium Herbal Formula for Fertility, Hormonal Balance & Overall Wellness',
+      description: 'Malika Shahi Gold is a premium herbal health booster specially formulated for women to support fertility, hormonal balance, energy, and overall wellness.',
+      badge: 'PREMIUM',
+      features: [
+        '✨ Support Fertility & Reproductive Health',
+        '✨ Balance Hormones Naturally',
+        '✨ Boost Energy & Vitality',
+        '✨ Relieve Stress & Anxiety',
+        '✨ Enhance Confidence & Intimacy'
+      ],
+      specialPriceAmount: '5,000',
+      // Common Problems Section
+      problemsTitle: '🌸 Common Problems Women Face Today',
+      problemsSubtitle: 'Millions of women silently struggle with these health challenges — but you don\'t have to anymore.',
+      problemsList: [
+        'Hormonal Imbalance (Mood swings, irregular periods, PCOS symptoms)',
+        'Infertility & Difficulty in Conception',
+        'Low Energy & Constant Fatigue',
+        'Weak Egg Quality & Poor Fertility Health',
+        'Stress, Anxiety & Poor Sleep',
+        'Menstrual Irregularities & Painful Periods',
+        'Low Libido & Intimacy Issues',
+        'Premature Aging & Hormonal Decline (Menopause symptoms)',
+        'Weak Immune System & Frequent Infections',
+        'Nutrient Deficiency Affecting Reproductive Health'
+      ],
+      solution: '✨ Malika Shahi Gold Health Booster is designed to restore hormonal balance, boost fertility, and enhance women\'s overall health naturally!',
+      // Video Section
+      videoTitle: '🎥 See Malika Shahi Gold Health Booster in Action',
+      videoSubtitle: 'Watch how Malika Shahi Gold has transformed the lives of women across Pakistan.',
+      videoId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
+      videoFooter: '💖 Don\'t just take our word for it — see the real results for yourself!',
+      // Pricing Packages
+      pricing: {
+        title: 'Affordable Packages',
+        subtitle: 'Choose the best package for your health journey',
+        packages: [
+          {
+            title: '1 Month Pack',
+            price: '5,000',
+            originalPrice: '',
+            duration: '30 Days Supply',
+            features: [
+              '1 Bottle of Malika Shahi Gold Health Booster',
+              'Free Delivery',
+              'Cash on Delivery',
+              '24/7 Customer Support'
+            ]
+          },
+          {
+            title: '2 Month Pack',
+            price: '9,500',
+            originalPrice: '10,000',
+            duration: '60 Days Supply',
+            features: [
+              '2 Bottles of Malika Shahi Gold Health Booster',
+              'Free Delivery',
+              'Cash on Delivery',
+              '24/7 Customer Support',
+              '💡 Save Rs. 500'
+            ]
+          },
+          {
+            title: '3 Month Complete Course',
+            price: '14,000',
+            originalPrice: '15,000',
+            duration: '90 Days Supply',
+            features: [
+              '3 Bottles of Malika Shahi Gold Health Booster',
+              'Free Delivery',
+              'Cash on Delivery',
+              '24/7 Customer Support',
+              '💡 Save Rs. 1,000 — Best Value!'
+            ]
+          }
+        ]
+      },
+      // Order form prices
+      orderFormPrices: {
+        package1: { price: 5000, label: '1 Month Pack - Rs 5,000' },
+        package2: { price: 9500, label: '2 Month Pack - Rs 9,500' },
+        package3: { price: 14000, label: '3 Month Pack - Rs 14,000' }
+      },
+      // Before & After Results Section
+      beforeAfterTitle: '💎 Real Results, Real Women',
+      beforeAfterSubtitle: 'See the difference Malika Shahi Gold Health Booster has made in the lives of women across Pakistan',
+      beforeAfterLabels: {
+        beforeTitle: 'Before Malika Shahi Gold',
+        afterTitle: 'After Malika Shahi Gold',
+        beforeDesc: 'Irregular cycles, low energy, mood swings, stress',
+        afterDesc: 'Balanced hormones, improved energy, better mood, reduced stress',
+        weeksPrefix: '',
+        weeksSuffix: ' Weeks of Use'
+      },
+      beforeAfterSets: [
+        {
+          weeks: 4,
+          before: {
+            image: '/images/before-after/women-before-1.jpg',
+            description: '😔 Irregular cycles, low energy, mood swings, stress'
+          },
+          after: {
+            image: '/images/before-after/women-after-1.jpg',
+            description: '✨ Balanced hormones, improved energy, better mood, reduced stress'
+          }
+        },
+        {
+          weeks: 8,
+          before: {
+            image: '/images/before-after/women-before-2.jpg',
+            description: '😞 Difficulty in conception, fatigue, low confidence'
+          },
+          after: {
+            image: '/images/before-after/women-after-2.jpg',
+            description: '🌸 Improved fertility, high vitality, emotional stability, renewed confidence'
+          }
+        }
+      ],
+      // Herbal Power Section
+      herbalSection: {
+        title: '🌿 Herbal Power. Backed by Science',
+        subtitle: 'A unique blend of natural herbs, vitamins, and minerals – trusted for women\'s fertility, hormonal balance & vitality.',
+        showIngredients: true,
+        twoColumnLayout: true,
+        ingredients: [
+          {
+            name: 'L-Carnitine',
+            icon: '⚡',
+            benefit: 'Supports egg quality & energy production',
+            image: '/images/ingredients/l-carnitine.jpg',
+            alt: 'L-Carnitine for egg quality and energy'
+          },
+          {
+            name: 'L-Arginine',
+            icon: '💖',
+            benefit: 'Improves blood flow & reproductive health',
+            image: '/images/ingredients/l-arginine.jpg',
+            alt: 'L-Arginine for reproductive health'
+          },
+          {
+            name: 'Acetyl-L-Carnitine',
+            icon: '🌸',
+            benefit: 'Protects eggs from oxidative stress',
+            image: '/images/ingredients/acetyl-l-carnitine.jpg',
+            alt: 'Acetyl-L-Carnitine for egg protection'
+          },
+          {
+            name: 'Vitamin C',
+            icon: '🍊',
+            benefit: 'Boosts immunity & maintains hormonal balance',
+            image: '/images/ingredients/vitamin-c.jpg',
+            alt: 'Vitamin C for immunity and hormones'
+          },
+          {
+            name: 'Vitamin E',
+            icon: '💎',
+            benefit: 'Protects cells & improves fertility',
+            image: '/images/ingredients/vitamin-e.jpg',
+            alt: 'Vitamin E for fertility'
+          },
+          {
+            name: 'Zinc',
+            icon: '⚖️',
+            benefit: 'Balances hormones & supports ovulation',
+            image: '/images/ingredients/zinc.jpg',
+            alt: 'Zinc for hormonal balance'
+          },
+          {
+            name: 'Folic Acid',
+            icon: '🌱',
+            benefit: 'Essential for healthy egg development & conception',
+            image: '/images/ingredients/folic-acid.jpg',
+            alt: 'Folic Acid for egg development'
+          },
+          {
+            name: 'Vitamin B6 & B12',
+            icon: '🧠',
+            benefit: 'Improve mood, energy, and reproductive health',
+            image: '/images/ingredients/vitamin-b.jpg',
+            alt: 'Vitamin B6 and B12 for mood and energy'
+          },
+          {
+            name: 'Selenium',
+            icon: '🛡️',
+            benefit: 'Antioxidant support for egg and reproductive health',
+            image: '/images/ingredients/selenium.jpg',
+            alt: 'Selenium for reproductive health'
+          },
+          {
+            name: 'Maca Root & Ashwagandha',
+            icon: '🌸',
+            benefit: 'Reduce stress, boost vitality & emotional well-being',
+            image: '/images/ingredients/maca-ashwagandha.jpg',
+            alt: 'Maca Root and Ashwagandha for stress relief'
+          }
+        ],
+        badgesLine: '✅ 100% Natural  |  ✅ Clinically Researched  |  ✅ Safe & Effective for Long-Term Use'
+      },
+      // Benefits Section
+      benefitsTitle: '🌸 Benefits of Malika Shahi Gold Health Booster',
+      benefitsList: [
+        '✨ Promotes Conception & Fertility - Supports egg quality, ovulation, and healthy fertilization',
+        '✨ Balances Hormones Naturally - Reduces irregular cycles and supports emotional stability',
+        '✨ Improves Reproductive Health - Strengthens female reproductive system & supports implantation',
+        '✨ Boosts Energy & Vitality - Enhances stamina, reduces fatigue, and promotes daily wellness',
+        '✨ Reduces Stress & Anxiety - Adaptogenic herbs support mental clarity & relaxation',
+        '✨ Supports Healthy Pregnancy - Provides essential nutrients for egg and embryo development',
+        '✨ Improves Mood & Confidence - Restores balance and enhances emotional well-being',
+        '✨ Enhances Pleasure & Intimacy - Promotes natural desire, energy, and confidence',
+        '✨ 100% Natural & Safe - No harmful chemicals or artificial additives'
+      ],
+      // Urdu translations
+      i18n: {
+        ur: {
+          problemsTitle: '🌸 آج کل خواتین کو درپیش عام مسائل',
+          problemsSubtitle: 'لاکھوں خواتین خاموشی سے ان صحت کے مسائل سے نبرد آزما ہیں — لیکن اب آپ کو نہیں۔',
+          problemsList: [
+            'ہارمونل عدم توازن (موڈ میں تبدیلی، بے قاعدہ ماہواری، پی سی او ایس کی علامات)',
+            'بانجھ پن اور حمل میں دشواری',
+            'کم توانائی اور مسلسل تھکاوٹ',
+            'کمزور انڈے کا معیار اور خراب زرخیزی کی صحت',
+            'تناؤ، پریشانی اور خراب نیند',
+            'ماہواری کی بے قاعدگی اور تکلیف دہ ادوار',
+            'کم لیبیڈو اور قربت کے مسائل',
+            'قبل از وقت بڑھاپا اور ہارمونل کمی (رجونورتی کی علامات)',
+            'کمزور مدافعتی نظام اور بار بار انفیکشن',
+            'غذائی قلت جو تولیدی صحت کو متاثر کرتی ہے'
+          ],
+          solution: '✨ ملکہ شاہی گولڈ ہیلتھ بوسٹر ہارمونل توازن بحال کرنے، زرخیزی کو بڑھانے اور خواتین کی مجموعی صحت کو قدرتی طور پر بہتر بنانے کے لیے ڈیزائن کیا گیا ہے!',
+          herbalSection: {
+            title: '🌿 جڑی بوٹیوں کی طاقت۔ سائنس سے ثابت شدہ',
+            subtitle: 'قدرتی جڑی بوٹیوں، وٹامنز اور معدنیات کا منفرد امتزاج – خواتین کی زرخیزی، ہارمونل توازن اور توانائی کے لیے قابل اعتماد۔',
+            ingredients: [
+              {
+                name: 'ایل-کارنیٹائن',
+                icon: '⚡',
+                benefit: 'انڈے کے معیار اور توانائی کی پیداوار میں مدد کرتا ہے'
+              },
+              {
+                name: 'ایل-آرجینین',
+                icon: '💖',
+                benefit: 'خون کی روانی اور تولیدی صحت کو بہتر بناتا ہے'
+              },
+              {
+                name: 'ایسیٹائل-ایل-کارنیٹائن',
+                icon: '🌸',
+                benefit: 'انڈوں کو آکسیڈیٹیو تناؤ سے بچاتا ہے'
+              },
+              {
+                name: 'وٹامن سی',
+                icon: '🍊',
+                benefit: 'قوت مدافعت بڑھاتا ہے اور ہارمونل توازن برقرار رکھتا ہے'
+              },
+              {
+                name: 'وٹامن ای',
+                icon: '💎',
+                benefit: 'خلیات کی حفاظت کرتا ہے اور زرخیزی کو بہتر بناتا ہے'
+              },
+              {
+                name: 'زنک',
+                icon: '⚖️',
+                benefit: 'ہارمونز کو متوازن کرتا ہے اور بیضہ دانی میں مدد کرتا ہے'
+              },
+              {
+                name: 'فولک ایسڈ',
+                icon: '🌱',
+                benefit: 'صحت مند انڈے کی نشوونما اور حمل کے لیے ضروری'
+              },
+              {
+                name: 'وٹامن بی 6 اور بی 12',
+                icon: '🧠',
+                benefit: 'موڈ، توانائی اور تولیدی صحت کو بہتر بناتے ہیں'
+              },
+              {
+                name: 'سیلینیم',
+                icon: '🛡️',
+                benefit: 'انڈے اور تولیدی صحت کے لیے اینٹی آکسیڈنٹ سپورٹ'
+              },
+              {
+                name: 'ماکا روٹ اور اشواگندھا',
+                icon: '🌸',
+                benefit: 'تناؤ کم کرتے ہیں، توانائی اور جذباتی صحت بڑھاتے ہیں'
+              }
+            ],
+            badgesLine: '✅ 100% قدرتی  |  ✅ طبی طور پر تحقیق شدہ  |  ✅ طویل مدتی استعمال کے لیے محفوظ اور موثر'
+          },
+          benefitsTitle: '🌸 ملکہ شاہی گولڈ ہیلتھ بوسٹر کے فوائد',
+          benefitsList: [
+            '✨ حمل اور زرخیزی کو فروغ دیتا ہے - انڈے کے معیار، بیضہ دانی اور صحت مند فرٹیلائزیشن میں مدد کرتا ہے',
+            '✨ قدرتی طور پر ہارمونز کو متوازن کرتا ہے - بے قاعدہ ماہواری کو کم کرتا ہے اور جذباتی استحکام کو سپورٹ کرتا ہے',
+            '✨ تولیدی صحت کو بہتر بناتا ہے - خواتین کے تولیدی نظام کو مضبوط بناتا ہے اور امپلانٹیشن میں مدد کرتا ہے',
+            '✨ توانائی اور حیویت کو بڑھاتا ہے - برداشت بڑھاتا ہے، تھکاوٹ کم کرتا ہے اور روزانہ کی صحت کو فروغ دیتا ہے',
+            '✨ تناؤ اور پریشانی کو کم کرتا ہے - اڈاپٹوجینک جڑی بوٹیاں ذہنی وضاحت اور آرام کو سپورٹ کرتی ہیں',
+            '✨ صحت مند حمل کو سپورٹ کرتا ہے - انڈے اور جنین کی نشوونما کے لیے ضروری غذائی اجزاء فراہم کرتا ہے',
+            '✨ موڈ اور اعتماد کو بہتر بناتا ہے - توازن بحال کرتا ہے اور جذباتی صحت کو بڑھاتا ہے',
+            '✨ خوشی اور قربت کو بڑھاتا ہے - قدرتی خواہش، توانائی اور اعتماد کو فروغ دیتا ہے',
+            '✨ 100% قدرتی اور محفوظ - کوئی نقصان دہ کیمیکل یا مصنوعی اضافی اجزاء نہیں'
+          ],
+          faqTitle: 'اکثر پوچھے جانے والے سوالات',
+          faqSubtitle: 'ملکہ شاہی گولڈ ہیلتھ بوسٹر کے بارے میں آپ کے عام سوالات کے جوابات',
+          faqs: [
+            {
+              question: 'ملکہ شاہی گولڈ ہیلتھ بوسٹر کیا ہے؟',
+              answer: 'ملکہ شاہی گولڈ ایک قدرتی جڑی بوٹیوں کا فارمولا ہے جو خاص طور پر خواتین کے ہارمونل توازن، زرخیزی اور مجموعی توانائی کو سپورٹ کرنے کے لیے بنایا گیا ہے۔'
+            },
+            {
+              question: 'ملکہ شاہی گولڈ ہیلتھ بوسٹر کون استعمال کر سکتی ہے؟',
+              answer: 'یہ تمام عمر کی بالغ خواتین کے لیے موزوں ہے، خاص طور پر وہ جو ہارمونل عدم توازن، بے قاعدہ ماہواری، کم توانائی، یا زرخیزی کے مسائل کا سامنا کر رہی ہیں۔'
+            },
+            {
+              question: 'کیا یہ پی سی او ایس اور بے قاعدہ ماہواری میں مدد کرتا ہے؟',
+              answer: 'جی ہاں، اس کا جڑی بوٹیوں کا امتزاج ہارمونز کو متوازن کرنے، ماہواری کے چکر کو منظم کرنے اور تولیدی صحت کو قدرتی طور پر بہتر بنانے میں مدد کرتا ہے۔'
+            },
+            {
+              question: 'میں ملکہ شاہی گولڈ کیسے استعمال کروں؟',
+              answer: 'کھانے کے بعد دودھ یا پانی کے ساتھ دن میں دو بار 1 کیپسول لیں۔ بہترین نتائج کے لیے کم از کم 2 سے 3 ماہ تک مسلسل استعمال کریں۔'
+            },
+            {
+              question: 'کیا یہ دوسرے سپلیمنٹس یا ادویات کے ساتھ استعمال کرنا محفوظ ہے؟',
+              answer: 'جی ہاں، یہ 100% جڑی بوٹیوں پر مبنی اور محفوظ ہے۔ تاہم، اگر آپ کسی طبی علاج سے گزر رہی ہیں تو استعمال سے پہلے اپنے ڈاکٹر سے مشورہ کرنا بہتر ہے۔'
+            },
+            {
+              question: 'کیا اس کے کوئی ضمنی اثرات ہیں؟',
+              answer: 'نہیں، کوئی ضمنی اثرات رپورٹ نہیں ہوئے۔ یہ خالص جڑی بوٹیوں کے اجزاء سے بنایا گیا ہے اور جی ایم پی سرٹیفائیڈ مینوفیکچرنگ معیارات کے ساتھ تیار کیا گیا ہے۔'
+            },
+            {
+              question: 'کیا اسے بچے کی پیدائش کے بعد یا رجونورتی کے دوران استعمال کیا جا سکتا ہے؟',
+              answer: 'جی ہاں، یہ زچگی کی بحالی یا رجونورتی کی منتقلی کے دوران ہارمونل توازن اور توانائی بحال کرنے میں مدد کرتا ہے۔'
+            },
+            {
+              question: 'نتائج کب تک نظر آنا شروع ہوں گے؟',
+              answer: 'زیادہ تر صارفین باقاعدہ استعمال کے 4-8 ہفتوں کے اندر توانائی، موڈ اور ہارمونل توازن میں نمایاں بہتری محسوس کرتی ہیں۔'
+            }
+          ]
+        }
+      },
+      // FAQs Section
+      faqsTitle: 'Frequently Asked Questions (FAQs)',
+      faqSubtitle: 'Answers to your most common questions about Malka Shahi Gold Health Booster',
+      faqs: [
+        {
+          question: 'What is Malka Shahi Gold Health Booster?',
+          answer: 'Malka Shahi Gold is a natural herbal formula specially made to support women\'s hormonal balance, fertility, and overall vitality.'
+        },
+        {
+          question: 'Who can use Malka Shahi Gold Health Booster?',
+          answer: 'It is suitable for adult women of all ages, especially those facing hormonal imbalance, irregular periods, low energy, or fertility challenges.'
+        },
+        {
+          question: 'Does it help with PCOS and irregular periods?',
+          answer: 'Yes, its herbal blend helps balance hormones, regulate menstrual cycles, and improve reproductive health naturally.'
+        },
+        {
+          question: 'How should I take Malka Shahi Gold?',
+          answer: 'Take 1 capsule twice daily with milk or water after meals. For best results, use continuously for at least 2 to 3 months.'
+        },
+        {
+          question: 'Is it safe to use with other supplements or medicines?',
+          answer: 'Yes, it is 100% herbal and safe. However, if you\'re under medical treatment, it\'s best to consult your doctor before use.'
+        },
+        {
+          question: 'Are there any side effects?',
+          answer: 'No side effects have been reported. It\'s made from pure herbal ingredients with GMP-certified manufacturing standards.'
+        },
+        {
+          question: 'Can it be used after childbirth or during menopause?',
+          answer: 'Yes, it helps restore hormonal balance and vitality during postnatal recovery or menopause transition.'
+        },
+        {
+          question: 'How long before I notice results?',
+          answer: 'Most users report noticeable improvements in energy, mood, and hormonal balance within 4–8 weeks of regular use.'
+        }
+      ]
+    },
+    'sultan-shahi-gold-health-booster': {
+      title: 'Sultan Shahi Gold Health Booster',
+      subtitle: 'To Live Life Powerfully, Actively & Strongly',
+      description: 'Experience renewed strength, stamina, and confidence with Sultan Shahi Gold — a powerful herbal health booster crafted for men of all ages. Naturally formulated with Ginseng, Ashwagandha, Safed Musli & Shilajit for lasting energy and peak performance.',
+      badge: 'PREMIUM',
+      features: [
+        '💪 Boosts Strength & Stamina',
+        '🔥 Enhances Performance & Vitality',
+        '🧠 Relieves Stress & Improves Focus',
+        '🌿 100% Herbal, Safe & Effective'
+      ],
+      solution: 'Sultan Shahi Gold Health Booster is the ultimate solution for powerful living!',
+      // About Product Section
+      aboutProduct: {
+        title: 'About Sultan Shahi Gold Health Booster',
+        description: 'Sultan Shahi Gold Health Booster is an advanced herbal formula specially made to improve men\'s power, stamina, and overall health. It is enriched with natural ingredients like Ginseng, Ashwagandha, Macca Root, Saffron, Shilajit, Safed Musli, and Tribulus Terrestris — known for boosting testosterone levels, improving blood circulation, and enhancing reproductive health. This herbal blend promotes long-lasting energy, better physical strength, and improved performance for men aged 18 to 80.',
+        keyFeatures: [
+          '⚡ Boosts natural testosterone levels',
+          '💪 Improves muscle strength and stamina',
+          '🩸 Enhances blood circulation and heart health',
+          '🧠 Reduces stress, anxiety, and fatigue',
+          '🌿 100% herbal and clinically proven ingredients'
+        ]
+      },
+      benefitsTitle: language === 'en' ? 'Benefits of Sultan Shahi Gold Health Booster' : 'سلطان شاہی گولڈ ہیلتھ بوسٹر کے فوائد',
+      benefitsList: [
+        'Enhances vitality and overall energy',
+        'Boosts stamina and endurance for long-lasting performance',
+        'Supports reproductive health and testosterone levels',
+        'Reduces stress and improves mental clarity',
+        'Improves blood circulation for better performance',
+        'Promotes muscle strength and physical wellness',
+        'Supports immune system and overall well-being',
+        'Helps maintain hormonal balance naturally',
+        '100% Natural and safe for long-term use'
+      ],
+      specialPriceAmount: '6,000',
+      problemsTitle: 'Common Problems Men Face Today',
+      problemsSubtitle: 'Millions of men silently face performance and vitality issues — but you don\'t have to anymore.',
+      problemsList: [
+        'Erectile Dysfunction (Inability to maintain erection)',
+        'Premature Ejaculation (Early discharge issue)',
+        'Penile Curvature / Peyronie\'s Disease',
+        'Short Penis / Micropenis',
+        'Poor Penile Blood Flow',
+        'Lack of Erection Rigidity',
+        'Reduced Penile Sensitivity',
+        'Hypersensitivity / Over Sensitivity',
+        'Penile Shrinkage / Wrinkling',
+        'Thin Penile Skin',
+        'Penile Pain / Strain',
+        'Penile Inflammation'
+      ],
+      // Herbal Power Section
+      herbalSection: {
+        title: '🌿 Herbal Power. Backed by Science',
+        subtitle: 'A unique blend of natural herbs, vitamins, and minerals – trusted for men\'s vitality, strength, and performance.',
+        badgesLine: '✔ 100% Natural | 🌱 Scientifically Proven | 🔒 Safe & Effective',
+        showIngredients: true
+      },
       // Custom Ingredients (EN) — 7 items for this product only
       ingredients: [
         {
           name: 'Ginseng',
-          description: 'Boosts stamina & immunity',
+          description: 'Enhances stamina and overall vitality',
           image: 'https://i.ibb.co/nsXkZMQC/Ginseng.png'
         },
         {
           name: 'Ashwagandha',
-          description: 'Reduces stress & enhances vitality',
+          description: 'Reduces stress and boosts strength',
           image: 'https://i.ibb.co/210D7HdN/Ashwagandha.png'
         },
         {
           name: 'Macca Root',
-          description: 'Supports reproductive health & energy',
+          description: 'Supports reproductive health and energy',
           image: 'https://i.ibb.co/JjGfBtfJ/Macca-Root.png'
         },
         {
           name: 'Saffron',
-          description: 'Natural mood & performance enhancer',
+          description: 'Improves blood circulation and hormonal balance',
           image: 'https://i.ibb.co/gLsBdgdQ/Saffron.png'
         },
         {
           name: 'Shilajit',
-          description: 'Improves strength & testosterone levels',
+          description: 'Ultimate strength and stamina booster',
           image: 'https://i.ibb.co/zTgrVH1k/Shilajit.png'
         },
         {
           name: 'Safed Musli',
-          description: 'Boosts semen quality & fertility',
+          description: 'Enhances sexual performance',
           image: 'https://i.ibb.co/4g15SC7c/Safed-Musli.png'
         },
         {
           name: 'Tribulus Terrestris',
-          description: 'Supports muscle growth & endurance',
+          description: 'Boosts testosterone naturally',
           image: 'https://i.ibb.co/LVJ2SDN/Tribulus-Terrestris.png'
         }
       ],
+      // Dosage & Usage Instructions (EN)
+      dosageSection: {
+        title: '💊 Dosage & Usage Instructions',
+        content: {
+          dosage: {
+            title: 'Dosage',
+            points: [
+              'Take ½ teaspoon twice a day, every day, with a glass of milk or water after meals.'
+            ]
+          },
+          duration: {
+            title: 'Course Duration',
+            points: [
+              'Use regularly for 30–90 days for optimal results.'
+            ]
+          },
+          bestResults: {
+            title: 'For Best Results',
+            points: [
+              'Maintain a healthy lifestyle with balanced diet and exercise.',
+              'Avoid excessive smoking, alcohol, and oily/fried foods during the course.',
+              'Stay hydrated and get proper sleep for faster recovery.'
+            ]
+          }
+        }
+      },
       // Video Section headings (EN)
-      videoTitle: 'See Shahi Sultan Health Booster in Action',
+      videoTitle: 'See Sultan Shahi Gold Health Booster in Action',
       videoSubtitle: 'Real Energy, Real Confidence, Real Power',
       // Urdu translations for this product only
       i18n: {
         ur: {
-          problemsTitle: 'عام مسائل',
-          problemsSubtitle: 'لاکھوں مرد خاموشی سے ان مسائل کا سامنا کرتے ہیں — لیکن آپ کو ایسا کرنے کی ضرورت نہیں۔',
+          solution: 'سلطان شاہی گولڈ ہیلتھ بوسٹر طاقتور زندگی گزارنے کا بہترین حل ہے!',
+          problemsTitle: 'عام مسائل جن کا مرد آج کل سامنا کرتے ہیں',
+          problemsSubtitle: 'لاکھوں مرد خاموشی سے ان مسائل کا شکار ہیں — لیکن آپ کو مزید پریشان ہونے کی ضرورت نہیں۔',
           problemsList: [
-            'کم اسٹیمنا اور کمزوری',
-            'کمزور کارکردگی اور توانائی میں کمی',
-            'تناؤ، تھکاوٹ اور ہارمونل عدم توازن',
-            'عمر کے ساتھ مردانہ طاقت میں کمی',
-            'سست پٹھوں کی بحالی اور فٹنس کی کمی',
-            'کم اعتماد اور خود اعتمادی کے مسائل'
+            'عضو مخصوص کی کمزوری (کھڑا نہ ہونا)',
+            'قبل از وقت انزال (جلدی فارغ ہو جانا)',
+            'عضو مخصوص کا ٹیڑھا پن (پیرونی کی بیماری)',
+            'عضو مخصوص کا چھوٹا ہونا',
+            'عضو مخصوص میں کمزور دوران خون',
+            'ایریکشن میں سختی کی کمی',
+            'سینسٹیویٹی کی کمی',
+            'زیادہ سینسٹیویٹی / اوور سینسٹیویٹی',
+            'عضو مخصوص میں سکڑاؤ یا جھریاں',
+            'عضو مخصوص کی پتلی جلد',
+            'عضو مخصوص میں درد یا کھنچاؤ',
+            'عضو مخصوص کی سوزش'
           ],
           benefitsList: [
-            {
-              text: '✅ حتمی تندرستی – توانائی، اسٹیمنا اور قوت مدافعت میں اضافہ',
-              image: 'https://i.ibb.co/XfkPHQ6p/Ultimate-Wellness-energy-stamina-immunity-booster.png',
-              alt: 'حتمی تندرستی توانائی اسٹیمنا قوت مدافعت میں اضافہ',
-              title: 'حتمی تندرستی – توانائی، اسٹیمنا اور قوت مدافعت میں اضافہ'
-            },
-            {
-              text: '✅ کھیلوں کی کارکردگی – مضبوط پٹھے، تیز بحالی',
-              image: 'https://i.ibb.co/ZRvwxPRw/Athletic-Performance-stronger-muscles-faster-recovery.png',
-              alt: 'کھیلوں کی کارکردگی مضبوط پٹھے تیز بحالی',
-              title: 'کھیلوں کی کارکردگی – مضبوط پٹھے، تیز بحالی'
-            },
-            {
-              text: '✅ توانائی اور طاقت کا باعث – تھکاوٹ سے لڑیں، طاقت بنائیں',
-              image: 'https://i.ibb.co/Y7Mff1r3/Energy-Strength-Builder-fight-fatigue-build-power.png',
-              alt: 'توانائی اور طاقت کا باعث تھکاوٹ سے لڑیں طاقت بنائیں',
-              title: 'توانائی اور طاقت کا باعث – تھکاوٹ سے لڑیں، طاقت بنائیں'
-            },
-            {
-              text: '✅ تناؤ سے نجات – متوازن ہارمونز اور موڈ میں بہتری',
-              image: 'https://i.ibb.co/0Rcp6vpp/Stress-Relief-balanced-hormones-mood-lift.png',
-              alt: 'تناؤ سے نجات متوازن ہارمونز اور موڈ میں بہتری',
-              title: 'تناؤ سے نجات – متوازن ہارمونز اور موڈ میں بہتری'
-            },
-            {
-              text: '✅ دوبارہ جوان – جوان، پراعتماد اور طاقتور محسوس کریں',
-              image: 'https://i.ibb.co/2bSvL4t/Re-Young-feel-youthful-confident-powerful.png',
-              alt: 'دوبارہ جوان جوان پراعتماد اور طاقتور محسوس کریں',
-              title: 'دوبارہ جوان – جوان، پراعتماد اور طاقتور محسوس کریں'
-            },
-            {
-              text: '✅ بہتر جنسی خواہش – قدرتی خواہش اور کارکردگی میں اضافہ',
-              image: 'https://i.ibb.co/b5SWNLWZ/Enhanced-Libido-natural-desire-performance-boost.png',
-              alt: 'بہتر جنسی خواہش قدرتی خواہش اور کارکردگی میں اضافہ',
-              title: 'بہتر جنسی خواہش – قدرتی خواہش اور کارکردگی میں اضافہ'
-            }
+            'توانائی اور مجموعی زندگی کی طاقت بڑھاتا ہے',
+            'طاقت اور برداشت کو بڑھاتا ہے تاکہ دیرپا کارکردگی ممکن ہو',
+            'تناسلی صحت اور ٹیسٹوسٹیرون کی سطح کی حمایت کرتا ہے',
+            'تناؤ کم کرتا ہے اور ذہنی وضاحت بہتر بناتا ہے',
+            'خون کی روانی بہتر بناتا ہے تاکہ کارکردگی میں اضافہ ہو',
+            'پٹھوں کی طاقت اور جسمانی صحت کو فروغ دیتا ہے',
+            'مدافعتی نظام اور مجموعی صحت کی حمایت کرتا ہے',
+            'قدرتی طور پر ہارمونل توازن برقرار رکھنے میں مدد کرتا ہے',
+            'لمبے عرصے کے استعمال کے لیے 100٪ قدرتی اور محفوظ'
           ],
           herbalSection: {
-            title: 'جڑی بوٹیوں کی طاقت۔ سائنس سے ثابت شدہ۔',
-            subtitle: '۳۰+ عالمی شہرت یافتہ جڑی بوٹیوں کا طاقتور امتزاج، صدیوں سے قابل اعتماد'
+            title: '🌿 جڑی بوٹیوں کی طاقت۔ سائنس سے ثابت شدہ۔',
+            subtitle: 'قدرتی جڑی بوٹیوں، وٹامنز اور معدنیات کا منفرد امتزاج — مردوں کی طاقت، توانائی اور کارکردگی کے لیے قابل اعتماد۔',
+            badgesLine: '✔ 100٪ قدرتی | 🌱 سائنسی طور پر ثابت شدہ | 🔒 محفوظ اور مؤثر'
           },
           ingredients: [
             {
-              name: 'جنسنگ',
-              description: 'اسٹیمنا اور قوت مدافعت بڑھاتا ہے',
+              name: 'جنسینگ',
+              description: 'طاقت اور عمومی توانائی بڑھاتا ہے',
               image: 'https://i.ibb.co/nsXkZMQC/Ginseng.png'
             },
             {
               name: 'اشوگندھا',
-              description: 'تناؤ کم کرتا ہے اور توانائی بڑھاتا ہے',
+              description: 'تناؤ کم کرتا ہے اور طاقت بڑھاتا ہے',
               image: 'https://i.ibb.co/210D7HdN/Ashwagandha.png'
             },
             {
-              name: 'ماکا روٹ',
-              description: 'تولیدی صحت اور توانائی کو سپورٹ کرتا ہے',
+              name: 'میکا روٹ',
+              description: 'تناسلی صحت اور توانائی میں مدد دیتا ہے',
               image: 'https://i.ibb.co/JjGfBtfJ/Macca-Root.png'
             },
             {
-              name: 'زعفران / کیسر',
-              description: 'قدرتی موڈ اور کارکردگی بہتر بناتا ہے',
+              name: 'زعفران',
+              description: 'خون کی روانی اور ہارمونل توازن بہتر بناتا ہے',
               image: 'https://i.ibb.co/gLsBdgdQ/Saffron.png'
             },
             {
               name: 'شلاجیت',
-              description: 'طاقت اور ٹیسٹوسٹیرون کی سطح بہتر بناتا ہے',
+              description: 'حتمی طاقت اور برداشت بڑھانے والا',
               image: 'https://i.ibb.co/zTgrVH1k/Shilajit.png'
             },
             {
-              name: 'سفید مصلی',
-              description: 'منی کی کوالٹی اور زرخیزی بڑھاتا ہے',
+              name: 'سفید مُصلی',
+              description: 'جنسی کارکردگی کو بہتر بناتا ہے',
               image: 'https://i.ibb.co/4g15SC7c/Safed-Musli.png'
             },
             {
-              name: 'گوکھرو',
-              description: 'پٹھوں کی نشوونما اور برداشت کو سپورٹ کرتا ہے',
+              name: 'ٹریبولس ٹیریسٹریس',
+              description: 'قدرتی طور پر ٹیسٹوسٹیرون بڑھاتا ہے',
               image: 'https://i.ibb.co/LVJ2SDN/Tribulus-Terrestris.png'
             }
           ],
-          usage: {
-            title: 'خوراک اور استعمال کی ہدایات',
-            dosage: {
-              text: 'دن میں دو بار آدھا چائے کا چمچ دودھ یا پانی کے ساتھ لیں'
-            },
-            course: {
-              text: 'کھانے کے بعد استعمال کریں'
-            },
-            best: {
-              text: 'بہترین نتائج کے لیے 30-90 دن تک باقاعدگی سے استعمال کریں'
+          dosageSection: {
+            title: '💊 خوراک اور استعمال کی ہدایات',
+            content: {
+              dosage: {
+                title: 'خوراک',
+                points: [
+                  'روزانہ آدھا چائے کا چمچ صبح اور شام، دودھ یا پانی کے ساتھ کھانے کے بعد لیں۔'
+                ]
+              },
+              duration: {
+                title: 'کورس کی مدت',
+                points: [
+                  'بہترین نتائج کے لیے 30 سے 90 دن تک مسلسل استعمال کریں۔'
+                ]
+              },
+              bestResults: {
+                title: 'بہترین نتائج کے لیے',
+                points: [
+                  'متوازن غذا اور ورزش کے ساتھ صحت مند طرز زندگی اپنائیں۔',
+                  'کورس کے دوران زیادہ سگریٹ نوشی، شراب اور تلی ہوئی یا زیادہ چکنائی والی غذا سے پرہیز کریں۔',
+                  'تیز صحت یابی کے لیے پانی زیادہ پئیں اور مناسب نیند لیں۔'
+                ]
+              }
             }
           },
-          faqTitle: 'شاہی سلطان ہیلتھ بوسٹر – سوالات و جوابات',
-          faqSubtitle: 'شاہی سلطان ہیلتھ بوسٹر سے متعلق اہم سوالات کے جوابات',
+          faqTitle: 'اکثر پوچھے جانے والے سوالات',
+          faqSubtitle: 'سلطان شاہی گولڈ ہیلتھ بوسٹر کے بارے میں آپ کو جاننے کی ضرورت ہے',
           faqs: [
-            { question: 'شاہی سلطان ہیلتھ بوسٹر کس کے لیے ہے؟', answer: 'یہ خاص طور پر مردوں کی قوت، برداشت اور مجموعی طاقت کے لیے تیار کیا گیا ہے۔', keywords: 'مردانہ طاقت برداشت طاقت' },
-            { question: 'کیا یہ ہربل اور محفوظ ہے؟', answer: 'جی ہاں، یہ 100% خالص جڑی بوٹیوں کا قدرتی مرکب ہے جس کے کوئی نقصان دہ مضر اثرات نہیں۔', keywords: 'ہربل محفوظ قدرتی بغیر مضر اثرات' },
-            { question: 'اسے کیسے استعمال کرنا ہے؟', answer: 'روزانہ آدھا چمچ، دن میں دو بار، دودھ یا پانی کے ساتھ کھانے کے بعد لیں۔', keywords: 'خوراک آدھا چمچ دن میں دو بار کھانے کے بعد' },
-            { question: 'کتنے عرصے تک استعمال کرنا چاہیے؟', answer: 'نمایاں نتائج کے لیے کم از کم 30–90 دن باقاعدگی سے استعمال کریں۔', keywords: 'مدت 30-90 دن نتائج' },
-            { question: 'کیا یہ سٹیمنا اور پرفارمنس بہتر کرتا ہے؟', answer: 'بالکل، یہ سٹیمنا، منی کی صحت اور پرفارمنس کو قدرتی طور پر بہتر کرتا ہے۔', keywords: 'سٹیمنا پرفارمنس منی صحت' },
-            { question: 'کیا اس سے ٹیسٹوسٹیرون میں اضافہ ہوتا ہے؟', answer: 'جی ہاں، اس کے ہربل اجزاء ٹیسٹوسٹیرون کو قدرتی طور پر بڑھانے میں مدد دیتے ہیں۔', keywords: 'ٹیسٹوسٹیرون اضافہ قدرتی' },
-            { question: 'کیا اس کے کوئی سائیڈ ایفیکٹس ہیں؟', answer: 'نہیں، اگر تجویز کردہ مقدار کے مطابق استعمال کیا جائے تو کوئی نقصان نہیں۔', keywords: 'بغیر سائیڈ ایفیکٹس تجویز کردہ مقدار' },
-            { question: 'کیا یہ اسٹریس اور تھکن میں مدد کرتا ہے؟', answer: 'جی ہاں، یہ فارمولہ اسٹریس کو مینیج کرنے اور تھکن کم کرنے میں مدد دیتا ہے۔', keywords: 'اسٹریس تھکن کمی' },
-            { question: 'کیا یہ ورزش اور فٹنس گولز میں مددگار ہے؟', answer: 'جی بالکل، مضبوط عضلات، سلم باڈی اور تیز ریکوری میں مدد دیتا ہے۔', keywords: 'ورزش فٹنس عضلات ریکوری' },
-            { question: 'کیا پاکستان میں ڈیلیوری دستیاب ہے؟', answer: 'جی ہاں، ہم پورے پاکستان میں فری ڈیلیوری فراہم کرتے ہیں۔', keywords: 'پاکستان ڈیلیوری فری پورے ملک' }
+            { question: 'سلطان شاہی گولڈ ہیلتھ بوسٹر کیا ہے؟', answer: 'یہ ایک پریمیم ہربل سپلیمنٹ ہے جو مردوں کی توانائی، قوت، ٹیسٹوسٹیرون کی سطح اور مجموعی صحت کو بہتر بنانے کے لیے بنایا گیا ہے۔', keywords: 'پریمیم ہربل سپلیمنٹ توانائی قوت ٹیسٹوسٹیرون صحت' },
+            { question: 'سلطان شاہی گولڈ ہیلتھ بوسٹر کیسے استعمال کریں؟', answer: 'کھانے کے بعد دن میں دو بار آدھا چمچ دودھ یا پانی کے ساتھ لیں۔ بہترین نتائج کے لیے 30-90 دن تک باقاعدگی سے استعمال کریں۔', keywords: 'خوراک آدھا چمچ دن میں دو بار کھانے کے بعد 30-90 دن' },
+            { question: 'کیا یہ طویل مدت کے استعمال کے لیے محفوظ ہے؟', answer: 'جی ہاں، یہ قدرتی جڑی بوٹیوں سے بنایا گیا ہے اور طویل مدت کے استعمال کے لیے محفوظ ہے، کوئی معلوم ضمنی اثرات نہیں۔', keywords: 'محفوظ طویل مدت قدرتی جڑی بوٹیاں کوئی ضمنی اثرات نہیں' },
+            { question: 'یہ سپلیمنٹ کون استعمال کر سکتا ہے؟', answer: 'یہ بالغ مردوں کے لیے موزوں ہے جو توانائی، قوت برداشت، تولیدی صحت اور مجموعی صحت کو بہتر بنانا چاہتے ہیں۔', keywords: 'بالغ مرد توانائی قوت برداشت تولیدی صحت مجموعی صحت' },
+            { question: 'کیا میں اسے دیگر سپلیمنٹس کے ساتھ استعمال کر سکتا ہوں؟', answer: 'جی ہاں، لیکن اگر آپ دیگر دوائیں یا سپلیمنٹس لے رہے ہیں تو کسی صحت کے ماہر سے مشورہ کریں۔', keywords: 'دیگر سپلیمنٹس دوائیں صحت کے ماہر مشورہ' },
+            { question: 'نتائج دیکھنے میں کتنا وقت لگے گا؟', answer: 'زیادہ تر صارفین 2-4 ہفتوں میں توانائی اور طاقت میں بہتری محسوس کرتے ہیں، جبکہ بہترین نتائج 1-3 ماہ کے بعد حاصل ہوتے ہیں۔', keywords: 'نتائج 2-4 ہفتے 1-3 ماہ توانائی طاقت' },
+            { question: 'کیا یہ ٹیسٹوسٹیرون کی سطح بہتر بناتا ہے؟', answer: 'جی ہاں، سلطان شاہی گولڈ ہیلتھ بوسٹر میں موجود جڑی بوٹیاں قدرتی طور پر صحت مند ٹیسٹوسٹیرون کی سطح کو سپورٹ کرتی ہیں۔', keywords: 'ٹیسٹوسٹیرون کی سطح جڑی بوٹیاں قدرتی سپورٹ' },
+            { question: 'کیا یہ شادی شدہ مردوں کے لیے موزوں ہے؟', answer: 'بالکل، یہ جنسی صحت، کارکردگی اور مجموعی طاقت کو بہتر بنانے میں مدد کرتا ہے، اس لیے شادی شدہ مردوں کے لیے بہترین ہے۔', keywords: 'شادی شدہ مرد جنسی صحت کارکردگی مجموعی طاقت' },
+            { question: 'کیا اس کے کوئی ضمنی اثرات ہیں؟', answer: 'نہیں، یہ 100% قدرتی ہے اور ہدایت کے مطابق استعمال کرنے پر کوئی معلوم ضمنی اثرات نہیں ہیں۔', keywords: 'کوئی ضمنی اثرات نہیں 100% قدرتی محفوظ' },
+            { question: 'کیا یہ تناؤ اور تھکن میں مددگار ہے؟', answer: 'جی ہاں، اس میں موجود جڑی بوٹیاں توانائی، دماغی وضاحت اور تناؤ کم کرنے میں مدد کرتی ہیں۔', keywords: 'تناؤ تھکن توانائی دماغی وضاحت کمی' }
+          ],
+          pricingPackages: [
+            {
+              name: '1 ماہ کا پیک',
+              price: '6,000 روپے',
+              details: [
+                '1 بوتل سلطان شاہی گولڈ ہیلتھ بوسٹر کی',
+                'فری ڈیلیوری',
+                'کیس آن ڈیلیوری',
+                '24/7 کسٹمر سپورٹ'
+              ]
+            },
+            {
+              name: '2 ماہ کا پیک',
+              price: '11,000 روپے',
+              details: [
+                '2 بوتلیں سلطان شاہی گولڈ ہیلتھ بوسٹر کی',
+                'فری ڈیلیوری',
+                'کیس آن ڈیلیوری',
+                '24/7 کسٹمر سپورٹ',
+                '1,000 روپے بچائیں'
+              ]
+            },
+            {
+              name: '3 ماہ کا پیک',
+              price: '16,000 روپے',
+              details: [
+                '3 بوتلیں سلطان شاہی گولڈ ہیلتھ بوسٹر کی',
+                'فری ڈیلیوری',
+                'کیس آن ڈیلیوری',
+                '24/7 کسٹمر سپورٹ',
+                'بہترین قیمت'
+              ]
+            }
           ]
         }
       },
       // Before & After (Real Results) - overrides
       beforeAfterTitle: 'Real Results, Real Men',
-      beforeAfterSubtitle: 'See the difference Shahi Sultan Health Booster has made in the lives of men across Pakistan',
+      beforeAfterSubtitle: 'See the difference Sultan Shahi Gold Health Booster has made in the lives of men across Pakistan',
       beforeAfterLabels: {
-        beforeTitle: 'Before Shahi Sultan',
-        afterTitle: 'After Shahi Sultan',
+        beforeTitle: 'Before Sultan Shahi',
+        afterTitle: 'After Sultan Shahi',
         beforeDesc: 'Low energy, poor confidence, marital issues',
         afterDesc: 'Renewed vigor, strong performance, happy relationship',
         weeksPrefix: '',
@@ -1853,6 +2678,41 @@ function App() {
           after: 'https://i.ibb.co/Gvs3GKjY/4-weeks-of-use-After-Shahi-Sultan-Health-Booster.png',
           duration: 4,
           summary: undefined
+        }
+      ],
+      // Affordable Packages
+      pricingPackages: [
+        {
+          name: '1 Month Pack',
+          price: 'Rs 6,000/-',
+          details: [
+            '1 Bottle of Sultan Shahi Gold Health Booster',
+            'Free Delivery',
+            'Cash on Delivery',
+            '24/7 Customer Support'
+          ]
+        },
+        {
+          name: '2 Month Pack',
+          price: 'Rs 11,000/-',
+          details: [
+            '2 Bottles of Sultan Shahi Gold Health Booster',
+            'Free Delivery',
+            'Cash on Delivery',
+            '24/7 Customer Support',
+            'Save Rs 1,000'
+          ]
+        },
+        {
+          name: '3 Month Pack',
+          price: 'Rs 16,000/-',
+          details: [
+            '3 Bottles of Sultan Shahi Gold Health Booster',
+            'Free Delivery',
+            'Cash on Delivery',
+            '24/7 Customer Support',
+            'Best Value'
+          ]
         }
       ],
       // Ingredients Section
@@ -1903,7 +2763,7 @@ function App() {
           age: 42,
           location: 'Karachi',
           rating: 5,
-          text: 'After 3 weeks of using Shahi Sultan Health Booster, my energy levels and confidence have completely transformed. My wife has noticed the difference too!'
+          text: 'After 3 weeks of using Sultan Shahi Gold Health Booster, my energy levels and confidence have completely transformed. My wife has noticed the difference too!'
         },
         {
           id: 2,
@@ -1911,7 +2771,7 @@ function App() {
           age: 38,
           location: 'Lahore',
           rating: 5,
-          text: 'I tried many products before, but Shahi Sultan Health Booster is the only one that actually delivered results. Highly recommended for any man over 35.'
+          text: 'I tried many products before, but Sultan Shahi Gold Health Booster is the only one that actually delivered results. Highly recommended for any man over 35.'
         },
         {
           id: 3,
@@ -1943,7 +2803,7 @@ function App() {
           {
             title: '1 Pack',
             headerTitle: '1 Pack',
-            price: 9500,
+            price: 6000,
             features: [
               'Free delivery all over Pakistan',
               'Secure packaging & fast shipping',
@@ -1954,7 +2814,7 @@ function App() {
           {
             title: '2 Packs',
             headerTitle: '2 Packs',
-            price: 18000,
+            price: 11000,
             saveAmount: 1000,
             features: [
               'Free delivery all over Pakistan',
@@ -1966,8 +2826,8 @@ function App() {
           {
             title: '3 Packs',
             headerTitle: '3 Packs',
-            price: 25000,
-            saveAmount: 3500,
+            price: 16000,
+            saveAmount: 2000,
             features: [
               'Free delivery all over Pakistan',
               'Secure packaging & fast shipping',
@@ -1980,19 +2840,19 @@ function App() {
       }
       ,
       // Product-specific FAQs (EN/UR)
-      faqTitle: 'Shahi Sultan Health Booster – FAQs',
-      faqSubtitle: 'Get answers specific to Shahi Sultan Health Booster',
+      faqTitle: 'Frequently Asked Questions',
+      faqSubtitle: 'Everything you need to know about Sultan Shahi Gold Health Booster',
       faqs: [
-        { question: 'Who is Shahi Sultan Health Booster for?', answer: "Specially designed for men's vitality, stamina, and overall strength.", keywords: 'men vitality stamina strength' },
-        { question: 'Is this herbal and safe?', answer: 'Yes, it is a 100% herbal, natural blend with no harmful side effects.', keywords: 'herbal safe natural no side effects' },
-        { question: 'How should I take it?', answer: 'Half teaspoon, twice daily, with milk or water after meals.', keywords: 'dosage half teaspoon twice a day after meals' },
-        { question: 'How long should I use it?', answer: 'Use regularly for at least 30–90 days for noticeable results.', keywords: 'duration 30-90 days results' },
-        { question: 'Does it improve stamina and performance?', answer: 'Absolutely, it helps improve stamina, semen health, and performance naturally.', keywords: 'stamina performance semen health' },
-        { question: 'Does it boost testosterone?', answer: 'Yes, its herbal ingredients help naturally enhance testosterone.', keywords: 'testosterone boost naturally' },
-        { question: 'Any side effects?', answer: 'No, if you follow the recommended dosage there are no harmful effects.', keywords: 'no side effects recommended dosage' },
-        { question: 'Does it help with stress and fatigue?', answer: 'Yes, this formula helps manage stress and reduces fatigue.', keywords: 'stress fatigue relief' },
-        { question: 'Is it helpful for exercise and fitness goals?', answer: 'Yes, it supports stronger muscles, a lean body, and faster recovery.', keywords: 'exercise fitness muscles recovery' },
-        { question: 'Is delivery available in Pakistan?', answer: 'Yes, we offer nationwide free delivery across Pakistan.', keywords: 'Pakistan delivery nationwide free' }
+        { question: 'What is Sultan Shahi Gold Health Booster?', answer: 'It is a premium herbal supplement designed to enhance men\'s energy, vitality, testosterone levels, and overall wellness.', keywords: 'premium herbal supplement energy vitality testosterone wellness' },
+        { question: 'How do I use Sultan Shahi Gold Health Booster?', answer: 'Take half a teaspoon twice a day with milk or water after meals. Use regularly for 30-90 days for best results.', keywords: 'dosage half teaspoon twice daily after meals 30-90 days' },
+        { question: 'Is it safe for long-term use?', answer: 'Yes, it is made with natural herbs and ingredients, safe for long-term use with no known side effects.', keywords: 'safe long-term natural herbs no side effects' },
+        { question: 'Who can use this supplement?', answer: 'It is suitable for adult men of all ages seeking to improve energy, stamina, reproductive health, and overall wellness.', keywords: 'adult men energy stamina reproductive health wellness' },
+        { question: 'Can I use it with other supplements?', answer: 'Yes, but consult a healthcare professional if you are taking other medications or supplements.', keywords: 'other supplements medications healthcare professional consult' },
+        { question: 'How long until I see results?', answer: 'Most users notice improvements in energy and stamina within 2-4 weeks, with optimal results after 1-3 months.', keywords: 'results 2-4 weeks 1-3 months energy stamina' },
+        { question: 'Does it improve testosterone levels?', answer: 'Yes, the herbal ingredients in Sultan Shahi Gold Health Booster naturally support healthy testosterone levels.', keywords: 'testosterone levels herbal ingredients natural support' },
+        { question: 'Is it suitable for married men?', answer: 'Absolutely, it supports sexual health, performance, and overall vitality, making it ideal for married men.', keywords: 'married men sexual health performance vitality' },
+        { question: 'Does it have any side effects?', answer: 'No, the product is 100% natural and has no known side effects when used as directed.', keywords: 'no side effects 100% natural safe' },
+        { question: 'Can it help with stress and fatigue?', answer: 'Yes, it contains herbs that support energy, mental clarity, and stress reduction.', keywords: 'stress fatigue energy mental clarity reduction' }
       ],
       
     },
@@ -2004,29 +2864,30 @@ function App() {
       benefitsTitle: language === 'en' ? 'Benefits of Malka Shahi Gold' : 'ملکہ شاہی گولڈ کے فوائد'
     },
     'slim-n-shape-tea': {
-      title: '☕ Slim n Shape Herbal Tea',
-      subtitle: 'Weight Loss | Boosts Immunity | Stress Relief',
+      title: 'Slim n Shape Herbal Tea',
+      subtitle: '🌿 Weight Loss | Boosts Immunity | Stress Relief',
       badge: 'WEIGHT LOSS',
+      tagline: 'Slim Smart Naturally - Refresh Your Body & Mind!',
+      heroSubtitle: 'Slim n Shape Herbal Tea is a premium blend of natural herbs like Green Tea, Lemongrass, and Mint - designed to help you lose extra fat, relieve stress, and boost immunity. Each sip refreshes your body, improves metabolism, and enhances overall well-being naturally.',
       features: [
-        'Premium herbal tea blend for natural weight loss & overall wellness.',
-        'Burn Fat & Control Cholesterol',
-        'Relieve Stress & Boost Immunity',
-        'Support Digestion & Enhance Skin Glow',
-        '⭐ Trusted Herbal Formula | 🌿 100% Natural Ingredients'
+        'Burn Fat Naturally',
+        'Relieve Stress & Anxiety',
+        'Boost Immunity & Energy',
+        'Improve Digestion & Skin Glow'
       ],
       // Page images (Tea only)
       heroImage: 'https://i.ibb.co/MkjMjkb0/Slim-n-Shape-Herbal-Tea.png',
       benefitsImage: 'https://i.ibb.co/7t9NJdFz/Benefits-of-Slim-n-Shape-Herbal-Tea.jpg',
-      specialPriceAmount: '999',
+      specialPriceAmount: '1,200',
       // Video Section (EN)
       videoId: 'OznIF_zTue8',
-      videoTitle: 'See Slim n Shape Tea in Action',
-      videoSubtitle: 'Watch how Slim n Shape Herbal Tea helps men & women across Pakistan stay slim, strong, and stress-free.',
+      videoTitle: '🎥 See Slim n Shape in Action',
+      videoSubtitle: 'Watch how Slim n Shape Herbal Tea has transformed lives with real results across Pakistan.',
       videoCover: 'https://i.ibb.co/NgRRFB7w/Slim-n-Shape-Herbal-Tea-Video.png',
       videoIframeTitle: 'Slim n Shape Herbal Tea Video',
       // Before & After (Real Results) - overrides
-      beforeAfterTitle: 'Real Results, Real People',
-      beforeAfterSubtitle: 'See the difference Slim n Shape Herbal Tea has made in the lives of people across Pakistan',
+      beforeAfterTitle: '✨ Real People, Real Results',
+      beforeAfterSubtitle: 'Experience visible transformation - feel lighter, more confident, and energetic with Slim n Shape Herbal Tea.',
       beforeAfterLabels: {
         beforeTitle: 'Before',
         afterTitle: 'After',
@@ -2041,115 +2902,131 @@ function App() {
           duration: 4,
           before: 'https://i.ibb.co/FkTjqd52/4-weeks-of-use-Before-Slim-n-Shape-Herbal-Tea.png',
           after: 'https://i.ibb.co/pvC5WsWt/4-weeks-of-use-After-Slim-n-Shape-Herbal-Tea.png',
-          summary: 'Visible improvement by week 4.'
+          summary: 'Lost 4–5 kg, reduced bloating, higher energy levels.'
         },
         {
           id: 2,
           duration: 8,
           before: 'https://i.ibb.co/5x8xDhdV/8-weeks-of-use-Before-Slim-n-Shape-Herbal-Tea.png',
           after: 'https://i.ibb.co/h1VBC9cn/8-weeks-of-use-After-Slim-n-Shape-Herbal-Tea.png',
-          summary: 'Stronger results by week 8.'
+          summary: 'Lost 5–6 kg, improved digestion, glowing skin, boosted confidence.'
         }
       ],
       // Common Problems (EN)
-      problemsTitle: 'Common Problems People Face Today',
-      problemsSubtitle: 'Millions struggle with these issues — but you don’t have to:',
+      problemsTitle: '🔥 Common Problems Due to Obesity',
+      problemsSubtitle: 'Millions of people suffer silently from these weight-related issues - but you can change that today!',
       problemsList: [
-        'Obesity & Belly Fat',
-        'Weak Immune System',
-        'Stress & Anxiety',
-        'High Cholesterol & BP'
+        'High blood pressure & cholesterol',
+        'Heart disease & stroke risk',
+        'Joint pain & fatigue',
+        'Hormonal imbalance & stress',
+        'Digestive issues & toxin buildup',
+        'Low energy & confidence'
       ],
+      solution: '🔑 Slim n Shape Herbal Tea is the natural solution you have been looking for!',
       // Benefits (EN)
-      benefitsTitle: 'Special Benefits of Slim n Shape Herbal Tea',
+      benefitsTitle: '🌿 Special Benefits of Slim n Shape Herbal Tea',
       benefitsList: [
-        '✅ Effective slimming solution',
-        '✅ Relieves stress and anxiety',
-        '✅ Helps control blood pressure levels',
-        '✅ Strengthens the immune system',
-        '✅ Boosts resistance against illnesses',
-        '✅ Reduces the risk of food poisoning',
-        '✅ Supports bone density maintenance',
-        '✅ Helps reduce obesity & cholesterol levels',
-        '✅ Enhances skin glow naturally',
-        '✅ Lowers high blood pressure'
+        '🔥 Burns belly fat naturally & boosts metabolism',
+        '🧘 Relieves stress, anxiety & improves sleep',
+        '💖 Supports healthy blood pressure & cholesterol',
+        '🛡️ Strengthens immune system & fights illness',
+        '💪 Increases energy levels all day',
+        '🌟 Enhances skin glow & reduces aging signs',
+        '🍃 Improves digestion & reduces bloating',
+        '🦴 Supports bone strength & overall wellness',
+        '✅ 100% natural with no side effects',
+        '⚡ Visible results in 10–15 days'
       ],
       // Pricing (EN) - Affordable Packages (Slim n Shape Tea only)
       pricing: {
-        title: 'Affordable Packages',
-        subtitle: 'Choose the perfect package for your health journey:',
+        title: '💰 Choose Your Slim Plan',
+        subtitle: 'Select the perfect package for your weight loss journey',
         popular: 'Best Value',
         save: 'Save',
         packages: [
           {
             title: '1 Pack',
-            price: 999,
+            headerTitle: '1 Pack (100g)',
+            price: 1200,
             features: [
-              '✔ 100g Herbal Tea',
-              '✔ Free Delivery',
-              '✔ Cash on Delivery'
+              '100g Herbal Tea',
+              'Free Delivery',
+              'Cash on Delivery',
+              '24/7 Support'
             ]
           },
           {
-            title: '2 Packs',
-            price: 1899,
-            saveAmount: 99,
+            title: '2 Pack',
+            headerTitle: '2 Pack (200g)',
+            price: 2000,
+            saveAmount: 400,
             features: [
-              '✔ Save Rs. 99',
-              '✔ Free Delivery',
-              '✔ 24/7 Support'
+              '200g Herbal Tea',
+              'Save Rs. 400',
+              'Free Delivery',
+              'Best for 1 Month'
             ]
           },
           {
-            title: '3 Packs – (Best Value)',
-            price: 2699,
-            saveAmount: 298,
+            title: '3 Pack',
+            headerTitle: '3 Pack (300g)',
+            price: 3000,
+            saveAmount: 600,
             features: [
-              '✔ Save Rs. 298',
-              '✔ Free Delivery',
-              '✔ Cash on Delivery'
-            ]
+              '300g Herbal Tea',
+              'Save Rs. 600',
+              'Free Delivery',
+              'Complete 45-Day Course'
+            ],
+            recommended: true
           }
         ]
       },
       // Usage (EN)
       usage: {
-        title: 'Usage Directions',
+        title: '☕ Dosage & Usage Instructions',
         dosage: {
-          title: 'How to Prepare',
-          text: '• Slim n Shape tea powder – ½ teaspoon • Water – 1 cup (250 ml) • Honey – 1 teaspoon • Lemon – 6 to 8 drops'
+          title: '☕ Ingredients',
+          text: 'Slim n Shape tea powder – ½ teaspoon\nWater – 1 cup (250ml)\nHoney – 1 teaspoon\nLemon – 6–8 drops'
         },
         course: {
-          title: 'Method',
-          text: 'Soak all ingredients together for 4–5 minutes before drinking.'
+          title: '🧾 Method',
+          text: 'Mix all ingredients in hot water.\nLet it steep for 4–5 minutes.\nDrink warm after meals, twice daily.'
         },
         best: {
-          title: 'Packaging',
-          text: '100g / 3.05 oz'
+          title: '💡 Usage Tips',
+          text: 'Avoid oily & junk food.\nStay hydrated (8–10 glasses/day).\nUse continuously for 30 days for best results.'
         }
       },
       // Product-specific FAQs (EN)
-      faqTitle: 'FAQs – Slim n Shape Herbal Tea',
-      faqSubtitle: undefined,
+      faqTitle: '❓ Frequently Asked Questions',
+      faqSubtitle: 'Everything you need to know about Slim n Shape Herbal Tea',
       faqs: [
-        { question: 'Is Slim n Shape Herbal Tea safe?', answer: '✅ Yes, it’s 100% natural, herbal, and safe for daily use.' },
-        { question: 'Can both men & women use it?', answer: '👍 Absolutely! It’s suitable for adults of all ages.' },
-        { question: 'How long before I see results?', answer: '📅 Most people see results within 2–3 weeks with regular use.' },
-        { question: 'Does it have any side effects?', answer: '🌿 No, it’s caffeine-light and free of harmful chemicals.' },
-        { question: 'Can it replace regular tea?', answer: '☕ Yes, you can drink it daily instead of your regular tea.' },
-        { question: 'Does it really help with stress?', answer: '💆 Yes, the herbal blend relieves stress & improves sleep quality.' },
-        { question: 'Can people with high BP or cholesterol take it?', answer: '✅ Yes, it may help regulate BP & cholesterol naturally.' },
-        { question: 'How many cups should I take daily?', answer: '🍵 Recommended: 2 cups per day (morning & evening).' },
-        { question: 'Can I use it with Slim n Shape Capsules?', answer: '🔥 Yes, combining it with Garcinia Cambogia Capsules gives faster results.' },
-        { question: 'Will the results last after stopping?', answer: '⚡ Yes, with a balanced lifestyle, results are long-lasting.' }
+        { question: 'How soon will I see results?', answer: 'Most users feel lighter and more energetic within 10–15 days of daily use.' },
+        { question: 'Is Slim n Shape Herbal Tea safe for everyone?', answer: 'Yes, it is 100% natural and safe for both men and women.' },
+        { question: 'Can I use it with green tea or detox drinks?', answer: 'Yes, it can be safely used alongside green tea or other herbal drinks.' },
+        { question: 'Does it cause weakness?', answer: 'No, it contains natural nutrients that maintain your energy while burning fat.' },
+        { question: 'Do I need to diet?', answer: 'No strict diet required - just avoid oily and sugary foods.' },
+        { question: 'What is the best course duration?', answer: 'For full results, continue for 2–3 months with regular use.' },
+        { question: 'Can people with high BP or cholesterol take it?', answer: 'Yes, it may help regulate BP & cholesterol naturally, but consult your doctor if on medication.' },
+        { question: 'How many cups should I drink daily?', answer: 'Recommended: 2 cups per day (morning & evening after meals).' },
+        { question: 'Can I use it with Slim n Shape Fit Booster?', answer: 'Yes, combining it with Fit Booster Capsules gives faster and better results.' },
+        { question: 'Will the results last after stopping?', answer: 'Yes, with a balanced lifestyle and healthy eating, results are long-lasting.' }
       ],
       // Herbal Power Section (EN) - 3 Columns
       herbalSection: {
-        title: 'Special Benefits of Slim n Shape Herbal Tea',
-        subtitle: '🌿 Herbal Power. Backed by Science. A potent blend of world-renowned herbal ingredients, trusted for centuries, specially formulated for weight loss, stress relief & immunity boost.',
-        bullets: [],
-        badgesLine: '✔ 100% Natural | 🌱 Scientifically Proven | 🔒 Safe & Effective',
-        showIngredients: false,
+        title: '🌿 Herbal Power. Backed by Nature.',
+        subtitle: 'A powerful blend of natural herbs - each carefully selected for fat burning, detox, and wellness support.',
+        bullets: [
+          'Green Tea – Boosts metabolism & burns fat',
+          'Lemongrass – Relieves stress & aids digestion',
+          'Pycnanthemum – Natural detox & antioxidant',
+          'Apple Cider Extract – Reduces fat buildup',
+          'Moringa – Maintains energy & immunity'
+        ],
+        badgesLine: '✔ 100% Natural | 🌱 Backed by Science | 🔒 Safe & Effective',
+        showIngredients: true,
         customColumns: [
           {
             title: 'Green Tea',
@@ -2189,49 +3066,63 @@ function App() {
       // Urdu translations (UR) — only for this product
       i18n: {
         ur: {
-          // FAQs (UR)
-          faqTitle: 'اکثر پوچھے جانے والے سوالات – سلیم ن شیپ ہربل ٹی',
-          faqSubtitle: undefined,
-          faqs: [
-            { question: 'کیا سلیم ن شیپ ہربل ٹی محفوظ ہے؟', answer: '✅ جی ہاں، یہ 100٪ قدرتی اور ہربل ہے اور روزانہ استعمال کے لیے محفوظ ہے۔' },
-            { question: 'کیا مرد اور خواتین دونوں استعمال کر سکتے ہیں؟', answer: '👍 بالکل! یہ ہر عمر کے بالغ افراد کے لیے موزوں ہے۔' },
-            { question: 'نتائج دیکھنے میں کتنا وقت لگتا ہے؟', answer: '📅 باقاعدہ استعمال کے ساتھ عموماً 2–3 ہفتوں میں نتائج نظر آنا شروع ہو جاتے ہیں۔' },
-            { question: 'کیا اس کے کوئی سائیڈ ایفیکٹس ہیں؟', answer: '🌿 نہیں، یہ کیفین کم ہے اور مضر کیمیکلز سے پاک ہے۔' },
-            { question: 'کیا یہ عام چائے کی جگہ لی جا سکتی ہے؟', answer: '☕ جی ہاں، آپ اسے روزانہ عام چائے کی جگہ پی سکتے ہیں۔' },
-            { question: 'کیا یہ واقعی اسٹریس میں مدد دیتی ہے؟', answer: '💆 جی ہاں، اس کا ہربل مکس ذہنی دباؤ کم کرتا ہے اور نیند کے معیار کو بہتر بناتا ہے۔' },
-            { question: 'ہائی بلڈ پریشر یا کولیسٹرول والے لوگ لے سکتے ہیں؟', answer: '✅ جی ہاں، یہ قدرتی طور پر بلڈ پریشر اور کولیسٹرول کو متوازن رکھنے میں مدد دے سکتی ہے۔' },
-            { question: 'روزانہ کتنے کپ لینے چاہئیں؟', answer: '🍵 تجویز: روزانہ 2 کپ (صبح اور شام)۔' },
-            { question: 'کیا اسے Slim n Shape Garcinia Cambogia Capsules کے ساتھ لے سکتا/سکتی ہوں؟', answer: '🔥 جی ہاں، گارسنیا کمبوژیا کیپسولز کے ساتھ لینے سے نتائج تیز ہوتے ہیں۔' },
-            { question: 'استعمال بند کرنے کے بعد کیا نتائج برقرار رہیں گے؟', answer: '⚡ جی ہاں، متوازن طرزِ زندگی کے ساتھ نتائج دیرپا رہتے ہیں۔' }
+          // Problems (UR)
+          problemsTitle: '🔥 موٹاپے کی وجہ سے عام مسائل',
+          problemsSubtitle: 'لاکھوں لوگ خاموشی سے ان وزن سے متعلق مسائل کا شکار ہیں — لیکن آج آپ اسے بدل سکتے ہیں!',
+          problemsList: [
+            'بلڈ پریشر اور کولیسٹرول میں اضافہ',
+            'دل کے امراض اور فالج کا خطرہ',
+            'جوڑوں کا درد اور تھکاوٹ',
+            'ہارمونل بے ترتیبی اور ذہنی دباؤ',
+            'ہاضمے کے مسائل اور جسم میں زہریلے مادے',
+            'کم توانائی اور اعتماد میں کمی'
           ],
-          benefitsTitle: 'سلیم اَن شیپ ہربل ٹی کے خاص فوائد',
+          solution: '🔑 سلیم ن شیپ ہربل ٹی وہ قدرتی حل ہے جس کی آپ تلاش کر رہے تھے!',
+          // Benefits (UR)
+          benefitsTitle: '🌿 سلیم اَن شیپ ہربل ٹی کے خاص فوائد',
           benefitsList: [
-            '✅ وزن گھٹانے میں موثر مدد',
-            '✅ ذہنی دباؤ اور بے چینی میں کمی',
-            '✅ بلڈ پریشر کنٹرول میں معاون',
-            '✅ قوتِ مدافعت مضبوط بنائے',
-            '✅ بیماریوں کے خلاف مزاحمت بڑھائے',
-            '✅ فوڈ پوائزننگ کے خطرات میں کمی',
-            '✅ ہڈیوں کی مضبوطی میں مددگار',
-            '✅ موٹاپے اور کولیسٹرول میں کمی میں مدد',
-            '✅ جلد کی قدرتی چمک میں اضافہ',
-            '✅ ہائی بلڈ پریشر کم کرنے میں مدد'
+            '🔥 قدرتی طور پر پیٹ کی چربی گھلائے اور میٹابولزم بڑھائے',
+            '🧘 ذہنی دباؤ، بے چینی میں کمی اور نیند بہتر بنائے',
+            '💖 صحت مند بلڈ پریشر اور کولیسٹرول میں مدد',
+            '🛡️ قوتِ مدافعت مضبوط بنائے اور بیماریوں سے لڑے',
+            '💪 دن بھر توانائی کی سطح بڑھائے',
+            '🌟 جلد کی چمک بڑھائے اور بڑھاپے کی علامات کم کرے',
+            '🍃 ہاضمہ بہتر بنائے اور پیٹ کی سوجن کم کرے',
+            '🦴 ہڈیوں کی مضبوطی اور مجموعی صحت میں مدد',
+            '✅ 100٪ قدرتی، کوئی سائیڈ ایفیکٹس نہیں',
+            '⚡ 10–15 دنوں میں نظر آنے والے نتائج'
           ],
+          // Usage (UR)
           usage: {
-            title: 'استعمال کا طریقہ',
+            title: '☕ خوراک اور استعمال کی ہدایات',
             dosage: {
-              title: 'تیاری کا طریقہ',
-              text: '• سلیم اَن شیپ ٹی پاؤڈر – ½ چائے کا چمچ • پانی – 1 کپ (250 ملی) • شہد – 1 چائے کا چمچ • لیموں – 6 سے 8 قطرے'
+              title: '☕ اجزاء',
+              text: 'سلیم ن شیپ ٹی پاؤڈر – ½ چائے کا چمچ\nپانی – 1 کپ (250 ملی)\nشہد – 1 چائے کا چمچ\nلیموں – 6–8 قطرے'
             },
             course: {
-              title: 'طریقہ',
-              text: 'پینے سے پہلے تمام اجزاء کو 4–5 منٹ تک بھگو کر رکھیں۔'
+              title: '🧾 طریقہ',
+              text: 'تمام اجزاء کو گرم پانی میں ملائیں۔\n4–5 منٹ تک بھگو کر رکھیں۔\nکھانے کے بعد گرم پئیں، دن میں دو بار۔'
             },
             best: {
-              title: 'پیکجنگ',
-              text: '100 گرام / 3.05 اونس'
+              title: '💡 استعمال کی تجاویز',
+              text: 'تیل والی اور جنک فوڈ سے پرہیز کریں۔\nہائیڈریٹ رہیں (8–10 گلاس/دن)۔\nبہترین نتائج کے لیے 30 دن مسلسل استعمال کریں۔'
             }
           },
+          // FAQs (UR)
+          faqTitle: '❓ اکثر پوچھے جانے والے سوالات',
+          faqSubtitle: 'سلیم ن شیپ ہربل ٹی کے بارے میں جو کچھ آپ کو جاننے کی ضرورت ہے',
+          faqs: [
+            { question: 'نتائج کتنی جلدی نظر آئیں گے؟', answer: 'زیادہ تر صارفین روزانہ استعمال کے 10–15 دنوں میں ہلکا پن اور توانائی محسوس کرتے ہیں۔' },
+            { question: 'کیا سلیم ن شیپ ہربل ٹی سب کے لیے محفوظ ہے؟', answer: 'جی ہاں، یہ 100٪ قدرتی ہے اور مرد و خواتین دونوں کے لیے محفوظ ہے۔' },
+            { question: 'کیا میں اسے گرین ٹی یا ڈیٹوکس ڈرنکس کے ساتھ لے سکتا ہوں؟', answer: 'جی ہاں، اسے گرین ٹی یا دیگر ہربل ڈرنکس کے ساتھ محفوظ طریقے سے استعمال کیا جا سکتا ہے۔' },
+            { question: 'کیا یہ کمزوری کا سبب بنتی ہے؟', answer: 'نہیں، اس میں قدرتی غذائی اجزاء ہیں جو چربی جلاتے ہوئے آپ کی توانائی برقرار رکھتے ہیں۔' },
+            { question: 'کیا مجھے ڈائیٹ کرنی ہوگی؟', answer: 'سخت ڈائیٹ کی ضرورت نہیں — صرف تیل اور میٹھی چیزوں سے پرہیز کریں۔' },
+            { question: 'بہترین کورس کی مدت کیا ہے؟', answer: 'مکمل نتائج کے لیے، باقاعدہ استعمال کے ساتھ 2–3 ماہ جاری رکھیں۔' },
+            { question: 'کیا ہائی بلڈ پریشر یا کولیسٹرول والے لوگ لے سکتے ہیں؟', answer: 'جی ہاں، یہ قدرتی طور پر بلڈ پریشر اور کولیسٹرول کو منظم کرنے میں مدد کر سکتی ہے، لیکن اگر دوا لے رہے ہیں تو ڈاکٹر سے مشورہ کریں۔' },
+            { question: 'روزانہ کتنے کپ پینے چاہئیں؟', answer: 'تجویز: دن میں 2 کپ (صبح اور شام کھانے کے بعد)۔' },
+            { question: 'کیا میں اسے سلیم ن شیپ فٹ بوسٹر کے ساتھ استعمال کر سکتا ہوں؟', answer: 'جی ہاں، فٹ بوسٹر کیپسولز کے ساتھ ملا کر بہتر اور تیز نتائج ملتے ہیں۔' },
+            { question: 'استعمال بند کرنے کے بعد کیا نتائج برقرار رہیں گے؟', answer: 'جی ہاں، متوازن طرزِ زندگی اور صحت مند کھانے کے ساتھ نتائج دیرپا رہتے ہیں۔' }
+          ],
           herbalSection: {
             title: 'سلیم اَن شیپ ہربل ٹی کے خاص فوائد',
             subtitle: '🌿 قدرتی جڑی بوٹیوں کی طاقت — سائنسی طور پر ثابت شدہ۔ عالمی شہرت یافتہ اجزاء پر مشتمل، جو وزن میں کمی، ذہنی سکون اور قوتِ مدافعت بڑھانے کے لیے خاص طور پر تیار کی گئی ہے۔',
@@ -2273,6 +3164,376 @@ function App() {
               }
             ]
           }
+        }
+      }
+    },
+    'slim-n-shape-fit-booster': {
+      title: 'Slim n Shape Fit Booster',
+      subtitle: 'Herbal Powder',
+      badge: 'WEIGHT LOSS',
+      heroImage: 'https://i.ibb.co/placeholder-fit-booster.png',
+      // Hero Section
+      features: [
+        '🔥 Lose 5–7 Kg Naturally in Just 4–6 Weeks!',
+        '100% Herbal Weight Loss Formula',
+        'Targets Belly & Thigh Fat',
+        'No Weakness or Side Effects',
+        'Visible Results in 10–15 Days'
+      ],
+      tagline: '🔥 Lose 5–7 Kg Naturally in Just 4–6 Weeks!',
+      heroSubtitle: '"Slim Smart Naturally — Fit Booster for a New You!"',
+      specialPriceAmount: '2,500',
+      
+      // Product Introduction
+      aboutProduct: {
+        title: 'Product Introduction',
+        description: 'Slim n Shape Fit Booster is a 100% herbal fat-burning powder formulated by The Planner Herbal International. It supports fat burning, metabolism, and detox — targeting stubborn belly and thigh fat naturally. Every spoon helps you feel lighter, fresher, and more energetic without weakness or side effects.'
+      },
+      
+      // Obesity Dangers
+      problemsTitle: 'Obesity Dangers / Harms',
+      problemsSubtitle: 'Fit Booster helps reverse these health risks naturally and effectively!',
+      problemsList: [
+        'High blood pressure, cholesterol & diabetes',
+        'Heart disease & stroke',
+        'Joint pain & fatigue',
+        'Hormonal imbalance & low confidence',
+        'Digestive issues & toxin buildup'
+      ],
+      solution: 'Fit Booster helps reverse these health risks naturally and effectively!',
+      
+      // Special Benefits
+      benefitsTitle: 'Special Benefits of Fit Booster',
+      benefitsList: [
+        'Lose 5–7 Kg in just 4–6 weeks',
+        'Burns belly & thigh fat naturally',
+        'Controls appetite & sugar cravings',
+        'Improves digestion & metabolism',
+        'Boosts energy — no weakness or tiredness',
+        'Detoxifies body & improves skin tone',
+        '100% Herbal • Safe • No Side Effects'
+      ],
+      
+      // Key Herbal Ingredients
+      herbalSection: {
+        title: '🌱 Key Herbal Ingredients',
+        subtitle: 'Powerful natural ingredients scientifically proven for weight loss and wellness',
+        showIngredients: true,
+        ingredients: [
+          {
+            name: 'Green Coffee Extract',
+            description: 'Speeds up fat metabolism & boosts energy',
+            image: 'https://i.ibb.co/placeholder-green-coffee.png'
+          },
+          {
+            name: 'Garcinia Cambogia',
+            description: 'Suppresses appetite & reduces fat buildup',
+            image: 'https://i.ibb.co/placeholder-garcinia.png'
+          },
+          {
+            name: 'Apple Cider Vinegar Powder',
+            description: 'Aids fat oxidation & detoxification',
+            image: 'https://i.ibb.co/placeholder-acv.png'
+          },
+          {
+            name: 'Lemon Peel & Ginger Extract',
+            description: 'Improves digestion & reduces bloating',
+            image: 'https://i.ibb.co/placeholder-lemon-ginger.png'
+          },
+          {
+            name: 'Green Tea Extract',
+            description: 'Burns stored fat naturally',
+            image: 'https://i.ibb.co/placeholder-green-tea.png'
+          },
+          {
+            name: 'Gul Daudi (Chrysanthemum)',
+            description: 'Balances body heat & detoxifies',
+            image: 'https://i.ibb.co/placeholder-chrysanthemum.png'
+          },
+          {
+            name: 'Moringa Leaf Powder',
+            description: 'Provides nutrients & prevents weakness',
+            image: 'https://i.ibb.co/placeholder-moringa.png'
+          }
+        ],
+        badgesLine: '✅ 100% Natural | ✅ Scientifically Proven | ✅ Safe & Effective'
+      },
+      
+      // Dosage & Usage Instructions
+      dosageSection: {
+        title: '🕒 Dosage & Usage Instructions',
+        steps: [
+          {
+            stepNumber: 'Step 1',
+            title: 'Take 1 Teaspoon (≈5g)',
+            description: 'After every meal (Morning, Afternoon, Night)'
+          },
+          {
+            stepNumber: 'Step 2',
+            title: 'Mix in Warm Water or Green Tea',
+            description: 'Stir well and drink slowly'
+          },
+          {
+            stepNumber: 'Step 3',
+            title: 'Stay Hydrated',
+            description: 'Drink at least 8–10 glasses of water daily'
+          }
+        ],
+        notes: [
+          '💡 Continue using for at least 30–45 days for best visible results and stable metabolism.',
+          '💚 No strict diet required — just avoid oily & sugary foods.'
+        ]
+      },
+      
+      // Affordable Packages
+      pricing: {
+        title: '💰 Affordable Packages',
+        subtitle: 'Choose the perfect package for your weight loss journey',
+        packages: [
+          {
+            title: '1 Pack',
+            headerTitle: '1 Pack (30 Days)',
+            price: 2500,
+            features: [
+              '250 grams (30 Days)',
+              'Free Delivery',
+              'Cash on Delivery'
+            ]
+          },
+          {
+            title: '2-Pack Combo',
+            headerTitle: '2-Pack Combo (60 Days)',
+            price: 4500,
+            saveAmount: 500,
+            features: [
+              '500 grams (60 Days)',
+              'Save Rs. 500',
+              'Free Delivery',
+              'Cash on Delivery'
+            ]
+          },
+          {
+            title: '3-Pack Full Course',
+            headerTitle: '3-Pack Full Course (90 Days)',
+            price: 6000,
+            saveAmount: 1500,
+            features: [
+              '750 grams (90 Days)',
+              'Save Rs. 1500 – Best Value',
+              'Free Delivery',
+              'Cash on Delivery'
+            ],
+            recommended: true
+          }
+        ]
+      },
+      
+      // Results Accuracy
+      beforeAfterTitle: '🎯 Results Accuracy',
+      beforeAfterSubtitle: 'Real results you can expect with Slim n Shape Fit Booster',
+      resultsAccuracy: [
+        'Visible results within 10–15 days',
+        'Weight reduction of 5–7 Kg in 4–6 weeks',
+        '100% herbal results — safe & consistent',
+        'No rebound effect or weakness'
+      ],
+      
+      // Video Section
+      videoId: 'YOUR_YOUTUBE_VIDEO_ID',
+      videoTitle: '📺 See Slim n Shape Fit Booster in Action',
+      videoSubtitle: 'Watch how Fit Booster has transformed the lives of people across Pakistan. Real results, real stories!',
+      videoCover: 'https://i.ibb.co/placeholder-fit-booster-video.png',
+      videoDescription: 'Click to load video. Loading the video will enable YouTube cookies. We respect your privacy.',
+      
+      // FAQs
+      faqTitle: '💬 Frequently Asked Questions (FAQs)',
+      faqSubtitle: 'Get answers to common questions about Slim n Shape Fit Booster',
+      faqs: [
+        {
+          question: 'How soon will I start seeing results?',
+          answer: 'Most users notice visible changes within 10–15 days of daily use.'
+        },
+        {
+          question: 'How much weight can I lose with Fit Booster?',
+          answer: 'You can lose 5–7 Kg in just 4–6 weeks with regular use and normal eating habits.'
+        },
+        {
+          question: 'Is Slim n Shape Fit Booster safe for everyone?',
+          answer: 'Yes, it\'s 100% herbal and safe for both men and women of all ages.'
+        },
+        {
+          question: 'Does it cause weakness or side effects?',
+          answer: 'No, it contains Moringa and other herbs that maintain strength and energy.'
+        },
+        {
+          question: 'Can I use it with other herbal or green teas?',
+          answer: 'Yes, you can safely combine it with green tea or detox teas for better results.'
+        },
+        {
+          question: 'Do I need to follow a strict diet or heavy exercise?',
+          answer: 'No strict diet is needed, just avoid oily/sugary foods and stay lightly active.'
+        },
+        {
+          question: 'What happens if I stop after results?',
+          answer: 'No rebound weight gain. Your metabolism stays balanced naturally.'
+        },
+        {
+          question: 'How long should I use it?',
+          answer: '2–3 months (2–3 packs) give the most consistent, long-lasting results.'
+        },
+        {
+          question: 'Can diabetic or hypertensive patients use it?',
+          answer: 'Yes, but consult your doctor if you\'re under medical treatment.'
+        },
+        {
+          question: 'Is it a powder or capsule?',
+          answer: 'It\'s a herbal powder (250g). Take 1 teaspoon after meals, 3 times daily.'
+        }
+      ],
+      
+      // Urdu Translations
+      i18n: {
+        ur: {
+          // Obesity Dangers (UR)
+          problemsTitle: 'موٹاپے کے خطرات / نقصانات',
+          problemsSubtitle: 'فٹ بوسٹر ان صحت کے خطرات کو قدرتی اور مؤثر طریقے سے ختم کرنے میں مدد کرتا ہے!',
+          problemsList: [
+            'ہائی بلڈ پریشر، کولیسٹرول اور ذیابیطس',
+            'دل کی بیماری اور فالج',
+            'جوڑوں کا درد اور تھکاوٹ',
+            'ہارمونل عدم توازن اور کم اعتماد',
+            'ہاضمے کے مسائل اور زہریلے مادوں کا جمع ہونا'
+          ],
+          solution: 'فٹ بوسٹر ان صحت کے خطرات کو قدرتی اور مؤثر طریقے سے ختم کرنے میں مدد کرتا ہے!',
+          
+          // Benefits (UR)
+          benefitsTitle: 'فٹ بوسٹر کے خاص فوائد',
+          benefitsList: [
+            'صرف 4-6 ہفتوں میں 5-7 کلو وزن کم کریں',
+            'پیٹ اور رانوں کی چربی قدرتی طور پر جلائیں',
+            'بھوک اور میٹھے کی خواہش پر قابو پائیں',
+            'ہاضمہ اور میٹابولزم بہتر بنائیں',
+            'توانائی بڑھائیں — کوئی کمزوری یا تھکاوٹ نہیں',
+            'جسم کو صاف کریں اور جلد کی رنگت بہتر بنائیں',
+            '100٪ ہربل • محفوظ • کوئی سائیڈ ایفیکٹس نہیں'
+          ],
+          
+          // Herbal Ingredients (UR)
+          herbalSection: {
+            title: '🌱 اہم ہربل اجزاء',
+            subtitle: 'طاقتور قدرتی اجزاء جو وزن میں کمی اور تندرستی کے لیے سائنسی طور پر ثابت شدہ ہیں',
+            showIngredients: true,
+            ingredients: [
+              {
+                name: 'گرین کافی ایکسٹریکٹ',
+                description: 'چربی کے میٹابولزم کو تیز کرتا ہے اور توانائی بڑھاتا ہے',
+                image: 'https://i.ibb.co/placeholder-green-coffee.png'
+              },
+              {
+                name: 'گارسینیا کیمبوجیا',
+                description: 'بھوک کو دباتا ہے اور چربی کے جمع ہونے کو کم کرتا ہے',
+                image: 'https://i.ibb.co/placeholder-garcinia.png'
+              },
+              {
+                name: 'ایپل سائیڈر وینیگر پاؤڈر',
+                description: 'چربی کے آکسیڈیشن اور ڈیٹاکسیفیکیشن میں مدد کرتا ہے',
+                image: 'https://i.ibb.co/placeholder-acv.png'
+              },
+              {
+                name: 'لیموں کا چھلکا اور ادرک کا عرق',
+                description: 'ہاضمہ بہتر بناتا ہے اور پھولنے کو کم کرتا ہے',
+                image: 'https://i.ibb.co/placeholder-lemon-ginger.png'
+              },
+              {
+                name: 'گرین ٹی ایکسٹریکٹ',
+                description: 'ذخیرہ شدہ چربی کو قدرتی طور پر جلاتا ہے',
+                image: 'https://i.ibb.co/placeholder-green-tea.png'
+              },
+              {
+                name: 'گل داؤدی (کرسنتھیمم)',
+                description: 'جسم کی حرارت کو متوازن کرتا ہے اور صاف کرتا ہے',
+                image: 'https://i.ibb.co/placeholder-chrysanthemum.png'
+              },
+              {
+                name: 'مورنگا کے پتوں کا پاؤڈر',
+                description: 'غذائی اجزاء فراہم کرتا ہے اور کمزوری سے بچاتا ہے',
+                image: 'https://i.ibb.co/placeholder-moringa.png'
+              }
+            ],
+            badgesLine: '✅ 100٪ قدرتی | ✅ سائنسی طور پر ثابت شدہ | ✅ محفوظ اور مؤثر'
+          },
+          
+          // Dosage Section (UR)
+          dosageSection: {
+            title: '🕒 خوراک اور استعمال کی ہدایات',
+            steps: [
+              {
+                stepNumber: 'مرحلہ 1',
+                title: '1 چائے کا چمچ (≈5g) لیں',
+                description: 'ہر کھانے کے بعد (صبح، دوپہر، رات)'
+              },
+              {
+                stepNumber: 'مرحلہ 2',
+                title: 'گرم پانی یا گرین ٹی میں ملائیں',
+                description: 'اچھی طرح ہلائیں اور آہستہ آہستہ پیئیں'
+              },
+              {
+                stepNumber: 'مرحلہ 3',
+                title: 'ہائیڈریٹ رہیں',
+                description: 'روزانہ کم از کم 8-10 گلاس پانی پیئیں'
+              }
+            ],
+            notes: [
+              '💡 بہترین نظر آنے والے نتائج اور مستحکم میٹابولزم کے لیے کم از کم 30-45 دن تک استعمال جاری رکھیں۔',
+              '💚 سخت غذا کی ضرورت نہیں — صرف تیل والی اور میٹھی غذاؤں سے پرہیز کریں۔'
+            ]
+          },
+          
+          // FAQs (UR)
+          faqTitle: '💬 اکثر پوچھے جانے والے سوالات (FAQs)',
+          faqSubtitle: 'سلیم ن شیپ فٹ بوسٹر کے بارے میں عام سوالات کے جوابات حاصل کریں',
+          faqs: [
+            {
+              question: 'نتائج کب نظر آنا شروع ہوں گے؟',
+              answer: 'زیادہ تر صارفین روزانہ استعمال کے 10-15 دنوں میں نظر آنے والی تبدیلیاں محسوس کرتے ہیں۔'
+            },
+            {
+              question: 'فٹ بوسٹر سے کتنا وزن کم ہو سکتا ہے؟',
+              answer: 'باقاعدہ استعمال اور عام کھانے کی عادات کے ساتھ صرف 4-6 ہفتوں میں 5-7 کلو وزن کم کر سکتے ہیں۔'
+            },
+            {
+              question: 'کیا سلیم ن شیپ فٹ بوسٹر سب کے لیے محفوظ ہے؟',
+              answer: 'جی ہاں، یہ 100٪ ہربل ہے اور تمام عمر کے مردوں اور عورتوں کے لیے محفوظ ہے۔'
+            },
+            {
+              question: 'کیا یہ کمزوری یا سائیڈ ایفیکٹس کا سبب بنتا ہے؟',
+              answer: 'نہیں، اس میں مورنگا اور دیگر جڑی بوٹیاں ہیں جو طاقت اور توانائی برقرار رکھتی ہیں۔'
+            },
+            {
+              question: 'کیا میں اسے دوسری ہربل یا گرین ٹی کے ساتھ استعمال کر سکتا ہوں؟',
+              answer: 'جی ہاں، بہتر نتائج کے لیے آپ اسے محفوظ طریقے سے گرین ٹی یا ڈیٹاکس ٹی کے ساتھ ملا سکتے ہیں۔'
+            },
+            {
+              question: 'کیا مجھے سخت غذا یا بھاری ورزش کی ضرورت ہے؟',
+              answer: 'سخت غذا کی ضرورت نہیں، صرف تیل والی/میٹھی غذاؤں سے پرہیز کریں اور ہلکی سرگرمی برقرار رکھیں۔'
+            },
+            {
+              question: 'نتائج کے بعد بند کرنے پر کیا ہوتا ہے؟',
+              answer: 'وزن میں دوبارہ اضافہ نہیں ہوتا۔ آپ کا میٹابولزم قدرتی طور پر متوازن رہتا ہے۔'
+            },
+            {
+              question: 'مجھے کتنی دیر تک استعمال کرنا چاہیے؟',
+              answer: '2-3 ماہ (2-3 پیک) سب سے زیادہ مستقل، دیرپا نتائج دیتے ہیں۔'
+            },
+            {
+              question: 'کیا ذیابیطس یا ہائی بلڈ پریشر کے مریض اسے استعمال کر سکتے ہیں؟',
+              answer: 'جی ہاں، لیکن اگر آپ طبی علاج کے تحت ہیں تو اپنے ڈاکٹر سے مشورہ کریں۔'
+            },
+            {
+              question: 'کیا یہ پاؤڈر ہے یا کیپسول؟',
+              answer: 'یہ ہربل پاؤڈر ہے (250g)۔ کھانے کے بعد 1 چائے کا چمچ، دن میں 3 بار لیں۔'
+            }
+          ]
         }
       }
     },
@@ -2474,6 +3735,19 @@ Please confirm my order. Thank you!`;
       const price = productPricing?.[qty - 1]?.price;
       if (price) return price;
     }
+    // Use product-specific pricing for Sultan Shahi Gold Health Booster
+    if (slug === 'sultan-shahi-gold-health-booster') {
+      if (qty === 1) return 6000;
+      if (qty === 2) return 11000;
+      if (qty === 3) return 16000;
+      return qty * 6000;
+    }
+    // Use product-specific pricing for Malika Shahi Gold Health Booster
+    if (slug === 'malika-shahi-gold-health-booster') {
+      const productPricing = productConfigs['malika-shahi-gold-health-booster']?.pricing?.packages;
+      const price = productPricing?.[qty - 1]?.price;
+      if (price) return price;
+    }
     // Default pricing (other products)
     if (qty === 1) return 2500;
     if (qty === 2) return 4500;
@@ -2548,16 +3822,16 @@ Please confirm my order. Thank you!`;
     return language === 'ur' && urduSections.includes(sectionName);
   };
 
-  // Check if this is Sultan Shahi Gold Majoon or Sultan Shahi Gold Tila product for luxury theme
-  const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila';
+  // Check if this is Sultan Shahi Gold Majoon, Sultan Shahi Gold Tila, or Sultan Shahi Gold Health Booster product for luxury theme
+  const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster';
 
   return (
-    <div className={`min-h-screen flex flex-col ${isLuxuryProduct ? 'bg-black text-white' : 'bg-gradient-to-br from-red-50 via-white to-red-50'} ${shouldShowInUrdu('all') ? 'font-urdu' : ''}`}>
+    <div className={`min-h-screen flex flex-col ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black text-white' : isLuxuryProduct ? 'bg-black text-white' : 'bg-gradient-to-br from-red-50 via-white to-red-50'} ${shouldShowInUrdu('all') ? 'font-urdu' : ''}`}>
       <div className="flex-grow">
         {/* Header moved to Root layout */}
 
         {/* Hero Section - Optimized */}
-        <section className={`py-8 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
+        <section className={`py-8 md:py-16 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-900 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
           {/* Background pattern */}
           <div className="absolute inset-0 z-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>
@@ -2567,19 +3841,24 @@ Please confirm my order. Thank you!`;
               <motion.div className="lg:w-1/2" {...fadeInUp}>
                 <div className="flex items-center space-x-2 mb-4">
                   <SafeIcon icon={FiAward} className="text-yellow-400 text-2xl" />
-                  <span className={`${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
+                  <span className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
                     {content.hero.badge}
                   </span>
                 </div>
-                <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-yellow-400">
+                <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'}`}>
                   {content.hero.title}
                 </h1>
-                <p className={`text-xl md:text-2xl mb-6 ${isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
+                <p className={`text-xl md:text-2xl mb-4 ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
                   {content.hero.subtitle}
                 </p>
+                {content.hero.description && (
+                  <p className={`text-base md:text-lg mb-6 leading-relaxed ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-red-50'}`}>
+                    {content.hero.description}
+                  </p>
+                )}
                 <div className="flex flex-wrap gap-4 mb-6 text-lg">
                   {content.hero.features.map((feature, index) => (
-                    <span key={index} className={`${isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
+                    <span key={index} className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/20 border border-pink-400/30' : isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
                   ))}
                 </div>
                 <div className="flex items-center space-x-1 mb-6">
@@ -2589,17 +3868,17 @@ Please confirm my order. Thank you!`;
                   <span className="ml-2 text-lg">{content.hero.trusted}</span>
                 </div>
                 <motion.div
-                  className={`${isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
+                  className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/10 border border-pink-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">
+                  <p className={`text-2xl md:text-3xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'} mb-2`}>
                     {content.hero.specialPrice}: Rs {content.hero.specialPriceAmount || '2,500'}/-
                   </p>
-                  <p className={`${isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
+                  <p className={`${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
                   <motion.button
                     onClick={() => document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' })}
-                    className={`mt-4 ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
+                    className={`mt-4 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -2663,17 +3942,56 @@ Please confirm my order. Thank you!`;
           </div>
         </section>
 
+        {/* About Product Section - Only for products with aboutProduct config */}
+        {content.aboutProduct && (
+          <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-black' : 'bg-white'}`}>
+            <div className="container mx-auto px-4">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="max-w-4xl mx-auto"
+              >
+                <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-900'}`}>
+                  {content.aboutProduct.title}
+                </h2>
+                <p className={`text-base md:text-lg leading-relaxed mb-8 ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                  {content.aboutProduct.description}
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {content.aboutProduct.keyFeatures.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className={`flex items-start gap-3 p-4 rounded-lg ${isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-gray-50 border border-gray-200'}`}
+                    >
+                      <span className="text-2xl flex-shrink-0">{feature.split(' ')[0]}</span>
+                      <p className={`${isLuxuryProduct ? 'text-gray-200' : 'text-gray-800'} font-medium`}>
+                        {feature.substring(feature.indexOf(' ') + 1)}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
         {/* Problems Section */}
         <section
-          className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gray-900' : 'bg-gray-50'} ${shouldShowInUrdu('problems') ? 'font-urdu' : ''}`}
+          className={`py-12 md:py-16 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black' : isLuxuryProduct ? 'bg-gray-900' : 'bg-gray-50'} ${shouldShowInUrdu('problems') ? 'font-urdu' : ''}`}
           dir={shouldShowInUrdu('problems') ? 'rtl' : 'ltr'}
         >
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}>
                 {content.problems.title}
               </h2>
-              <p className={`text-xl ${isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} max-w-3xl mx-auto`}>
+              <p className={`text-xl ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} max-w-3xl mx-auto`}>
                 {content.problems.subtitle}
               </p>
             </motion.div>
@@ -2735,14 +4053,14 @@ Please confirm my order. Thank you!`;
                 {content.problems.list.map((problem, index) => (
                   <motion.div
                     key={index}
-                    className={`${isLuxuryProduct ? 'bg-gray-800 border-l-4 border-yellow-400' : 'bg-white border-l-4 border-red-500'} p-6 rounded-lg shadow-lg`}
+                    className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-purple-900/50 border-l-4 border-pink-400' : isLuxuryProduct ? 'bg-gray-800 border-l-4 border-yellow-400' : 'bg-white border-l-4 border-red-500'} p-6 rounded-lg shadow-lg`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <div className="flex items-center space-x-3">
-                      <SafeIcon icon={FiZap} className={`${isLuxuryProduct ? 'text-yellow-400' : 'text-red-500'} text-xl flex-shrink-0`} />
-                      <p className={`font-semibold ${isLuxuryProduct ? 'text-white' : 'text-gray-800'}`}>{problem}</p>
+                      <SafeIcon icon={FiZap} className={`${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-red-500'} text-xl flex-shrink-0`} />
+                      <p className={`font-semibold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isLuxuryProduct ? 'text-white' : 'text-gray-800'}`}>{problem}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -2755,7 +4073,7 @@ Please confirm my order. Thank you!`;
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <p className={`text-2xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`}>{content.problems.solution}</p>
+              <p className={`text-2xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`}>{content.problems.solution}</p>
             </motion.div>
           </div>
         </section>
@@ -2793,16 +4111,26 @@ Please confirm my order. Thank you!`;
           </div>
         </section>
 
-        {/* Shahi Sultan – Ingredients Grid (English only) */}
-        {slug === 'shahi-sultan-health-booster' && (
+        {/* Sultan Shahi Gold Health Booster – Ingredients Grid */}
+        {slug === 'sultan-shahi-gold-health-booster' && (
           <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gray-900' : 'bg-white'} ${language === 'ur' ? 'font-urdu' : ''}`} dir={language === 'ur' ? 'rtl' : 'ltr'}>
             <div className="container mx-auto px-4">
               <div className="text-center mb-8">
-                <h2 className={`text-3xl md:text-4xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-900'}`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-900'}`}>
                   {language === 'ur'
                     ? (productConfigs[slug]?.i18n?.ur?.herbalSection?.title || 'جڑی بوٹیوں کی طاقت۔ سائنس سے ثابت شدہ۔')
-                    : '🌿 Herbal Power. Backed by Science.'}
+                    : (productConfigs[slug]?.herbalSection?.title || '🌿 Herbal Power. Backed by Science')}
                 </h2>
+                <p className={`text-lg md:text-xl mb-4 max-w-3xl mx-auto ${isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'}`}>
+                  {language === 'ur'
+                    ? (productConfigs[slug]?.i18n?.ur?.herbalSection?.subtitle || '')
+                    : (productConfigs[slug]?.herbalSection?.subtitle || '')}
+                </p>
+                <p className={`text-sm md:text-base ${isLuxuryProduct ? 'text-gray-400' : 'text-gray-500'}`}>
+                  {language === 'ur'
+                    ? (productConfigs[slug]?.i18n?.ur?.herbalSection?.badgesLine || '')
+                    : (productConfigs[slug]?.herbalSection?.badgesLine || '')}
+                </p>
               </div>
               {/* First row: 3 ingredients */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -2848,7 +4176,7 @@ Please confirm my order. Thank you!`;
 
         {/* Herbal Power Section - Lazy Loaded */}
         <Suspense fallback={<div className="py-10 text-center">{language === 'ur' ? 'لوڈ ہو رہا ہے…' : 'Loading…'}</div>}>
-          {slug !== 'shahi-sultan-health-booster' && (
+          {slug !== 'sultan-shahi-gold-health-booster' && (
             <HerbalPowerSection
               language={language}
               title={language === 'ur' && productConfigs[slug]?.i18n?.ur?.herbalSection ? (productConfigs[slug]?.i18n?.ur?.herbalSection?.title) : (productConfigs[slug]?.herbalSection?.title)}
@@ -2861,7 +4189,9 @@ Please confirm my order. Thank you!`;
               showIngredients={productConfigs[slug]?.herbalSection?.showIngredients}
               ingredients={language === 'ur' && productConfigs[slug]?.i18n?.ur?.herbalSection?.ingredients ? (productConfigs[slug]?.i18n?.ur?.herbalSection?.ingredients) : (productConfigs[slug]?.herbalSection?.ingredients)}
               customColumns={language === 'ur' && productConfigs[slug]?.i18n?.ur?.herbalSection ? (productConfigs[slug]?.i18n?.ur?.herbalSection?.customColumns) : (productConfigs[slug]?.herbalSection?.customColumns)}
+              customColumnsGridClass={productConfigs[slug]?.herbalSection?.customColumnsGridClass}
               oneRowLayout={slug === 'b-maxman-royal-special-treatment'}
+              twoColumnLayout={productConfigs[slug]?.herbalSection?.twoColumnLayout}
               threeByThreeLayout={slug === 'sultan-shahi-gold-tila'}
               bigImage={productConfigs[slug]?.herbalSection?.bigImage}
             />
@@ -2870,7 +4200,7 @@ Please confirm my order. Thank you!`;
 
         {/* Benefits Section */}
         <section
-          className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-gradient-to-r from-blue-50 to-indigo-50'} ${shouldShowInUrdu('benefits') ? 'font-urdu' : ''}`}
+          className={`py-12 md:py-16 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-gradient-to-r from-blue-50 to-indigo-50'} ${shouldShowInUrdu('benefits') ? 'font-urdu' : ''}`}
           dir={shouldShowInUrdu('benefits') ? 'rtl' : 'ltr'}
           aria-labelledby="benefits-section"
           role="region"
@@ -2878,7 +4208,7 @@ Please confirm my order. Thank you!`;
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
               <h2
-                className={`text-3xl md:text-4xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}
+                className={`text-3xl md:text-4xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}
                 id="benefits-section"
                 title={language === 'en' ? "Expected results from B-Maxman Royal herbal supplement for men" : "بی میکس مین رائل جڑی بوٹیوں کے سپلیمنٹ سے متوقع نتائج"}
               >
@@ -2929,7 +4259,7 @@ Please confirm my order. Thank you!`;
                 {content.benefits.list.map((benefit, index) => (
                   <motion.article
                     key={index}
-                    className={`${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'} p-6 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300`}
+                    className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-purple-900/50 border border-pink-400/30' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'} p-6 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300`}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -2951,10 +4281,10 @@ Please confirm my order. Thank you!`;
 
                     {/* Text Content */}
                     <div className={`flex items-start ${shouldShowInUrdu('benefits') ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
-                      <SafeIcon icon={FiCheck} className={`${isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'} text-xl mt-1 flex-shrink-0`} />
+                      <SafeIcon icon={FiCheck} className={`${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'} text-xl mt-1 flex-shrink-0`} />
                       <h3
                         id={`benefit-${index}`}
-                        className={`font-semibold ${isLuxuryProduct ? 'text-yellow-200' : 'text-gray-800'}`}
+                        className={`font-semibold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-800'}`}
                         title={benefit.seoDescription || (typeof benefit === 'string' ? benefit : benefit.text)}
                       >
                         {typeof benefit === 'string' ? benefit : benefit.text}
@@ -2968,15 +4298,20 @@ Please confirm my order. Thank you!`;
         </section>
 
         {/* Testimonials - Always in English - Lazy Loaded */}
-        <section className={`py-12 md:py-16 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gray-100'}`}>
+        <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gray-100'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-gray-800'}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                 {productConfigs[slug]?.testimonialsTitle || englishContent.testimonials.title}
               </h2>
-              <p className={`text-xl max-w-3xl mx-auto ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-gray-600'}`}>
+              <p className={`text-xl max-w-3xl mx-auto ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-600'}`}>
                 {productConfigs[slug]?.testimonialsSubtitle || englishContent.testimonials.subtitle}
               </p>
+              {productConfigs[slug]?.testimonialsDescription && (
+                <p className={`text-lg max-w-4xl mx-auto mt-4 ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                  {productConfigs[slug]?.testimonialsDescription}
+                </p>
+              )}
             </motion.div>
             <Suspense fallback={<LoadingFallback />}>
               <TestimonialSlider testimonials={productConfigs[slug]?.testimonials || testimonials} slug={slug} />
@@ -2984,8 +4319,73 @@ Please confirm my order. Thank you!`;
           </div>
         </section>
 
-        {/* Usage Instructions - Custom for Sultan Shahi Gold Majoon and Sultan Shahi Gold Tila */}
-        {slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? (
+        {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster */}
+        {slug === 'slim-n-shape-fit-booster' && productConfigs[slug]?.dosageSection?.steps && (
+          <section className={`py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto">
+                {(() => {
+                  const dosageData = (shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.dosageSection)
+                    ? productConfigs[slug].i18n.ur.dosageSection
+                    : productConfigs[slug].dosageSection;
+                  
+                  return (
+                    <>
+                      <motion.h2 
+                        {...fadeInUp}
+                        className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800"
+                      >
+                        {dosageData.title}
+                      </motion.h2>
+                      
+                      <div className="grid md:grid-cols-3 gap-6 mb-8">
+                        {dosageData.steps.map((step, index) => (
+                          <motion.div
+                            key={index}
+                            {...fadeInUp}
+                            transition={{ delay: index * 0.1 }}
+                            className="bg-white rounded-xl shadow-lg p-6 border-2 border-green-100 hover:border-green-300 transition-all"
+                          >
+                            <div className="flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full text-2xl font-bold mx-auto mb-4">
+                              {index + 1}
+                            </div>
+                            <h3 className="text-sm font-semibold text-green-600 text-center mb-2">
+                              {step.stepNumber}
+                            </h3>
+                            <h4 className="text-lg font-bold text-gray-800 text-center mb-3">
+                              {step.title}
+                            </h4>
+                            <p className="text-gray-600 text-center text-sm">
+                              {step.description}
+                            </p>
+                          </motion.div>
+                        ))}
+                      </div>
+                      
+                      {dosageData.notes && (
+                        <motion.div 
+                          {...fadeInUp}
+                          className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border-l-4 border-green-500"
+                        >
+                          <div className="space-y-3">
+                            {dosageData.notes.map((note, index) => (
+                              <p key={index} className="text-gray-700 text-base flex items-start">
+                                <span className={shouldShowInUrdu('usage') ? 'mr-0 ml-2' : 'mr-2'}>{note}</span>
+                              </p>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </>
+                  );
+                })()}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Usage Instructions - Custom for Sultan Shahi Gold Majoon, Sultan Shahi Gold Tila, and G-Max Passion */}
+        {(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila') && (
           <section className={`py-12 md:py-16 bg-gradient-to-b from-black to-gray-900 ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
             <div className="container mx-auto px-4">
               {(() => {
@@ -3018,7 +4418,7 @@ Please confirm my order. Thank you!`;
                             <div>
                               <h3 className="text-xl font-semibold text-yellow-400 mb-2">{d?.content?.dosage?.title || 'Dosage'}</h3>
                               {d?.content?.dosage?.points ? (
-                                <ul className={`text-gray-300 space-y-2 ${shouldShowInUrdu('usage') ? 'text-right pr-5 list-none' : ''}`}>
+                                <ul className={`text-gray-300 space-y-2 list-none ${shouldShowInUrdu('usage') ? 'text-right pr-5' : ''}`}>
                                   {d.content.dosage.points.map((pt, i) => (
                                     <li key={i}>{pt}</li>
                                   ))}
@@ -3031,7 +4431,7 @@ Please confirm my order. Thank you!`;
                             <div>
                               <h3 className="text-xl font-semibold text-yellow-400 mb-2">{d?.content?.duration?.title || 'Course Duration'}</h3>
                               {d?.content?.duration?.points ? (
-                                <ul className={`text-gray-300 space-y-2 ${shouldShowInUrdu('usage') ? 'text-right pr-5 list-none' : ''}`}>
+                                <ul className={`text-gray-300 space-y-2 list-none ${shouldShowInUrdu('usage') ? 'text-right pr-5' : ''}`}>
                                   {d.content.duration.points.map((pt, i) => (
                                     <li key={i}>{pt}</li>
                                   ))}
@@ -3058,22 +4458,24 @@ Please confirm my order. Thank you!`;
               })()}
             </div>
           </section>
-        ) : (
-          <section className="py-12 md:py-16 bg-yellow-50">
+        )}
+
+        {!(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'g-max-passion' || slug === 'slim-n-shape-fit-booster') && (
+          <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gray-900' : 'bg-yellow-50'}`}>
             <div className="container mx-auto px-4">
               <motion.div className="max-w-4xl mx-auto" {...fadeInUp}>
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800">
+                <h2 className={`text-3xl md:text-4xl font-bold text-center mb-8 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                   {content.usage.title}
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="p-6 rounded-lg shadow-lg text-center bg-white">
-                    <SafeIcon icon={FiClock} className="text-4xl mx-auto mb-4 text-yellow-600" />
-                    <h3 className="font-bold text-lg mb-2 text-gray-800">{content.usage.dosage.title}</h3>
+                  <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                    <SafeIcon icon={FiClock} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-yellow-600'}`} />
+                    <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>{content.usage.dosage.title}</h3>
                     {(() => {
                       const parts = String(content?.usage?.dosage?.text || '').split('•').map(s => s.trim()).filter(Boolean);
                       const isUrdu = shouldShowInUrdu('usage');
                       return (
-                        <ul className={`list-disc ${isUrdu ? 'pr-5 text-right' : 'pl-5 text-left'} space-y-1 text-gray-700`}>
+                        <ul className={`list-none ${isUrdu ? 'text-right' : 'text-left'} space-y-1 ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
                           {parts.map((line, idx) => (
                             <li key={idx}>{line}</li>
                           ))}
@@ -3081,15 +4483,15 @@ Please confirm my order. Thank you!`;
                       );
                     })()}
                   </div>
-                  <div className="p-6 rounded-lg shadow-lg text-center bg-white">
-                    <SafeIcon icon={FiShield} className="text-4xl mx-auto mb-4 text-green-600" />
-                    <h3 className="font-bold text-lg mb-2 text-gray-800">{content.usage.course.title}</h3>
-                    <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} text-gray-700`}>{content.usage.course.text}</p>
+                  <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                    <SafeIcon icon={FiShield} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-600'}`} />
+                    <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>{content.usage.course.title}</h3>
+                    <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>{content.usage.course.text}</p>
                   </div>
-                  <div className="p-6 rounded-lg shadow-lg text-center bg-white">
-                    <SafeIcon icon={FiHeart} className="text-4xl mx-auto mb-4 text-red-600" />
-                    <h3 className="font-bold text-lg mb-2 text-gray-800">{content.usage.best.title}</h3>
-                    <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} text-gray-700`}>{content.usage.best.text}</p>
+                  <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                    <SafeIcon icon={FiHeart} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`} />
+                    <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>{content.usage.best.title}</h3>
+                    <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>{content.usage.best.text}</p>
                   </div>
                 </div>
               </motion.div>
@@ -3097,26 +4499,118 @@ Please confirm my order. Thank you!`;
           </section>
         )}
 
+        {(slug === 'g-max-passion' && productConfigs[slug]?.usage) && (
+          <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-b from-black to-gray-900' : 'bg-yellow-50'} ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
+            <div className="container mx-auto px-4">
+              <motion.div className="max-w-4xl mx-auto" {...fadeInUp}>
+                <h2 className={`text-3xl md:text-4xl font-bold text-center mb-8 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+                  {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.title 
+                    ? productConfigs[slug].i18n.ur.usage.title 
+                    : productConfigs[slug]?.usage?.title}
+                </h2>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Dosage */}
+                  <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                    <SafeIcon icon={FiClock} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`} />
+                    <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>
+                      {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.dosage?.title
+                        ? productConfigs[slug].i18n.ur.usage.dosage.title
+                        : productConfigs[slug]?.usage?.dosage?.title}
+                    </h3>
+                    <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.dosage?.text
+                        ? productConfigs[slug].i18n.ur.usage.dosage.text
+                        : productConfigs[slug]?.usage?.dosage?.text}
+                    </p>
+                  </div>
+                  {/* With */}
+                  {productConfigs[slug]?.usage?.with && (
+                    <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                      <SafeIcon icon={FiHeart} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`} />
+                      <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>
+                        {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.with?.title
+                          ? productConfigs[slug].i18n.ur.usage.with.title
+                          : productConfigs[slug]?.usage?.with?.title}
+                      </h3>
+                      <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                        {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.with?.text
+                          ? productConfigs[slug].i18n.ur.usage.with.text
+                          : productConfigs[slug]?.usage?.with?.text}
+                      </p>
+                    </div>
+                  )}
+                  {/* Timing */}
+                  {productConfigs[slug]?.usage?.timing && (
+                    <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                      <SafeIcon icon={FiClock} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-600'}`} />
+                      <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>
+                        {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.timing?.title
+                          ? productConfigs[slug].i18n.ur.usage.timing.title
+                          : productConfigs[slug]?.usage?.timing?.title}
+                      </h3>
+                      <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                        {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.timing?.text
+                          ? productConfigs[slug].i18n.ur.usage.timing.text
+                          : productConfigs[slug]?.usage?.timing?.text}
+                      </p>
+                    </div>
+                  )}
+                  {/* Course Duration */}
+                  <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                    <SafeIcon icon={FiShield} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-600'}`} />
+                    <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>
+                      {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.course?.title
+                        ? productConfigs[slug].i18n.ur.usage.course.title
+                        : productConfigs[slug]?.usage?.course?.title}
+                    </h3>
+                    <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.course?.text
+                        ? productConfigs[slug].i18n.ur.usage.course.text
+                        : productConfigs[slug]?.usage?.course?.text}
+                    </p>
+                  </div>
+                  {/* Note */}
+                  {productConfigs[slug]?.usage?.note && (
+                    <div className={`p-6 rounded-lg shadow-lg text-center ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'}`}>
+                      <SafeIcon icon={FiHeart} className={`text-4xl mx-auto mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`} />
+                      <h3 className={`font-bold text-lg mb-2 ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-800'}`}>
+                        {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.note?.title
+                          ? productConfigs[slug].i18n.ur.usage.note.title
+                          : productConfigs[slug]?.usage?.note?.title}
+                      </h3>
+                      <p className={`${shouldShowInUrdu('usage') ? 'text-right' : 'text-left'} ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                        {shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.usage?.note?.text
+                          ? productConfigs[slug].i18n.ur.usage.note.text
+                          : productConfigs[slug]?.usage?.note?.text}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
         {/* Pricing */}
-        <section className={`py-12 md:py-16 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-white'}`}>
+        <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-white'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-gray-800'}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                 {content.pricing.title}
               </h2>
-              <p className={`text-xl max-w-3xl mx-auto ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-gray-600'}`}>{content.pricing.subtitle}</p>
+              <p className={`text-xl max-w-3xl mx-auto ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-600'}`}>{content.pricing.subtitle}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* 1st Pack */}
               <motion.div
-                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
+                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className={`p-4 text-white text-center ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' : 'bg-red-600'}`}>
-                  <h3 className={`text-xl font-bold ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-black' : 'text-white'}`}>
+                <div className={`p-4 text-white text-center ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' : 'bg-red-600'}`}>
+                  <h3 className={`text-xl font-bold ${isLuxuryProduct ? 'text-black' : 'text-white'}`}>
                     {slug === 'slim-n-shape-garcinia-cambogia-capsules'
                       ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || content.pricing.packages[0].title)
                       : slug === 'b-maxtime-super-active'
@@ -3125,17 +4619,17 @@ Please confirm my order. Thank you!`;
                   </h3>
                 </div>
                 <div className="p-6 text-center">
-                  <div className={`text-4xl font-bold mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-gray-800'}`}>
+                  <div className={`text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                     Rs {(productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.()
                       || content?.pricing?.packages?.[0]?.price?.toLocaleString?.()
                       || '2,500')}
-                    <span className={`text-lg ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                    <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                   </div>
                   <ul className="mb-6 text-left space-y-2">
                     {content.pricing.packages[0].features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-green-500'}`} />
-                        <span className={slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
+                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
+                        <span className={isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
                       </li>
                     ))}
                   </ul>
@@ -3144,13 +4638,13 @@ Please confirm my order. Thank you!`;
 
               {/* 2nd Pack */}
               <motion.div
-                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
+                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <div className={`p-4 text-white text-center ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-yellow-600 to-yellow-700' : 'bg-red-700'}`}>
-                  <h3 className={`text-xl font-bold ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-black' : 'text-white'}`}>
+                <div className={`p-4 text-white text-center ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-600 to-yellow-700' : 'bg-red-700'}`}>
+                  <h3 className={`text-xl font-bold ${isLuxuryProduct ? 'text-black' : 'text-white'}`}>
                     {slug === 'slim-n-shape-garcinia-cambogia-capsules'
                       ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || content.pricing.packages[1].title)
                       : slug === 'b-maxtime-super-active'
@@ -3161,35 +4655,35 @@ Please confirm my order. Thank you!`;
                 <div className="p-6 text-center">
                   {slug === 'shahi-sultan-health-booster' ? (
                     <>
-                      <div className={`text-4xl font-bold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold mb-2 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || '4,500')}
-                        <span className={`text-lg ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount ? (
-                        <div className={`text-sm inline-block px-2 py-1 rounded mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
+                        <div className={`text-sm inline-block px-2 py-1 rounded mb-4 ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
                           {content.pricing.save} {productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount}
                         </div>
                       ) : null}
                     </>
                   ) : (
                     <div className="text-center mb-4">
-                      <div className={`text-4xl font-bold ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || '4,500')}
-                        <span className={`text-lg ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {slug === 'slim-n-shape-garcinia-cambogia-capsules' ? (
                         productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount ? (
-                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
+                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
                             {content.pricing.save} {productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount}
                           </div>
                         ) : null
                       ) : slug === 'b-maxtime-super-active' ? null : (
                         productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount ? (
-                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
+                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
                             {content.pricing.save} {(productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount?.toLocaleString?.()
                               || productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount
                               || 500)}
@@ -3202,8 +4696,8 @@ Please confirm my order. Thank you!`;
                   <ul className="mb-6 text-left space-y-2">
                     {content.pricing.packages[1].features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-green-500'}`} />
-                        <span className={slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
+                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
+                        <span className={isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
                       </li>
                     ))}
                   </ul>
@@ -3212,35 +4706,31 @@ Please confirm my order. Thank you!`;
 
               {/* 3rd Pack */}
               <motion.div
-                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
+                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <div className={`p-4 text-white text-center relative overflow-hidden ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-yellow-700 to-yellow-800' : 'bg-red-700'}`}>
-                  <h3 className={`text-xl font-bold ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-black' : 'text-white'}`}>
+                <div className={`p-4 text-white text-center ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-700 to-yellow-800' : 'bg-red-700'}`}>
+                  <h3 className={`text-xl font-bold ${isLuxuryProduct ? 'text-black' : 'text-white'}`}>
                     {slug === 'slim-n-shape-garcinia-cambogia-capsules'
                       ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || content.pricing.packages[2].title)
                       : slug === 'b-maxtime-super-active'
                         ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || '3 Packs')
                         : (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || content.pricing.packages[2].title)}
                   </h3>
-                  {/* Optional Popular badge */}
-                  <span className={`absolute top-2 right-2 text-xs font-bold px-2 py-1 rounded ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-black text-yellow-400' : 'bg-yellow-300 text-red-800'}`}>
-                    {content.pricing.popular}
-                  </span>
                 </div>
                 <div className="p-6 text-center">
                   {slug === 'shahi-sultan-health-booster' ? (
                     <>
-                      <div className={`text-4xl font-bold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold mb-2 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || '6,000')}
-                        <span className={`text-lg ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount ? (
-                        <div className={`text-sm inline-block px-2 py-1 rounded mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
+                        <div className={`text-sm inline-block px-2 py-1 rounded mb-4 ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
                           {content.pricing.save} {(productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount?.toLocaleString?.()
                             || productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount
                             || '1,500')}
@@ -3249,21 +4739,21 @@ Please confirm my order. Thank you!`;
                     </>
                   ) : (
                     <div className="text-center mb-4">
-                      <div className={`text-4xl font-bold ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || '6,000')}
-                        <span className={`text-lg ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {slug === 'slim-n-shape-garcinia-cambogia-capsules' ? (
                         productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount ? (
-                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
+                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
                             {content.pricing.save} {productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount}
                           </div>
                         ) : null
                       ) : slug === 'b-maxtime-super-active' ? null : (
                         productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount ? (
-                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
+                          <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
                             {content.pricing.save} {(productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount?.toLocaleString?.()
                               || productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount
                               || '1,500')}
@@ -3276,8 +4766,8 @@ Please confirm my order. Thank you!`;
                   <ul className="mb-6 text-left space-y-2">
                     {content.pricing.packages[2].features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-green-500'}`} />
-                        <span className={slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
+                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
+                        <span className={isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
                       </li>
                     ))}
                   </ul>
@@ -3291,139 +4781,157 @@ Please confirm my order. Thank you!`;
         <Suspense fallback={<LoadingFallback />}>
           <FAQSection
             language={language}
-            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
-            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
-            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
+            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
+            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
+            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
             ctaLanguage={(slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-garcinia-cambogia-capsules') ? 'en' : undefined}
             slug={slug}
           />
         </Suspense>
 
         {/* Order Form */}
-        <section id="order-form" className={`py-12 md:py-16 text-white ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-black to-gray-900' : 'bg-gradient-to-r from-red-600 to-red-700'}`}>
+        <section id="order-form" className={`py-12 md:py-16 text-white ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-black to-gray-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-950 to-purple-950' : 'bg-gradient-to-r from-red-600 to-red-700'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="max-w-2xl mx-auto" {...fadeInUp}>
               <div className="text-center mb-8">
-                <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-white'}`}>{content.orderForm.title}</h2>
-                <p className={`text-xl ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-red-100'}`}>{content.orderForm.subtitle}</p>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.title}</h2>
+                <p className={`text-xl ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : 'text-red-100'}`}>{content.orderForm.subtitle}</p>
               </div>
 
-              <div className={`p-8 rounded-2xl backdrop-blur-sm ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gray-800/20 border border-yellow-400/30' : 'bg-white/10 border border-white/10'}`}>
+              <div className={`p-8 rounded-2xl backdrop-blur-sm ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gray-800/20 border border-yellow-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-purple-900/30 border border-pink-400/40' : 'bg-white/10 border border-white/10'}`}>
                 <div className="grid gap-6">
                   <div>
-                    <label htmlFor="name" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-white'}`}>{content.orderForm.name} *</label>
+                    <label htmlFor="name" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.name} *</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
+                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200 bg-purple-950 border-pink-400 focus:ring-2 focus:ring-pink-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
                       placeholder={content.orderForm.namePlaceholder}
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-white'}`}>{content.orderForm.phone} *</label>
+                    <label htmlFor="phone" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.phone} *</label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
+                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200 bg-purple-950 border-pink-400 focus:ring-2 focus:ring-pink-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
                       placeholder="03XX-XXXXXXX"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="address" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-white'}`}>{content.orderForm.address} *</label>
+                    <label htmlFor="address" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.address} *</label>
                     <textarea
                       id="address"
                       name="address"
                       value={formData.address}
                       onChange={handleInputChange}
                       rows="3"
-                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
+                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200 bg-purple-950 border-pink-400 focus:ring-2 focus:ring-pink-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
                       placeholder={content.orderForm.addressPlaceholder}
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="city" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-white'}`}>{content.orderForm.city} *</label>
+                    <label htmlFor="city" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.city} *</label>
                     <input
                       type="text"
                       id="city"
                       name="city"
                       value={formData.city}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
+                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200 bg-purple-950 border-pink-400 focus:ring-2 focus:ring-pink-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
                       placeholder={content.orderForm.cityPlaceholder}
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="quantity" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : 'text-white'}`}>{content.orderForm.quantity}</label>
+                    <label htmlFor="quantity" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.quantity}</label>
                     <select
                       id="quantity"
                       name="quantity"
                       value={formData.quantity}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
+                      className={`w-full px-4 py-3 rounded-lg border outline-none ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400 bg-gray-800 border-yellow-400 focus:ring-2 focus:ring-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200 bg-purple-950 border-pink-400 focus:ring-2 focus:ring-pink-400' : 'text-gray-800 border focus:ring-2 focus:ring-yellow-400'}`}
                     >
                       <option value="1">
                         {slug === 'slim-n-shape-tea'
                           ? `1 Pack - Rs ${productConfigs['slim-n-shape-tea']?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs['slim-n-shape-tea']?.pricing?.packages?.[0]?.price}`
                           : (slug === 'slim-n-shape-garcinia-cambogia-capsules'
                             ? `1 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
-                            : (slug === 'b-maxtime-super-active'
-                              ? `1 Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || 1200}`
-                              : (slug === 'shahi-sultan-health-booster'
-                                ? `1 Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
-                                : (slug === 'sultan-shahi-gold-majoon'
+                            : (slug === 'slim-n-shape-fit-booster'
+                              ? `1 Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
+                              : (slug === 'b-maxtime-super-active'
+                                ? `1 Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || 1200}`
+                                : (slug === 'shahi-sultan-health-booster'
                                   ? `1 Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
-                                  : (slug === 'sultan-shahi-gold-tila'
-                                    ? `1 Bottle - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
-                                    : content.orderForm.quantityOptions[0])))))}
+                                  : (slug === 'sultan-shahi-gold-majoon'
+                                    ? `1 Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
+                                    : (slug === 'sultan-shahi-gold-tila'
+                                      ? `1 Bottle - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
+                                      : (slug === 'sultan-shahi-gold-health-booster'
+                                        ? '1 Month Pack - Rs 6,000'
+                                        : (slug === 'malika-shahi-gold-health-booster'
+                                          ? `1 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
+                                          : content.orderForm.quantityOptions[0]))))))))}
                       </option>
                       <option value="2">
                         {slug === 'slim-n-shape-tea'
-                          ? `2 Packs - Rs ${productConfigs['slim-n-shape-tea']?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs['slim-n-shape-tea']?.pricing?.packages?.[1]?.price}`
+                          ? `2 Packs - Rs ${productConfigs['slim-n-shape-tea']?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs['slim-n-shape-tea']?.pricing?.packages?.[1]?.price} (Save Rs. 400)`
                           : (slug === 'slim-n-shape-garcinia-cambogia-capsules'
                             ? `2 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
-                            : (slug === 'b-maxtime-super-active'
-                              ? `2 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || 2000}`
-                              : (slug === 'shahi-sultan-health-booster'
-                                ? `2 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
-                                : (slug === 'sultan-shahi-gold-majoon'
+                            : (slug === 'slim-n-shape-fit-booster'
+                              ? `2 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price} (Save Rs. 500)`
+                              : (slug === 'b-maxtime-super-active'
+                                ? `2 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || 2000}`
+                                : (slug === 'shahi-sultan-health-booster'
                                   ? `2 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
-                                  : (slug === 'sultan-shahi-gold-tila'
-                                    ? `2 Bottles - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
-                                    : content.orderForm.quantityOptions[1])))))}
+                                  : (slug === 'sultan-shahi-gold-majoon'
+                                    ? `2 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
+                                    : (slug === 'sultan-shahi-gold-tila'
+                                      ? `2 Bottles - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
+                                      : (slug === 'sultan-shahi-gold-health-booster'
+                                        ? '2 Month Pack - Rs 11,000 (Save Rs 1,000)'
+                                        : (slug === 'malika-shahi-gold-health-booster'
+                                          ? `2 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
+                                          : content.orderForm.quantityOptions[1]))))))))}
                       </option>
                       <option value="3">
                         {slug === 'slim-n-shape-tea'
-                          ? `3 Packs - Rs ${productConfigs['slim-n-shape-tea']?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs['slim-n-shape-tea']?.pricing?.packages?.[2]?.price}`
+                          ? `3 Packs - Rs ${productConfigs['slim-n-shape-tea']?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs['slim-n-shape-tea']?.pricing?.packages?.[2]?.price} (Save Rs. 600)`
                           : (slug === 'slim-n-shape-garcinia-cambogia-capsules'
                             ? `3 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
-                            : (slug === 'b-maxtime-super-active'
-                              ? `3 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || 3000}`
-                              : (slug === 'shahi-sultan-health-booster'
-                                ? `3 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
-                                : (slug === 'sultan-shahi-gold-majoon'
+                            : (slug === 'slim-n-shape-fit-booster'
+                              ? `3 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price} (Save Rs. 1500)`
+                              : (slug === 'b-maxtime-super-active'
+                                ? `3 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || 3000}`
+                                : (slug === 'shahi-sultan-health-booster'
                                   ? `3 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
-                                  : (slug === 'sultan-shahi-gold-tila'
-                                    ? `3 Bottles - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
-                                    : content.orderForm.quantityOptions[2])))))}
+                                  : (slug === 'sultan-shahi-gold-majoon'
+                                    ? `3 Packs - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
+                                    : (slug === 'sultan-shahi-gold-tila'
+                                      ? `3 Bottles - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
+                                      : (slug === 'sultan-shahi-gold-health-booster'
+                                        ? '3 Month Pack - Rs 16,000 (Best Value)'
+                                        : (slug === 'malika-shahi-gold-health-booster'
+                                          ? `3 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
+                                          : content.orderForm.quantityOptions[2]))))))))}
                       </option>
                     </select>
                   </div>
 
-                  <div className={`p-4 rounded-lg text-center ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'}`}>
+                  <div className={`p-4 rounded-lg text-center ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-yellow-400 text-black' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : 'bg-yellow-400 text-red-800'}`}>
                     <p className="font-bold text-lg">
                       {content.orderForm.total}: Rs {calculatePrice(formData.quantity)}/-
                     </p>
@@ -3432,7 +4940,7 @@ Please confirm my order. Thank you!`;
 
                   <motion.button
                     onClick={handleWhatsAppOrder}
-                    className={`w-full font-bold py-4 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black' : 'bg-green-600 hover:bg-green-700 text-white'}`}
+                    className={`w-full font-bold py-4 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white' : 'bg-green-600 hover:bg-green-700 text-white'}`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -3440,7 +4948,7 @@ Please confirm my order. Thank you!`;
                     <span>{content.orderForm.orderButton}</span>
                   </motion.button>
 
-                  <div className={`text-center ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : 'text-red-100'}`}>
+                  <div className={`text-center ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : 'text-red-100'}`}>
                     <p className="flex items-center justify-center space-x-2">
                       <SafeIcon icon={FiTruck} />
                       <span>{content.orderForm.sameDayDelivery}</span>
