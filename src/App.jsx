@@ -3761,6 +3761,343 @@ function App() {
         }
       ]
     },
+    'bustmax-xl-breast-booster': {
+      title: 'Bustmax XL – Breast Firming & Shape Booster',
+      subtitle: '💗 Beautiful B Shape • Natural Lift • Visible Firmness',
+      badge: 'WOMEN',
+      heroImage: '/images/Bustmax XL Breast Booster.png',
+      
+      // Hero Section
+      features: [
+        'Beautiful B Shape • Natural Lift • Visible Firmness',
+        'Advanced herbal formula',
+        'Internal hormonal balance support',
+        'Tissue nourishment',
+        'No chemicals or side effects'
+      ],
+      tagline: '"Confidence in Every Curve — Naturally Beautiful with Bustmax XL!"',
+      heroSubtitle: 'Bustmax XL aik advanced herbal formula hai jo women ke breast firmness, shape aur elasticity ko naturally improve karta hai. Ye internal hormonal balance aur tissue nourishment ko support karta hai — bina kisi chemical ya side effect ke.',
+      specialPriceAmount: '3,000',
+      
+      // Common Problems Women Face
+      problemsTitle: '💢 Common Problems Women Face',
+      problemsSubtitle: 'Bustmax XL naturally restores balance, firmness, and B-shape confidence without artificial hormones.',
+      problemsList: [
+        'Sagging or shapeless bust after breastfeeding or aging',
+        'Hormonal imbalance affecting firmness',
+        'Weak skin elasticity and poor tone',
+        'Lack of natural lift and roundness',
+        'Dull, uneven breast texture'
+      ],
+      solution: '👉 Bustmax XL naturally restores balance, firmness, and B-shape confidence without artificial hormones.',
+      
+      // Video Section
+      videoId: 'YOUR_BUSTMAX_XL_VIDEO_ID',
+      videoTitle: '🎥 See Bustmax XL in Action',
+      videoSubtitle: 'Watch how Bustmax XL has helped women across Pakistan feel naturally confident and youthful again!',
+      videoCover: '/images/bustmax-xl-video-cover.png',
+      videoDescription: '💃 Don\'t just read — see real women sharing their beautiful transformation stories!',
+      
+      // Real Results Section
+      beforeAfterTitle: '💃 Real Results, Real Women',
+      beforeAfterSubtitle: 'Thousands of satisfied women are loving their new confidence with Bustmax XL!',
+      resultsAccuracy: [
+        '💗 Noticeable lift and tightness in 2–3 weeks',
+        '💗 Softer and smoother skin',
+        '💗 Fuller, rounder shape in 4–6 weeks',
+        '💗 Safe for post-breastfeeding use'
+      ],
+      resultsQuotes: [
+        {
+          text: '"I noticed visible firmness in just 15 days — it really works!"',
+          author: 'Ayesha, Lahore'
+        },
+        {
+          text: '"After weight loss, Bustmax XL helped me restore natural curves again!"',
+          author: 'Rimsha, Islamabad'
+        }
+      ],
+      resultsRating: '⭐ 4.9/5 Rating (Based on 1000+ Verified Users)',
+      
+      // Herbal Power Section
+      herbalSection: {
+        title: '🌿 Herbal Power – Key Natural Ingredients',
+        subtitle: 'Premium natural herbs scientifically proven for breast health and hormonal balance',
+        showIngredients: true,
+        customColumns: [
+          {
+            title: '🌾 Fenugreek Extract (Methi Dana)',
+            description: 'Stimulates breast tissue growth and supports natural hormonal activity.',
+            points: []
+          },
+          {
+            title: '🌸 Fennel Seed Extract (Saunf)',
+            description: 'Contains phytoestrogens that balance female hormones and enhance fullness.',
+            points: []
+          },
+          {
+            title: '🌱 Pueraria Mirifica',
+            description: 'Known for its natural estrogenic properties — restores firmness & improves lift.',
+            points: []
+          },
+          {
+            title: '🍠 Wild Yam Extract',
+            description: 'Regulates hormones, supports breast tissue health, and prevents sagging.',
+            points: []
+          },
+          {
+            title: '🌿 Shatavari (Asparagus Racemosus)',
+            description: 'Boosts female vitality and enhances skin elasticity.',
+            points: []
+          },
+          {
+            title: '🌼 Dong Quai Root',
+            description: 'Improves blood circulation and nourishes breast tissues for better tone.',
+            points: []
+          },
+          {
+            title: '🌳 Moringa Leaf Powder',
+            description: 'Provides essential vitamins and nutrients for strong and healthy tissue structure.',
+            points: []
+          }
+        ],
+        badgesLine: '✅ 100% Natural | ✅ Hormone-Friendly | ✅ Safe & Effective'
+      },
+      
+      // Special Benefits
+      benefitsTitle: '🌟 Special Benefits of Bustmax XL',
+      benefitsList: [
+        '✅ Restores natural B-shape & lift',
+        '✅ Tightens & tones skin tissues',
+        '✅ Boosts hormonal balance naturally',
+        '✅ Reduces sagging and dullness',
+        '✅ Enhances skin glow & elasticity',
+        '✅ 100% herbal, safe, and hormone-friendly'
+      ],
+      
+      // Dosage & Usage Instructions
+      dosageSection: {
+        title: '🕒 Dosage & Usage Instructions',
+        steps: [
+          {
+            stepNumber: '1️⃣',
+            title: 'Take 1 teaspoon (≈5g) of Bustmax XL powder',
+            description: 'After breakfast'
+          },
+          {
+            stepNumber: '2️⃣',
+            title: 'Take 1 teaspoon again',
+            description: 'After dinner'
+          },
+          {
+            stepNumber: '3️⃣',
+            title: 'Mix with lukewarm milk or water',
+            description: 'Twice daily'
+          },
+          {
+            stepNumber: '4️⃣',
+            title: 'Use regularly for 30–45 days',
+            description: 'For visible results'
+          }
+        ],
+        notes: [
+          '💡 Light massage or gentle exercise helps boost results naturally.',
+          '⚠️ Avoid oily food, soft drinks, and late-night meals.'
+        ]
+      },
+      
+      // Affordable Packages
+      pricing: {
+        title: '📦 Affordable Packages',
+        subtitle: 'Choose the perfect package for your breast health journey',
+        packages: [
+          {
+            title: '1 Pack',
+            headerTitle: '1 Pack (30 Days)',
+            price: 3000,
+            features: [
+              '250g (Powder Form)',
+              'Standard',
+              'Free Delivery',
+              'Cash on Delivery'
+            ]
+          },
+          {
+            title: '2 Packs',
+            headerTitle: '2 Packs (60 Days)',
+            price: 5500,
+            saveAmount: 500,
+            features: [
+              '500g (Powder Form)',
+              'Save Rs. 500',
+              'Free Delivery',
+              'Cash on Delivery'
+            ]
+          },
+          {
+            title: '3 Packs',
+            headerTitle: '3 Packs (90 Days)',
+            price: 8000,
+            saveAmount: 1000,
+            features: [
+              '750g (Powder Form)',
+              'Best Value - Save Rs. 1,000',
+              'Free Delivery',
+              'Cash on Delivery'
+            ],
+            recommended: true
+          }
+        ],
+        shelfLife: '📦 Shelf Life: 3 Years',
+        madeIn: '🌿 Made by The Planner Herbal Int., Pakistan'
+      },
+      
+      // Results Timeline
+      resultsTimeline: {
+        title: '💡 Results You Can Expect',
+        timeline: [
+          { duration: '2–3 Weeks', change: 'Noticeable firmness & tone' },
+          { duration: '4–6 Weeks', change: 'Lift, shape & elasticity improve' },
+          { duration: '8–10 Weeks', change: 'Natural B-shape maintained' },
+          { duration: 'Regular Use', change: 'Balanced hormones & lasting results' }
+        ]
+      },
+      
+      // Testimonials Section
+      testimonialsTitle: '💬 What Our Customers Say',
+      testimonialsDescription: '⭐ Trusted by Women Nationwide | 🩷 100% Herbal Formula – No Chemicals, No Hormones',
+      testimonials: [
+        {
+          id: 1,
+          name: 'Hira',
+          age: 29,
+          location: 'Karachi',
+          rating: 5,
+          text: 'My confidence is back! Bustmax XL gave me natural lift and tone.',
+          image: 'https://i.pravatar.cc/150?img=1'
+        },
+        {
+          id: 2,
+          name: 'Minaal',
+          age: 31,
+          location: 'Multan',
+          rating: 5,
+          text: 'Best herbal solution, results start in 2 weeks.',
+          image: 'https://i.pravatar.cc/150?img=5'
+        },
+        {
+          id: 3,
+          name: 'Sadia',
+          age: 27,
+          location: 'Hyderabad',
+          rating: 5,
+          text: 'Totally safe and effective — loved it!',
+          image: 'https://i.pravatar.cc/150?img=9'
+        }
+      ],
+      
+      // FAQs
+      faqTitle: '❓ Frequently Asked Questions (FAQs)',
+      faqSubtitle: 'Everything you need to know about Bustmax XL',
+      faqs: [
+        {
+          question: 'Q1: What is Bustmax XL used for?',
+          answer: '➡️ For breast firming, shape enhancement, and hormonal balance.'
+        },
+        {
+          question: 'Q2: When will I start seeing results?',
+          answer: '➡️ Within 2–3 weeks you\'ll feel visible tightness and lift.'
+        },
+        {
+          question: 'Q3: Is it safe for all women?',
+          answer: '➡️ 100% herbal — safe for all women above 18 years.'
+        },
+        {
+          question: 'Q4: Can it be used after breastfeeding or weight loss?',
+          answer: '➡️ Yes! Perfect for restoring firmness and shape.'
+        },
+        {
+          question: 'Q5: Does it increase size?',
+          answer: '➡️ Focuses on firmness, but enhances fullness through hormonal support.'
+        },
+        {
+          question: 'Q6: Any side effects?',
+          answer: '➡️ None — it\'s chemical-free and made from natural herbs only.'
+        },
+        {
+          question: 'Q7: How long should I use it?',
+          answer: '➡️ Minimum 30–45 days for visible results; 90 days for full course.'
+        },
+        {
+          question: 'Q8: Can teenagers or older women use it?',
+          answer: '➡️ Yes, recommended for 18+ and even beneficial post-menopause.'
+        },
+        {
+          question: 'Q9: Can I combine it with other herbal products?',
+          answer: '➡️ Yes, safe to use with other Planner Herbal supplements.'
+        }
+      ],
+      
+      // Urdu Translation
+      i18n: {
+        ur: {
+          problemsTitle: '💢 عام مسائل جن کا خواتین کو سامنا ہے',
+          problemsSubtitle: 'Bustmax XL قدرتی طور پر توازن، مضبوطی اور B-شکل کا اعتماد بحال کرتا ہے بغیر مصنوعی ہارمونز کے۔',
+          problemsList: [
+            'دودھ پلانے یا عمر بڑھنے کے بعد ڈھیلا پن یا بے شکل سینہ',
+            'ہارمونل عدم توازن جو مضبوطی کو متاثر کرتا ہے',
+            'کمزور جلد کی لچک اور خراب ٹون',
+            'قدرتی لفٹ اور گولائی کی کمی',
+            'پھیکا، غیر مساوی سینے کی ساخت'
+          ],
+          solution: 'Bustmax XL قدرتی طور پر توازن، مضبوطی اور B-شکل کا اعتماد بحال کرتا ہے بغیر مصنوعی ہارمونز کے۔ ◄',
+          herbalSection: {
+            title: '🌿 جڑی بوٹیوں کی طاقت – کلیدی قدرتی اجزاء',
+            subtitle: 'چھاتی کی صحت اور ہارمونل توازن کے لیے سائنسی طور پر ثابت شدہ قدرتی جڑی بوٹیاں',
+            customColumns: [
+              {
+                title: '🌾 میتھی کا عرق (Fenugreek Extract)',
+                description: 'چھاتی کے ٹشو کی نشوونما کو متحرک کرتا ہے اور قدرتی ہارمونل سرگرمی کو سپورٹ کرتا ہے۔'
+              },
+              {
+                title: '🌸 سونف کا عرق (Fennel Seed Extract)',
+                description: 'فائٹو ایسٹروجن پر مشتمل ہے جو خواتین کے ہارمونز کو متوازن کرتا ہے اور بھرپن بڑھاتا ہے۔'
+              },
+              {
+                title: '🌱 پیوریریا میریفیکا (Pueraria Mirifica)',
+                description: 'قدرتی ایسٹروجینک خصوصیات کے لیے مشہور — مضبوطی بحال کرتا ہے اور لفٹ بہتر بناتا ہے۔'
+              },
+              {
+                title: '🍠 جنگلی یام کا عرق (Wild Yam Extract)',
+                description: 'ہارمونز کو منظم کرتا ہے، چھاتی کے ٹشو کی صحت کو سپورٹ کرتا ہے، اور ڈھیلا پن روکتا ہے۔'
+              },
+              {
+                title: '🌿 شتاوری (Asparagus Racemosus)',
+                description: 'خواتین کی توانائی بڑھاتا ہے اور جلد کی لچک میں اضافہ کرتا ہے۔'
+              },
+              {
+                title: '🌼 ڈونگ کوائی جڑ (Dong Quai Root)',
+                description: 'خون کی گردش بہتر بناتا ہے اور بہتر ٹون کے لیے چھاتی کے ٹشو کو غذائیت فراہم کرتا ہے۔'
+              },
+              {
+                title: '🌳 مورنگا کے پتوں کا پاؤڈر (Moringa Leaf Powder)',
+                description: 'مضبوط اور صحت مند ٹشو کی ساخت کے لیے ضروری وٹامنز اور غذائی اجزاء فراہم کرتا ہے۔'
+              }
+            ],
+            badgesLine: '✅ 100% قدرتی | ✅ ہارمون دوست | ✅ محفوظ اور موثر'
+          },
+          benefitsTitle: '🌟 Bustmax XL کے خصوصی فوائد',
+          benefitsList: [
+            '✅ قدرتی B-شکل اور لفٹ بحال کرتا ہے',
+            '✅ جلد کے ٹشو کو سخت اور ٹون کرتا ہے',
+            '✅ قدرتی طور پر ہارمونل توازن بڑھاتا ہے',
+            '✅ ڈھیلا پن اور پھیکا پن کم کرتا ہے',
+            '✅ جلد کی چمک اور لچک میں اضافہ کرتا ہے',
+            '✅ 100% جڑی بوٹیوں سے، محفوظ، اور ہارمون دوست'
+          ]
+        }
+      }
+    },
 
   };
 
@@ -4543,8 +4880,8 @@ Please confirm my order. Thank you!`;
           </div>
         </section>
 
-        {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster and BustMax Oil */}
-        {(slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil') && productConfigs[slug]?.dosageSection?.steps && (
+        {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster, BustMax Oil, and Bustmax XL */}
+        {(slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') && productConfigs[slug]?.dosageSection?.steps && (
           <section className={`py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
@@ -4684,7 +5021,7 @@ Please confirm my order. Thank you!`;
           </section>
         )}
 
-        {!(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'g-max-passion' || slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil') && (
+        {!(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'g-max-passion' || slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') && (
           <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gray-900' : 'bg-yellow-50'}`}>
             <div className="container mx-auto px-4">
               <motion.div className="max-w-4xl mx-auto" {...fadeInUp}>
@@ -4999,8 +5336,8 @@ Please confirm my order. Thank you!`;
               </motion.div>
             </div>
             
-            {/* Shelf Life & Made In - for BustMax Oil */}
-            {slug === 'bustmax-breast-oil' && productConfigs[slug]?.pricing?.shelfLife && (
+            {/* Shelf Life & Made In - for BustMax Oil and Bustmax XL */}
+            {(slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') && productConfigs[slug]?.pricing?.shelfLife && (
               <motion.div className="text-center mt-8 space-y-2" {...fadeInUp}>
                 <p className="text-lg text-gray-700 font-medium">{productConfigs[slug].pricing.shelfLife}</p>
                 <p className="text-lg text-gray-700 font-medium">{productConfigs[slug].pricing.madeIn}</p>
@@ -5009,13 +5346,44 @@ Please confirm my order. Thank you!`;
           </div>
         </section>
 
+        {/* Results Timeline - for Bustmax XL */}
+        {slug === 'bustmax-xl-breast-booster' && productConfigs[slug]?.resultsTimeline && (
+          <section className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50">
+            <div className="container mx-auto px-4">
+              <motion.div className="max-w-4xl mx-auto" {...fadeInUp}>
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+                  {productConfigs[slug].resultsTimeline.title}
+                </h2>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-pink-500 to-red-500 text-white">
+                        <th className="px-6 py-4 text-left font-semibold">Duration</th>
+                        <th className="px-6 py-4 text-left font-semibold">Visible Change</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {productConfigs[slug].resultsTimeline.timeline.map((item, index) => (
+                        <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-pink-50 transition-colors`}>
+                          <td className="px-6 py-4 font-medium text-gray-800 border-b border-gray-200">{item.duration}</td>
+                          <td className="px-6 py-4 text-gray-700 border-b border-gray-200">{item.change}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
         {/* FAQ Section - Lazy Loaded */}
         <Suspense fallback={<LoadingFallback />}>
           <FAQSection
             language={language}
-            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
-            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
-            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
+            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
+            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
+            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
             ctaLanguage={(slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-garcinia-cambogia-capsules') ? 'en' : undefined}
             slug={slug}
           />
