@@ -1625,10 +1625,12 @@ function App() {
       subtitle: 'Natural Fertility & Hormonal Support for Women',
       description: 'Boost your reproductive health, hormonal balance, and energy naturally with our premium herbal formula.',
       badge: 'PREMIUM',
+      heroImage: 'https://i.ibb.co/G37PNcPH/G-Max-Passion.png',
       // Video Section
       videoId: 'YOUR_YOUTUBE_VIDEO_ID',
       videoTitle: '🌸 See G-Max Passion in Action',
       videoSubtitle: 'Watch how G-Max Passion has helped women across Pakistan restore their natural balance, energy, and fertility.',
+      videoCover: 'https://i.ibb.co/wF3KZHgg/G-Max-Passion-Video-Section.png',
       videoDescription: 'Don\'t just take our word for it — see the real stories and transformations of confident, healthy women who trusted G-Max Passion!',
       features: [
         '🌸 Supports conception & fertility',
@@ -1696,44 +1698,87 @@ function App() {
           {
             name: '⚡ Horny Goat Weed',
             description: 'Supports reproductive health, blood flow, and sexual wellness',
-            image: '/images/Horny-Goat-Weed.png',
+            image: 'https://i.ibb.co/TNdrLD0/Horny-Goat-Weed.png',
             alt: 'Horny Goat Weed herbal supplement for women\'s reproductive health and wellness',
+            title: 'Horny Goat Weed - Supports reproductive health, blood flow, and sexual wellness',
             seoDescription: 'Horny Goat Weed extract that supports reproductive health, improves blood flow, and enhances sexual wellness for women'
           },
           {
             name: '🌸 Ashwagandha',
             description: 'Reduces stress, boosts energy, and supports emotional well-being',
-            image: '/images/Ashwagandha.png',
+            image: 'https://i.ibb.co/210D7HdN/Ashwagandha.png',
             alt: 'Ashwagandha adaptogenic herb for stress reduction and energy boost',
+            title: 'Ashwagandha - Reduces stress, boosts energy, and supports emotional well-being',
             seoDescription: 'Pure Ashwagandha extract that reduces stress, boosts energy levels, and supports emotional well-being for women'
           },
           {
             name: '💖 Tribulus Terrestris',
             description: 'Enhances fertility, balances hormones, and improves sexual drive',
-            image: '/images/Tribulus-Terrestris.png',
+            image: 'https://i.ibb.co/1JPDgVLg/Tribulus-Terrestris.png',
             alt: 'Tribulus Terrestris herb for fertility enhancement and hormonal balance',
+            title: 'Tribulus Terrestris - Enhances fertility, balances hormones, and improves sexual drive',
             seoDescription: 'Tribulus Terrestris extract that enhances fertility, balances hormones naturally, and improves sexual drive in women'
           },
           {
             name: '🍊 Vitamins & Minerals',
             description: 'B6, B12, C, Zinc, Folic Acid, Iron, Selenium - Support egg quality, hormone regulation, immunity, and overall reproductive health',
-            image: '/images/Vitamins-Minerals.png',
+            image: 'https://i.ibb.co/cKznGzjS/Vitamins-Minerals.png',
             alt: 'Essential vitamins and minerals for women\'s reproductive health',
+            title: 'Vitamins & Minerals - Support egg quality, hormone regulation, immunity, and reproductive health',
             seoDescription: 'Complete blend of B6, B12, C, Zinc, Folic Acid, Iron, and Selenium to support egg quality, hormone regulation, immunity, and reproductive health'
           }
         ]
       },
       benefitsTitle: language === 'en' ? '🌸 Benefits of G-Max Passion – Women\'s Fertility & Hormonal Support' : '🌸 جی میکس پاشن کے فوائد – خواتین کی زرخیزی اور ہارمونل سپورٹ',
       benefitsList: [
-        '✨ Promotes Conception & Fertility',
-        '✨ Supports Hormonal Balance Naturally',
-        '✨ Enhances Reproductive Health',
-        '✨ Boosts Energy & Vitality',
-        '✨ Reduces Stress & Anxiety',
-        '✨ Strengthens Uterus & Reproductive Organs',
-        '✨ Supports Egg Quality & Ovulation',
-        '✨ Improves Mood & Emotional Well-being',
-        '✨ 100% Herbal & Safe'
+        {
+          text: 'Promotes Conception & Fertility',
+          image: 'https://i.ibb.co/LXZ1TPNc/Promotes-Conception-Fertility.png',
+          alt: 'Promotes Conception Fertility',
+          title: 'Promotes Conception & Fertility'
+        },
+        {
+          text: 'Supports Hormonal Balance Naturally',
+          image: 'https://i.ibb.co/HDJsJ5QL/Supports-Hormonal-Balance-Naturally.png',
+          alt: 'Supports Hormonal Balance Naturally',
+          title: 'Supports Hormonal Balance Naturally'
+        },
+        {
+          text: 'Enhances Reproductive Health',
+          image: 'https://i.ibb.co/Ngg8XgnW/Enhances-Reproductive-Health.png',
+          alt: 'Enhances Reproductive Health',
+          title: 'Enhances Reproductive Health'
+        },
+        {
+          text: 'Boosts Energy & Vitality',
+          image: 'https://i.ibb.co/ZCzFnMM/Boosts-Energy-Vitality.png',
+          alt: 'Boosts Energy Vitality',
+          title: 'Boosts Energy & Vitality'
+        },
+        {
+          text: 'Reduces Stress & Anxiety',
+          image: 'https://i.ibb.co/y3pMV7D/Reduces-Stress-Anxiety.png',
+          alt: 'Reduces Stress Anxiety',
+          title: 'Reduces Stress & Anxiety'
+        },
+        {
+          text: 'Strengthens Uterus & Reproductive Organs',
+          image: 'https://i.ibb.co/vCRvnvL6/Strengthens-Uterus-Reproductive-Organs.png',
+          alt: 'Strengthens Uterus Reproductive Organs',
+          title: 'Strengthens Uterus & Reproductive Organs'
+        },
+        {
+          text: 'Improves Mood & Emotional Well-being',
+          image: 'https://i.ibb.co/zVC2WxJH/Improves-Mood-Emotional-Well-being.png',
+          alt: 'Improves Mood Emotional Well-being',
+          title: 'Improves Mood & Emotional Well-being'
+        },
+        {
+          text: '100% Herbal & Safe',
+          image: 'https://i.ibb.co/G3x1wFdq/100-Herbal-Safe.png',
+          alt: '100 Herbal Safe',
+          title: '100% Herbal & Safe'
+        }
       ],
       // Usage/Dosage Section
       usage: {
@@ -1818,15 +1863,54 @@ function App() {
           solution: 'جی میکس پاشن قدرتی طور پر خواتین کی تولیدی صحت، زرخیزی اور ہارمونل توازن کو سپورٹ کرتا ہے۔',
           benefitsTitle: '🌸 جی میکس پاشن کے فوائد – خواتین کی زرخیزی اور ہارمونل سپورٹ',
           benefitsList: [
-            '✨ حمل اور زرخیزی کو فروغ دیتا ہے',
-            '✨ قدرتی طور پر ہارمونل توازن کو سپورٹ کرتا ہے',
-            '✨ تولیدی صحت کو بہتر بناتا ہے',
-            '✨ توانائی اور قوت میں اضافہ کرتا ہے',
-            '✨ تناؤ اور پریشانی کو کم کرتا ہے',
-            '✨ رحم اور تولیدی اعضاء کو مضبوط بناتا ہے',
-            '✨ انڈے کے معیار اور بیضہ دانی کو سپورٹ کرتا ہے',
-            '✨ موڈ اور جذباتی صحت کو بہتر بناتا ہے',
-            '✨ 100% جڑی بوٹیوں پر مبنی اور محفوظ'
+            {
+              text: 'حمل اور زرخیزی کو فروغ دیتا ہے',
+              image: 'https://i.ibb.co/LXZ1TPNc/Promotes-Conception-Fertility.png',
+              alt: 'حمل اور زرخیزی',
+              title: 'حمل اور زرخیزی کو فروغ دیتا ہے'
+            },
+            {
+              text: 'قدرتی طور پر ہارمونل توازن کو سپورٹ کرتا ہے',
+              image: 'https://i.ibb.co/HDJsJ5QL/Supports-Hormonal-Balance-Naturally.png',
+              alt: 'ہارمونل توازن',
+              title: 'قدرتی طور پر ہارمونل توازن کو سپورٹ کرتا ہے'
+            },
+            {
+              text: 'تولیدی صحت کو بہتر بناتا ہے',
+              image: 'https://i.ibb.co/Ngg8XgnW/Enhances-Reproductive-Health.png',
+              alt: 'تولیدی صحت',
+              title: 'تولیدی صحت کو بہتر بناتا ہے'
+            },
+            {
+              text: 'توانائی اور قوت میں اضافہ کرتا ہے',
+              image: 'https://i.ibb.co/ZCzFnMM/Boosts-Energy-Vitality.png',
+              alt: 'توانائی اور قوت',
+              title: 'توانائی اور قوت میں اضافہ کرتا ہے'
+            },
+            {
+              text: 'تناؤ اور پریشانی کو کم کرتا ہے',
+              image: 'https://i.ibb.co/y3pMV7D/Reduces-Stress-Anxiety.png',
+              alt: 'تناؤ اور پریشانی',
+              title: 'تناؤ اور پریشانی کو کم کرتا ہے'
+            },
+            {
+              text: 'رحم اور تولیدی اعضاء کو مضبوط بناتا ہے',
+              image: 'https://i.ibb.co/vCRvnvL6/Strengthens-Uterus-Reproductive-Organs.png',
+              alt: 'رحم اور تولیدی اعضاء',
+              title: 'رحم اور تولیدی اعضاء کو مضبوط بناتا ہے'
+            },
+            {
+              text: 'موڈ اور جذباتی صحت کو بہتر بناتا ہے',
+              image: 'https://i.ibb.co/zVC2WxJH/Improves-Mood-Emotional-Well-being.png',
+              alt: 'موڈ اور جذباتی صحت',
+              title: 'موڈ اور جذباتی صحت کو بہتر بناتا ہے'
+            },
+            {
+              text: '100% جڑی بوٹیوں پر مبنی اور محفوظ',
+              image: 'https://i.ibb.co/G3x1wFdq/100-Herbal-Safe.png',
+              alt: 'جڑی بوٹیوں پر مبنی محفوظ',
+              title: '100% جڑی بوٹیوں پر مبنی اور محفوظ'
+            }
           ],
           usage: {
             title: '💊 خوراک اور استعمال کی ہدایات – جی میکس پاشن ہیلتھ بوسٹر',
@@ -1997,7 +2081,28 @@ function App() {
         weeksPrefix: '',
         weeksSuffix: ' weeks of use'
       },
-      beforeAfterSets: [] // Empty array to hide the slider
+      beforeAfterSets: [
+        {
+          id: 1,
+          before: 'https://i.ibb.co/2Yp0dppb/Before-G-Max-Passion-4-Weeks.png',
+          after: 'https://i.ibb.co/KPspNss/After-G-Max-Passion-4-Weeks.png',
+          duration: 4,
+          beforeAlt: 'Before G-Max Passion 4 Weeks',
+          afterAlt: 'After G-Max Passion 4 Weeks',
+          beforeTitle: 'Before G-Max Passion - 4 Weeks',
+          afterTitle: 'After G-Max Passion - 4 Weeks'
+        },
+        {
+          id: 2,
+          before: 'https://i.ibb.co/Cs1pM2rW/Before-G-Max-Passion-8-Weeks.png',
+          after: 'https://i.ibb.co/PstmbgYQ/After-G-Max-Passion-8-Weeks.png',
+          duration: 8,
+          beforeAlt: 'Before G-Max Passion 8 Weeks',
+          afterAlt: 'After G-Max Passion 8 Weeks',
+          beforeTitle: 'Before G-Max Passion - 8 Weeks',
+          afterTitle: 'After G-Max Passion - 8 Weeks'
+        }
+      ]
     },
     'malika-shahi-gold-health-booster': {
       title: 'Malika Shahi Gold Health Booster',
