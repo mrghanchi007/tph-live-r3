@@ -2109,6 +2109,7 @@ function App() {
       subtitle: 'Premium Herbal Formula for Fertility, Hormonal Balance & Overall Wellness',
       description: 'Malika Shahi Gold is a premium herbal health booster specially formulated for women to support fertility, hormonal balance, energy, and overall wellness.',
       badge: 'PREMIUM',
+      heroImage: 'https://i.ibb.co/JwdB46CD/Malka-Shahi-Gold-Health-Booster-Hero-Section.png',
       features: [
         '✨ Support Fertility & Reproductive Health',
         '✨ Balance Hormones Naturally',
@@ -2136,6 +2137,7 @@ function App() {
       // Video Section
       videoTitle: '🎥 See Malika Shahi Gold Health Booster in Action',
       videoSubtitle: 'Watch how Malika Shahi Gold has transformed the lives of women across Pakistan.',
+      videoCover: 'https://i.ibb.co/HL5XXdW5/Malka-Shahi-Gold-Health-Booster-Video-Section.png',
       videoId: 'dQw4w9WgXcQ', // Replace with actual YouTube video ID
       videoFooter: '💖 Don\'t just take our word for it — see the real results for yourself!',
       // Pricing Packages
@@ -2202,26 +2204,24 @@ function App() {
       },
       beforeAfterSets: [
         {
-          weeks: 4,
-          before: {
-            image: '/images/before-after/women-before-1.jpg',
-            description: '😔 Irregular cycles, low energy, mood swings, stress'
-          },
-          after: {
-            image: '/images/before-after/women-after-1.jpg',
-            description: '✨ Balanced hormones, improved energy, better mood, reduced stress'
-          }
+          id: 1,
+          before: 'https://i.ibb.co/v4q4kpxQ/4-Weeks-of-Use-Real-Women-Transformation.png',
+          after: 'https://i.ibb.co/yBP2fps7/Real-Women-Real-Change-Wellness-Journey.png',
+          duration: 4,
+          beforeAlt: '4 Weeks of Use Real Women Transformation',
+          afterAlt: 'Real Women Real Change Wellness Journey',
+          beforeTitle: '4 Weeks of Use - Real Women Transformation',
+          afterTitle: 'Real Women Real Change - Wellness Journey'
         },
         {
-          weeks: 8,
-          before: {
-            image: '/images/before-after/women-before-2.jpg',
-            description: '😞 Difficulty in conception, fatigue, low confidence'
-          },
-          after: {
-            image: '/images/before-after/women-after-2.jpg',
-            description: '🌸 Improved fertility, high vitality, emotional stability, renewed confidence'
-          }
+          id: 2,
+          before: 'https://i.ibb.co/7tbcYtwD/8-Weeks-of-Use-Hormonal-Balance-Restored.png',
+          after: 'https://i.ibb.co/bRXhCYWp/Empowered-Transformation-Balanced-Hormones-Confidence.png',
+          duration: 8,
+          beforeAlt: '8 Weeks of Use Hormonal Balance Restored',
+          afterAlt: 'Empowered Transformation Balanced Hormones Confidence',
+          beforeTitle: '8 Weeks of Use - Hormonal Balance Restored',
+          afterTitle: 'Empowered Transformation - Balanced Hormones & Confidence'
         }
       ],
       // Herbal Power Section
@@ -2235,71 +2235,81 @@ function App() {
             name: 'L-Carnitine',
             icon: '⚡',
             benefit: 'Supports egg quality & energy production',
-            image: '/images/ingredients/l-carnitine.jpg',
-            alt: 'L-Carnitine for egg quality and energy'
+            image: 'https://i.ibb.co/B50Fzdyd/L-Carnitine.png',
+            alt: 'L-Carnitine for egg quality and energy',
+            title: 'L-Carnitine - Supports egg quality & energy production'
           },
           {
             name: 'L-Arginine',
             icon: '💖',
             benefit: 'Improves blood flow & reproductive health',
-            image: '/images/ingredients/l-arginine.jpg',
-            alt: 'L-Arginine for reproductive health'
+            image: 'https://i.ibb.co/k63vXthF/L-Arginine.png',
+            alt: 'L-Arginine for reproductive health',
+            title: 'L-Arginine - Improves blood flow & reproductive health'
           },
           {
             name: 'Acetyl-L-Carnitine',
             icon: '🌸',
             benefit: 'Protects eggs from oxidative stress',
-            image: '/images/ingredients/acetyl-l-carnitine.jpg',
-            alt: 'Acetyl-L-Carnitine for egg protection'
+            image: 'https://i.ibb.co/GfrKWVDH/Acetyl-L-Carnitine.png',
+            alt: 'Acetyl-L-Carnitine for egg protection',
+            title: 'Acetyl-L-Carnitine - Protects eggs from oxidative stress'
           },
           {
             name: 'Vitamin C',
             icon: '🍊',
             benefit: 'Boosts immunity & maintains hormonal balance',
-            image: '/images/ingredients/vitamin-c.jpg',
-            alt: 'Vitamin C for immunity and hormones'
+            image: 'https://i.ibb.co/zhjLsT52/Vitamin-C.png',
+            alt: 'Vitamin C for immunity and hormones',
+            title: 'Vitamin C - Boosts immunity & maintains hormonal balance'
           },
           {
             name: 'Vitamin E',
             icon: '💎',
             benefit: 'Protects cells & improves fertility',
-            image: '/images/ingredients/vitamin-e.jpg',
-            alt: 'Vitamin E for fertility'
+            image: 'https://i.ibb.co/0VFfX5KW/Vitamin-E.png',
+            alt: 'Vitamin E for fertility',
+            title: 'Vitamin E - Protects cells & improves fertility'
           },
           {
             name: 'Zinc',
             icon: '⚖️',
             benefit: 'Balances hormones & supports ovulation',
-            image: '/images/ingredients/zinc.jpg',
-            alt: 'Zinc for hormonal balance'
+            image: 'https://i.ibb.co/tMVHc56S/Zinc.png',
+            alt: 'Zinc for hormonal balance',
+            title: 'Zinc - Balances hormones & supports ovulation'
           },
           {
             name: 'Folic Acid',
             icon: '🌱',
             benefit: 'Essential for healthy egg development & conception',
-            image: '/images/ingredients/folic-acid.jpg',
-            alt: 'Folic Acid for egg development'
+            image: 'https://i.ibb.co/yFjrXmWJ/Folic-Acid.png',
+            alt: 'Folic Acid for egg development',
+            title: 'Folic Acid - Essential for healthy egg development & conception'
           },
           {
             name: 'Vitamin B6 & B12',
             icon: '🧠',
             benefit: 'Improve mood, energy, and reproductive health',
-            image: '/images/ingredients/vitamin-b.jpg',
-            alt: 'Vitamin B6 and B12 for mood and energy'
+            image: 'https://i.ibb.co/Vc48XYtp/Vitamin-B6-B12.png',
+            alt: 'Vitamin B6 and B12 for mood and energy',
+            title: 'Vitamin B6 & B12 - Improve mood, energy, and reproductive health'
           },
           {
             name: 'Selenium',
             icon: '🛡️',
             benefit: 'Antioxidant support for egg and reproductive health',
-            image: '/images/ingredients/selenium.jpg',
-            alt: 'Selenium for reproductive health'
+            image: 'https://i.ibb.co/FqsM6N5b/Selenium.png',
+            alt: 'Selenium for reproductive health',
+            title: 'Selenium - Antioxidant support for egg and reproductive health'
           },
           {
             name: 'Maca Root & Ashwagandha',
             icon: '🌸',
             benefit: 'Reduce stress, boost vitality & emotional well-being',
-            image: '/images/ingredients/maca-ashwagandha.jpg',
-            alt: 'Maca Root and Ashwagandha for stress relief'
+            image: 'https://i.ibb.co/bnPnqPj/Maca-Root-Ashwagandha.png',
+            alt: 'Maca Root and Ashwagandha for stress relief',
+            title: 'Maca Root & Ashwagandha - Reduce stress, boost vitality & emotional well-being'
           }
         ],
         badgesLine: '✅ 100% Natural  |  ✅ Clinically Researched  |  ✅ Safe & Effective for Long-Term Use'
@@ -2307,15 +2317,60 @@ function App() {
       // Benefits Section
       benefitsTitle: '🌸 Benefits of Malika Shahi Gold Health Booster',
       benefitsList: [
-        '✨ Promotes Conception & Fertility - Supports egg quality, ovulation, and healthy fertilization',
-        '✨ Balances Hormones Naturally - Reduces irregular cycles and supports emotional stability',
-        '✨ Improves Reproductive Health - Strengthens female reproductive system & supports implantation',
-        '✨ Boosts Energy & Vitality - Enhances stamina, reduces fatigue, and promotes daily wellness',
-        '✨ Reduces Stress & Anxiety - Adaptogenic herbs support mental clarity & relaxation',
-        '✨ Supports Healthy Pregnancy - Provides essential nutrients for egg and embryo development',
-        '✨ Improves Mood & Confidence - Restores balance and enhances emotional well-being',
-        '✨ Enhances Pleasure & Intimacy - Promotes natural desire, energy, and confidence',
-        '✨ 100% Natural & Safe - No harmful chemicals or artificial additives'
+        {
+          text: 'Promotes Conception & Fertility',
+          image: 'https://i.ibb.co/ZR6NV9G2/Promotes-Conception-Fertility.png',
+          alt: 'Promotes Conception Fertility',
+          title: 'Promotes Conception & Fertility - Supports egg quality, ovulation, and healthy fertilization'
+        },
+        {
+          text: 'Balances Hormones Naturally',
+          image: 'https://i.ibb.co/RGKcXqjX/Balances-Hormones-Naturally.png',
+          alt: 'Balances Hormones Naturally',
+          title: 'Balances Hormones Naturally - Reduces irregular cycles and supports emotional stability'
+        },
+        {
+          text: 'Improves Reproductive Health',
+          image: 'https://i.ibb.co/v4HHb5mS/Improves-Reproductive-Health.png',
+          alt: 'Improves Reproductive Health',
+          title: 'Improves Reproductive Health - Strengthens female reproductive system & supports implantation'
+        },
+        {
+          text: 'Boosts Energy & Vitality',
+          image: 'https://i.ibb.co/6Rh1B2Kb/Boosts-Energy-Vitality.png',
+          alt: 'Boosts Energy Vitality',
+          title: 'Boosts Energy & Vitality - Enhances stamina, reduces fatigue, and promotes daily wellness'
+        },
+        {
+          text: 'Reduces Stress & Anxiety',
+          image: 'https://i.ibb.co/bRGnZ2Lp/Reduces-Stress-Anxiety.png',
+          alt: 'Reduces Stress Anxiety',
+          title: 'Reduces Stress & Anxiety - Adaptogenic herbs support mental clarity & relaxation'
+        },
+        {
+          text: 'Supports Healthy Pregnancy',
+          image: 'https://i.ibb.co/0jJwYS9y/Supports-Healthy-Pregnancy.png',
+          alt: 'Supports Healthy Pregnancy',
+          title: 'Supports Healthy Pregnancy - Provides essential nutrients for egg and embryo development'
+        },
+        {
+          text: 'Improves Mood & Confidence',
+          image: 'https://i.ibb.co/35kVFvWk/Improves-Mood-Confidence.png',
+          alt: 'Improves Mood Confidence',
+          title: 'Improves Mood & Confidence - Restores balance and enhances emotional well-being'
+        },
+        {
+          text: 'Enhances Pleasure & Intimacy',
+          image: 'https://i.ibb.co/wFzcyjXr/Enhances-Pleasure-Intimacy.png',
+          alt: 'Enhances Pleasure Intimacy',
+          title: 'Enhances Pleasure & Intimacy - Promotes natural desire, energy, and confidence'
+        },
+        {
+          text: '100% Natural & Safe',
+          image: 'https://i.ibb.co/Lhg4gk83/100-Natural-Safe.png',
+          alt: '100 Natural Safe',
+          title: '100% Natural & Safe - No harmful chemicals or artificial additives'
+        }
       ],
       // Urdu translations
       i18n: {
@@ -2394,15 +2449,60 @@ function App() {
           },
           benefitsTitle: '🌸 ملکہ شاہی گولڈ ہیلتھ بوسٹر کے فوائد',
           benefitsList: [
-            '✨ حمل اور زرخیزی کو فروغ دیتا ہے - انڈے کے معیار، بیضہ دانی اور صحت مند فرٹیلائزیشن میں مدد کرتا ہے',
-            '✨ قدرتی طور پر ہارمونز کو متوازن کرتا ہے - بے قاعدہ ماہواری کو کم کرتا ہے اور جذباتی استحکام کو سپورٹ کرتا ہے',
-            '✨ تولیدی صحت کو بہتر بناتا ہے - خواتین کے تولیدی نظام کو مضبوط بناتا ہے اور امپلانٹیشن میں مدد کرتا ہے',
-            '✨ توانائی اور حیویت کو بڑھاتا ہے - برداشت بڑھاتا ہے، تھکاوٹ کم کرتا ہے اور روزانہ کی صحت کو فروغ دیتا ہے',
-            '✨ تناؤ اور پریشانی کو کم کرتا ہے - اڈاپٹوجینک جڑی بوٹیاں ذہنی وضاحت اور آرام کو سپورٹ کرتی ہیں',
-            '✨ صحت مند حمل کو سپورٹ کرتا ہے - انڈے اور جنین کی نشوونما کے لیے ضروری غذائی اجزاء فراہم کرتا ہے',
-            '✨ موڈ اور اعتماد کو بہتر بناتا ہے - توازن بحال کرتا ہے اور جذباتی صحت کو بڑھاتا ہے',
-            '✨ خوشی اور قربت کو بڑھاتا ہے - قدرتی خواہش، توانائی اور اعتماد کو فروغ دیتا ہے',
-            '✨ 100% قدرتی اور محفوظ - کوئی نقصان دہ کیمیکل یا مصنوعی اضافی اجزاء نہیں'
+            {
+              text: 'حمل اور زرخیزی کو فروغ دیتا ہے',
+              image: 'https://i.ibb.co/ZR6NV9G2/Promotes-Conception-Fertility.png',
+              alt: 'حمل اور زرخیزی',
+              title: 'حمل اور زرخیزی کو فروغ دیتا ہے - انڈے کے معیار، بیضہ دانی اور صحت مند فرٹیلائزیشن میں مدد کرتا ہے'
+            },
+            {
+              text: 'قدرتی طور پر ہارمونز کو متوازن کرتا ہے',
+              image: 'https://i.ibb.co/RGKcXqjX/Balances-Hormones-Naturally.png',
+              alt: 'ہارمونز متوازن',
+              title: 'قدرتی طور پر ہارمونز کو متوازن کرتا ہے - بے قاعدہ ماہواری کو کم کرتا ہے اور جذباتی استحکام کو سپورٹ کرتا ہے'
+            },
+            {
+              text: 'تولیدی صحت کو بہتر بناتا ہے',
+              image: 'https://i.ibb.co/v4HHb5mS/Improves-Reproductive-Health.png',
+              alt: 'تولیدی صحت',
+              title: 'تولیدی صحت کو بہتر بناتا ہے - خواتین کے تولیدی نظام کو مضبوط بناتا ہے اور امپلانٹیشن میں مدد کرتا ہے'
+            },
+            {
+              text: 'توانائی اور حیویت کو بڑھاتا ہے',
+              image: 'https://i.ibb.co/6Rh1B2Kb/Boosts-Energy-Vitality.png',
+              alt: 'توانائی اور حیویت',
+              title: 'توانائی اور حیویت کو بڑھاتا ہے - برداشت بڑھاتا ہے، تھکاوٹ کم کرتا ہے اور روزانہ کی صحت کو فروغ دیتا ہے'
+            },
+            {
+              text: 'تناؤ اور پریشانی کو کم کرتا ہے',
+              image: 'https://i.ibb.co/bRGnZ2Lp/Reduces-Stress-Anxiety.png',
+              alt: 'تناؤ اور پریشانی',
+              title: 'تناؤ اور پریشانی کو کم کرتا ہے - اڈاپٹوجینک جڑی بوٹیاں ذہنی وضاحت اور آرام کو سپورٹ کرتی ہیں'
+            },
+            {
+              text: 'صحت مند حمل کو سپورٹ کرتا ہے',
+              image: 'https://i.ibb.co/0jJwYS9y/Supports-Healthy-Pregnancy.png',
+              alt: 'صحت مند حمل',
+              title: 'صحت مند حمل کو سپورٹ کرتا ہے - انڈے اور جنین کی نشوونما کے لیے ضروری غذائی اجزاء فراہم کرتا ہے'
+            },
+            {
+              text: 'موڈ اور اعتماد کو بہتر بناتا ہے',
+              image: 'https://i.ibb.co/35kVFvWk/Improves-Mood-Confidence.png',
+              alt: 'موڈ اور اعتماد',
+              title: 'موڈ اور اعتماد کو بہتر بناتا ہے - توازن بحال کرتا ہے اور جذباتی صحت کو بڑھاتا ہے'
+            },
+            {
+              text: 'خوشی اور قربت کو بڑھاتا ہے',
+              image: 'https://i.ibb.co/wFzcyjXr/Enhances-Pleasure-Intimacy.png',
+              alt: 'خوشی اور قربت',
+              title: 'خوشی اور قربت کو بڑھاتا ہے - قدرتی خواہش، توانائی اور اعتماد کو فروغ دیتا ہے'
+            },
+            {
+              text: '100% قدرتی اور محفوظ',
+              image: 'https://i.ibb.co/Lhg4gk83/100-Natural-Safe.png',
+              alt: 'قدرتی محفوظ',
+              title: '100% قدرتی اور محفوظ - کوئی نقصان دہ کیمیکل یا مصنوعی اضافی اجزاء نہیں'
+            }
           ],
           faqTitle: 'اکثر پوچھے جانے والے سوالات',
           faqSubtitle: 'ملکہ شاہی گولڈ ہیلتھ بوسٹر کے بارے میں آپ کے عام سوالات کے جوابات',
