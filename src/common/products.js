@@ -126,7 +126,7 @@ export const PRODUCTS = {
     { 
       name: 'Bustmax XL Breast Booster', 
       price: 3000, 
-      image: '/images/Bustmax XL Breast Booster.png',
+      image: 'https://i.ibb.co/5W8RWH1Y/Bustmax-XL.png',
       description: 'Premium breast enhancement formula',
       benefits: [
         'Natural breast enlargement',

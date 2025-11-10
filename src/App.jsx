@@ -4257,7 +4257,9 @@ function App() {
       title: 'Bustmax XL – Breast Firming & Shape Booster',
       subtitle: '💗 Beautiful B Shape • Natural Lift • Visible Firmness',
       badge: 'WOMEN',
-      heroImage: '/images/Bustmax XL Breast Booster.png',
+      heroImage: 'https://i.ibb.co/6cSkC0Qm/Bustmax-XL-Hero-Section.png',
+      metaTitle: 'Bustmax XL Breast Booster - Natural Breast Firming & Shape Enhancement | The Planner Herbal',
+      metaDescription: 'Bustmax XL is a premium herbal breast enhancement formula that naturally restores firmness, lift, and beautiful B-shape. 100% natural ingredients, safe for all women. Order now with free delivery!',
       
       // Hero Section
       features: [
@@ -4287,8 +4289,46 @@ function App() {
       videoId: 'YOUR_BUSTMAX_XL_VIDEO_ID',
       videoTitle: '🎥 See Bustmax XL in Action',
       videoSubtitle: 'Watch how Bustmax XL has helped women across Pakistan feel naturally confident and youthful again!',
-      videoCover: '/images/bustmax-xl-video-cover.png',
+      videoCover: 'https://i.ibb.co/hFyGbgmV/G-Max-Passion-Video-Section.png',
       videoDescription: '💃 Don\'t just read — see real women sharing their beautiful transformation stories!',
+      
+      // Before/After Image Sets
+      beforeAfterSets: [
+        {
+          id: 1,
+          before: 'https://i.ibb.co/YFYGb35b/Before-4-Weeks.png',
+          after: 'https://i.ibb.co/ycSWChjM/After-4-Weeks.png',
+          duration: 4,
+          beforeAlt: 'Before using Bustmax XL - 4 weeks',
+          afterAlt: 'After using Bustmax XL - 4 weeks',
+          beforeTitle: 'Before Bustmax XL',
+          afterTitle: 'After Bustmax XL',
+          beforeDetails: 'Lack of firmness and shape',
+          afterDetails: 'Visible lift and improved tone',
+          summary: 'Noticeable improvement in firmness and natural lift'
+        },
+        {
+          id: 2,
+          before: 'https://i.ibb.co/rKFhhCwP/Before-8-Weeks.png',
+          after: 'https://i.ibb.co/gFD2xmmW/After-8-Weeks.png',
+          duration: 8,
+          beforeAlt: 'Before using Bustmax XL - 8 weeks',
+          afterAlt: 'After using Bustmax XL - 8 weeks',
+          beforeTitle: 'Before Bustmax XL',
+          afterTitle: 'After Bustmax XL',
+          beforeDetails: 'Sagging and dull appearance',
+          afterDetails: 'Enhanced shape, glow & elasticity',
+          summary: 'Significant transformation in shape, firmness and skin quality'
+        }
+      ],
+      beforeAfterLabels: {
+        beforeTitle: 'Before Bustmax XL',
+        afterTitle: 'After Bustmax XL',
+        beforeDesc: 'Lack of firmness and shape',
+        afterDesc: 'Natural lift and improved tone',
+        weeksPrefix: '',
+        weeksSuffix: ' weeks of use'
+      },
       
       // Real Results Section
       beforeAfterTitle: '💃 Real Results, Real Women',
@@ -4359,12 +4399,42 @@ function App() {
       // Special Benefits
       benefitsTitle: '🌟 Special Benefits of Bustmax XL',
       benefitsList: [
-        '✅ Restores natural B-shape & lift',
-        '✅ Tightens & tones skin tissues',
-        '✅ Boosts hormonal balance naturally',
-        '✅ Reduces sagging and dullness',
-        '✅ Enhances skin glow & elasticity',
-        '✅ 100% herbal, safe, and hormone-friendly'
+        {
+          text: 'Restores natural B-shape & lift',
+          image: 'https://i.ibb.co/TBWYQXhK/Restores-natural-B-shape-lift.png',
+          alt: 'Restores natural B-shape and lift',
+          seoDescription: 'Natural breast lift and B-shape restoration'
+        },
+        {
+          text: 'Tightens & tones skin tissues',
+          image: 'https://i.ibb.co/23kRVXWF/2-Tightens-tones-skin-tissues.png',
+          alt: 'Tightens and tones skin tissues',
+          seoDescription: 'Breast skin tightening and toning'
+        },
+        {
+          text: 'Boosts hormonal balance naturally',
+          image: 'https://i.ibb.co/Kj61S4hL/3-Boosts-hormonal-balance-naturally.png',
+          alt: 'Boosts hormonal balance naturally',
+          seoDescription: 'Natural hormonal balance for breast health'
+        },
+        {
+          text: 'Reduces sagging and dullness',
+          image: 'https://i.ibb.co/TMkTmdC6/4-Reduces-sagging-and-dullness.png',
+          alt: 'Reduces sagging and dullness',
+          seoDescription: 'Reduces breast sagging and skin dullness'
+        },
+        {
+          text: 'Enhances skin glow & elasticity',
+          image: 'https://i.ibb.co/q3Q2Jhw3/Enhances-skin-glow-elasticity.png',
+          alt: 'Enhances skin glow and elasticity',
+          seoDescription: 'Improves breast skin glow and elasticity'
+        },
+        {
+          text: '100% herbal, safe, and hormone-friendly',
+          image: 'https://i.ibb.co/xqGGQtq3/100-herbal-safe-and-hormone-friendly.png',
+          alt: '100% herbal safe and hormone-friendly',
+          seoDescription: '100% natural herbal breast enhancement formula'
+        }
       ],
       
       // Dosage & Usage Instructions
@@ -4580,12 +4650,42 @@ function App() {
           },
           benefitsTitle: '🌟 Bustmax XL کے خصوصی فوائد',
           benefitsList: [
-            '✅ قدرتی B-شکل اور لفٹ بحال کرتا ہے',
-            '✅ جلد کے ٹشو کو سخت اور ٹون کرتا ہے',
-            '✅ قدرتی طور پر ہارمونل توازن بڑھاتا ہے',
-            '✅ ڈھیلا پن اور پھیکا پن کم کرتا ہے',
-            '✅ جلد کی چمک اور لچک میں اضافہ کرتا ہے',
-            '✅ 100% جڑی بوٹیوں سے، محفوظ، اور ہارمون دوست'
+            {
+              text: 'قدرتی B-شکل اور لفٹ بحال کرتا ہے',
+              image: 'https://i.ibb.co/TBWYQXhK/Restores-natural-B-shape-lift.png',
+              alt: 'قدرتی B-شکل اور لفٹ بحال کرتا ہے',
+              seoDescription: 'قدرتی طور پر چھاتی کی لفٹ اور B-شکل بحال کرنا'
+            },
+            {
+              text: 'جلد کے ٹشو کو سخت اور ٹون کرتا ہے',
+              image: 'https://i.ibb.co/23kRVXWF/2-Tightens-tones-skin-tissues.png',
+              alt: 'جلد کے ٹشو کو سخت اور ٹون کرتا ہے',
+              seoDescription: 'چھاتی کی جلد کو سخت اور ٹون کرنا'
+            },
+            {
+              text: 'قدرتی طور پر ہارمونل توازن بڑھاتا ہے',
+              image: 'https://i.ibb.co/Kj61S4hL/3-Boosts-hormonal-balance-naturally.png',
+              alt: 'قدرتی طور پر ہارمونل توازن بڑھاتا ہے',
+              seoDescription: 'چھاتی کی صحت کے لیے قدرتی ہارمونل توازن'
+            },
+            {
+              text: 'ڈھیلا پن اور پھیکا پن کم کرتا ہے',
+              image: 'https://i.ibb.co/TMkTmdC6/4-Reduces-sagging-and-dullness.png',
+              alt: 'ڈھیلا پن اور پھیکا پن کم کرتا ہے',
+              seoDescription: 'چھاتی کا ڈھیلا پن اور جلد کا پھیکا پن کم کرنا'
+            },
+            {
+              text: 'جلد کی چمک اور لچک میں اضافہ کرتا ہے',
+              image: 'https://i.ibb.co/q3Q2Jhw3/Enhances-skin-glow-elasticity.png',
+              alt: 'جلد کی چمک اور لچک میں اضافہ کرتا ہے',
+              seoDescription: 'چھاتی کی جلد کی چمک اور لچک بہتر بناتا ہے'
+            },
+            {
+              text: '100% جڑی بوٹیوں سے، محفوظ، اور ہارمون دوست',
+              image: 'https://i.ibb.co/xqGGQtq3/100-herbal-safe-and-hormone-friendly.png',
+              alt: '100% جڑی بوٹیوں سے محفوظ اور ہارمون دوست',
+              seoDescription: '100% قدرتی جڑی بوٹیوں سے چھاتی بڑھانے کا فارمولا'
+            }
           ]
         }
       }
@@ -4673,25 +4773,39 @@ function App() {
   useEffect(() => {
     // Update page title based on current product
     if (slug && productConfigs[slug]) {
-      const productTitle = productConfigs[slug].title;
-      document.title = `${productTitle} | The Planner Herbal International`;
+      const productTitle = productConfigs[slug].metaTitle || productConfigs[slug].title;
+      const productDescription = productConfigs[slug].metaDescription || `${productConfigs[slug].title} - Premium herbal solution from The Planner Herbal International. 100% natural ingredients, free delivery across Pakistan.`;
+      
+      document.title = productConfigs[slug].metaTitle || `${productConfigs[slug].title} | The Planner Herbal International`;
 
       // Update meta description
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', `${productTitle} - Premium herbal solution from The Planner Herbal International. 100% natural ingredients, free delivery across Pakistan.`);
+        metaDescription.setAttribute('content', productDescription);
       }
 
       // Update Open Graph title
       const ogTitle = document.querySelector('meta[property="og:title"]');
       if (ogTitle) {
-        ogTitle.setAttribute('content', `${productTitle} | The Planner Herbal International`);
+        ogTitle.setAttribute('content', productTitle);
+      }
+
+      // Update Open Graph description
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      if (ogDescription) {
+        ogDescription.setAttribute('content', productDescription);
       }
 
       // Update Twitter title
       const twitterTitle = document.querySelector('meta[property="twitter:title"]');
       if (twitterTitle) {
-        twitterTitle.setAttribute('content', `${productTitle} | The Planner Herbal International`);
+        twitterTitle.setAttribute('content', productTitle);
+      }
+
+      // Update Twitter description
+      const twitterDescription = document.querySelector('meta[property="twitter:description"]');
+      if (twitterDescription) {
+        twitterDescription.setAttribute('content', productDescription);
       }
     }
 
