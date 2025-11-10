@@ -3810,7 +3810,12 @@ function App() {
       title: 'BustMax Breast Oil – Breast Massage Oil',
       subtitle: '🌸 Total Breast Health & Natural Firming Solution',
       badge: 'WOMEN',
-      heroImage: '/images/BustMax Breast Oil.png',
+      heroImage: 'https://i.ibb.co/LVnS3NS/Bust-Max-Breast-Oil-Hero-Section.png',
+      heroImageAlt: 'Bust Max Breast Oil Hero Section',
+      heroImageTitle: 'BustMax Breast Oil - Total Breast Health & Natural Firming Solution',
+      featuredImage: 'https://i.ibb.co/k2M0zm7W/Bust-Max-Breast-Oil.png',
+      featuredImageAlt: 'Bust Max Breast Oil',
+      featuredImageTitle: 'BustMax Breast Oil - Premium Natural Breast Enhancement Oil',
       
       // Hero Section
       features: [
@@ -3840,7 +3845,9 @@ function App() {
       videoId: 'YOUR_BUSTMAX_VIDEO_ID',
       videoTitle: '🎥 See BustMax in Action',
       videoSubtitle: 'Watch how BustMax Oil is transforming women\'s confidence and body shape across Pakistan.',
-      videoCover: '/images/bustmax-video-cover.png',
+      videoCover: 'https://i.ibb.co/jdp2NVx/G-Max-Passion-Video-Section.png',
+      videoCoverAlt: 'BustMax Breast Oil Video Section',
+      videoCoverTitle: 'Watch BustMax Breast Oil Transformation Results',
       videoDescription: '🌺 Don\'t just take our word for it — see the real glow & shape results yourself!',
       
       // Real Results Section
@@ -3851,6 +3858,28 @@ function App() {
         '💗 Natural size enhancement',
         '💗 Softer & glowing skin',
         '💗 Better hormonal balance'
+      ],
+      beforeAfterSets: [
+        {
+          id: 1,
+          before: 'https://i.ibb.co/xtqQ08D0/Before-4-Weeks.png',
+          after: 'https://i.ibb.co/svHnfGLV/After-4-Weeks.png',
+          duration: 4,
+          beforeAlt: 'Before 4 Weeks - BustMax Breast Oil',
+          afterAlt: 'After 4 Weeks - BustMax Breast Oil',
+          beforeTitle: 'Before 4 Weeks of Using BustMax Breast Oil',
+          afterTitle: 'After 4 Weeks of Using BustMax Breast Oil - Visible Firmness & Lift'
+        },
+        {
+          id: 2,
+          before: 'https://i.ibb.co/jv8SBqTy/Before-8-Weeks.png',
+          after: 'https://i.ibb.co/bqwhmS8/After-8-Weeks.png',
+          duration: 8,
+          beforeAlt: 'Before 8 Weeks - BustMax Breast Oil',
+          afterAlt: 'After 8 Weeks - BustMax Breast Oil',
+          beforeTitle: 'Before 8 Weeks of Using BustMax Breast Oil',
+          afterTitle: 'After 8 Weeks of Using BustMax Breast Oil - Enhanced Shape & Natural Firmness'
+        }
       ],
       
       // Herbal Power Section
@@ -4655,14 +4684,15 @@ Please confirm my order. Thank you!`;
 
   // Check if this is Sultan Shahi Gold Majoon, Sultan Shahi Gold Tila, or Sultan Shahi Gold Health Booster product for luxury theme
   const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster';
+  const isBustMaxOil = slug === 'bustmax-breast-oil';
 
   return (
-    <div className={`min-h-screen flex flex-col ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black text-white' : isLuxuryProduct ? 'bg-black text-white' : 'bg-gradient-to-br from-red-50 via-white to-red-50'} ${shouldShowInUrdu('all') ? 'font-urdu' : ''}`}>
+    <div className={`min-h-screen flex flex-col ${isBustMaxOil ? 'bg-gradient-to-br from-pink-950 via-rose-950 to-amber-950 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black text-white' : isLuxuryProduct ? 'bg-black text-white' : 'bg-gradient-to-br from-red-50 via-white to-red-50'} ${shouldShowInUrdu('all') ? 'font-urdu' : ''}`}>
       <div className="flex-grow">
         {/* Header moved to Root layout */}
 
         {/* Hero Section - Optimized */}
-        <section className={`py-8 md:py-16 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-900 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
+        <section className={`py-8 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-r from-pink-900 via-rose-800 to-amber-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-900 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
           {/* Background pattern */}
           <div className="absolute inset-0 z-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>
@@ -4672,24 +4702,24 @@ Please confirm my order. Thank you!`;
               <motion.div className="lg:w-1/2" {...fadeInUp}>
                 <div className="flex items-center space-x-2 mb-4">
                   <SafeIcon icon={FiAward} className="text-yellow-400 text-2xl" />
-                  <span className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
+                  <span className={`${isBustMaxOil ? 'bg-gradient-to-r from-amber-400 to-pink-500 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
                     {content.hero.badge}
                   </span>
                 </div>
-                <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'}`}>
+                <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'}`}>
                   {content.hero.title}
                 </h1>
-                <p className={`text-xl md:text-2xl mb-4 ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
+                <p className={`text-xl md:text-2xl mb-4 ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
                   {content.hero.subtitle}
                 </p>
                 {content.hero.description && (
-                  <p className={`text-base md:text-lg mb-6 leading-relaxed ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-red-50'}`}>
+                  <p className={`text-base md:text-lg mb-6 leading-relaxed ${isBustMaxOil ? 'text-pink-100' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-red-50'}`}>
                     {content.hero.description}
                   </p>
                 )}
                 <div className="flex flex-wrap gap-4 mb-6 text-lg">
                   {content.hero.features.map((feature, index) => (
-                    <span key={index} className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/20 border border-pink-400/30' : isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
+                    <span key={index} className={`${isBustMaxOil ? 'bg-amber-500/20 border border-amber-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/20 border border-pink-400/30' : isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
                   ))}
                 </div>
                 <div className="flex items-center space-x-1 mb-6">
@@ -4699,17 +4729,17 @@ Please confirm my order. Thank you!`;
                   <span className="ml-2 text-lg">{content.hero.trusted}</span>
                 </div>
                 <motion.div
-                  className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/10 border border-pink-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
+                  className={`${isBustMaxOil ? 'bg-amber-500/10 border border-amber-400/20' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/10 border border-pink-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className={`text-2xl md:text-3xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'} mb-2`}>
+                  <p className={`text-2xl md:text-3xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'} mb-2`}>
                     {content.hero.specialPrice}: Rs {content.hero.specialPriceAmount || '2,500'}/-
                   </p>
-                  <p className={`${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
+                  <p className={`${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
                   <motion.button
                     onClick={() => document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' })}
-                    className={`mt-4 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
+                    className={`mt-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600 hover:from-amber-600 hover:to-pink-700' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -4815,15 +4845,15 @@ Please confirm my order. Thank you!`;
 
         {/* Problems Section */}
         <section
-          className={`py-12 md:py-16 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black' : isLuxuryProduct ? 'bg-gray-900' : 'bg-gray-50'} ${shouldShowInUrdu('problems') ? 'font-urdu' : ''}`}
+          className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-br from-rose-950 to-amber-950' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black' : isLuxuryProduct ? 'bg-gray-900' : 'bg-gray-50'} ${shouldShowInUrdu('problems') ? 'font-urdu' : ''}`}
           dir={shouldShowInUrdu('problems') ? 'rtl' : 'ltr'}
         >
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}>
                 {content.problems.title}
               </h2>
-              <p className={`text-xl ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} max-w-3xl mx-auto`}>
+              <p className={`text-xl ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} max-w-3xl mx-auto`}>
                 {content.problems.subtitle}
               </p>
             </motion.div>
