@@ -3853,6 +3853,14 @@ function App() {
       // Real Results Section
       beforeAfterTitle: '💃 Real Results, Real Women',
       beforeAfterSubtitle: 'Thousands of women across Pakistan have experienced amazing transformation with regular use of BustMax Oil',
+      beforeAfterLabels: {
+        beforeTitle: 'Before BustMax',
+        afterTitle: 'After BustMax',
+        beforeDesc: 'Low energy, poor confidence, marital issues',
+        afterDesc: 'Renewed vigor, strong performance, happy relationship',
+        weeksPrefix: '',
+        weeksSuffix: ' weeks of use'
+      },
       resultsAccuracy: [
         '💗 Improved firmness & lift',
         '💗 Natural size enhancement',
@@ -3865,20 +3873,20 @@ function App() {
           before: 'https://i.ibb.co/xtqQ08D0/Before-4-Weeks.png',
           after: 'https://i.ibb.co/svHnfGLV/After-4-Weeks.png',
           duration: 4,
-          beforeAlt: 'Before 4 Weeks - BustMax Breast Oil',
-          afterAlt: 'After 4 Weeks - BustMax Breast Oil',
-          beforeTitle: 'Before 4 Weeks of Using BustMax Breast Oil',
-          afterTitle: 'After 4 Weeks of Using BustMax Breast Oil - Visible Firmness & Lift'
+          beforeAlt: 'Before BustMax',
+          afterAlt: 'After BustMax',
+          beforeTitle: 'Before BustMax - Low energy, poor confidence, marital issues',
+          afterTitle: 'After BustMax - Renewed vigor, strong performance, happy relationship'
         },
         {
           id: 2,
           before: 'https://i.ibb.co/jv8SBqTy/Before-8-Weeks.png',
           after: 'https://i.ibb.co/bqwhmS8/After-8-Weeks.png',
           duration: 8,
-          beforeAlt: 'Before 8 Weeks - BustMax Breast Oil',
-          afterAlt: 'After 8 Weeks - BustMax Breast Oil',
-          beforeTitle: 'Before 8 Weeks of Using BustMax Breast Oil',
-          afterTitle: 'After 8 Weeks of Using BustMax Breast Oil - Enhanced Shape & Natural Firmness'
+          beforeAlt: 'Before BustMax',
+          afterAlt: 'After BustMax',
+          beforeTitle: 'Before BustMax - Low energy, poor confidence, marital issues',
+          afterTitle: 'After BustMax - Renewed vigor, strong performance, happy relationship'
         }
       ],
       
@@ -3920,13 +3928,48 @@ function App() {
       // Results Section
       benefitsTitle: '✨ Visible Results You\'ll Love',
       benefitsList: [
-        '✅ Firmer, fuller & lifted bust',
-        '✅ Natural shape enhancement',
-        '✅ Smooth & moisturized skin',
-        '✅ Improved blood & lymph circulation',
-        '✅ Supports hormonal balance',
-        '✅ 100% herbal & safe for daily use',
-        '💧 No side effects – only herbal nourishment!'
+        {
+          text: 'Firmer, fuller & lifted bust',
+          image: 'https://i.ibb.co/r1zJrW4/Firmer-fuller-lifted-bust.png',
+          alt: 'Firmer fuller lifted bust',
+          title: 'Firmer, fuller & lifted bust - Natural breast enhancement with BustMax Oil'
+        },
+        {
+          text: 'Natural shape enhancement',
+          image: 'https://i.ibb.co/fYDH9FSC/Natural-shape-enhancement.png',
+          alt: 'Natural shape enhancement',
+          title: 'Natural shape enhancement - Improve breast shape naturally'
+        },
+        {
+          text: 'Smooth & moisturized skin',
+          image: 'https://i.ibb.co/Jw8dwPcR/Smooth-moisturized-skin.png',
+          alt: 'Smooth moisturized skin',
+          title: 'Smooth & moisturized skin - Deep nourishment for soft, supple skin'
+        },
+        {
+          text: 'Improved blood & lymph circulation',
+          image: 'https://i.ibb.co/gZS322B2/Improved-blood-lymph-circulation.png',
+          alt: 'Improved blood lymph circulation',
+          title: 'Improved blood & lymph circulation - Better breast health and vitality'
+        },
+        {
+          text: 'Supports hormonal balance',
+          image: 'https://i.ibb.co/9mLgDjMh/Supports-hormonal-balance.png',
+          alt: 'Supports hormonal balance',
+          title: 'Supports hormonal balance - Natural hormonal support for women'
+        },
+        {
+          text: '100% herbal & safe for daily use',
+          image: 'https://i.ibb.co/gbxCGXbv/100-herbal-safe-for-daily-use.png',
+          alt: '100 herbal safe for daily use',
+          title: '100% herbal & safe for daily use - Natural ingredients with no side effects'
+        },
+        {
+          text: 'No side effects – only herbal nourishment!',
+          image: 'https://i.ibb.co/JR3SWdnN/No-side-effects-only-herbal-nourishment.png',
+          alt: 'No side effects only herbal nourishment',
+          title: 'No side effects – only herbal nourishment - Pure natural care for your body'
+        }
       ],
       
       // Dosage & Usage Instructions
@@ -4058,7 +4101,152 @@ function App() {
           question: 'Q6: Can I use it with other lotions or creams?',
           answer: 'Yes, but apply BustMax Oil first for better absorption.'
         }
-      ]
+      ],
+      
+      // Urdu Translations
+      i18n: {
+        ur: {
+          problemsTitle: '💢 خواتین کو درپیش عام مسائل',
+          problemsSubtitle: 'بسٹ میکس آئل آپ کو قدرتی طور پر مضبوطی، شکل اور اعتماد بحال کرنے میں مدد کرتا ہے بغیر کسی ضمنی اثرات کے۔',
+          problemsList: [
+            'چھوٹے یا بے شکل چھاتی',
+            'ڈھیلا پن یا غیر مساوی مضبوطی',
+            'ہارمونل عدم توازن کی وجہ سے کمزوری',
+            'لچک یا جلد کی سختی میں کمی',
+            'خراب گردش اور پھیکا رنگ'
+          ],
+          solution: '👉 بسٹ میکس آئل آپ کو قدرتی طور پر مضبوطی، شکل اور اعتماد بحال کرنے میں مدد کرتا ہے بغیر کسی ضمنی اثرات کے۔',
+          
+          herbalSection: {
+            title: '🌿 جڑی بوٹیوں کی طاقت – 100% قدرتی اجزاء',
+            subtitle: 'چھاتی کی مکمل صحت کے لیے پریمیم قدرتی تیل اور عرق',
+            customColumns: [
+              {
+                title: '🍃 سیمونڈسیا چائنینسس (جوجوبا آئل)',
+                description: 'جلد کو گہرائی سے پرورش اور نمی فراہم کرتا ہے، لچک اور مضبوطی کو بہتر بناتا ہے۔'
+              },
+              {
+                title: '🌸 ریسینس کمیونس (کیسٹر آئل)',
+                description: 'کولیجن کو متحرک کرتا ہے اور ہموار، چمکدار جلد کو فروغ دیتا ہے۔'
+              },
+              {
+                title: '🌾 اولیا یوروپیا (زیتون کا تیل)',
+                description: 'اینٹی آکسیڈنٹس سے بھرپور، جلد کی تخلیق نو اور قدرتی لفٹ میں مدد کرتا ہے۔'
+              },
+              {
+                title: '🌰 اوک گالز',
+                description: 'جلد کے ٹشوز کو سخت کرتا ہے، رنگت کو بڑھاتا ہے اور قدرتی مضبوطی کو سپورٹ کرتا ہے۔'
+              },
+              {
+                title: '🌹 گلاب کا تیل',
+                description: 'سکون بخش خوشبو دیتا ہے اور جلد کو تازہ کرتا ہے، اسے نرم اور کومل بناتا ہے۔'
+              }
+            ],
+            badgesLine: '✅ 100% قدرتی | ✅ کوئی ضمنی اثرات نہیں | ✅ روزانہ استعمال کے لیے محفوظ'
+          },
+          
+          benefitsTitle: '✨ نظر آنے والے نتائج جو آپ کو پسند آئیں گے',
+          benefitsList: [
+            {
+              text: 'مضبوط، بھرپور اور اٹھی ہوئی چھاتی',
+              image: 'https://i.ibb.co/r1zJrW4/Firmer-fuller-lifted-bust.png',
+              alt: 'مضبوط بھرپور اٹھی ہوئی چھاتی',
+              title: 'مضبوط، بھرپور اور اٹھی ہوئی چھاتی - بسٹ میکس آئل کے ساتھ قدرتی بہتری'
+            },
+            {
+              text: 'قدرتی شکل میں بہتری',
+              image: 'https://i.ibb.co/fYDH9FSC/Natural-shape-enhancement.png',
+              alt: 'قدرتی شکل میں بہتری',
+              title: 'قدرتی شکل میں بہتری - قدرتی طور پر چھاتی کی شکل بہتر بنائیں'
+            },
+            {
+              text: 'ہموار اور نمی والی جلد',
+              image: 'https://i.ibb.co/Jw8dwPcR/Smooth-moisturized-skin.png',
+              alt: 'ہموار نمی والی جلد',
+              title: 'ہموار اور نمی والی جلد - نرم، کومل جلد کے لیے گہری پرورش'
+            },
+            {
+              text: 'خون اور لمف کی گردش میں بہتری',
+              image: 'https://i.ibb.co/gZS322B2/Improved-blood-lymph-circulation.png',
+              alt: 'خون لمف گردش بہتری',
+              title: 'خون اور لمف کی گردش میں بہتری - بہتر چھاتی کی صحت اور توانائی'
+            },
+            {
+              text: 'ہارمونل توازن کو سپورٹ کرتا ہے',
+              image: 'https://i.ibb.co/9mLgDjMh/Supports-hormonal-balance.png',
+              alt: 'ہارمونل توازن سپورٹ',
+              title: 'ہارمونل توازن کو سپورٹ کرتا ہے - خواتین کے لیے قدرتی ہارمونل سپورٹ'
+            },
+            {
+              text: '100% جڑی بوٹیوں سے بنا اور روزانہ استعمال کے لیے محفوظ',
+              image: 'https://i.ibb.co/gbxCGXbv/100-herbal-safe-for-daily-use.png',
+              alt: '100 جڑی بوٹیوں محفوظ روزانہ استعمال',
+              title: '100% جڑی بوٹیوں سے بنا اور روزانہ استعمال کے لیے محفوظ - قدرتی اجزاء بغیر ضمنی اثرات'
+            },
+            {
+              text: 'کوئی ضمنی اثرات نہیں – صرف جڑی بوٹیوں کی پرورش!',
+              image: 'https://i.ibb.co/JR3SWdnN/No-side-effects-only-herbal-nourishment.png',
+              alt: 'کوئی ضمنی اثرات نہیں صرف جڑی بوٹیوں پرورش',
+              title: 'کوئی ضمنی اثرات نہیں – صرف جڑی بوٹیوں کی پرورش - آپ کے جسم کے لیے خالص قدرتی دیکھ بھال'
+            }
+          ],
+          
+          dosageSection: {
+            title: '🕒 خوراک اور استعمال کی ہدایات',
+            steps: [
+              {
+                stepNumber: '1️⃣',
+                title: 'ہدف والے حصے (چھاتی) کو صاف کریں',
+                description: 'صبح اور رات'
+              },
+              {
+                stepNumber: '2️⃣',
+                title: 'بسٹ میکس آئل کی 4-5 بوندیں لیں',
+                description: 'ہتھیلی پر'
+              },
+              {
+                stepNumber: '3️⃣',
+                title: 'نرمی سے سرکلر موشن میں مساج کریں',
+                description: '5-10 منٹ تک'
+              },
+              {
+                stepNumber: '4️⃣',
+                title: 'بہترین نتائج کے لیے باقاعدگی سے استعمال کریں',
+                description: 'روزانہ 2 بار'
+              }
+            ]
+          },
+          
+          faqTitle: '❓ اکثر پوچھے جانے والے سوالات',
+          faqSubtitle: 'بسٹ میکس آئل کے بارے میں آپ کو جاننے کی ضرورت ہے',
+          faqs: [
+            {
+              question: 'سوال 1: نتائج دیکھنے میں کتنا وقت لگتا ہے؟',
+              answer: 'زیادہ تر صارفین مسلسل استعمال کے 2 سے 3 ہفتوں کے اندر نظر آنے والی مضبوطی محسوس کرتے ہیں۔'
+            },
+            {
+              question: 'سوال 2: کیا یہ تمام جلد کی اقسام کے لیے محفوظ ہے؟',
+              answer: 'جی ہاں، بسٹ میکس آئل 100% جڑی بوٹیوں سے بنا ہے اور تمام جلد کی اقسام کے لیے موزوں ہے۔'
+            },
+            {
+              question: 'سوال 3: کیا یہ جلن کا سبب بن سکتا ہے؟',
+              answer: 'نہیں، لیکن زخموں یا بہت حساس جلد پر لگانے سے گریز کریں۔'
+            },
+            {
+              question: 'سوال 4: مجھے اسے کتنی بار لگانا چاہیے؟',
+              answer: 'بہترین نتائج کے لیے دن میں دو بار — صبح اور سونے سے پہلے۔'
+            },
+            {
+              question: 'سوال 5: کیا اس کے کوئی ضمنی اثرات ہیں؟',
+              answer: 'بالکل نہیں۔ یہ کیمیکلز سے پاک ہے اور قدرتی تیلوں سے بنایا گیا ہے۔'
+            },
+            {
+              question: 'سوال 6: کیا میں اسے دوسرے لوشن یا کریموں کے ساتھ استعمال کر سکتی ہوں؟',
+              answer: 'جی ہاں، لیکن بہتر جذب کے لیے پہلے بسٹ میکس آئل لگائیں۔'
+            }
+          ]
+        }
+      }
     },
     'bustmax-xl-breast-booster': {
       title: 'Bustmax XL – Breast Firming & Shape Booster',
