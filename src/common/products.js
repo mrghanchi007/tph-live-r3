@@ -114,7 +114,7 @@ export const PRODUCTS = {
     { 
       name: 'BustMax Breast Oil', 
       price: 2500, 
-      image: '/images/BustMax Breast Oil.png',
+      image: 'https://i.ibb.co/k2M0zm7W/Bust-Max-Breast-Oil.png',
       description: 'Natural breast enhancement oil',
       benefits: [
         'Firms and tones',

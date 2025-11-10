@@ -3983,13 +3983,18 @@ function App() {
           },
           {
             stepNumber: '2️⃣',
-            title: 'Apply 5–8 drops of BustMax Oil',
-            description: 'Gently massage upward'
+            title: 'Take 4-5 drops of BustMax Oil',
+            description: 'On palm'
           },
           {
             stepNumber: '3️⃣',
-            title: 'Continue daily for visible lift',
-            description: '3–4 weeks regular use'
+            title: 'Gently massage in circular motion',
+            description: '5-10 minutes'
+          },
+          {
+            stepNumber: '4️⃣',
+            title: 'Use regularly for best results',
+            description: 'Daily 2 times'
           }
         ],
         notes: [
@@ -5142,13 +5147,13 @@ Please confirm my order. Thank you!`;
         
 
         {/* Before & After Results - Always in English - Lazy Loaded */}
-        <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-br from-black to-gray-900' : 'bg-gradient-to-br from-gray-900 to-gray-800'} text-white`}>
+        <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-br from-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-black to-gray-900' : 'bg-gradient-to-br from-gray-900 to-gray-800'} text-white`}>
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-white'}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-white'}`}>
                 {productConfigs[slug]?.beforeAfterTitle || englishContent.beforeAfter.title}
               </h2>
-              <p className={`text-lg ${isLuxuryProduct ? 'text-yellow-200' : 'text-gray-300'} max-w-3xl mx-auto`}>
+              <p className={`text-lg ${isBustMaxOil ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-300'} max-w-3xl mx-auto`}>
                 {productConfigs[slug]?.beforeAfterSubtitle || englishContent.beforeAfter.subtitle}
               </p>
             </motion.div>
@@ -5250,7 +5255,7 @@ Please confirm my order. Thank you!`;
 
         {/* Benefits Section */}
         <section
-          className={`py-12 md:py-16 ${slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-gradient-to-r from-blue-50 to-indigo-50'} ${shouldShowInUrdu('benefits') ? 'font-urdu' : ''}`}
+          className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-amber-950' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-gradient-to-r from-blue-50 to-indigo-50'} ${shouldShowInUrdu('benefits') ? 'font-urdu' : ''}`}
           dir={shouldShowInUrdu('benefits') ? 'rtl' : 'ltr'}
           aria-labelledby="benefits-section"
           role="region"
@@ -5258,7 +5263,7 @@ Please confirm my order. Thank you!`;
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
               <h2
-                className={`text-3xl md:text-4xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}
+                className={`text-3xl md:text-4xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}
                 id="benefits-section"
                 title={language === 'en' ? "Expected results from B-Maxman Royal herbal supplement for men" : "بی میکس مین رائل جڑی بوٹیوں کے سپلیمنٹ سے متوقع نتائج"}
               >
@@ -5371,7 +5376,7 @@ Please confirm my order. Thank you!`;
 
         {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster, BustMax Oil, and Bustmax XL */}
         {(slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') && productConfigs[slug]?.dosageSection?.steps && (
-          <section className={`py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
+          <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-b from-amber-950 to-pink-950' : 'bg-gradient-to-b from-gray-50 to-white'} ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
                 {(() => {
@@ -5383,29 +5388,29 @@ Please confirm my order. Thank you!`;
                     <>
                       <motion.h2 
                         {...fadeInUp}
-                        className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800"
+                        className={`text-3xl md:text-4xl font-bold text-center mb-4 ${isBustMaxOil ? 'text-amber-300' : 'text-gray-800'}`}
                       >
                         {dosageData.title}
                       </motion.h2>
                       
-                      <div className="grid md:grid-cols-3 gap-6 mb-8">
+                      <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
                         {dosageData.steps.map((step, index) => (
                           <motion.div
                             key={index}
                             {...fadeInUp}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white rounded-xl shadow-lg p-6 border-2 border-green-100 hover:border-green-300 transition-all"
+                            className={`${isBustMaxOil ? 'bg-pink-900/30 border-2 border-amber-500/30 hover:border-amber-400' : 'bg-white border-2 border-green-100 hover:border-green-300'} rounded-xl shadow-lg p-6 transition-all`}
                           >
-                            <div className="flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full text-2xl font-bold mx-auto mb-4">
+                            <div className={`flex items-center justify-center w-16 h-16 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600' : 'bg-green-500'} text-white rounded-full text-2xl font-bold mx-auto mb-4`}>
                               {index + 1}
                             </div>
-                            <h3 className="text-sm font-semibold text-green-600 text-center mb-2">
+                            <h3 className={`text-sm font-semibold ${isBustMaxOil ? 'text-amber-400' : 'text-green-600'} text-center mb-2`}>
                               {step.stepNumber}
                             </h3>
-                            <h4 className="text-lg font-bold text-gray-800 text-center mb-3">
+                            <h4 className={`text-lg font-bold ${isBustMaxOil ? 'text-pink-200' : 'text-gray-800'} text-center mb-3`}>
                               {step.title}
                             </h4>
-                            <p className="text-gray-600 text-center text-sm">
+                            <p className={`${isBustMaxOil ? 'text-pink-300' : 'text-gray-600'} text-center text-sm`}>
                               {step.description}
                             </p>
                           </motion.div>
@@ -5415,11 +5420,11 @@ Please confirm my order. Thank you!`;
                       {dosageData.notes && (
                         <motion.div 
                           {...fadeInUp}
-                          className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border-l-4 border-green-500"
+                          className={`rounded-xl p-6 border-l-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-900/20 to-pink-900/20 border-amber-500' : 'bg-gradient-to-r from-green-50 to-blue-50 border-green-500'}`}
                         >
                           <div className="space-y-3">
                             {dosageData.notes.map((note, index) => (
-                              <p key={index} className="text-gray-700 text-base flex items-start">
+                              <p key={index} className={`text-base flex items-start ${isBustMaxOil ? 'text-pink-100' : 'text-gray-700'}`}>
                                 <span className={shouldShowInUrdu('usage') ? 'mr-0 ml-2' : 'mr-2'}>{note}</span>
                               </p>
                             ))}
@@ -5642,25 +5647,25 @@ Please confirm my order. Thank you!`;
         )}
 
         {/* Pricing */}
-        <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-white'}`}>
+        <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-b from-purple-950 to-pink-950' : isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-white'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                 {content.pricing.title}
               </h2>
-              <p className={`text-xl max-w-3xl mx-auto ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-600'}`}>{content.pricing.subtitle}</p>
+              <p className={`text-lg ${isBustMaxOil ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'}`}>{content.pricing.subtitle}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* 1st Pack */}
               <motion.div
-                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
+                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isBustMaxOil ? 'bg-pink-900/20 border border-amber-400' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className={`p-4 text-white text-center ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' : 'bg-red-600'}`}>
-                  <h3 className={`text-xl font-bold ${isLuxuryProduct ? 'text-black' : 'text-white'}`}>
+                <div className={`p-4 text-white text-center ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' : 'bg-red-600'}`}>
+                  <h3 className={`text-xl font-bold ${isBustMaxOil ? 'text-white' : isLuxuryProduct ? 'text-black' : 'text-white'}`}>
                     {slug === 'slim-n-shape-garcinia-cambogia-capsules'
                       ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || content.pricing.packages[0].title)
                       : slug === 'b-maxtime-super-active'
@@ -5669,17 +5674,17 @@ Please confirm my order. Thank you!`;
                   </h3>
                 </div>
                 <div className="p-6 text-center">
-                  <div className={`text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+                  <div className={`text-4xl font-bold mb-4 ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                     Rs {(productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.()
                       || content?.pricing?.packages?.[0]?.price?.toLocaleString?.()
                       || '2,500')}
-                    <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                    <span className={`text-lg ${isBustMaxOil ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                   </div>
                   <ul className="mb-6 text-left space-y-2">
                     {content.pricing.packages[0].features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
-                        <span className={isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
+                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isBustMaxOil ? 'text-amber-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
+                        <span className={isBustMaxOil ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
                       </li>
                     ))}
                   </ul>
@@ -5688,13 +5693,13 @@ Please confirm my order. Thank you!`;
 
               {/* 2nd Pack */}
               <motion.div
-                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
+                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isBustMaxOil ? 'bg-pink-900/20 border border-amber-400' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <div className={`p-4 text-white text-center ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-600 to-yellow-700' : 'bg-red-700'}`}>
-                  <h3 className={`text-xl font-bold ${isLuxuryProduct ? 'text-black' : 'text-white'}`}>
+                <div className={`p-4 text-white text-center ${isBustMaxOil ? 'bg-gradient-to-r from-amber-600 to-pink-700' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-600 to-yellow-700' : 'bg-red-700'}`}>
+                  <h3 className={`text-xl font-bold ${isBustMaxOil ? 'text-white' : isLuxuryProduct ? 'text-black' : 'text-white'}`}>
                     {slug === 'slim-n-shape-garcinia-cambogia-capsules'
                       ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || content.pricing.packages[1].title)
                       : slug === 'b-maxtime-super-active'
@@ -5705,11 +5710,11 @@ Please confirm my order. Thank you!`;
                 <div className="p-6 text-center">
                   {slug === 'shahi-sultan-health-booster' ? (
                     <>
-                      <div className={`text-4xl font-bold mb-2 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold mb-2 ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || '4,500')}
-                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isBustMaxOil ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount ? (
                         <div className={`text-sm inline-block px-2 py-1 rounded mb-4 ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
@@ -5719,11 +5724,11 @@ Please confirm my order. Thank you!`;
                     </>
                   ) : (
                     <div className="text-center mb-4">
-                      <div className={`text-4xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[1]?.price?.toLocaleString?.()
                           || '4,500')}
-                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isBustMaxOil ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {slug === 'slim-n-shape-garcinia-cambogia-capsules' ? (
                         productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount ? (
@@ -5746,8 +5751,8 @@ Please confirm my order. Thank you!`;
                   <ul className="mb-6 text-left space-y-2">
                     {content.pricing.packages[1].features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
-                        <span className={isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
+                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isBustMaxOil ? 'text-amber-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
+                        <span className={isBustMaxOil ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
                       </li>
                     ))}
                   </ul>
@@ -5756,13 +5761,13 @@ Please confirm my order. Thank you!`;
 
               {/* 3rd Pack */}
               <motion.div
-                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
+                className={`rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow ${isBustMaxOil ? 'bg-pink-900/20 border border-amber-400' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-red-100'}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <div className={`p-4 text-white text-center ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-700 to-yellow-800' : 'bg-red-700'}`}>
-                  <h3 className={`text-xl font-bold ${isLuxuryProduct ? 'text-black' : 'text-white'}`}>
+                <div className={`p-4 text-white text-center ${isBustMaxOil ? 'bg-gradient-to-r from-amber-700 to-pink-800' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-700 to-yellow-800' : 'bg-red-700'}`}>
+                  <h3 className={`text-xl font-bold ${isBustMaxOil ? 'text-white' : isLuxuryProduct ? 'text-black' : 'text-white'}`}>
                     {slug === 'slim-n-shape-garcinia-cambogia-capsules'
                       ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || content.pricing.packages[2].title)
                       : slug === 'b-maxtime-super-active'
@@ -5773,11 +5778,11 @@ Please confirm my order. Thank you!`;
                 <div className="p-6 text-center">
                   {slug === 'shahi-sultan-health-booster' ? (
                     <>
-                      <div className={`text-4xl font-bold mb-2 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold mb-2 ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || '6,000')}
-                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isBustMaxOil ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount ? (
                         <div className={`text-sm inline-block px-2 py-1 rounded mb-4 ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
@@ -5789,11 +5794,11 @@ Please confirm my order. Thank you!`;
                     </>
                   ) : (
                     <div className="text-center mb-4">
-                      <div className={`text-4xl font-bold ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+                      <div className={`text-4xl font-bold ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                         Rs {(productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || content?.pricing?.packages?.[2]?.price?.toLocaleString?.()
                           || '6,000')}
-                        <span className={`text-lg ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
+                        <span className={`text-lg ${isBustMaxOil ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-300' : 'text-gray-500'}`}>/-</span>
                       </div>
                       {slug === 'slim-n-shape-garcinia-cambogia-capsules' ? (
                         productConfigs[slug]?.pricing?.packages?.[2]?.saveAmount ? (
@@ -5816,8 +5821,8 @@ Please confirm my order. Thank you!`;
                   <ul className="mb-6 text-left space-y-2">
                     {content.pricing.packages[2].features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
-                        <span className={isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
+                        <SafeIcon icon={FiCheck} className={`mt-1 mr-2 flex-shrink-0 ${isBustMaxOil ? 'text-amber-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-green-500'}`} />
+                        <span className={isBustMaxOil ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'} dangerouslySetInnerHTML={{ __html: feature }} />
                       </li>
                     ))}
                   </ul>
@@ -5828,8 +5833,8 @@ Please confirm my order. Thank you!`;
             {/* Shelf Life & Made In - for BustMax Oil and Bustmax XL */}
             {(slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') && productConfigs[slug]?.pricing?.shelfLife && (
               <motion.div className="text-center mt-8 space-y-2" {...fadeInUp}>
-                <p className="text-lg text-gray-700 font-medium">{productConfigs[slug].pricing.shelfLife}</p>
-                <p className="text-lg text-gray-700 font-medium">{productConfigs[slug].pricing.madeIn}</p>
+                <p className={`text-lg font-medium ${isBustMaxOil ? 'text-amber-300' : 'text-gray-700'}`}>{productConfigs[slug].pricing.shelfLife}</p>
+                <p className={`text-lg font-medium ${isBustMaxOil ? 'text-pink-200' : 'text-gray-700'}`}>{productConfigs[slug].pricing.madeIn}</p>
               </motion.div>
             )}
           </div>
