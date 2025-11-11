@@ -152,7 +152,7 @@ export const PRODUCTS = {
     { 
       name: 'Slim n Shape Fit Booster', 
       price: 2500, 
-      image: '/images/Slim n Shape Garcinia.png',
+      image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
       description: 'Best Herbal Weight Loss Capsules in Pakistan | Natural Belly Fat Burner | Metabolism Booster for Men & Women\n\nPremium herbal formula for safe & effective weight loss.',
       benefits: [
         'Burn Belly Fat Naturally',

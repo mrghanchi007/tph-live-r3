@@ -724,6 +724,8 @@ function App() {
       title: 'Slim n Shape Fit Booster',
       subtitle: 'Best Herbal Weight Loss Capsules in Pakistan | Natural Belly Fat Burner | Metabolism Booster for Men & Women',
       badge: 'WEIGHT LOSS',
+      metaTitle: 'Slim n Shape Fit Booster - Best Herbal Weight Loss Powder in Pakistan | The Planner Herbal',
+      metaDescription: 'Lose 5-7 Kg naturally in just 4-6 weeks with Slim n Shape Fit Booster. 100% herbal weight loss powder that burns belly & thigh fat without weakness or side effects. Free delivery across Pakistan!',
       solution: '🔑 Slim n Shape Fit Booster is the natural solution you\'ve been looking for!',
       benefitsTitle: 'Benefits of Slim n Shape Fit Booster',
       features: [
@@ -735,57 +737,57 @@ function App() {
       benefitsList: [
         {
           text: '🔥 Accelerates fat burn & metabolism naturally',
-          image: '/images/Slim n Shape Garcinia.png',
+          image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
           alt: 'Natural belly fat burner and metabolism booster - Slim n Shape Fit Booster',
           title: 'Accelerates Natural Fat Burn & Metabolism - Slim n Shape Fit Booster',
           seoDescription: 'Herbal Fit Booster capsules that naturally accelerate fat burning and boost metabolism for safe weight loss'
         },
         {
           text: '🍽 Reduces hunger & controls cravings effectively',
-          image: '/images/Slim n Shape Garcinia.png',
+          image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
           alt: 'Appetite suppressant and craving control with Fit Booster',
           title: 'Reduces Hunger & Controls Cravings - Slim n Shape Fit Booster',
           seoDescription: 'Natural appetite control that helps reduce hunger and manage food cravings effectively'
         },
         {
           text: '💖 Supports healthy cholesterol & blood pressure',
-          image: '/images/Slim n Shape Garcinia.png',
+          image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
           alt: 'Supports healthy cholesterol and blood pressure levels',
           title: 'Supports Healthy Cholesterol & Blood Pressure',
           seoDescription: 'Fit Booster may support healthy lipid profile and blood pressure as part of a balanced lifestyle'
         },
         {
           text: '🧠 Improves focus & balances emotional eating',
-          image: '/images/Slim n Shape Garcinia.png',
+          image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
           alt: 'Improves focus and helps balance emotional eating habits',
           title: 'Improves Focus & Balances Emotional Eating',
           seoDescription: 'Natural support to improve focus and reduce stress-related emotional eating'
         },
         {
           text: '🦴 Boosts bone & nerve strength',
-          image: '/images/Slim n Shape Garcinia.png',
+          image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
           alt: 'Boosts bone and nerve strength support',
           title: 'Boosts Bone & Nerve Strength',
           seoDescription: 'Supports overall wellness that contributes to bone and nerve strength'
         },
         {
           text: '🌿 100% natural weight loss with no side effects',
-          image: '/images/Slim n Shape Garcinia.png',
+          image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
           alt: '100% natural herbal weight loss with no known side effects',
           title: '100% Natural Weight Loss - No Side Effects',
           seoDescription: 'Herbal, chemical-free formula designed for safe and natural weight loss'
         },
         {
           text: '✅ Helps men & women burn belly fat safely',
-          image: '/images/Slim n Shape Garcinia.png',
+          image: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
           alt: 'Safe belly fat burner for men and women',
           title: 'Safe Belly Fat Burner for Men & Women',
           seoDescription: 'Suitable for both men and women to burn belly fat safely with natural ingredients'
         }
       ],
-      benefitsImage: 'https://i.ibb.co/KpmMN1kL/Benefits-of-Slim-n-Shape-Garcinia-Cambogia.png',
+      benefitsImage: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
       // Product-specific hero image
-      heroImage: 'https://i.ibb.co/GfYCr9z9/Slim-n-Shape-Garcinia-Cambogia-Capsules.png',
+      heroImage: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
       specialPriceAmount: '2,500',
       problemsTitle: 'Common Problems People Face Today',
       problemsSubtitle: 'Millions of men & women in Pakistan silently struggle with these issues — but you don’t have to:',
@@ -801,17 +803,17 @@ function App() {
       videoId: 'GG04kBQ_1NA',
       videoTitle: 'See Slim n Shape in Action',
       videoSubtitle: 'Watch how Slim n Shape Fit Booster has helped people across Pakistan lose weight naturally and safely.',
-      videoCover: 'https://i.ibb.co/YFS4t88Y/Slim-n-Shape-Garcinia-Cambogia-Video.png',
+      videoCover: 'https://i.ibb.co/Xf1g5YZn/G-Max-Passion-Video-Section.png',
       videoIframeTitle: 'Slim n Shape Fit Booster Video'
       ,
       // Before & After overrides (Real Results)
       beforeAfterTitle: 'Real Results, Real People',
       beforeAfterSubtitle: undefined,
       beforeAfterLabels: {
-        beforeTitle: 'Before',
-        afterTitle: 'After',
-        beforeDesc: '',
-        afterDesc: '',
+        beforeTitle: 'Before Slim n Shape Fit Booster',
+        afterTitle: 'After Slim n Shape Fit Booster',
+        beforeDesc: 'Low energy, poor confidence, marital issues',
+        afterDesc: 'Renewed vigor, strong performance, happy relationship',
         weeks: 'weeks of use',
         weeksPrefix: '📅 After ',
         weeksSuffix: ' Weeks of Use'
@@ -820,15 +822,15 @@ function App() {
         {
           id: 1,
           duration: 4,
-          before: 'https://i.ibb.co/ZpTfzQCK/4-weeks-of-use-Before-Slim-n-Shape-Garcinia-Cambogia-Capsules.png',
-          after: 'https://i.ibb.co/7DRv6vx/4-weeks-of-use-After-Slim-n-Shape-Garcinia-Cambogia-Capsules.png',
+          before: 'https://i.ibb.co/SXZfjX9b/Before-4-Weeks-of-Use.png',
+          after: 'https://i.ibb.co/mVDmHYf0/After-4-Weeks-of-Use.png',
           summary: 'Reduced belly fat, controlled cravings, higher energy.'
         },
         {
           id: 2,
           duration: 8,
-          before: 'https://i.ibb.co/cc2J72BT/8-weeks-of-use-Before-Slim-n-Shape-Garcinia-Cambogia-Capsules.png',
-          after: 'https://i.ibb.co/bM5RDKqr/8-weeks-of-use-After-Slim-n-Shape-Garcinia-Cambogia-Capsules.png',
+          before: 'https://i.ibb.co/679GXPvc/Before-8-Weeks-of-Use.png',
+          after: 'https://i.ibb.co/5x8JVmDf/After-8-Weeks-of-Use.png',
           summary: 'Noticeable weight loss, boosted confidence, healthier lifestyle.'
         }
       ]
@@ -3440,7 +3442,9 @@ function App() {
       title: 'Slim n Shape Fit Booster',
       subtitle: 'Herbal Powder',
       badge: 'WEIGHT LOSS',
-      heroImage: 'https://i.ibb.co/placeholder-fit-booster.png',
+      heroImage: 'https://i.ibb.co/6R5M6LHk/Slim-n-Shape-Fit-Booster-Hero-Section.png',
+      metaTitle: 'Slim n Shape Fit Booster - Best Herbal Weight Loss Powder in Pakistan | The Planner Herbal',
+      metaDescription: 'Lose 5-7 Kg naturally in just 4-6 weeks with Slim n Shape Fit Booster. 100% herbal weight loss powder that burns belly & thigh fat without weakness or side effects. Free delivery across Pakistan!',
       // Hero Section
       features: [
         '🔥 Lose 5–7 Kg Naturally in Just 4–6 Weeks!',
@@ -3474,13 +3478,34 @@ function App() {
       // Special Benefits
       benefitsTitle: 'Special Benefits of Fit Booster',
       benefitsList: [
-        'Lose 5–7 Kg in just 4–6 weeks',
-        'Burns belly & thigh fat naturally',
-        'Controls appetite & sugar cravings',
-        'Improves digestion & metabolism',
-        'Boosts energy — no weakness or tiredness',
-        'Detoxifies body & improves skin tone',
-        '100% Herbal • Safe • No Side Effects'
+        {
+          text: 'Lose 5–7 Kg in just 4–6 weeks',
+          image: 'https://i.ibb.co/4gjFx8gK/Lose-5-7-Kg-in-just-4-6-weeks.png'
+        },
+        {
+          text: 'Burns belly & thigh fat naturally',
+          image: 'https://i.ibb.co/6RMWcRF4/Burns-belly-thigh-fat-naturally.png'
+        },
+        {
+          text: 'Controls appetite & sugar cravings',
+          image: 'https://i.ibb.co/F4KCp25g/Controls-appetite-sugar-cravings.png'
+        },
+        {
+          text: 'Improves digestion & metabolism',
+          image: 'https://i.ibb.co/1tqNFt2R/Improves-digestion-metabolism.png'
+        },
+        {
+          text: 'Boosts energy — no weakness or tiredness',
+          image: 'https://i.ibb.co/60ZX2j9n/Boosts-energy-no-weakness-or-tiredness.png'
+        },
+        {
+          text: 'Detoxifies body & improves skin tone',
+          image: 'https://i.ibb.co/gLxbTHyv/Detoxifies-body-improves-skin-tone.png'
+        },
+        {
+          text: '100% Herbal • Safe • No Side Effects',
+          image: 'https://i.ibb.co/Qj7MwGQn/100-Herbal-Safe-No-Side-Effects.png'
+        }
       ],
       
       // Key Herbal Ingredients
@@ -3492,37 +3517,37 @@ function App() {
           {
             name: 'Green Coffee Extract',
             description: 'Speeds up fat metabolism & boosts energy',
-            image: 'https://i.ibb.co/placeholder-green-coffee.png'
+            image: 'https://i.ibb.co/67J8p9Qs/Green-Coffee-Extract.png'
           },
           {
             name: 'Garcinia Cambogia',
             description: 'Suppresses appetite & reduces fat buildup',
-            image: 'https://i.ibb.co/placeholder-garcinia.png'
+            image: 'https://i.ibb.co/nqwrHhHn/Garcinia-Cambogia.png'
           },
           {
             name: 'Apple Cider Vinegar Powder',
             description: 'Aids fat oxidation & detoxification',
-            image: 'https://i.ibb.co/placeholder-acv.png'
+            image: 'https://i.ibb.co/5xYX68QX/Apple-Cider-Vinegar-Powder.png'
           },
           {
             name: 'Lemon Peel & Ginger Extract',
             description: 'Improves digestion & reduces bloating',
-            image: 'https://i.ibb.co/placeholder-lemon-ginger.png'
+            image: 'https://i.ibb.co/vCBLJ7T1/Lemon-Peel-Ginger-Extract.png'
           },
           {
             name: 'Green Tea Extract',
             description: 'Burns stored fat naturally',
-            image: 'https://i.ibb.co/placeholder-green-tea.png'
+            image: 'https://i.ibb.co/Kx0Dp0Rd/Green-Tea-Extract.png'
           },
           {
             name: 'Gul Daudi (Chrysanthemum)',
             description: 'Balances body heat & detoxifies',
-            image: 'https://i.ibb.co/placeholder-chrysanthemum.png'
+            image: 'https://i.ibb.co/wFfq1SLy/Gul-Daudi-Chrysanthemum.png'
           },
           {
             name: 'Moringa Leaf Powder',
             description: 'Provides nutrients & prevents weakness',
-            image: 'https://i.ibb.co/placeholder-moringa.png'
+            image: 'https://i.ibb.co/XZK60tZ4/Moringa-Leaf-Powder.png'
           }
         ],
         badgesLine: '✅ 100% Natural | ✅ Scientifically Proven | ✅ Safe & Effective'
@@ -3600,18 +3625,43 @@ function App() {
       // Results Accuracy
       beforeAfterTitle: '🎯 Results Accuracy',
       beforeAfterSubtitle: 'Real results you can expect with Slim n Shape Fit Booster',
+      beforeAfterLabels: {
+        beforeTitle: 'Before Slim n Shape Fit Booster',
+        afterTitle: 'After Slim n Shape Fit Booster',
+        beforeDesc: 'Low energy, poor confidence, marital issues',
+        afterDesc: 'Renewed vigor, strong performance, happy relationship',
+        weeks: 'weeks of use',
+        weeksPrefix: '📅 After ',
+        weeksSuffix: ' Weeks of Use'
+      },
       resultsAccuracy: [
         'Visible results within 10–15 days',
         'Weight reduction of 5–7 Kg in 4–6 weeks',
         '100% herbal results — safe & consistent',
         'No rebound effect or weakness'
       ],
+      beforeAfterSets: [
+        {
+          id: 1,
+          duration: 4,
+          before: 'https://i.ibb.co/SXZfjX9b/Before-4-Weeks-of-Use.png',
+          after: 'https://i.ibb.co/mVDmHYf0/After-4-Weeks-of-Use.png',
+          summary: 'Reduced belly fat, controlled cravings, higher energy.'
+        },
+        {
+          id: 2,
+          duration: 8,
+          before: 'https://i.ibb.co/679GXPvc/Before-8-Weeks-of-Use.png',
+          after: 'https://i.ibb.co/5x8JVmDf/After-8-Weeks-of-Use.png',
+          summary: 'Noticeable weight loss, boosted confidence, healthier lifestyle.'
+        }
+      ],
       
       // Video Section
       videoId: 'YOUR_YOUTUBE_VIDEO_ID',
       videoTitle: '📺 See Slim n Shape Fit Booster in Action',
       videoSubtitle: 'Watch how Fit Booster has transformed the lives of people across Pakistan. Real results, real stories!',
-      videoCover: 'https://i.ibb.co/placeholder-fit-booster-video.png',
+      videoCover: 'https://i.ibb.co/Xf1g5YZn/G-Max-Passion-Video-Section.png',
       videoDescription: 'Click to load video. Loading the video will enable YouTube cookies. We respect your privacy.',
       
       // FAQs
@@ -3678,13 +3728,34 @@ function App() {
           // Benefits (UR)
           benefitsTitle: 'فٹ بوسٹر کے خاص فوائد',
           benefitsList: [
-            'صرف 4-6 ہفتوں میں 5-7 کلو وزن کم کریں',
-            'پیٹ اور رانوں کی چربی قدرتی طور پر جلائیں',
-            'بھوک اور میٹھے کی خواہش پر قابو پائیں',
-            'ہاضمہ اور میٹابولزم بہتر بنائیں',
-            'توانائی بڑھائیں — کوئی کمزوری یا تھکاوٹ نہیں',
-            'جسم کو صاف کریں اور جلد کی رنگت بہتر بنائیں',
-            '100٪ ہربل • محفوظ • کوئی سائیڈ ایفیکٹس نہیں'
+            {
+              text: 'صرف 4-6 ہفتوں میں 5-7 کلو وزن کم کریں',
+              image: 'https://i.ibb.co/4gjFx8gK/Lose-5-7-Kg-in-just-4-6-weeks.png'
+            },
+            {
+              text: 'پیٹ اور رانوں کی چربی قدرتی طور پر جلائیں',
+              image: 'https://i.ibb.co/6RMWcRF4/Burns-belly-thigh-fat-naturally.png'
+            },
+            {
+              text: 'بھوک اور میٹھے کی خواہش پر قابو پائیں',
+              image: 'https://i.ibb.co/F4KCp25g/Controls-appetite-sugar-cravings.png'
+            },
+            {
+              text: 'ہاضمہ اور میٹابولزم بہتر بنائیں',
+              image: 'https://i.ibb.co/1tqNFt2R/Improves-digestion-metabolism.png'
+            },
+            {
+              text: 'توانائی بڑھائیں — کوئی کمزوری یا تھکاوٹ نہیں',
+              image: 'https://i.ibb.co/60ZX2j9n/Boosts-energy-no-weakness-or-tiredness.png'
+            },
+            {
+              text: 'جسم کو صاف کریں اور جلد کی رنگت بہتر بنائیں',
+              image: 'https://i.ibb.co/gLxbTHyv/Detoxifies-body-improves-skin-tone.png'
+            },
+            {
+              text: '100٪ ہربل • محفوظ • کوئی سائیڈ ایفیکٹس نہیں',
+              image: 'https://i.ibb.co/Qj7MwGQn/100-Herbal-Safe-No-Side-Effects.png'
+            }
           ],
           
           // Herbal Ingredients (UR)
@@ -3696,37 +3767,37 @@ function App() {
               {
                 name: 'گرین کافی ایکسٹریکٹ',
                 description: 'چربی کے میٹابولزم کو تیز کرتا ہے اور توانائی بڑھاتا ہے',
-                image: 'https://i.ibb.co/placeholder-green-coffee.png'
+                image: 'https://i.ibb.co/67J8p9Qs/Green-Coffee-Extract.png'
               },
               {
                 name: 'گارسینیا کیمبوجیا',
                 description: 'بھوک کو دباتا ہے اور چربی کے جمع ہونے کو کم کرتا ہے',
-                image: 'https://i.ibb.co/placeholder-garcinia.png'
+                image: 'https://i.ibb.co/nqwrHhHn/Garcinia-Cambogia.png'
               },
               {
                 name: 'ایپل سائیڈر وینیگر پاؤڈر',
                 description: 'چربی کے آکسیڈیشن اور ڈیٹاکسیفیکیشن میں مدد کرتا ہے',
-                image: 'https://i.ibb.co/placeholder-acv.png'
+                image: 'https://i.ibb.co/5xYX68QX/Apple-Cider-Vinegar-Powder.png'
               },
               {
                 name: 'لیموں کا چھلکا اور ادرک کا عرق',
                 description: 'ہاضمہ بہتر بناتا ہے اور پھولنے کو کم کرتا ہے',
-                image: 'https://i.ibb.co/placeholder-lemon-ginger.png'
+                image: 'https://i.ibb.co/vCBLJ7T1/Lemon-Peel-Ginger-Extract.png'
               },
               {
                 name: 'گرین ٹی ایکسٹریکٹ',
                 description: 'ذخیرہ شدہ چربی کو قدرتی طور پر جلاتا ہے',
-                image: 'https://i.ibb.co/placeholder-green-tea.png'
+                image: 'https://i.ibb.co/Kx0Dp0Rd/Green-Tea-Extract.png'
               },
               {
                 name: 'گل داؤدی (کرسنتھیمم)',
                 description: 'جسم کی حرارت کو متوازن کرتا ہے اور صاف کرتا ہے',
-                image: 'https://i.ibb.co/placeholder-chrysanthemum.png'
+                image: 'https://i.ibb.co/wFfq1SLy/Gul-Daudi-Chrysanthemum.png'
               },
               {
                 name: 'مورنگا کے پتوں کا پاؤڈر',
                 description: 'غذائی اجزاء فراہم کرتا ہے اور کمزوری سے بچاتا ہے',
-                image: 'https://i.ibb.co/placeholder-moringa.png'
+                image: 'https://i.ibb.co/XZK60tZ4/Moringa-Leaf-Powder.png'
               }
             ],
             badgesLine: '✅ 100٪ قدرتی | ✅ سائنسی طور پر ثابت شدہ | ✅ محفوظ اور مؤثر'
@@ -4876,6 +4947,21 @@ function App() {
       if (twitterDescription) {
         twitterDescription.setAttribute('content', productDescription);
       }
+
+      // Update Open Graph image
+      const productImage = productConfigs[slug].heroImage || productConfigs[slug].image;
+      if (productImage) {
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) {
+          ogImage.setAttribute('content', productImage);
+        }
+
+        // Update Twitter image
+        const twitterImage = document.querySelector('meta[property="twitter:image"]');
+        if (twitterImage) {
+          twitterImage.setAttribute('content', productImage);
+        }
+      }
     }
 
     // Check if cookies are accepted
@@ -5068,7 +5154,7 @@ Please confirm my order. Thank you!`;
         {/* Header moved to Root layout */}
 
         {/* Hero Section - Optimized */}
-        <section className={`py-8 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-r from-pink-900 via-rose-800 to-amber-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-900 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
+        <section className={`py-8 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-r from-pink-900 via-rose-800 to-amber-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-900 to-purple-950' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-600 to-blue-700' : isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
           {/* Background pattern */}
           <div className="absolute inset-0 z-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>
@@ -5078,24 +5164,24 @@ Please confirm my order. Thank you!`;
               <motion.div className="lg:w-1/2" {...fadeInUp}>
                 <div className="flex items-center space-x-2 mb-4">
                   <SafeIcon icon={FiAward} className="text-yellow-400 text-2xl" />
-                  <span className={`${isBustMaxOil ? 'bg-gradient-to-r from-amber-400 to-pink-500 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
+                  <span className={`${isBustMaxOil ? 'bg-gradient-to-r from-amber-400 to-pink-500 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : slug === 'slim-n-shape-fit-booster' ? 'bg-yellow-400 text-blue-800' : isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
                     {content.hero.badge}
                   </span>
                 </div>
-                <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'}`}>
+                <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : slug === 'slim-n-shape-fit-booster' ? 'text-yellow-400' : 'text-yellow-400'}`}>
                   {content.hero.title}
                 </h1>
-                <p className={`text-xl md:text-2xl mb-4 ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
+                <p className={`text-xl md:text-2xl mb-4 ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-100' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
                   {content.hero.subtitle}
                 </p>
                 {content.hero.description && (
-                  <p className={`text-base md:text-lg mb-6 leading-relaxed ${isBustMaxOil ? 'text-pink-100' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-red-50'}`}>
+                  <p className={`text-base md:text-lg mb-6 leading-relaxed ${isBustMaxOil ? 'text-pink-100' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-50' : isLuxuryProduct ? 'text-gray-300' : 'text-red-50'}`}>
                     {content.hero.description}
                   </p>
                 )}
                 <div className="flex flex-wrap gap-4 mb-6 text-lg">
                   {content.hero.features.map((feature, index) => (
-                    <span key={index} className={`${isBustMaxOil ? 'bg-amber-500/20 border border-amber-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/20 border border-pink-400/30' : isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
+                    <span key={index} className={`${isBustMaxOil ? 'bg-amber-500/20 border border-amber-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/20 border border-pink-400/30' : slug === 'slim-n-shape-fit-booster' ? 'bg-white/20' : isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
                   ))}
                 </div>
                 <div className="flex items-center space-x-1 mb-6">
@@ -5105,17 +5191,17 @@ Please confirm my order. Thank you!`;
                   <span className="ml-2 text-lg">{content.hero.trusted}</span>
                 </div>
                 <motion.div
-                  className={`${isBustMaxOil ? 'bg-amber-500/10 border border-amber-400/20' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/10 border border-pink-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
+                  className={`${isBustMaxOil ? 'bg-amber-500/10 border border-amber-400/20' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/10 border border-pink-400/20' : slug === 'slim-n-shape-fit-booster' ? 'bg-white/10 border border-white/10' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className={`text-2xl md:text-3xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-yellow-400'} mb-2`}>
+                  <p className={`text-2xl md:text-3xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : slug === 'slim-n-shape-fit-booster' ? 'text-yellow-400' : 'text-yellow-400'} mb-2`}>
                     {content.hero.specialPrice}: Rs {content.hero.specialPriceAmount || '2,500'}/-
                   </p>
-                  <p className={`${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
+                  <p className={`${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-100' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
                   <motion.button
                     onClick={() => document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' })}
-                    className={`mt-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600 hover:from-amber-600 hover:to-pink-700' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
+                    className={`mt-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600 hover:from-amber-600 hover:to-pink-700' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -5576,7 +5662,7 @@ Please confirm my order. Thank you!`;
                         {dosageData.title}
                       </motion.h2>
                       
-                      <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
+                      <div className={`grid ${(slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-6 mb-8 max-w-6xl mx-auto`}>
                         {dosageData.steps.map((step, index) => (
                           <motion.div
                             key={index}
@@ -6067,7 +6153,7 @@ Please confirm my order. Thank you!`;
         </Suspense>
 
         {/* Order Form */}
-        <section id="order-form" className={`py-12 md:py-16 text-white ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-black to-gray-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-950 to-purple-950' : 'bg-gradient-to-r from-red-600 to-red-700'}`}>
+        <section id="order-form" className={`py-12 md:py-16 text-white ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-black to-gray-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-950 to-purple-950' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-600 to-blue-700' : 'bg-gradient-to-r from-red-600 to-red-700'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="max-w-2xl mx-auto" {...fadeInUp}>
               <div className="text-center mb-8">
