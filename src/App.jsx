@@ -2587,7 +2587,7 @@ function App() {
       subtitle: 'To Live Life Powerfully, Actively & Strongly',
       description: 'Experience renewed strength, stamina, and confidence with Sultan Shahi Gold — a powerful herbal health booster crafted for men of all ages. Naturally formulated with Ginseng, Ashwagandha, Safed Musli & Shilajit for lasting energy and peak performance.',
       badge: 'PREMIUM',
-      heroImage: 'https://i.ibb.co/Ldw6wttM/Shahi-Sultan-Health-Booster.png',
+      heroImage: 'https://i.ibb.co/vvz7y4Bf/Sultan-Shahi-Gold-Health-Booster-Hero-Section.png',
       features: [
         '💪 Boosts Strength & Stamina',
         '🔥 Enhances Performance & Vitality',
@@ -2737,7 +2737,7 @@ function App() {
       // Video Section headings (EN)
       videoTitle: 'See Sultan Shahi Gold Health Booster in Action',
       videoSubtitle: 'Real Energy, Real Confidence, Real Power',
-      videoCover: 'https://i.ibb.co/Hpt0BJ92/Shahi-Sultan-Health-Booster-Video.png',
+      videoCover: 'https://i.ibb.co/GvZNgS4z/Sultan-Shahi-Gold-Health-Booster-Video-Section.png',
       // Urdu translations for this product only
       i18n: {
         ur: {

@@ -75,7 +75,7 @@ export const PRODUCTS = {
     { 
       name: 'Sultan Shahi Gold Health Booster', 
       price: 6000, 
-      image: '/images/Shahi Sultan Health Booster.png',
+      image: 'https://i.ibb.co/tP2D3PYn/Sultan-Shahi-Gold-Health-Booster.png',
       description: 'To Live Life Powerfully / Actively / Strongly💪\nEnergetic • Men Power • Wellness in All Ages',
       benefits: [
         'Boosts immunity',
