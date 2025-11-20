@@ -33,7 +33,7 @@ const Header = () => {
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
             <img
-              src="https://i.ibb.co/vv30wqfr/The-Planner-Herbal-International-Logo.png"
+              src="/logo.svg"
               alt="The Planner Herbal International"
               className="h-14 w-auto rounded md:h-16"
               width={56}

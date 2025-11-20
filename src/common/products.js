@@ -135,6 +135,18 @@ export const PRODUCTS = {
         'Herbal ingredients'
       ]
     },
+    { 
+      name: 'GlowGrow Root Revival Oil', 
+      price: 1950, 
+      image: 'https://i.ibb.co/609qQhdh/Glow-Grow-Root-Revival-Oil.jpg',
+      description: 'Nourishing hair oil for healthy roots and growth',
+      benefits: [
+        'Strengthens hair roots',
+        'Promotes healthy hair growth',
+        'Reduces hair fall',
+        'Natural herbal blend'
+      ]
+    },
   ],
   'weight-lose': [
     { 
