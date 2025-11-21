@@ -69,7 +69,7 @@ const Home = () => {
     <div className="bg-white">
       {/* 1️⃣ Hero Section */}
       <section className="relative bg-gradient-to-r from-red-50 to-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://i.ibb.co/Hp76qS4G/Hero-Section-Banner.jpg')] bg-cover bg-center mix-blend-overlay opacity-5"></div>
+        <div className="absolute inset-0 bg-[url('https://i.ibb.co/V0HyJDjG/Home-Page-Hero-Section-Banner.jpg')] bg-cover bg-center mix-blend-overlay opacity-5"></div>
         
         <div className="container mx-auto px-4 py-16 md:py-24 relative">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -124,7 +124,7 @@ const Home = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-red-100 to-yellow-100 rounded-2xl transform rotate-3 -z-10 blur-xl opacity-70"></div>
                 <img 
-                  src="https://i.ibb.co/Vc7pgW9D/About-TPH-International-Section.jpg" 
+                  src="https://i.ibb.co/KxZ5fYzt/Why-Choose-TPH-Int.jpg" 
                   alt="Herbal Products" 
                   className="w-full h-auto rounded-2xl shadow-2xl border-8 border-white"
                   onError={(e) => {
@@ -318,7 +318,7 @@ const Home = () => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-tr from-red-500 to-red-700 opacity-20"></div>
                 <img 
-                  src="https://i.ibb.co/Vc7pgW9D/About-TPH-International-Section.jpg" 
+                  src="https://i.ibb.co/KxZ5fYzt/Why-Choose-TPH-Int.jpg" 
                   alt="TPH International" 
                   className="w-full h-auto object-cover"
                   onError={(e) => {

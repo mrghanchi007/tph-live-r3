@@ -45,7 +45,7 @@ const About = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <img
-              src="https://i.ibb.co/Vc7pgW9D/About-TPH-International-Section.jpg"
+              src="https://i.ibb.co/G4N35s12/Who-We-Are.jpg"
               alt="Who We Are"
               className="rounded-xl shadow-lg w-full object-cover"
               loading="lazy"
@@ -139,7 +139,7 @@ const About = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
           <motion.img
-            src="/images/Why Choose TPH Int.png"
+            src="https://i.ibb.co/KxZ5fYzt/Why-Choose-TPH-Int.jpg"
             alt="Why Choose TPH International"
             className="rounded-xl shadow-lg w-full object-cover order-last md:order-first"
             initial={{ opacity: 0 }}
