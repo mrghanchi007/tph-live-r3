@@ -208,6 +208,26 @@ const ProductDetail = () => {
               <h2 className={isLuxuryTheme ? "text-xl font-bold text-yellow-400 mb-4" : "text-xl font-bold text-gray-900 mb-4"}>Product Description</h2>
               <div className={isLuxuryTheme ? "prose max-w-none text-yellow-100" : "prose max-w-none text-gray-700"}>
                 <p>{product.fullDescription?.overview || 'Our products are made with the finest natural ingredients and are free from harmful chemicals. Each batch is carefully crafted to ensure maximum potency and effectiveness.'}</p>
+                
+                {product.fullDescription?.commonHairProblems && (
+                  <>
+                    <h3 className={isLuxuryTheme ? "text-lg font-semibold mt-6 mb-4 text-yellow-400" : "text-lg font-semibold mt-6 mb-4"}>Common Hair Problems Women Face</h3>
+                    <div className="space-y-4">
+                      {product.fullDescription.commonHairProblems.map((issue, index) => (
+                        <div key={index} className="flex">
+                          <div className="flex-shrink-0 mt-1">
+                            <span className="text-red-500 font-bold text-lg">❌</span>
+                          </div>
+                          <div className="ml-3">
+                            <h4 className={isLuxuryTheme ? "font-semibold text-yellow-300" : "font-semibold text-gray-900"}>{issue.problem}</h4>
+                            <p className={isLuxuryTheme ? "text-yellow-200 mt-1" : "text-gray-600 mt-1"}>{issue.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
+                
                 <p className="mt-4 font-medium">Key Features:</p>
                 <ul className="list-disc pl-5 mt-2 space-y-1">
                   {product.fullDescription?.keyFeatures?.map((feature, index) => (

@@ -145,7 +145,48 @@ export const PRODUCTS = {
         'Promotes healthy hair growth',
         'Reduces hair fall',
         'Natural herbal blend'
-      ]
+      ],
+      fullDescription: {
+        overview: 'Most women struggle with hair issues that affect confidence, growth and overall hair health. GlowGrow Root Revival Oil is designed to target the most common challenges:',
+        commonHairProblems: [
+          {
+            problem: 'Excessive Hair Fall',
+            description: 'Weak roots, stress and nutritional imbalance lead to constant shedding.'
+          },
+          {
+            problem: 'Thin, Flat and Weak Hair',
+            description: 'Lack of nourishment and poor scalp circulation reduce volume and thickness.'
+          },
+          {
+            problem: 'Slow or Stopped Hair Growth',
+            description: 'Damaged follicles and clogged scalp block natural regrowth.'
+          },
+          {
+            problem: 'Dry, Rough and Frizzy Hair',
+            description: 'Loss of moisture leaves hair dull, brittle and difficult to manage.'
+          },
+          {
+            problem: 'Dandruff & Itchy Scalp',
+            description: 'Fungal growth, dryness or oil imbalance cause irritation and flakes.'
+          },
+          {
+            problem: 'Split Ends & Breakage',
+            description: 'Weak strands break easily, making hair look uneven and unhealthy.'
+          },
+          {
+            problem: 'Post-Color & Chemical Damage',
+            description: 'Heat styling, dyes and treatments strip hair of strength and shine.'
+          }
+        ],
+        keyFeatures: [
+          'Strengthens hair roots',
+          'Promotes healthy hair growth',
+          'Reduces hair fall',
+          'Natural herbal blend'
+        ],
+        howToUse: 'Apply a small quantity of oil to the scalp and hair. Massage gently for 5-10 minutes. Leave overnight for best results. Wash off with mild shampoo in the morning. Use 2-3 times a week for optimal results.',
+        ingredients: 'Made with 100% natural herbs and extracts including Bhringraj, Amla, Brahmi, and other traditional Ayurvedic ingredients. Free from artificial colors, fragrances, and harsh chemicals.'
+      }
     },
   ],
   'weight-lose': [
