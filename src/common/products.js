@@ -49,7 +49,7 @@ export const PRODUCTS = {
     { 
       name: 'Sultan Shahi Gold Majoon', 
       price: 5000, 
-      image: 'https://i.ibb.co/qTywxNG/Sultan-Shahi-Gold-Majoon.png',
+      image: 'https://i.ibb.co/Ps3f9vxW/Sultan-Shahi-Gold-Majoon.jpg',
       description: 'Royal herbal jam for strength and vitality',
       benefits: [
         'Boosts energy',
@@ -114,7 +114,7 @@ export const PRODUCTS = {
     { 
       name: 'BustMax Breast Oil', 
       price: 2500, 
-      image: 'https://i.ibb.co/k2M0zm7W/Bust-Max-Breast-Oil.png',
+      image: 'https://i.ibb.co/BdFCHvp/Bust-Max-Breast-Oil.jpg',
       description: 'Natural breast enhancement oil',
       benefits: [
         'Firms and tones',

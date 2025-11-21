@@ -5,6 +5,52 @@ import { CATEGORY_LIST, PRODUCTS, slugifyProduct } from '../common/products';
 
 const cardVariants = { hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } };
 
+// Theme configurations for each category
+const getCategoryTheme = (slug) => {
+  switch (slug) {
+    case 'men':
+      return {
+        bgGradient: 'from-blue-900 to-blue-700',
+        text: 'text-white',
+        accent: 'text-blue-400',
+        buttonBg: 'bg-blue-600 hover:bg-blue-700',
+        cardBg: 'bg-white',
+        cardBorder: 'border-blue-200',
+        priceColor: 'text-blue-600'
+      };
+    case 'women':
+      return {
+        bgGradient: 'from-pink-800 to-purple-800',
+        text: 'text-white',
+        accent: 'text-pink-300',
+        buttonBg: 'bg-pink-600 hover:bg-pink-700',
+        cardBg: 'bg-white',
+        cardBorder: 'border-pink-200',
+        priceColor: 'text-pink-600'
+      };
+    case 'weight-lose':
+      return {
+        bgGradient: 'from-red-700 to-red-600',
+        text: 'text-white',
+        accent: 'text-red-200',
+        buttonBg: 'bg-red-600 hover:bg-red-700',
+        cardBg: 'bg-white',
+        cardBorder: 'border-red-200',
+        priceColor: 'text-red-600'
+      };
+    default:
+      return {
+        bgGradient: 'from-red-600 to-red-700',
+        text: 'text-white',
+        accent: 'text-red-50',
+        buttonBg: 'bg-red-600 hover:bg-red-700',
+        cardBg: 'bg-white',
+        cardBorder: 'border-gray-200',
+        priceColor: 'text-red-600'
+      };
+  }
+};
+
 const Category = () => {
   const { slug } = useParams();
   const raw = (slug || '').toString();
@@ -20,6 +66,9 @@ const Category = () => {
     .filter(Boolean);
   const category = CATEGORY_LIST.find((c) => keysToTry.includes(c.slug.toLowerCase()));
   const items = keysToTry.map((k) => PRODUCTS[k]).find((arr) => Array.isArray(arr)) || [];
+  
+  // Get theme based on category
+  const theme = getCategoryTheme(category?.slug);
 
   useEffect(() => {
     document.title = `${category ? category.label : 'Shop'} | The Planner Herbal International (TPH Int.)`;
@@ -37,8 +86,8 @@ const Category = () => {
 
   return (
     <>
-      {/* Hero Header (match About hero) */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-red-600 to-red-700 text-white">
+      {/* Hero Header with category-specific theme */}
+      <section className={`relative overflow-hidden bg-gradient-to-r ${theme.bgGradient} ${theme.text}`}>
         <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-yellow-400/20 rounded-full blur-3xl" />
         <div className="container mx-auto px-4 py-16 md:py-24 relative">
@@ -46,14 +95,14 @@ const Category = () => {
             <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-3xl md:text-5xl font-extrabold mb-4">
               {category.label}
             </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05 }} className="text-lg md:text-xl text-red-50 max-w-3xl">
+            <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05 }} className={`text-lg md:text-xl ${theme.accent} max-w-3xl`}>
               Explore authentic {category.label} products.
             </motion.p>
           </div>
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-white">
+      <section className={`py-12 md:py-16 ${theme.cardBg}`}>
         <div className="container mx-auto px-4">
           <motion.div initial="hidden" animate="show" className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {items.map((p, i) => (
@@ -61,7 +110,7 @@ const Category = () => {
                 key={p.name}
                 variants={cardVariants}
                 transition={{ duration: 0.35, delay: i * 0.05 }}
-                className="group bg-white rounded-2xl border border-gray-200/60 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className={`group rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${theme.cardBg} ${theme.cardBorder}`}
               >
                 <div className="aspect-[4/3] bg-white flex items-center justify-center p-3">
                   <img
@@ -84,10 +133,10 @@ const Category = () => {
                 </div>
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-gray-900 leading-snug tracking-wide">{p.name}</h3>
-                  <div className="mt-2 text-red-600 font-bold">Rs {p.price.toLocaleString()}</div>
+                  <div className={`mt-2 font-bold ${theme.priceColor}`}>Rs {p.price.toLocaleString()}</div>
                   <Link
                     to={`/product/${slugifyProduct(p.name)}`}
-                    className="inline-flex items-center gap-2 mt-3 text-sm font-semibold text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md shadow-sm transition-colors"
+                    className={`inline-flex items-center gap-2 mt-3 text-sm font-semibold text-white px-4 py-2 rounded-md shadow-sm transition-colors ${theme.buttonBg}`}
                     aria-label={`View ${p.name}`}
                   >
                     View Product <span aria-hidden>→</span>

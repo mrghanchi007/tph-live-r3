@@ -61,7 +61,7 @@ function App() {
       title: 'Sultan Shahi Gold Majoon',
       subtitle: 'Traditional Herbal Strength & Vitality Tonic for Men',
       badge: 'BEST SELLER',
-      heroImage: 'https://i.ibb.co/Zw5CjYC/Sultan-Shahi-Gold-Majoon-Hero-Section.png',
+      heroImage: 'https://i.ibb.co/xxD6XG9/Banner-Sultan-Shahi-Gold-Majoon.jpg',
       solution: 'Sultan Shahi Gold Majoon is the royal solution you\'ve been looking for!',
       benefitsTitle: 'Benefits of Sultan Shahi Gold Majoon',
       // Benefits section description
@@ -439,6 +439,7 @@ function App() {
       title: 'B-Maxman Royal Special Treatment',
       subtitle: 'Premium herbal formula for enhanced performance and vitality',
       badge: 'BEST SELLER',
+      heroImage: 'https://i.ibb.co/8LZ3b2HG/Banner-B-Maxman-Royal-Special-Treatment.jpg',
       solution: 'B-Maxman Royal Special Treatment is the ultimate solution you\'ve been looking for!',
       benefitsTitle: language === 'en' ? 'Benefits of B-Maxman Royal Special Treatment' : 'بی میکس مین رائل سپیشل ٹریٹمنٹ کے فوائد',
       // Herbal Power Section with 2-column layout
@@ -467,7 +468,7 @@ function App() {
       solution: 'B-Maxtime Super Active is the natural solution you\'ve been looking for!',
       benefitsTitle: language === 'en' ? 'Benefits of B-Maxtime Super Active' : 'بی میکس ٹائم سپر ایکٹو کے فوائد',
       // Page hero image (only for this product)
-      heroImage: 'https://i.ibb.co/HLKYt3XP/Slim-n-Shape-Herbal-Tea.png',
+      heroImage: 'https://i.ibb.co/LX4d5wYp/Banner-B-Maxtime-Super-Active.jpg',
       // Video section cover (only for this product)
       videoCover: 'https://i.ibb.co/wFpDYw3b/B-Maxtime-Super-Active-Video.png',
       // Hero overrides (page specific)
@@ -787,7 +788,7 @@ function App() {
       ],
       benefitsImage: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
       // Product-specific hero image
-      heroImage: 'https://i.ibb.co/1Gmm2hwy/Slim-n-Shape-Fit-Booster.png',
+      heroImage: 'https://i.ibb.co/fz2RHNJz/Banner-Slim-n-Shape-Fit-Booster.jpg',
       specialPriceAmount: '2,500',
       problemsTitle: 'Common Problems People Face Today',
       problemsSubtitle: 'Millions of men & women in Pakistan silently struggle with these issues — but you don’t have to:',
@@ -1076,7 +1077,7 @@ function App() {
       title: 'Sultan Shahi Gold Tila',
       subtitle: 'Herbal Massage Oil',
       badge: 'BEST SELLER',
-      heroImage: 'https://i.ibb.co/SXW1B3f4/Sultan-Shahi-Gold-Tila-Hero-Section.png',
+      heroImage: 'https://i.ibb.co/0R2mqCTr/Banner-Sultan-Shahi-Gold-Tila.jpg',
       solution: 'Premium herbal blend for men\'s strength, endurance & vitality',
       benefitsTitle: language === 'en' ? '✨ Benefits of Sultan Shahi Gold Tila' : 'سلطان شاہی گولڈ تلا کے فوائد',
       benefitsDescription: '🌿 Natural herbal massage oil for men showing improved firmness and vitality',
@@ -1627,7 +1628,7 @@ function App() {
       subtitle: 'Natural Fertility & Hormonal Support for Women',
       description: 'Boost your reproductive health, hormonal balance, and energy naturally with our premium herbal formula.',
       badge: 'PREMIUM',
-      heroImage: 'https://i.ibb.co/G37PNcPH/G-Max-Passion.png',
+      heroImage: 'https://i.ibb.co/pBt59VM5/Banner-G-Max-Passion.jpg',
       // Video Section
       videoId: 'YOUR_YOUTUBE_VIDEO_ID',
       videoTitle: '🌸 See G-Max Passion in Action',
@@ -2111,7 +2112,7 @@ function App() {
       subtitle: 'Premium Herbal Formula for Fertility, Hormonal Balance & Overall Wellness',
       description: 'Malika Shahi Gold is a premium herbal health booster specially formulated for women to support fertility, hormonal balance, energy, and overall wellness.',
       badge: 'PREMIUM',
-      heroImage: 'https://i.ibb.co/JwdB46CD/Malka-Shahi-Gold-Health-Booster-Hero-Section.png',
+      heroImage: 'https://i.ibb.co/KxHN1smC/Banner-Malika-Shahi-Gold-Health-Booster.jpg',
       features: [
         '✨ Support Fertility & Reproductive Health',
         '✨ Balance Hormones Naturally',
@@ -2587,7 +2588,7 @@ function App() {
       subtitle: 'To Live Life Powerfully, Actively & Strongly',
       description: 'Experience renewed strength, stamina, and confidence with Sultan Shahi Gold — a powerful herbal health booster crafted for men of all ages. Naturally formulated with Ginseng, Ashwagandha, Safed Musli & Shilajit for lasting energy and peak performance.',
       badge: 'PREMIUM',
-      heroImage: 'https://i.ibb.co/vvz7y4Bf/Sultan-Shahi-Gold-Health-Booster-Hero-Section.png',
+      heroImage: 'https://i.ibb.co/4g2MqYNT/Banner-Sultan-Shahi-Gold-Health-Booster.jpg',
       features: [
         '💪 Boosts Strength & Stamina',
         '🔥 Enhances Performance & Vitality',
@@ -3131,6 +3132,7 @@ function App() {
       title: 'Malka Shahi Gold Health Booster',
       subtitle: 'Premium herbal supplement for women\'s health',
       badge: 'WOMEN\'S HEALTH',
+      heroImage: 'https://i.ibb.co/pBt59VM5/Banner-G-Max-Passion.jpg',
       solution: 'Malka Shahi Gold supports women\'s health naturally!',
       benefitsTitle: language === 'en' ? 'Benefits of Malka Shahi Gold' : 'ملکہ شاہی گولڈ کے فوائد'
     },
@@ -3147,7 +3149,7 @@ function App() {
         'Improve Digestion & Skin Glow'
       ],
       // Page images (Tea only)
-      heroImage: 'https://i.ibb.co/MkjMjkb0/Slim-n-Shape-Herbal-Tea.png',
+      heroImage: 'https://i.ibb.co/8L4vQ7BD/Banner-Slim-n-Shape-Herbal-Tea.jpg',
       benefitsImage: 'https://i.ibb.co/7t9NJdFz/Benefits-of-Slim-n-Shape-Herbal-Tea.jpg',
       specialPriceAmount: '1,200',
       // Video Section (EN)
@@ -3442,7 +3444,7 @@ function App() {
       title: 'Slim n Shape Fit Booster',
       subtitle: 'Herbal Powder',
       badge: 'WEIGHT LOSS',
-      heroImage: 'https://i.ibb.co/6R5M6LHk/Slim-n-Shape-Fit-Booster-Hero-Section.png',
+      heroImage: 'https://i.ibb.co/fz2RHNJz/Banner-Slim-n-Shape-Fit-Booster.jpg',
       metaTitle: 'Slim n Shape Fit Booster - Best Herbal Weight Loss Powder in Pakistan | The Planner Herbal',
       metaDescription: 'Lose 5-7 Kg naturally in just 4-6 weeks with Slim n Shape Fit Booster. 100% herbal weight loss powder that burns belly & thigh fat without weakness or side effects. Free delivery across Pakistan!',
       // Hero Section
@@ -3881,7 +3883,7 @@ function App() {
       title: 'BustMax Breast Oil – Breast Massage Oil',
       subtitle: '🌸 Total Breast Health & Natural Firming Solution',
       badge: 'WOMEN',
-      heroImage: 'https://i.ibb.co/LVnS3NS/Bust-Max-Breast-Oil-Hero-Section.png',
+      heroImage: 'https://i.ibb.co/MDrY1kBD/Banner-Bust-Max-Breast-Oil.jpg',
       heroImageAlt: 'Bust Max Breast Oil Hero Section',
       heroImageTitle: 'BustMax Breast Oil - Total Breast Health & Natural Firming Solution',
       featuredImage: 'https://i.ibb.co/k2M0zm7W/Bust-Max-Breast-Oil.png',
@@ -4328,7 +4330,7 @@ function App() {
       title: 'Bustmax XL – Breast Firming & Shape Booster',
       subtitle: '💗 Beautiful B Shape • Natural Lift • Visible Firmness',
       badge: 'WOMEN',
-      heroImage: 'https://i.ibb.co/6cSkC0Qm/Bustmax-XL-Hero-Section.png',
+      heroImage: 'https://i.ibb.co/0jH2NDCr/Banner-Bustmax-XL-Breast-Booster.jpg',
       metaTitle: 'Bustmax XL Breast Booster - Natural Breast Firming & Shape Enhancement | The Planner Herbal',
       metaDescription: 'Bustmax XL is a premium herbal breast enhancement formula that naturally restores firmness, lift, and beautiful B-shape. 100% natural ingredients, safe for all women. Order now with free delivery!',
       
@@ -4828,6 +4830,80 @@ function App() {
             }
           ]
         }
+      }
+    },
+    'glowgrow-root-revival-oil': {
+      title: 'GlowGrow Root Revival Oil',
+      subtitle: 'Nourishing hair oil for healthy roots and growth',
+      badge: 'WOMEN',
+      heroImage: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg',
+      features: [
+        'Strengthens hair roots',
+        'Promotes healthy hair growth',
+        'Reduces hair fall',
+        'Natural herbal blend'
+      ],
+      specialPriceAmount: '1,950',
+      problemsTitle: 'Common Hair Problems Women Face',
+      problemsSubtitle: 'GlowGrow Root Revival Oil helps restore hair health naturally without side effects.',
+      problemsList: [
+        'Excessive hair fall and thinning',
+        'Weak and brittle hair',
+        'Slow hair growth',
+        'Dry and damaged hair',
+        'Dandruff and scalp issues'
+      ],
+      solution: 'GlowGrow Root Revival Oil helps restore hair health naturally without side effects.',
+      benefitsTitle: 'Special Benefits of GlowGrow Root Revival Oil',
+      benefitsList: [
+        {
+          text: 'Strengthens hair roots from within',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        },
+        {
+          text: 'Promotes faster and healthier hair growth',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        },
+        {
+          text: 'Reduces hair fall and breakage',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        },
+        {
+          text: 'Nourishes and conditions hair naturally',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        },
+        {
+          text: 'Soothes scalp and reduces dandruff',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        },
+        {
+          text: '100% herbal and safe for daily use',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        }
+      ],
+      dosageSection: {
+        title: 'Dosage & Usage Instructions',
+        steps: [
+          {
+            stepNumber: '1️⃣',
+            title: 'Take 4-5 drops of GlowGrow Oil',
+            description: 'On palm'
+          },
+          {
+            stepNumber: '2️⃣',
+            title: 'Gently massage into scalp',
+            description: '5-10 minutes'
+          },
+          {
+            stepNumber: '3️⃣',
+            title: 'Use regularly for best results',
+            description: 'Daily 2 times'
+          }
+        ],
+        notes: [
+          '⚠️ For external use only',
+          'Avoid contact with eyes or damaged skin.'
+        ]
       }
     },
 
