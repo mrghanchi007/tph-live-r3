@@ -10,13 +10,13 @@ const getCategoryTheme = (slug) => {
   switch (slug) {
     case 'men':
       return {
-        bgGradient: 'from-blue-900 to-blue-700',
+        bgGradient: 'from-red-900 to-black',
         text: 'text-white',
-        accent: 'text-blue-400',
-        buttonBg: 'bg-blue-600 hover:bg-blue-700',
+        accent: 'text-red-300',
+        buttonBg: 'bg-red-800 hover:bg-black',
         cardBg: 'bg-white',
-        cardBorder: 'border-blue-200',
-        priceColor: 'text-blue-600'
+        cardBorder: 'border-red-200',
+        priceColor: 'text-red-800'
       };
     case 'women':
       return {
@@ -30,13 +30,13 @@ const getCategoryTheme = (slug) => {
       };
     case 'weight-lose':
       return {
-        bgGradient: 'from-red-700 to-red-600',
+        bgGradient: 'from-blue-600 to-green-500',
         text: 'text-white',
-        accent: 'text-red-200',
-        buttonBg: 'bg-red-600 hover:bg-red-700',
+        accent: 'text-blue-200',
+        buttonBg: 'bg-green-600 hover:bg-blue-700',
         cardBg: 'bg-white',
-        cardBorder: 'border-red-200',
-        priceColor: 'text-red-600'
+        cardBorder: 'border-green-200',
+        priceColor: 'text-green-700'
       };
     default:
       return {

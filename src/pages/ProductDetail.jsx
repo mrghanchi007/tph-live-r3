@@ -30,7 +30,8 @@ const ProductDetail = () => {
   const category = product ? CATEGORY_LIST.find(cat => cat.slug === product.category) : null;
   
   // Sultan Shahi Gold Majoon aur Sultan Shahi Gold Tila ke liye luxury theme
-  const isLuxuryTheme = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila';
+  // GlowGrow Root Revival Oil ke liye dark theme with black, golden, and green
+  const isLuxuryTheme = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'glowgrow-root-revival-oil';
 
   useEffect(() => {
     if (product) {
@@ -159,7 +160,7 @@ const ProductDetail = () => {
                   <ul className="space-y-2">
                     {product.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start">
-                        <FiCheck className={isLuxuryTheme ? "text-yellow-400 mt-1 mr-2 flex-shrink-0" : "text-green-500 mt-1 mr-2 flex-shrink-0"} />
+                        <FiCheck className={slug === 'glowgrow-root-revival-oil' ? "text-green-500 mt-1 mr-2 flex-shrink-0" : isLuxuryTheme ? "text-yellow-400 mt-1 mr-2 flex-shrink-0" : "text-green-500 mt-1 mr-2 flex-shrink-0"} />
                         <span className={isLuxuryTheme ? "text-yellow-100" : ""}>{benefit}</span>
                       </li>
                     ))}
