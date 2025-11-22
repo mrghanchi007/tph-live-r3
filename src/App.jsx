@@ -4845,39 +4845,50 @@ function App() {
       ],
       specialPriceAmount: '1,950',
       problemsTitle: 'Common Hair Problems Women Face',
-      problemsSubtitle: 'GlowGrow Root Revival Oil helps restore hair health naturally without side effects.',
+      problemsSubtitle: 'Most women struggle with hair issues that affect confidence, growth and overall hair health. GlowGrow Root Revival Oil is designed to target the most common challenges:',
       problemsList: [
-        'Excessive hair fall and thinning',
-        'Weak and brittle hair',
-        'Slow hair growth',
-        'Dry and damaged hair',
-        'Dandruff and scalp issues'
+        'Excessive Hair Fall - Weak roots, stress and nutritional imbalance lead to constant shedding.',
+        'Thin, Flat and Weak Hair - Lack of nourishment and poor scalp circulation reduce volume and thickness.',
+        'Slow or Stopped Hair Growth - Damaged follicles and clogged scalp block natural regrowth.',
+        'Dry, Rough and Frizzy Hair - Loss of moisture leaves hair dull, brittle and difficult to manage.',
+        'Dandruff & Itchy Scalp - Fungal growth, dryness or oil imbalance cause irritation and flakes.',
+        'Split Ends & Breakage - Weak strands break easily, making hair look uneven and unhealthy.',
+        'Post-Color & Chemical Damage - Heat styling, dyes and treatments strip hair of strength and shine.'
       ],
       solution: 'GlowGrow Root Revival Oil helps restore hair health naturally without side effects.',
       benefitsTitle: 'Special Benefits of GlowGrow Root Revival Oil',
+      benefitsSubtitle: 'Visible improvement in hair strength, shine, and growth\nGlowGrow Root Revival Oil delivers multiple results through regular use:',
       benefitsList: [
         {
-          text: 'Strengthens hair roots from within',
+          text: '✔ Reduces Hair Fall Naturally\nStrengthens roots and minimizes daily hair shedding.',
           image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
         },
         {
-          text: 'Promotes faster and healthier hair growth',
+          text: '✔ Boosts New Hair Growth\nImproves scalp circulation and supports healthy follicle activity.',
           image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
         },
         {
-          text: 'Reduces hair fall and breakage',
+          text: '✔ Strengthens Scalp & Follicles\nHelps repair internal weakness that causes breakage and thinning.',
           image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
         },
         {
-          text: 'Nourishes and conditions hair naturally',
+          text: '✔ Controls Dandruff & Itching\nNatural anti-inflammatory and anti-fungal properties calm the scalp.',
           image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
         },
         {
-          text: 'Soothes scalp and reduces dandruff',
+          text: '✔ Repairs Dry & Damaged Hair\nRestores moisture, smoothness, and elasticity to rough strands.',
           image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
         },
         {
-          text: '100% herbal and safe for daily use',
+          text: '✔ Improves Shine & Softness\nMakes hair look glossier, healthier, and easier to manage.',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        },
+        {
+          text: '✔ Balances Scalp Oil\nSuitable for all scalp types including oily, dry, or irritated.',
+          image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+        },
+        {
+          text: '✔ Safe for Men & Women\n100% herbal formula with no chemicals, silicone, parabens, or mineral oil.\nGlowGrow is designed to repair hair from root to tip, delivering long-lasting strength, volume, and natural beauty.',
           image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
         }
       ],
@@ -4903,6 +4914,90 @@ function App() {
         notes: [
           '⚠️ For external use only',
           'Avoid contact with eyes or damaged skin.'
+        ]
+      },
+      // Video Section
+      videoId: 'YOUR_GLOWGROW_VIDEO_ID',
+      videoTitle: '🎥 See GlowGrow in Action',
+      videoSubtitle: 'Real women. Real results. Real hair transformation.',
+      videoCover: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg',
+      videoIframeTitle: 'GlowGrow Root Revival Oil Transformation Results',
+      // Before/After Section (Real Results)
+      beforeAfterTitle: '🌟 Real Results. Real Women',
+      beforeAfterSubtitle: 'Proven transformations from women who trusted GlowGrow',
+      beforeAfterLabels: {
+        beforeTitle: 'Before',
+        afterTitle: 'After',
+        beforeDesc: '',
+        afterDesc: '',
+        weeksPrefix: '',
+        weeksSuffix: ' Weeks of Use'
+      },
+      beforeAfterSets: [
+        {
+          id: 1,
+          duration: 4,
+          before: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg',
+          after: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg',
+          beforeDetails: 'Heavy hair fall\nWeak and thinning hair\nDry scalp and rough strands',
+          afterDetails: 'Noticeable reduction in hair fall\nStronger roots and improved thickness\nSmoother hair with natural shine'
+        },
+        {
+          id: 2,
+          duration: 8,
+          before: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg',
+          after: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg',
+          beforeDetails: 'Slow growth\nPatchy and thin hair areas',
+          afterDetails: 'Visible new hair growth\nFuller and denser appearance\nImproved scalp health'
+        }
+      ],
+      // Herbal Power Section
+      herbalSection: {
+        title: '🌿 Herbal Power. Backed by Science',
+        subtitle: 'A powerful blend of natural oils and extracts – scientifically validated for hair health, growth, and strength.',
+        badgesLine: '🌿 100% Natural | ⚗️ Scientifically Proven | 🛡️ Safe & Effective',
+        showIngredients: true,
+        ingredients: [
+          {
+            name: 'Coconut Oil',
+            description: 'Deep nourishment and moisture',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          },
+          {
+            name: 'Castor Oil',
+            description: 'Supports faster growth and thickness',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          },
+          {
+            name: 'Black Seed Oil (Kalonji)',
+            description: 'Strengthens roots and reduces shedding',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          },
+          {
+            name: 'Amla Extract',
+            description: 'Improves scalp health and fights breakage',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          },
+          {
+            name: 'Bhringraj Oil',
+            description: 'Known for fast hair regrowth',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          },
+          {
+            name: 'Onion Seed Oil',
+            description: 'Boosts circulation and active growth',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          },
+          {
+            name: 'Argan & Jojoba Oil',
+            description: 'Smoothness, shine, and scalp balance',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          },
+          {
+            name: 'Vitamin E',
+            description: 'Repair, protection, and shine enhancement',
+            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+          }
         ]
       }
     },
