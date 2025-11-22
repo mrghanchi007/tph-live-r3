@@ -442,18 +442,23 @@ function App() {
       heroImage: 'https://i.ibb.co/8LZ3b2HG/Banner-B-Maxman-Royal-Special-Treatment.jpg',
       solution: 'B-Maxman Royal Special Treatment is the ultimate solution you\'ve been looking for!',
       benefitsTitle: language === 'en' ? 'Benefits of B-Maxman Royal Special Treatment' : 'بی میکس مین رائل سپیشل ٹریٹمنٹ کے فوائد',
-      // Herbal Power Section with 2-column layout
       herbalSection: {
         title: '🌿 Herbal Power. Backed by Science.',
         subtitle: 'A potent blend of 30+ world-renowned herbal ingredients, trusted for centuries',
         showIngredients: true,
         twoColumnLayout: true
       },
+
+      usage: {
+        title: '💊 Dosage & Usage Instructions',
+        dosage: '1 capsule at night (before bed)',
+        course: '3-month course for full results',
+        best: 'Avoid cold drinks, smoking & fried food'
+      },
+
       i18n: {
         ur: {
-          // Problems section line override (Urdu only for this product)
           solution: 'بی میکس مین رائل اسپیشل ٹریٹمنٹ وہ بہترین حل ہے جس کی آپ تلاش کر رہے تھے!',
-          // Herbal Power Section (Urdu)
           herbalSection: {
             title: '🌿 جڑی بوٹیوں کی طاقت۔ سائنس سے ثابت شدہ۔',
             subtitle: '۳۰+ عالمی شہرت یافتہ جڑی بوٹیوں کا طاقتور امتزاج، صدیوں سے قابل اعتماد'
@@ -4893,27 +4898,40 @@ function App() {
         }
       ],
       dosageSection: {
-        title: 'Dosage & Usage Instructions',
+        title: '🕒 Dosage & Usage',
+        subtitle: 'How to use GlowGrow for maximum results',
         steps: [
           {
             stepNumber: '1️⃣',
-            title: 'Take 4-5 drops of GlowGrow Oil',
-            description: 'On palm'
+            title: 'Application',
+            description: 'Take a small amount of oil on your fingertips. Apply directly to the scalp and along the full length of the hair'
           },
           {
             stepNumber: '2️⃣',
-            title: 'Gently massage into scalp',
-            description: '5-10 minutes'
+            title: 'Massage',
+            description: 'Massage gently for 2–3 minutes. Helps increase blood circulation and improves absorption'
           },
           {
             stepNumber: '3️⃣',
-            title: 'Use regularly for best results',
-            description: 'Daily 2 times'
+            title: 'Leave-On Time',
+            description: 'For best results, leave the oil for 1–2 hours or overnight'
+          },
+          {
+            stepNumber: '4️⃣',
+            title: 'Wash',
+            description: 'Rinse with a mild or herbal shampoo. Avoid harsh chemical shampoos for better results'
+          },
+          {
+            stepNumber: '5️⃣',
+            title: 'Recommended Frequency',
+            description: 'Use 3–4 times per week'
           }
         ],
         notes: [
-          '⚠️ For external use only',
-          'Avoid contact with eyes or damaged skin.'
+          '⚡ When to Expect Results',
+          'Reduced hair fall within 7–10 days',
+          'Noticeable new growth and improved texture in 3–4 weeks',
+          'GlowGrow works best with consistent use and a healthy hair care routine.'
         ]
       },
       // Video Section
@@ -4951,7 +4969,6 @@ function App() {
           afterDetails: 'Visible new hair growth\nFuller and denser appearance\nImproved scalp health'
         }
       ],
-      // Herbal Power Section
       herbalSection: {
         title: '🌿 Herbal Power. Backed by Science',
         subtitle: 'A powerful blend of natural oils and extracts – scientifically validated for hair health, growth, and strength.',
@@ -4999,12 +5016,99 @@ function App() {
             image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
           }
         ]
-      }
+      },
+      pricing: {
+        title: '📦 Affordable Packages',
+        subtitle: 'Choose the package that suits your hair care goals:',
+        packages: [
+          {
+            title: '1 Month Pack – 250 ml',
+            price: 1950,
+            features: [
+              '1 Bottle of GlowGrow Root Revival Oil',
+              '✅ Free Delivery Across Pakistan',
+              '💳 Cash on Delivery Available',
+              '🕒 24/7 Customer Support'
+            ]
+          },
+          {
+            title: '2 Month Combo – 500 ml',
+            price: 3800,
+            originalPrice: 3900,
+            savings: 100,
+            features: [
+              '2 Bottles of GlowGrow Root Revival Oil',
+              '✅ Free Delivery Across Pakistan',
+              '💳 Cash on Delivery Available',
+              '🕒 24/7 Customer Support',
+              '💰 Save Rs. 100'
+            ]
+          },
+          {
+            title: '3 Month Full Course – 750 ml',
+            price: 5500,
+            originalPrice: 5850,
+            savings: 350,
+            popular: true,
+            badge: 'Best Value!',
+            features: [
+              '3 Bottles of GlowGrow Root Revival Oil',
+              '✅ Free Delivery Across Pakistan',
+              '💳 Cash on Delivery Available',
+              '🕒 24/7 Customer Support',
+              '💰 Save Rs. 350'
+            ]
+          }
+        ],
+        note: '💡 Tip: For best results, use consistently 3–4 times a week along with gentle scalp massage.'
+      },
+      faqTitle: '❓ Frequently Asked Questions (FAQs) – GlowGrow Root Revival Oil',
+      faqs: [
+        {
+          question: 'Q1: Are the ingredients 100% herbal?',
+          answer: '➡️ Yes! GlowGrow uses premium herbal oils and natural botanical extracts only. No chemicals or artificial additives.'
+        },
+        {
+          question: 'Q2: Does it help with hair fall and thinning?',
+          answer: '➡️ Absolutely! The combination of kalonji, bhringraj, castor oil, and other herbal oils reduces hair fall, strengthens roots, and promotes new hair growth.'
+        },
+        {
+          question: 'Q3: Is it safe for chemically treated or color-treated hair?',
+          answer: '➡️ Yes, it repairs damage, adds shine, and works safely on colored or chemically treated hair.'
+        },
+        {
+          question: 'Q4: How soon will I see results?',
+          answer: '➡️ Hair fall reduction usually starts within 7–10 days. Noticeable new growth begins in 3–4 weeks with regular use.'
+        },
+        {
+          question: 'Q5: Can men use GlowGrow Root Revival Oil?',
+          answer: '➡️ Absolutely. It\'s suitable for both men and women for hair strengthening and regrowth.'
+        },
+        {
+          question: 'Q6: How often should I use it?',
+          answer: '➡️ Apply 3–4 times a week for best results. Massage gently into the scalp and leave for 1–2 hours or overnight.'
+        },
+        {
+          question: 'Q7: How long should I continue using it?',
+          answer: '➡️ For optimal results, continue for at least 1–3 months. Regular use improves thickness, shine, and overall scalp health.'
+        },
+        {
+          question: 'Q8: Is it greasy or heavy on hair?',
+          answer: '➡️ No, the oil absorbs well when massaged properly. You can wash it off with a mild or herbal shampoo.'
+        },
+        {
+          question: 'Q9: Can it treat dandruff and dry scalp?',
+          answer: '➡️ Yes! The herbal ingredients nourish the scalp, reduce dryness, and help control dandruff naturally.'
+        },
+        {
+          question: 'Q10: Any side effects?',
+          answer: '➡️ None reported. It\'s 100% herbal, safe, and suitable for all hair types.'
+        }
+      ]
     },
 
   };
 
-  // Build page content from translations + product-specific overrides
   const content = useMemo(() => {
     const base = language === 'ur' ? urduContent : englishContent;
     const product = productConfigs[slug] || {};
@@ -5241,6 +5345,13 @@ Please confirm my order. Thank you!`;
       const price = productPricing?.[qty - 1]?.price;
       if (price) return price;
     }
+    // Use product-specific pricing for GlowGrow Root Revival Oil
+    if (slug === 'glowgrow-root-revival-oil') {
+      if (qty === 1) return 1950;
+      if (qty === 2) return 3800;
+      if (qty === 3) return 5500;
+      return qty * 1950;
+    }
     // Default pricing (other products)
     if (qty === 1) return 2500;
     if (qty === 2) return 4500;
@@ -5318,14 +5429,15 @@ Please confirm my order. Thank you!`;
   // Check if this is Sultan Shahi Gold Majoon, Sultan Shahi Gold Tila, or Sultan Shahi Gold Health Booster product for luxury theme
   const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster';
   const isBustMaxOil = slug === 'bustmax-breast-oil';
+  const isGlowGrow = slug === 'glowgrow-root-revival-oil';
 
   return (
-    <div className={`min-h-screen flex flex-col ${isBustMaxOil ? 'bg-gradient-to-br from-pink-950 via-rose-950 to-amber-950 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black text-white' : isLuxuryProduct ? 'bg-black text-white' : 'bg-gradient-to-br from-red-50 via-white to-red-50'} ${shouldShowInUrdu('all') ? 'font-urdu' : ''}`}>
+    <div className={`min-h-screen flex flex-col ${isBustMaxOil ? 'bg-gradient-to-br from-pink-950 via-rose-950 to-amber-950 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black text-white' : isLuxuryProduct ? 'bg-black text-white' : isGlowGrow ? 'bg-black text-white' : 'bg-gradient-to-br from-red-50 via-white to-red-50'} ${shouldShowInUrdu('all') ? 'font-urdu' : ''}`}>
       <div className="flex-grow">
         {/* Header moved to Root layout */}
 
         {/* Hero Section - Optimized */}
-        <section className={`py-8 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-r from-pink-900 via-rose-800 to-amber-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-900 to-purple-950' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-600 to-blue-700' : isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
+        <section className={`py-8 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-r from-pink-900 via-rose-800 to-amber-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-900 to-purple-950' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-600 to-blue-700' : isGlowGrow ? 'bg-gradient-to-r from-gray-900 via-black to-gray-900' : isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'} text-white overflow-hidden relative`}>
           {/* Background pattern */}
           <div className="absolute inset-0 z-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full bg-pattern"></div>
@@ -5335,24 +5447,24 @@ Please confirm my order. Thank you!`;
               <motion.div className="lg:w-1/2" {...fadeInUp}>
                 <div className="flex items-center space-x-2 mb-4">
                   <SafeIcon icon={FiAward} className="text-yellow-400 text-2xl" />
-                  <span className={`${isBustMaxOil ? 'bg-gradient-to-r from-amber-400 to-pink-500 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : slug === 'slim-n-shape-fit-booster' ? 'bg-yellow-400 text-blue-800' : isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
+                  <span className={`${isBustMaxOil ? 'bg-gradient-to-r from-amber-400 to-pink-500 text-white' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white' : slug === 'slim-n-shape-fit-booster' ? 'bg-yellow-400 text-blue-800' : isGlowGrow ? 'bg-gradient-to-r from-yellow-400 to-amber-500 text-black' : isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-yellow-400 text-red-800'} px-3 py-1 rounded-full text-sm font-bold`}>
                     {content.hero.badge}
                   </span>
                 </div>
-                <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : slug === 'slim-n-shape-fit-booster' ? 'text-yellow-400' : 'text-yellow-400'}`}>
+                <h1 className={`text-3xl md:text-5xl font-bold mb-6 leading-tight ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : slug === 'slim-n-shape-fit-booster' ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-yellow-400'}`}>
                   {content.hero.title}
                 </h1>
-                <p className={`text-xl md:text-2xl mb-4 ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-100' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
+                <p className={`text-xl md:text-2xl mb-4 ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-100' : isGlowGrow ? 'text-green-300' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>
                   {content.hero.subtitle}
                 </p>
                 {content.hero.description && (
-                  <p className={`text-base md:text-lg mb-6 leading-relaxed ${isBustMaxOil ? 'text-pink-100' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-50' : isLuxuryProduct ? 'text-gray-300' : 'text-red-50'}`}>
+                  <p className={`text-base md:text-lg mb-6 leading-relaxed ${isBustMaxOil ? 'text-pink-100' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-50' : isGlowGrow ? 'text-gray-300' : isLuxuryProduct ? 'text-gray-300' : 'text-red-50'}`}>
                     {content.hero.description}
                   </p>
                 )}
                 <div className="flex flex-wrap gap-4 mb-6 text-lg">
                   {content.hero.features.map((feature, index) => (
-                    <span key={index} className={`${isBustMaxOil ? 'bg-amber-500/20 border border-amber-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/20 border border-pink-400/30' : slug === 'slim-n-shape-fit-booster' ? 'bg-white/20' : isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
+                    <span key={index} className={`${isBustMaxOil ? 'bg-amber-500/20 border border-amber-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/20 border border-pink-400/30' : slug === 'slim-n-shape-fit-booster' ? 'bg-white/20' : isGlowGrow ? 'bg-amber-500/20 border border-amber-400/30' : isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : 'bg-white/20'} px-4 py-2 rounded-full`}>{feature}</span>
                   ))}
                 </div>
                 <div className="flex items-center space-x-1 mb-6">
@@ -5362,17 +5474,17 @@ Please confirm my order. Thank you!`;
                   <span className="ml-2 text-lg">{content.hero.trusted}</span>
                 </div>
                 <motion.div
-                  className={`${isBustMaxOil ? 'bg-amber-500/10 border border-amber-400/20' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/10 border border-pink-400/20' : slug === 'slim-n-shape-fit-booster' ? 'bg-white/10 border border-white/10' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
+                  className={`${isBustMaxOil ? 'bg-amber-500/10 border border-amber-400/20' : slug === 'malika-shahi-gold-health-booster' ? 'bg-pink-500/10 border border-pink-400/20' : slug === 'slim-n-shape-fit-booster' ? 'bg-white/10 border border-white/10' : isGlowGrow ? 'bg-amber-500/10 border border-amber-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} p-6 rounded-lg backdrop-blur-sm`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className={`text-2xl md:text-3xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : slug === 'slim-n-shape-fit-booster' ? 'text-yellow-400' : 'text-yellow-400'} mb-2`}>
+                  <p className={`text-2xl md:text-3xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : slug === 'slim-n-shape-fit-booster' ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-yellow-400'} mb-2`}>
                     {content.hero.specialPrice}: Rs {content.hero.specialPriceAmount || '2,500'}/-
                   </p>
-                  <p className={`${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-100' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
+                  <p className={`${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : slug === 'slim-n-shape-fit-booster' ? 'text-blue-100' : isGlowGrow ? 'text-green-300' : isLuxuryProduct ? 'text-yellow-200' : 'text-red-100'}`}>{content.hero.delivery}</p>
                   <motion.button
                     onClick={() => document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' })}
-                    className={`mt-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600 hover:from-amber-600 hover:to-pink-700' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
+                    className={`mt-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600 hover:from-amber-600 hover:to-pink-700' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700' : isGlowGrow ? 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700' : 'bg-green-600 hover:bg-green-700'} text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-3 text-lg transition-colors w-full`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -5418,7 +5530,7 @@ Please confirm my order. Thank you!`;
                     />
 
                     {/* Main content card */}
-                    <div className={`${isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} backdrop-blur-sm p-8 rounded-2xl shadow-xl`}>
+                    <div className={`${isGlowGrow ? 'bg-amber-500/10 border border-amber-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/10 border border-white/10'} backdrop-blur-sm p-8 rounded-2xl shadow-xl`}>
                       {/* Product Image */}
                       <div className="flex justify-center">
                         <img
@@ -5439,7 +5551,7 @@ Please confirm my order. Thank you!`;
 
         {/* About Product Section - Only for products with aboutProduct config */}
         {content.aboutProduct && (
-          <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-black' : 'bg-white'}`}>
+          <section className={`py-12 md:py-16 ${isGlowGrow ? 'bg-gray-900' : isLuxuryProduct ? 'bg-black' : 'bg-white'}`}>
             <div className="container mx-auto px-4">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -5448,10 +5560,10 @@ Please confirm my order. Thank you!`;
                 transition={{ duration: 0.6 }}
                 className="max-w-4xl mx-auto"
               >
-                <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-900'}`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isGlowGrow ? 'text-amber-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-900'}`}>
                   {content.aboutProduct.title}
                 </h2>
-                <p className={`text-base md:text-lg leading-relaxed mb-8 ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p className={`text-base md:text-lg leading-relaxed mb-8 ${isGlowGrow ? 'text-gray-300' : isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
                   {content.aboutProduct.description}
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -5478,15 +5590,15 @@ Please confirm my order. Thank you!`;
 
         {/* Problems Section */}
         <section
-          className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-br from-rose-950 to-amber-950' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black' : isLuxuryProduct ? 'bg-gray-900' : 'bg-gray-50'} ${shouldShowInUrdu('problems') ? 'font-urdu' : ''}`}
+          className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-br from-rose-950 to-amber-950' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 to-black' : isGlowGrow ? 'bg-black' : isLuxuryProduct ? 'bg-gray-900' : 'bg-gray-50'} ${shouldShowInUrdu('problems') ? 'font-urdu' : ''}`}
           dir={shouldShowInUrdu('problems') ? 'rtl' : 'ltr'}
         >
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isGlowGrow ? 'text-amber-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                 {content.problems.title}
               </h2>
-              <p className={`text-xl ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} max-w-3xl mx-auto`}>
+              <p className={`text-xl ${isBustMaxOil ? 'text-pink-200' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : isGlowGrow ? 'text-green-300' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} max-w-3xl mx-auto`}>
                 {content.problems.subtitle}
               </p>
             </motion.div>
@@ -5548,14 +5660,14 @@ Please confirm my order. Thank you!`;
                 {content.problems.list.map((problem, index) => (
                   <motion.div
                     key={index}
-                    className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-purple-900/50 border-l-4 border-pink-400' : isLuxuryProduct ? 'bg-gray-800 border-l-4 border-yellow-400' : 'bg-white border-l-4 border-red-500'} p-6 rounded-lg shadow-lg`}
+                    className={`${slug === 'malika-shahi-gold-health-booster' ? 'bg-purple-900/50 border-l-4 border-pink-400' : isGlowGrow ? 'bg-gray-900 border-l-4 border-amber-400' : isLuxuryProduct ? 'bg-gray-800 border-l-4 border-yellow-400' : 'bg-white border-l-4 border-red-500'} p-6 rounded-lg shadow-lg`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
                     <div className="flex items-center space-x-3">
-                      <SafeIcon icon={FiZap} className={`${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-red-500'} text-xl flex-shrink-0`} />
-                      <p className={`font-semibold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isLuxuryProduct ? 'text-white' : 'text-gray-800'}`}>{problem}</p>
+                      <SafeIcon icon={FiZap} className={`${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isGlowGrow ? 'text-green-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-red-500'} text-xl flex-shrink-0`} />
+                      <p className={`font-semibold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-100' : isGlowGrow ? 'text-gray-200' : isLuxuryProduct ? 'text-white' : 'text-gray-800'}`}>{problem}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -5568,7 +5680,7 @@ Please confirm my order. Thank you!`;
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <p className={`text-2xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`}>{content.problems.solution}</p>
+              <p className={`text-2xl font-bold ${slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isGlowGrow ? 'text-green-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`}>{content.problems.solution}</p>
             </motion.div>
           </div>
         </section>
@@ -5633,7 +5745,7 @@ Please confirm my order. Thank you!`;
                   ? (productConfigs[slug]?.i18n?.ur?.ingredients || [])
                   : (productConfigs[slug]?.ingredients || [])
                 ).slice(0, 3).map((ing, idx) => (
-                  <div key={`sshb-ing-top-${idx}`} className={`${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white border border-gray-100'} rounded-xl shadow-lg p-6 text-center`}>
+                  <div key={`sshb-ing-top-${idx}`} className={`${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'} rounded-xl shadow-lg overflow-hidden p-6 text-center`}>
                     <img
                       src={ing.image}
                       alt={ing.name}
@@ -5652,7 +5764,7 @@ Please confirm my order. Thank you!`;
                   ? (productConfigs[slug]?.i18n?.ur?.ingredients || [])
                   : (productConfigs[slug]?.ingredients || [])
                 ).slice(3, 7).map((ing, idx) => (
-                  <div key={`sshb-ing-bot-${idx}`} className={`${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white border border-gray-100'} rounded-xl shadow-lg p-6 text-center`}>
+                  <div key={`sshb-ing-bot-${idx}`} className={`${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white'} rounded-xl shadow-lg overflow-hidden p-6 text-center`}>
                     <img
                       src={ing.image}
                       alt={ing.name}
@@ -5695,7 +5807,7 @@ Please confirm my order. Thank you!`;
 
         {/* Benefits Section */}
         <section
-          className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-amber-950' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-gradient-to-r from-blue-50 to-indigo-50'} ${shouldShowInUrdu('benefits') ? 'font-urdu' : ''}`}
+          className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-amber-950' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isGlowGrow ? 'bg-gray-900' : isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-gradient-to-r from-blue-50 to-indigo-50'} ${shouldShowInUrdu('benefits') ? 'font-urdu' : ''}`}
           dir={shouldShowInUrdu('benefits') ? 'rtl' : 'ltr'}
           aria-labelledby="benefits-section"
           role="region"
@@ -5703,7 +5815,7 @@ Please confirm my order. Thank you!`;
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
               <h2
-                className={`text-3xl md:text-4xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}
+                className={`text-3xl md:text-4xl font-bold ${isBustMaxOil ? 'text-amber-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : isGlowGrow ? 'text-amber-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}
                 id="benefits-section"
                 title={language === 'en' ? "Expected results from B-Maxman Royal herbal supplement for men" : "بی میکس مین رائل جڑی بوٹیوں کے سپلیمنٹ سے متوقع نتائج"}
               >
@@ -5711,7 +5823,7 @@ Please confirm my order. Thank you!`;
               </h2>
             </motion.div>
 
-            {(['slim-n-shape-garcinia-cambogia-capsules', 'slim-n-shape-tea', 'b-maxtime-super-active'].includes(slug)) ? (
+            {(['slim-n-shape-garcinia-cambogia-capsules', 'slim-n-shape-tea', 'slim-n-shape-fit-booster', 'b-maxtime-super-active'].includes(slug)) ? (
               <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
                 {/* Left: Image 40% */}
                 <div className="md:col-span-2">
@@ -5814,8 +5926,8 @@ Please confirm my order. Thank you!`;
           </div>
         </section>
 
-        {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster, BustMax Oil, and Bustmax XL */}
-        {(slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') && productConfigs[slug]?.dosageSection?.steps && (
+        {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster, BustMax Oil, Bustmax XL, and GlowGrow */}
+        {(slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster' || slug === 'glowgrow-root-revival-oil') && productConfigs[slug]?.dosageSection?.steps && (
           <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-b from-amber-950 to-pink-950' : 'bg-gradient-to-b from-gray-50 to-white'} ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
@@ -5823,16 +5935,19 @@ Please confirm my order. Thank you!`;
                   const dosageData = (shouldShowInUrdu('usage') && productConfigs[slug]?.i18n?.ur?.dosageSection)
                     ? productConfigs[slug].i18n.ur.dosageSection
                     : productConfigs[slug].dosageSection;
-                  
                   return (
                     <>
                       <motion.h2 
                         {...fadeInUp}
-                        className={`text-3xl md:text-4xl font-bold text-center mb-4 ${isBustMaxOil ? 'text-amber-300' : 'text-gray-800'}`}
+                        className={`text-3xl md:text-4xl font-bold text-center mb-2 ${isBustMaxOil ? 'text-amber-300' : 'text-gray-800'}`}
                       >
                         {dosageData.title}
                       </motion.h2>
-                      
+                      {dosageData.subtitle && (
+                        <p className={`text-center mb-6 ${isBustMaxOil ? 'text-pink-200' : 'text-gray-600'}`}>
+                          {dosageData.subtitle}
+                        </p>
+                      )}
                       <div className={`grid ${(slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-6 mb-8 max-w-6xl mx-auto`}>
                         {dosageData.steps.map((step, index) => (
                           <motion.div
@@ -5856,7 +5971,6 @@ Please confirm my order. Thank you!`;
                           </motion.div>
                         ))}
                       </div>
-                      
                       {dosageData.notes && (
                         <motion.div 
                           {...fadeInUp}
@@ -5955,7 +6069,7 @@ Please confirm my order. Thank you!`;
           </section>
         )}
 
-        {!(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'g-max-passion' || slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') && (
+        {!(slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'g-max-passion' || slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster' || slug === 'glowgrow-root-revival-oil') && (
           <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gray-900' : 'bg-yellow-50'}`}>
             <div className="container mx-auto px-4">
               <motion.div className="max-w-4xl mx-auto" {...fadeInUp}>
@@ -6087,13 +6201,13 @@ Please confirm my order. Thank you!`;
         )}
 
         {/* Pricing */}
-        <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-b from-purple-950 to-pink-950' : isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-white'}`}>
+        <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-b from-purple-950 to-pink-950' : isGlowGrow ? 'bg-black' : isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-white'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isBustMaxOil ? 'text-amber-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isBustMaxOil ? 'text-amber-300' : isGlowGrow ? 'text-amber-400' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
                 {content.pricing.title}
               </h2>
-              <p className={`text-lg ${isBustMaxOil ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'}`}>{content.pricing.subtitle}</p>
+              <p className={`text-lg ${isBustMaxOil ? 'text-pink-200' : isGlowGrow ? 'text-green-300' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'}`}>{content.pricing.subtitle}</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -6104,13 +6218,25 @@ Please confirm my order. Thank you!`;
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className={`p-4 text-white text-center ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' : 'bg-red-600'}`}>
+                <div className={`p-4 text-white text-center ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600' : isGlowGrow ? 'bg-gradient-to-r from-amber-600 to-yellow-600' : isLuxuryProduct ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' : 'bg-red-600'}`}>
                   <h3 className={`text-xl font-bold ${isBustMaxOil ? 'text-white' : isLuxuryProduct ? 'text-black' : 'text-white'}`}>
                     {slug === 'slim-n-shape-garcinia-cambogia-capsules'
                       ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || content.pricing.packages[0].title)
                       : slug === 'b-maxtime-super-active'
                         ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || '1 Pack')
-                        : (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || content.pricing.packages[0].title)}
+                        : (slug === 'shahi-sultan-health-booster'
+                          ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || '1 Pack')
+                          : (slug === 'sultan-shahi-gold-majoon'
+                            ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || '1 Pack')
+                            : (slug === 'sultan-shahi-gold-tila'
+                              ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || '1 Bottle')
+                              : (slug === 'sultan-shahi-gold-health-booster'
+                                ? '1 Month Pack'
+                                : (slug === 'malika-shahi-gold-health-booster'
+                                  ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || '1 Month Pack')
+                                  : (slug === 'glowgrow-root-revival-oil'
+                                    ? (productConfigs[slug]?.pricing?.packages?.[0]?.headerTitle || '1 Bottle')
+                                    : content.pricing.packages[0].title))))))}
                   </h3>
                 </div>
                 <div className="p-6 text-center">
@@ -6144,7 +6270,19 @@ Please confirm my order. Thank you!`;
                       ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || content.pricing.packages[1].title)
                       : slug === 'b-maxtime-super-active'
                         ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || '2 Packs')
-                        : (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || content.pricing.packages[1].title)}
+                        : (slug === 'shahi-sultan-health-booster'
+                          ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || '2 Packs')
+                          : (slug === 'sultan-shahi-gold-majoon'
+                            ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || '2 Packs')
+                            : (slug === 'sultan-shahi-gold-tila'
+                              ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || '2 Bottles')
+                              : (slug === 'sultan-shahi-gold-health-booster'
+                                ? '2 Month Pack'
+                                : (slug === 'malika-shahi-gold-health-booster'
+                                  ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || '2 Month Pack')
+                                  : (slug === 'glowgrow-root-revival-oil'
+                                    ? (productConfigs[slug]?.pricing?.packages?.[1]?.headerTitle || '2 Bottles')
+                                    : content.pricing.packages[1].title))))))}
                   </h3>
                 </div>
                 <div className="p-6 text-center">
@@ -6158,7 +6296,9 @@ Please confirm my order. Thank you!`;
                       </div>
                       {productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount ? (
                         <div className={`text-sm inline-block px-2 py-1 rounded mb-4 ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
-                          {content.pricing.save} {productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount}
+                          {content.pricing.save} {(productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount?.toLocaleString?.()
+                            || productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount
+                            || '500')}
                         </div>
                       ) : null}
                     </>
@@ -6181,7 +6321,7 @@ Please confirm my order. Thank you!`;
                           <div className={`mt-2 text-sm inline-block px-2 py-1 rounded ${isLuxuryProduct ? 'bg-yellow-400 text-black' : 'bg-green-100 text-green-800'}`}>
                             {content.pricing.save} {(productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount?.toLocaleString?.()
                               || productConfigs[slug]?.pricing?.packages?.[1]?.saveAmount
-                              || 500)}
+                              || '500')}
                           </div>
                         ) : null
                       )}
@@ -6212,7 +6352,19 @@ Please confirm my order. Thank you!`;
                       ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || content.pricing.packages[2].title)
                       : slug === 'b-maxtime-super-active'
                         ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || '3 Packs')
-                        : (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || content.pricing.packages[2].title)}
+                        : (slug === 'shahi-sultan-health-booster'
+                          ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || '3 Packs')
+                          : (slug === 'sultan-shahi-gold-majoon'
+                            ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || '3 Packs')
+                            : (slug === 'sultan-shahi-gold-tila'
+                              ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || '3 Bottles')
+                              : (slug === 'sultan-shahi-gold-health-booster'
+                                ? '3 Month Pack'
+                                : (slug === 'malika-shahi-gold-health-booster'
+                                  ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || '3 Month Pack')
+                                  : (slug === 'glowgrow-root-revival-oil'
+                                    ? (productConfigs[slug]?.pricing?.packages?.[2]?.headerTitle || '3 Bottles')
+                                    : content.pricing.packages[2].title))))))}
                   </h3>
                 </div>
                 <div className="p-6 text-center">
@@ -6315,24 +6467,24 @@ Please confirm my order. Thank you!`;
         <Suspense fallback={<LoadingFallback />}>
           <FAQSection
             language={language}
-            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
-            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
-            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
+            overrideTitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster' || slug === 'glowgrow-root-revival-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqTitle : productConfigs[slug]?.faqTitle) : undefined}
+            overrideSubtitle={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster' || slug === 'glowgrow-root-revival-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqSubtitle : productConfigs[slug]?.faqSubtitle) : undefined}
+            overrideFaqs={(slug === 'slim-n-shape-garcinia-cambogia-capsules' || slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-fit-booster' || slug === 'b-maxtime-super-active' || slug === 'shahi-sultan-health-booster' || slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster' || slug === 'g-max-passion' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster' || slug === 'glowgrow-root-revival-oil') ? (language === 'ur' ? productConfigs[slug]?.i18n?.ur?.faqs : productConfigs[slug]?.faqs) : undefined}
             ctaLanguage={(slug === 'slim-n-shape-tea' || slug === 'slim-n-shape-garcinia-cambogia-capsules') ? 'en' : undefined}
             slug={slug}
           />
         </Suspense>
 
         {/* Order Form */}
-        <section id="order-form" className={`py-12 md:py-16 text-white ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-black to-gray-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-950 to-purple-950' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-600 to-blue-700' : 'bg-gradient-to-r from-red-600 to-red-700'}`}>
+        <section id="order-form" className={`py-12 md:py-16 text-white ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gradient-to-r from-black to-gray-900' : slug === 'malika-shahi-gold-health-booster' ? 'bg-gradient-to-r from-purple-950 via-pink-950 to-purple-950' : slug === 'slim-n-shape-fit-booster' ? 'bg-gradient-to-r from-blue-600 to-blue-700' : slug === 'glowgrow-root-revival-oil' ? 'bg-gradient-to-r from-gray-900 to-black' : 'bg-gradient-to-r from-red-600 to-red-700'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="max-w-2xl mx-auto" {...fadeInUp}>
               <div className="text-center mb-8">
-                <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.title}</h2>
-                <p className={`text-xl ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : 'text-red-100'}`}>{content.orderForm.subtitle}</p>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : slug === 'glowgrow-root-revival-oil' ? 'text-amber-400' : 'text-white'}`}>{content.orderForm.title}</h2>
+                <p className={`text-xl ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-300' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-200' : slug === 'glowgrow-root-revival-oil' ? 'text-green-300' : 'text-red-100'}`}>{content.orderForm.subtitle}</p>
               </div>
 
-              <div className={`p-8 rounded-2xl backdrop-blur-sm ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gray-800/20 border border-yellow-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-purple-900/30 border border-pink-400/40' : 'bg-white/10 border border-white/10'}`}>
+              <div className={`p-8 rounded-2xl backdrop-blur-sm ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'bg-gray-800/20 border border-yellow-400/30' : slug === 'malika-shahi-gold-health-booster' ? 'bg-purple-900/30 border border-pink-400/40' : slug === 'glowgrow-root-revival-oil' ? 'bg-gray-900/50 border border-amber-400/30' : 'bg-white/10 border border-white/10'}`}>
                 <div className="grid gap-6">
                   <div>
                     <label htmlFor="name" className={`block text-sm font-semibold mb-2 ${slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' ? 'text-yellow-400' : slug === 'malika-shahi-gold-health-booster' ? 'text-pink-300' : 'text-white'}`}>{content.orderForm.name} *</label>
@@ -6418,7 +6570,9 @@ Please confirm my order. Thank you!`;
                                         ? '1 Month Pack - Rs 6,000'
                                         : (slug === 'malika-shahi-gold-health-booster'
                                           ? `1 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
-                                          : content.orderForm.quantityOptions[0]))))))))}
+                                          : (slug === 'glowgrow-root-revival-oil'
+                                            ? `1 Bottle - Rs ${productConfigs[slug]?.pricing?.packages?.[0]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[0]?.price}`
+                                            : content.orderForm.quantityOptions[0])))))))))}
                       </option>
                       <option value="2">
                         {slug === 'slim-n-shape-tea'
@@ -6439,7 +6593,9 @@ Please confirm my order. Thank you!`;
                                         ? '2 Month Pack - Rs 11,000 (Save Rs 1,000)'
                                         : (slug === 'malika-shahi-gold-health-booster'
                                           ? `2 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price}`
-                                          : content.orderForm.quantityOptions[1]))))))))}
+                                          : (slug === 'glowgrow-root-revival-oil'
+                                            ? `2 Bottles - Rs ${productConfigs[slug]?.pricing?.packages?.[1]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[1]?.price} (Save Rs. 100)`
+                                            : content.orderForm.quantityOptions[1])))))))))}
                       </option>
                       <option value="3">
                         {slug === 'slim-n-shape-tea'
@@ -6460,7 +6616,9 @@ Please confirm my order. Thank you!`;
                                         ? '3 Month Pack - Rs 16,000 (Best Value)'
                                         : (slug === 'malika-shahi-gold-health-booster'
                                           ? `3 Month Pack - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price}`
-                                          : content.orderForm.quantityOptions[2]))))))))}
+                                          : (slug === 'glowgrow-root-revival-oil'
+                                            ? `3 Bottles - Rs ${productConfigs[slug]?.pricing?.packages?.[2]?.price?.toLocaleString?.() || productConfigs[slug]?.pricing?.packages?.[2]?.price} (Save Rs. 350)`
+                                            : content.orderForm.quantityOptions[2])))))))))}
                       </option>
                     </select>
                   </div>
