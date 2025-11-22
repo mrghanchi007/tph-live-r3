@@ -4973,53 +4973,41 @@ function App() {
         title: '🌿 Herbal Power. Backed by Science',
         subtitle: 'A powerful blend of natural oils and extracts – scientifically validated for hair health, growth, and strength.',
         badgesLine: '🌿 100% Natural | ⚗️ Scientifically Proven | 🛡️ Safe & Effective',
-        showIngredients: true,
-        ingredients: [
+        showIngredients: false,
+        customColumns: [
           {
-            name: 'Coconut Oil',
-            description: 'Deep nourishment and moisture',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+            title: '🥥 Base Oils',
+            description: 'Premium carrier oils that deliver nutrients deep into hair follicles',
+            points: [
+              'Coconut Oil - Deep nourishment and moisture retention',
+              'Castor Oil - Supports faster growth and thickness',
+              'Argan & Jojoba Oil - Smoothness, shine, and scalp balance'
+            ]
           },
           {
-            name: 'Castor Oil',
-            description: 'Supports faster growth and thickness',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+            title: '🌿 Active Herbal Extracts',
+            description: 'Powerful botanical ingredients proven to stimulate hair growth',
+            points: [
+              'Black Seed Oil (Kalonji) - Strengthens roots and reduces shedding',
+              'Bhringraj Oil - Known for fast hair regrowth',
+              'Amla Extract - Improves scalp health and fights breakage'
+            ]
           },
           {
-            name: 'Black Seed Oil (Kalonji)',
-            description: 'Strengthens roots and reduces shedding',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
-          },
-          {
-            name: 'Amla Extract',
-            description: 'Improves scalp health and fights breakage',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
-          },
-          {
-            name: 'Bhringraj Oil',
-            description: 'Known for fast hair regrowth',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
-          },
-          {
-            name: 'Onion Seed Oil',
-            description: 'Boosts circulation and active growth',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
-          },
-          {
-            name: 'Argan & Jojoba Oil',
-            description: 'Smoothness, shine, and scalp balance',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
-          },
-          {
-            name: 'Vitamin E',
-            description: 'Repair, protection, and shine enhancement',
-            image: 'https://i.ibb.co/3Y9NYsXp/Banner-Glow-Grow-Root-Revival-Oil.jpg'
+            title: '⚡ Growth Boosters',
+            description: 'Essential nutrients and circulation enhancers for optimal results',
+            points: [
+              'Onion Seed Oil - Boosts circulation and active growth',
+              'Vitamin E - Repair, protection, and shine enhancement',
+              'Natural Antioxidants - Fight free radical damage'
+            ]
           }
-        ]
+        ],
+        customColumnsGridClass: 'md:grid-cols-3'
       },
       pricing: {
         title: '📦 Affordable Packages',
-        subtitle: 'Choose the package that suits your hair care goals:',
+        subtitle: 'Choose the perfect package for your hair growth journey',
         packages: [
           {
             title: '1 Month Pack – 250 ml',
@@ -5062,6 +5050,34 @@ function App() {
         ],
         note: '💡 Tip: For best results, use consistently 3–4 times a week along with gentle scalp massage.'
       },
+      testimonialsTitle: '💬 What Our Customers Say',
+      testimonialsSubtitle: 'Real women sharing their amazing hair transformation with GlowGrow',
+      testimonials: [
+        {
+          id: 1,
+          name: 'Ayesha M.',
+          age: 28,
+          location: 'Karachi',
+          rating: 5,
+          text: 'After using GlowGrow for just 3 weeks, my hair fall reduced significantly. I can see new baby hair growing around my hairline. This oil is magical!'
+        },
+        {
+          id: 2,
+          name: 'Sana K.',
+          age: 32,
+          location: 'Lahore',
+          rating: 5,
+          text: 'My hair was becoming thin and weak. GlowGrow made it stronger and thicker. The shine and softness are amazing. Highly recommend!'
+        },
+        {
+          id: 3,
+          name: 'Fatima R.',
+          age: 35,
+          location: 'Islamabad',
+          rating: 5,
+          text: 'I had severe dandruff and itching. Within 2 weeks of using GlowGrow, my scalp feels healthy and dandruff is gone. My hair looks so much better!'
+        }
+      ],
       faqTitle: '❓ Frequently Asked Questions (FAQs) – GlowGrow Root Revival Oil',
       faqs: [
         {
@@ -5905,17 +5921,17 @@ Please confirm my order. Thank you!`;
         </section>
 
         {/* Testimonials - Always in English - Lazy Loaded */}
-        <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gray-100'}`}>
+        <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-b from-gray-900 to-black' : isGlowGrow ? 'bg-black' : 'bg-gray-100'}`}>
           <div className="container mx-auto px-4">
             <motion.div className="text-center mb-12" {...fadeInUp}>
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-gray-800'}`}>
                 {productConfigs[slug]?.testimonialsTitle || englishContent.testimonials.title}
               </h2>
-              <p className={`text-xl max-w-3xl mx-auto ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-600'}`}>
+              <p className={`text-xl max-w-3xl mx-auto ${isLuxuryProduct ? 'text-yellow-300' : isGlowGrow ? 'text-green-300' : 'text-gray-600'}`}>
                 {productConfigs[slug]?.testimonialsSubtitle || englishContent.testimonials.subtitle}
               </p>
               {productConfigs[slug]?.testimonialsDescription && (
-                <p className={`text-lg max-w-4xl mx-auto mt-4 ${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p className={`text-lg max-w-4xl mx-auto mt-4 ${isLuxuryProduct ? 'text-gray-300' : isGlowGrow ? 'text-gray-300' : 'text-gray-700'}`}>
                   {productConfigs[slug]?.testimonialsDescription}
                 </p>
               )}
@@ -5928,7 +5944,7 @@ Please confirm my order. Thank you!`;
 
         {/* Usage Instructions - Step-by-Step for Slim n Shape Fit Booster, BustMax Oil, Bustmax XL, and GlowGrow */}
         {(slug === 'slim-n-shape-fit-booster' || slug === 'bustmax-breast-oil' || slug === 'bustmax-xl-breast-booster' || slug === 'glowgrow-root-revival-oil') && productConfigs[slug]?.dosageSection?.steps && (
-          <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-b from-amber-950 to-pink-950' : 'bg-gradient-to-b from-gray-50 to-white'} ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
+          <section className={`py-12 md:py-16 ${isBustMaxOil ? 'bg-gradient-to-b from-amber-950 to-pink-950' : isGlowGrow ? 'bg-gradient-to-br from-gray-900 via-black to-gray-800' : 'bg-gradient-to-b from-gray-50 to-white'} ${shouldShowInUrdu('usage') ? 'font-urdu' : ''}`} dir={shouldShowInUrdu('usage') ? 'rtl' : 'ltr'}>
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto">
                 {(() => {
@@ -5939,12 +5955,12 @@ Please confirm my order. Thank you!`;
                     <>
                       <motion.h2 
                         {...fadeInUp}
-                        className={`text-3xl md:text-4xl font-bold text-center mb-2 ${isBustMaxOil ? 'text-amber-300' : 'text-gray-800'}`}
+                        className={`text-3xl md:text-4xl font-bold text-center mb-2 ${isBustMaxOil ? 'text-amber-300' : isGlowGrow ? 'text-amber-400' : 'text-gray-800'}`}
                       >
                         {dosageData.title}
                       </motion.h2>
                       {dosageData.subtitle && (
-                        <p className={`text-center mb-6 ${isBustMaxOil ? 'text-pink-200' : 'text-gray-600'}`}>
+                        <p className={`text-center mb-6 ${isBustMaxOil ? 'text-pink-200' : isGlowGrow ? 'text-green-300' : 'text-gray-600'}`}>
                           {dosageData.subtitle}
                         </p>
                       )}
@@ -5954,18 +5970,18 @@ Please confirm my order. Thank you!`;
                             key={index}
                             {...fadeInUp}
                             transition={{ delay: index * 0.1 }}
-                            className={`${isBustMaxOil ? 'bg-pink-900/30 border-2 border-amber-500/30 hover:border-amber-400' : 'bg-white border-2 border-green-100 hover:border-green-300'} rounded-xl shadow-lg p-6 transition-all`}
+                            className={`${isBustMaxOil ? 'bg-pink-900/30 border-2 border-amber-500/30 hover:border-amber-400' : isGlowGrow ? 'bg-gray-800/50 border-2 border-amber-500/30 hover:border-amber-400 backdrop-blur-sm' : 'bg-white border-2 border-green-100 hover:border-green-300'} rounded-xl shadow-lg p-6 transition-all`}
                           >
-                            <div className={`flex items-center justify-center w-16 h-16 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600' : 'bg-green-500'} text-white rounded-full text-2xl font-bold mx-auto mb-4`}>
+                            <div className={`flex items-center justify-center w-16 h-16 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-500 to-pink-600' : isGlowGrow ? 'bg-gradient-to-r from-amber-400 to-amber-600' : 'bg-green-500'} text-white rounded-full text-2xl font-bold mx-auto mb-4`}>
                               {index + 1}
                             </div>
-                            <h3 className={`text-sm font-semibold ${isBustMaxOil ? 'text-amber-400' : 'text-green-600'} text-center mb-2`}>
+                            <h3 className={`text-sm font-semibold ${isBustMaxOil ? 'text-amber-400' : isGlowGrow ? 'text-green-400' : 'text-green-600'} text-center mb-2`}>
                               {step.stepNumber}
                             </h3>
-                            <h4 className={`text-lg font-bold ${isBustMaxOil ? 'text-pink-200' : 'text-gray-800'} text-center mb-3`}>
+                            <h4 className={`text-lg font-bold ${isBustMaxOil ? 'text-pink-200' : isGlowGrow ? 'text-amber-300' : 'text-gray-800'} text-center mb-3`}>
                               {step.title}
                             </h4>
-                            <p className={`${isBustMaxOil ? 'text-pink-300' : 'text-gray-600'} text-center text-sm`}>
+                            <p className={`${isBustMaxOil ? 'text-pink-300' : isGlowGrow ? 'text-gray-300' : 'text-gray-600'} text-center text-sm`}>
                               {step.description}
                             </p>
                           </motion.div>
@@ -5974,11 +5990,11 @@ Please confirm my order. Thank you!`;
                       {dosageData.notes && (
                         <motion.div 
                           {...fadeInUp}
-                          className={`rounded-xl p-6 border-l-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-900/20 to-pink-900/20 border-amber-500' : 'bg-gradient-to-r from-green-50 to-blue-50 border-green-500'}`}
+                          className={`rounded-xl p-6 border-l-4 ${isBustMaxOil ? 'bg-gradient-to-r from-amber-900/20 to-pink-900/20 border-amber-500' : isGlowGrow ? 'bg-gradient-to-r from-amber-900/20 to-gray-800/20 border-amber-500' : 'bg-gradient-to-r from-green-50 to-blue-50 border-green-500'}`}
                         >
                           <div className="space-y-3">
                             {dosageData.notes.map((note, index) => (
-                              <p key={index} className={`text-base flex items-start ${isBustMaxOil ? 'text-pink-100' : 'text-gray-700'}`}>
+                              <p key={index} className={`text-base flex items-start ${isBustMaxOil ? 'text-pink-100' : isGlowGrow ? 'text-gray-300' : 'text-gray-700'}`}>
                                 <span className={shouldShowInUrdu('usage') ? 'mr-0 ml-2' : 'mr-2'}>{note}</span>
                               </p>
                             ))}

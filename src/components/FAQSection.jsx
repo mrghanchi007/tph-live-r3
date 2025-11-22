@@ -9,6 +9,7 @@ const FAQSection = ({ language = 'en', overrideTitle, overrideSubtitle, override
     const [openFAQ, setOpenFAQ] = useState(null);
     const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster' || slug === 'malika-shahi-gold-health-booster';
     const isFemaleProduct = slug === 'malika-shahi-gold-health-booster';
+    const isGlowGrow = slug === 'glowgrow-root-revival-oil';
 
     // Memoize FAQ data for better performance
     const faqData = useMemo(() => ({
@@ -171,7 +172,7 @@ const FAQSection = ({ language = 'en', overrideTitle, overrideSubtitle, override
             />
             
             <section
-                className={`py-12 md:py-16 ${isFemaleProduct ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-black to-gray-900' : 'bg-gradient-to-br from-blue-50 to-indigo-50'} ${language === 'ur' ? 'font-urdu' : ''}`}
+                className={`py-12 md:py-16 ${isFemaleProduct ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-black to-gray-900' : isGlowGrow ? 'bg-gradient-to-br from-gray-800 via-black to-gray-900' : 'bg-gradient-to-br from-blue-50 to-indigo-50'} ${language === 'ur' ? 'font-urdu' : ''}`}
                 dir={language === 'ur' ? 'rtl' : 'ltr'}
                 aria-labelledby="faq-heading"
                 role="region"
@@ -182,14 +183,14 @@ const FAQSection = ({ language = 'en', overrideTitle, overrideSubtitle, override
                 <motion.div className="text-center mb-12" {...fadeInUp}>
                     <h2
                         id="faq-heading"
-                        className={`text-3xl md:text-4xl font-bold mb-4 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}
+                        className={`text-3xl md:text-4xl font-bold mb-4 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-gray-800'}`}
                         title={language === 'en' ? "Frequently asked questions about B-Maxman Royal herbal supplement" : "بی میکس مین رائل جڑی بوٹیوں کے سپلیمنٹ کے بارے میں اکثر پوچھے جانے والے سوالات"}
                         itemProp="name"
                     >
                         {currentContent.title}
                     </h2>
                     {currentContent.subtitle && (
-                        <p className={`text-lg max-w-3xl mx-auto mt-4 ${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : 'text-gray-600'}`}>
+                        <p className={`text-lg max-w-3xl mx-auto mt-4 ${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : isGlowGrow ? 'text-green-300' : 'text-gray-600'}`}>
                             {currentContent.subtitle}
                         </p>
                     )}
@@ -207,15 +208,15 @@ const FAQSection = ({ language = 'en', overrideTitle, overrideSubtitle, override
                             itemType="https://schema.org/Question"
                             itemProp="mainEntity"
                         >
-                            <div className={`rounded-lg shadow-lg overflow-hidden ${isFemaleProduct ? 'bg-purple-900/50 border border-pink-400' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white border border-gray-100'}`}>
+                            <div className={`rounded-lg shadow-lg overflow-hidden ${isFemaleProduct ? 'bg-purple-900/50 border border-pink-400' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : isGlowGrow ? 'bg-gray-800/60 border border-amber-500/50 backdrop-blur-sm' : 'bg-white border border-gray-100'}`}>
                                 <button
                                     onClick={() => toggleFAQ(index)}
-                                    className={`w-full px-6 py-4 text-left flex justify-between items-center transition-colors ${language === 'ur' ? 'text-right' : ''} ${isFemaleProduct ? 'hover:bg-purple-800/50' : isLuxuryProduct ? 'hover:bg-gray-700' : 'hover:bg-gray-50'}`}
+                                    className={`w-full px-6 py-4 text-left flex justify-between items-center transition-colors ${language === 'ur' ? 'text-right' : ''} ${isFemaleProduct ? 'hover:bg-purple-800/50' : isLuxuryProduct ? 'hover:bg-gray-700' : isGlowGrow ? 'hover:bg-gray-700/50' : 'hover:bg-gray-50'}`}
                                     aria-expanded={openFAQ === index}
                                     aria-controls={`faq-answer-${index}`}
                                 >
                                     <h3 
-                                        className={`font-semibold text-lg ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}
+                                        className={`font-semibold text-lg ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-gray-800'}`}
                                         itemProp="name"
                                         title={faq.keywords}
                                     >
@@ -223,7 +224,7 @@ const FAQSection = ({ language = 'en', overrideTitle, overrideSubtitle, override
                                     </h3>
                                     <SafeIcon
                                         icon={openFAQ === index ? FiChevronUp : FiChevronDown}
-                                        className={`text-xl flex-shrink-0 ml-2 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-red-600'}`}
+                                        className={`text-xl flex-shrink-0 ml-2 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-green-400' : 'text-red-600'}`}
                                     />
                                 </button>
 
@@ -238,13 +239,13 @@ const FAQSection = ({ language = 'en', overrideTitle, overrideSubtitle, override
                                             className="overflow-hidden"
                                         >
                                             <div 
-                                                className={`px-6 pb-4 ${isFemaleProduct ? 'border-t border-pink-400' : isLuxuryProduct ? 'border-t border-yellow-400' : 'border-t border-gray-100'}`}
+                                                className={`px-6 pb-4 ${isFemaleProduct ? 'border-t border-pink-400' : isLuxuryProduct ? 'border-t border-yellow-400' : isGlowGrow ? 'border-t border-amber-500/50' : 'border-t border-gray-100'}`}
                                                 itemScope
                                                 itemType="https://schema.org/Answer"
                                                 itemProp="acceptedAnswer"
                                             >
                                                 <div 
-                                                    className={`pt-4 leading-relaxed whitespace-pre-line ${isFemaleProduct ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}
+                                                    className={`pt-4 leading-relaxed whitespace-pre-line ${isFemaleProduct ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : isGlowGrow ? 'text-gray-300' : 'text-gray-700'}`}
                                                     itemProp="text"
                                                     title={faq.keywords}
                                                 >

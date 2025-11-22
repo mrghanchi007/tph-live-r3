@@ -14,6 +14,7 @@ const TestimonialSlider = ({ testimonials, slug }) => {
   };
 
   const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster';
+  const isGlowGrow = slug === 'glowgrow-root-revival-oil';
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -21,29 +22,29 @@ const TestimonialSlider = ({ testimonials, slug }) => {
         {testimonials.map((testimonial) => (
           <motion.div
             key={testimonial.id}
-            className={`p-6 rounded-lg shadow-lg ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : 'bg-white'}`}
+            className={`p-6 rounded-lg shadow-lg ${isLuxuryProduct ? 'bg-gray-800 border border-yellow-400' : isGlowGrow ? 'bg-gray-900 border border-amber-400' : 'bg-white'}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center mb-4">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-black' : 'bg-gradient-to-r from-red-500 to-red-600 text-white'}`}>
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${isLuxuryProduct ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-black' : isGlowGrow ? 'bg-gradient-to-r from-amber-400 to-amber-600 text-black' : 'bg-gradient-to-r from-red-500 to-red-600 text-white'}`}>
                 {testimonial.name.charAt(0)}
               </div>
               <div className="ml-4">
-                <h4 className={`font-bold text-lg ${isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'}`}>{testimonial.name}</h4>
-                <p className={`text-sm ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-600'}`}>
+                <h4 className={`font-bold text-lg ${isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-gray-800'}`}>{testimonial.name}</h4>
+                <p className={`text-sm ${isLuxuryProduct ? 'text-yellow-300' : isGlowGrow ? 'text-green-300' : 'text-gray-600'}`}>
                   {text.age}: {testimonial.age}, {text.location} {testimonial.location}
                 </p>
               </div>
             </div>
             <div className="flex items-center mb-3">
               {[...Array(testimonial.rating)].map((_, i) => (
-                <SafeIcon key={i} icon={FiStar} className="text-yellow-400 text-lg fill-current" />
+                <SafeIcon key={i} icon={FiStar} className={`${isGlowGrow ? 'text-amber-400' : 'text-yellow-400'} text-lg fill-current`} />
               ))}
-              <span className={`ml-1 text-sm ${isLuxuryProduct ? 'text-yellow-300' : 'text-gray-600'}`}>{testimonial.rating} {text.stars}</span>
+              <span className={`ml-1 text-sm ${isLuxuryProduct ? 'text-yellow-300' : isGlowGrow ? 'text-green-300' : 'text-gray-600'}`}>{testimonial.rating} {text.stars}</span>
             </div>
-            <p className={`${isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>{testimonial.text}</p>
+            <p className={`${isLuxuryProduct ? 'text-gray-300' : isGlowGrow ? 'text-gray-300' : 'text-gray-700'}`}>{testimonial.text}</p>
           </motion.div>
         ))}
       </div>

@@ -6,6 +6,7 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
   const { slug } = useParams();
   const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster';
   const isFemaleProduct = slug === 'malika-shahi-gold-health-booster';
+  const isGlowGrow = slug === 'glowgrow-root-revival-oil';
 
   const herbalIngredients = {
     en: [
@@ -125,7 +126,7 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
 
   return (
     <section
-      className={`py-12 md:py-16 ${isFemaleProduct ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : 'bg-gradient-to-br from-green-50 to-emerald-50'} ${language === 'ur' ? 'font-urdu' : ''}`}
+      className={`py-12 md:py-16 ${isFemaleProduct ? 'bg-gradient-to-br from-purple-950 via-pink-950 to-purple-950' : isLuxuryProduct ? 'bg-gradient-to-br from-gray-900 to-black' : isGlowGrow ? 'bg-black' : 'bg-gradient-to-br from-green-50 to-emerald-50'} ${language === 'ur' ? 'font-urdu' : ''}`}
       aria-labelledby="herbal-power-heading"
       role="region"
       dir={language === 'ur' ? 'rtl' : 'ltr'}
@@ -140,21 +141,21 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
         >
           <h2
             id="herbal-power-heading"
-            className={`text-3xl md:text-4xl font-bold ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-4`}
+            className={`text-3xl md:text-4xl font-bold ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-gray-800'} mb-4`}
             title="Natural herbal supplements backed by scientific research"
           >
             {title
               ? title
               : language === 'en'
                 ? (
-                  <>🌿 Herbal Power. <span className={`${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : 'text-green-600'}`}>Backed by Science.</span></>
+                  <>🌿 Herbal Power. <span className={`${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : isGlowGrow ? 'text-green-400' : 'text-green-600'}`}>Backed by Science.</span></>
                 )
                 : (
-                  <>🌿 جڑی بوٹیوں کی طاقت۔ <span className={`${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : 'text-green-600'}`}>سائنس سے ثابت شدہ۔</span></>
+                  <>🌿 جڑی بوٹیوں کی طاقت۔ <span className={`${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : isGlowGrow ? 'text-green-400' : 'text-green-600'}`}>سائنس سے ثابت شدہ۔</span></>
                 )}
           </h2>
           <p
-            className={`text-xl ${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} max-w-3xl mx-auto`}
+            className={`text-xl ${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : isGlowGrow ? 'text-green-300' : 'text-gray-600'} max-w-3xl mx-auto`}
             title="Premium herbal formula combining traditional wisdom with modern science"
           >
             {subtitle || currentContent.subtitle}
@@ -164,7 +165,7 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
         {/* Science-backed bullet points (optional) */}
         {Array.isArray(bullets) && bullets.length > 0 && (
           <motion.ul
-            className="max-w-3xl mx-auto mb-10 grid gap-3 text-gray-800"
+            className={`max-w-3xl mx-auto mb-10 grid gap-3 ${isGlowGrow ? 'text-gray-300' : 'text-gray-800'}`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
@@ -173,10 +174,10 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
             {bullets.map((point, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-3 bg-white/80 border border-green-100 rounded-lg p-3"
+                className={`flex items-start gap-3 ${isGlowGrow ? 'bg-gray-900/50 border border-amber-400/30' : 'bg-white/80 border border-green-100'} rounded-lg p-3`}
               >
-                <span aria-hidden className="text-green-600 text-xl leading-none">✔</span>
-                <span className="text-base">{point}</span>
+                <span aria-hidden className={`${isGlowGrow ? 'text-green-400' : 'text-green-600'} text-xl leading-none`}>✔</span>
+                <span className={`text-base ${isGlowGrow ? 'text-gray-300' : ''}`}>{point}</span>
               </li>
             ))}
           </motion.ul>
@@ -190,7 +191,7 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className={`${isFemaleProduct ? 'bg-purple-900/50 border border-pink-400/30' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white border border-green-100'} rounded-xl shadow-lg overflow-hidden`}>
+            <div className={`${isFemaleProduct ? 'bg-purple-900/50 border border-pink-400/30' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : isGlowGrow ? 'bg-gray-900/50 border border-amber-400/30' : 'bg-white border border-green-100'} rounded-xl shadow-lg overflow-hidden`}>
               <img
                 src={bigImage}
                 alt={`${title || 'Herbal Power'} - Ingredients`}
@@ -208,20 +209,20 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
               {customColumns.map((col, idx) => (
                 <motion.article
                   key={idx}
-                  className={`${isFemaleProduct ? 'bg-purple-900/50 border border-pink-400/30' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : 'bg-white border border-green-100'} rounded-xl p-6 shadow-sm`}
+                  className={`${isFemaleProduct ? 'bg-purple-900/50 border border-pink-400/30' : isLuxuryProduct ? 'bg-gray-800 border border-yellow-400/20' : isGlowGrow ? 'bg-gray-900/50 border border-amber-400/30' : 'bg-white border border-green-100'} rounded-xl p-6 shadow-sm`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
                 >
-                  <h3 className={`text-lg font-bold mb-2 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-green-700'}`}>{col.title}</h3>
+                  <h3 className={`text-lg font-bold mb-2 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-green-700'}`}>{col.title}</h3>
                   {col.description && (
-                    <p className={`mb-4 ${isFemaleProduct ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-gray-700'}`}>{col.description}</p>
+                    <p className={`mb-4 ${isFemaleProduct ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : isGlowGrow ? 'text-gray-300' : 'text-gray-700'}`}>{col.description}</p>
                   )}
                   {Array.isArray(col.points) && col.points.length > 0 && (
-                    <ul className={`space-y-2 ${isFemaleProduct ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : 'text-gray-800'}`}>
+                    <ul className={`space-y-2 ${isFemaleProduct ? 'text-pink-100' : isLuxuryProduct ? 'text-gray-300' : isGlowGrow ? 'text-gray-300' : 'text-gray-800'}`}>
                       {col.points.map((p, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <span className={`mt-0.5 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-green-600'}`}>✅</span>
+                          <span className={`mt-0.5 ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-green-400' : 'text-green-600'}`}>✅</span>
                           <span>{p}</span>
                         </li>
                       ))}
@@ -252,7 +253,7 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
                   >
                     {/* Round Image Container with 2px red border */}
                     <div className="relative mx-auto mb-4 w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32">
-                      <div className={`w-full h-full rounded-full border-2 ${isFemaleProduct ? 'border-pink-400 bg-purple-900' : isLuxuryProduct ? 'border-yellow-400 bg-gray-800' : 'border-red-500 bg-white'} shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden`}>
+                      <div className={`w-full h-full rounded-full border-2 ${isFemaleProduct ? 'border-pink-400 bg-purple-900' : isLuxuryProduct ? 'border-yellow-400 bg-gray-800' : isGlowGrow ? 'border-amber-400 bg-gray-900' : 'border-red-500 bg-white'} shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden`}>
                         <img
                           src={ingredient.image}
                           alt={ingredient.alt}
@@ -264,20 +265,20 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
                         />
                       </div>
                       {/* Decorative glow */}
-                      <div className="absolute inset-0 rounded-full bg-red-400 opacity-0 group-hover:opacity-20 transition-opacity blur-lg"></div>
+                      <div className={`absolute inset-0 rounded-full ${isGlowGrow ? 'bg-green-400' : 'bg-red-400'} opacity-0 group-hover:opacity-20 transition-opacity blur-lg`}></div>
                     </div>
 
                     {/* Text Content - Centered below image */}
                     <div className="space-y-2 max-w-[120px] md:max-w-[140px]">
                       <h3
                         id={`ingredient-${index}`}
-                        className={`font-bold text-sm md:text-base ${isFemaleProduct ? 'text-pink-300 group-hover:text-pink-200' : isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
+                        className={`font-bold text-sm md:text-base ${isFemaleProduct ? 'text-pink-300 group-hover:text-pink-200' : isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : isGlowGrow ? 'text-amber-400 group-hover:text-amber-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
                         title={`${ingredient.name} - ${ingredient.seoDescription}`}
                       >
                         {ingredient.name}
                       </h3>
                       <p
-                        className={`text-xs md:text-sm ${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} leading-relaxed`}
+                        className={`text-xs md:text-sm ${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-200' : isGlowGrow ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}
                         title={ingredient.seoDescription}
                       >
                         {ingredient.description}
@@ -302,7 +303,7 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
                   >
                     {/* Round Image Container with 2px red border */}
                     <div className="relative mx-auto mb-4 w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32">
-                      <div className={`w-full h-full rounded-full border-2 ${isLuxuryProduct ? 'border-yellow-400 bg-gray-800' : 'border-yellow-400 bg-white'} shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden`}>
+                      <div className={`w-full h-full rounded-full border-2 ${isLuxuryProduct ? 'border-yellow-400 bg-gray-800' : isGlowGrow ? 'border-amber-400 bg-gray-900' : 'border-yellow-400 bg-white'} shadow-lg group-hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden`}>
                         <img
                           src={ingredient.image}
                           alt={ingredient.alt}
@@ -314,20 +315,20 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
                         />
                       </div>
                       {/* Decorative glow */}
-                      <div className={`absolute inset-0 rounded-full ${isLuxuryProduct ? 'bg-yellow-400' : 'bg-yellow-400'} opacity-0 group-hover:opacity-20 transition-opacity blur-lg`}></div>
+                      <div className={`absolute inset-0 rounded-full ${isLuxuryProduct ? 'bg-yellow-400' : isGlowGrow ? 'bg-green-400' : 'bg-yellow-400'} opacity-0 group-hover:opacity-20 transition-opacity blur-lg`}></div>
                     </div>
 
                     {/* Text Content - Centered below image */}
                     <div className="space-y-2 max-w-[120px] md:max-w-[140px]">
                       <h3
                         id={`ingredient-${index}`}
-                        className={`font-bold text-sm md:text-base ${isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
+                        className={`font-bold text-sm md:text-base ${isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : isGlowGrow ? 'text-amber-400 group-hover:text-amber-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
                         title={`${ingredient.name} - ${ingredient.seoDescription}`}
                       >
                         {ingredient.name}
                       </h3>
                       <p
-                        className={`text-xs md:text-sm ${isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} leading-relaxed`}
+                        className={`text-xs md:text-sm ${isLuxuryProduct ? 'text-yellow-200' : isGlowGrow ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}
                         title={ingredient.seoDescription}
                       >
                         {ingredient.description}
@@ -365,20 +366,20 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
                           />
                         </div>
                         {/* Decorative glow */}
-                        <div className="absolute inset-0 rounded-full bg-red-400 opacity-0 group-hover:opacity-20 transition-opacity blur-lg"></div>
+                        <div className={`absolute inset-0 rounded-full ${isGlowGrow ? 'bg-green-400' : 'bg-red-400'} opacity-0 group-hover:opacity-20 transition-opacity blur-lg`}></div>
                       </div>
 
                       {/* Text Content - Centered below image */}
                       <div className="space-y-2 max-w-[120px] md:max-w-[140px]">
                         <h3
                           id={`ingredient-${index}`}
-                          className={`font-bold text-sm md:text-base ${isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
+                          className={`font-bold text-sm md:text-base ${isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : isGlowGrow ? 'text-amber-400 group-hover:text-amber-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
                           title={`${ingredient.name} - ${ingredient.seoDescription}`}
                         >
                           {ingredient.name}
                         </h3>
                         <p
-                          className={`text-xs md:text-sm ${isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} leading-relaxed`}
+                          className={`text-xs md:text-sm ${isLuxuryProduct ? 'text-yellow-200' : isGlowGrow ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}
                           title={ingredient.seoDescription}
                         >
                           {ingredient.description}
@@ -415,20 +416,20 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
                           />
                         </div>
                         {/* Decorative glow */}
-                        <div className="absolute inset-0 rounded-full bg-red-400 opacity-0 group-hover:opacity-20 transition-opacity blur-lg"></div>
+                        <div className={`absolute inset-0 rounded-full ${isGlowGrow ? 'bg-green-400' : 'bg-red-400'} opacity-0 group-hover:opacity-20 transition-opacity blur-lg`}></div>
                       </div>
 
                       {/* Text Content - Centered below image */}
                       <div className="space-y-2 max-w-[120px] md:max-w-[140px]">
                         <h3
                           id={`ingredient-${index + 3}`}
-                          className={`font-bold text-sm md:text-base ${isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
+                          className={`font-bold text-sm md:text-base ${isLuxuryProduct ? 'text-yellow-400 group-hover:text-yellow-300' : isGlowGrow ? 'text-amber-400 group-hover:text-amber-300' : 'text-gray-800 group-hover:text-green-600'} transition-colors leading-tight`}
                           title={`${ingredient.name} - ${ingredient.seoDescription}`}
                         >
                           {ingredient.name}
                         </h3>
                         <p
-                          className={`text-xs md:text-sm ${isLuxuryProduct ? 'text-yellow-200' : 'text-gray-600'} leading-relaxed`}
+                          className={`text-xs md:text-sm ${isLuxuryProduct ? 'text-yellow-200' : isGlowGrow ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}
                           title={ingredient.seoDescription}
                         >
                           {ingredient.description}
@@ -452,18 +453,18 @@ const HerbalPowerSection = ({ language = 'en', title, subtitle, bullets = [], ba
           aria-label="Product quality assurance"
         >
           <div
-            className={`${isFemaleProduct ? 'bg-pink-500/10 border border-pink-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : 'bg-white/80 border border-green-100'} backdrop-blur-sm p-6 rounded-xl shadow-lg max-w-2xl mx-auto`}
+            className={`${isFemaleProduct ? 'bg-pink-500/10 border border-pink-400/20' : isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : isGlowGrow ? 'bg-amber-500/10 border border-amber-400/20' : 'bg-white/80 border border-green-100'} backdrop-blur-sm p-6 rounded-xl shadow-lg max-w-2xl mx-auto`}
             title="Quality assurance for herbal supplements"
           >
             <div dir={effectiveBadgesLang === 'ur' ? 'rtl' : 'ltr'} className={`${effectiveBadgesLang === 'ur' ? 'font-urdu' : ''}`}>
               <p
-                className={`text-lg md:text-xl font-semibold ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : 'text-gray-800'} mb-2`}
+                className={`text-lg md:text-xl font-semibold ${isFemaleProduct ? 'text-pink-300' : isLuxuryProduct ? 'text-yellow-400' : isGlowGrow ? 'text-amber-400' : 'text-gray-800'} mb-2`}
                 title="100% natural scientifically proven safe and effective herbal supplements"
               >
                 {badgesLine || badgesContent.natural}
               </p>
               <p
-                className={`${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : 'text-green-600'} font-medium`}
+                className={`${isFemaleProduct ? 'text-pink-200' : isLuxuryProduct ? 'text-yellow-300' : isGlowGrow ? 'text-green-400' : 'text-green-600'} font-medium`}
                 title="Premium quality herbal ingredients tested for maximum potency and effectiveness"
               >
                 {badgesContent.quality}

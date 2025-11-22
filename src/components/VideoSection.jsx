@@ -10,6 +10,7 @@ const VideoSection = ({ videoId, title, subtitle, coverImage, videoTitle }) => {
   const { slug } = useParams();
   const isLuxuryProduct = slug === 'sultan-shahi-gold-majoon' || slug === 'sultan-shahi-gold-tila' || slug === 'sultan-shahi-gold-health-booster';
   const isFitBooster = slug === 'slim-n-shape-fit-booster';
+  const isGlowGrow = slug === 'glowgrow-root-revival-oil';
   const [videoLoaded, setVideoLoaded] = useState(false);
   const heading = title || 'See B-Maxman in Action';
   const sub = subtitle || 'Watch how B-Maxman has transformed the lives of men across Pakistan';
@@ -23,7 +24,7 @@ const VideoSection = ({ videoId, title, subtitle, coverImage, videoTitle }) => {
   };
 
   return (
-    <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : isFitBooster ? 'bg-gradient-to-r from-blue-700 to-blue-800' : 'bg-gradient-to-r from-red-700 to-red-800'} text-white`}>
+    <section className={`py-12 md:py-16 ${isLuxuryProduct ? 'bg-gradient-to-r from-gray-900 to-black' : isFitBooster ? 'bg-gradient-to-r from-blue-700 to-blue-800' : isGlowGrow ? 'bg-black' : 'bg-gradient-to-r from-red-700 to-red-800'} text-white`}>
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-10"
@@ -31,8 +32,8 @@ const VideoSection = ({ videoId, title, subtitle, coverImage, videoTitle }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : isFitBooster ? 'text-white' : 'text-white'}`}>{heading}</h2>
-          <p className={`text-xl ${isLuxuryProduct ? 'text-yellow-200' : isFitBooster ? 'text-blue-100' : 'text-red-100'} max-w-3xl mx-auto`}>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isLuxuryProduct ? 'text-yellow-400' : isFitBooster ? 'text-white' : isGlowGrow ? 'text-amber-400' : 'text-white'}`}>{heading}</h2>
+          <p className={`text-xl ${isLuxuryProduct ? 'text-yellow-200' : isFitBooster ? 'text-blue-100' : isGlowGrow ? 'text-green-300' : 'text-red-100'} max-w-3xl mx-auto`}>
             {sub}
           </p>
         </motion.div>
@@ -54,10 +55,10 @@ const VideoSection = ({ videoId, title, subtitle, coverImage, videoTitle }) => {
                   backgroundPosition: 'center'
                 }}
               >
-                <div className={`${isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : isFitBooster ? 'bg-blue-700/80' : 'bg-red-700/80'} p-8 rounded-xl flex flex-col items-center max-w-md`}>
-                  <SafeIcon icon={FiPlayCircle} className="text-white text-5xl mb-4" />
-                  <p className="text-lg font-bold mb-2">Click to load video</p>
-                  <p className="text-sm text-center">Loading the video will enable YouTube cookies. We respect your privacy.</p>
+                <div className={`${isLuxuryProduct ? 'bg-yellow-400/20 border border-yellow-400/30' : isFitBooster ? 'bg-blue-700/80' : isGlowGrow ? 'bg-amber-500/20 border border-amber-400/30' : 'bg-red-700/80'} p-8 rounded-xl flex flex-col items-center max-w-md`}>
+                  <SafeIcon icon={FiPlayCircle} className={`${isGlowGrow ? 'text-green-400' : 'text-white'} text-5xl mb-4`} />
+                  <p className={`text-lg font-bold mb-2 ${isGlowGrow ? 'text-amber-300' : 'text-white'}`}>Click to load video</p>
+                  <p className={`text-sm text-center ${isGlowGrow ? 'text-gray-300' : 'text-white'}`}>Loading the video will enable YouTube cookies. We respect your privacy.</p>
                 </div>
               </div>
             ) : (
@@ -71,8 +72,8 @@ const VideoSection = ({ videoId, title, subtitle, coverImage, videoTitle }) => {
             )}
           </div>
 
-          <div className={`mt-8 ${isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : isFitBooster ? 'bg-blue-900/50' : 'bg-red-900/50'} p-6 rounded-lg text-center`}>
-            <p className={`text-lg font-bold ${isLuxuryProduct ? 'text-yellow-400' : isFitBooster ? 'text-white' : 'text-white'}`}>
+          <div className={`mt-8 ${isLuxuryProduct ? 'bg-yellow-400/10 border border-yellow-400/20' : isFitBooster ? 'bg-blue-900/50' : isGlowGrow ? 'bg-amber-500/10 border border-amber-400/20' : 'bg-red-900/50'} p-6 rounded-lg text-center`}>
+            <p className={`text-lg font-bold ${isLuxuryProduct ? 'text-yellow-400' : isFitBooster ? 'text-white' : isGlowGrow ? 'text-amber-400' : 'text-white'}`}>
               Don't just take our word for it — see the real results for yourself!
             </p>
           </div>
